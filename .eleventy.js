@@ -10,7 +10,7 @@ module.exports = function (eleventyConfig) {
   // addOptimizations(eleventyConfig)
 
   return {
-    dir: { input: '.', output: '_build', includes: '_includes' },
+    dir: { input: '.', output: '_site', includes: 'includes', data: 'data' },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
   }
@@ -98,8 +98,8 @@ function addTemplateCustomizations(eleventyConfig) {
 
   function addNunjucksCustomizations() {
     const Nunjucks = require("nunjucks");
-    eleventyConfig.setLibrary('njk', Nunjucks.configure('_includes', {
-      tags: { commentStart: '{%#', commentEnd: '#%}' }
+    eleventyConfig.setLibrary('njk', Nunjucks.configure('includes', {
+      tags: { commentStart: '{##', commentEnd: '##}' }
     }))
   }
 
@@ -122,7 +122,7 @@ function addResponsiveImages(eleventyConfig) {
   eleventyConfig.addPlugin(require('eleventy-plugin-local-respimg'), {
     folders: {
       source: '.', // Folder images are stored in
-      output: '_build', // Folder images should be output to
+      output: '_site', // Folder images should be output to
     },
     images: {
       resize: {
