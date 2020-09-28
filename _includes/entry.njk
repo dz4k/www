@@ -1,0 +1,29 @@
+---
+layout: layout.njk
+---
+
+<article class="h-entry">
+
+<header>
+<a class="u-url" href="{{page.url|url}}">
+  <time class="dt-published">{{page.date|moment('DD/MM/YYYY')}}</time>
+</a>
+{%if uPhoto%}<link class="u-photo" href="{{uPhoto}}">{%endif%}
+<h1 class="p-name">{{title}}</h1>
+</header>
+
+<div class="e-content">{{content|safe}}</div>
+
+<section class="tags">
+{%set tags = tags%}
+{%include "partials/tags.njk"%}
+</section>
+
+{%if devToSyndication[page.url] !== undefined%}
+<section class="syndication-links">
+This article is syndicated to <a class="u-syndication" 
+    href="{{devToSyndication[page.url]}}">DEV</a>, where you can comment on it.
+</section>
+{%endif%}
+
+</article>

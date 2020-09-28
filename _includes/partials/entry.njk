@@ -1,0 +1,21 @@
+
+
+<article class="h-entry">
+
+<a class="p-name u-url" href="{{entry.url|url}}">{{entry.data.title}}</a>
+
+<time class="dt-published">{{entry.date|moment('DD/MM/YYYY')}}</time>
+
+{%if entry.data.page.excerpt%}
+<p class="p-summary">
+  {{entry.data.page.excerpt|markdown|striptags|safe}}
+</p>
+{%endif%}
+
+<p>
+{%set tags = entry.data.tags%}
+{%include "partials/tags.njk"%}
+</p>
+
+</article>
+

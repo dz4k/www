@@ -1,0 +1,95 @@
+
+<!doctype html>
+
+<html lang=en>
+
+<head>
+
+<meta charset="UTF-8">
+<title>{{title | d("Deniz Akşimşek")}}</title>
+<meta name="description" content="{{excerpt|d(page.excerpt)|d(content)|markdown|striptags|truncate}}">
+
+<meta name="generator" content="@11ty/eleventy">
+
+<link rel="micropub" href="https://mastr-cntrl-dza.herokuapp.com/micropub">
+<link rel="microsub" href="https://aperture.p3k.io/microsub/558">
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+<link href="https://tokens.indieauth.com/token" rel="token_endpoint">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="/assets/favicon.svg">
+<link rel="stylesheet" href="{{stylesheet}}">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Deniz A.">
+<meta name="apple-mobile-web-app-title" content="Deniz A.">
+<meta name="theme-color" content="#ff6600">
+<meta name="msapplication-navbutton-color" content="#ff6600">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="image/svg+xml" sizes="512x512" href="/assets/logo.svg">
+<link rel="apple-touch-icon" type="image/svg+xml" sizes="512x512" href="/assets/logo.svg">
+
+<!-- Open Graph tags -->
+<meta property="og:title" content="{{title}}">
+<meta property="og:url" content="https://www.denizaksimsek.com{{page.url|url}}">
+<meta property="og:type" content="article">
+{%if uPhoto%}<meta property="og:image" content="https://www.denizaksimsek.com{{uPhoto|url}}">{%endif%}
+{%if page.excerpt%}<meta property="og:description"
+  content="{{page.excerpt|markdown|striptags|safe}}">{%endif%}
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@DenizAksimsek">
+<meta name="twitter:creator" content="@DenizAksimsek">
+
+{%set styles%}
+  {%include "styles/main.css"%}
+{%endset%}
+
+<style>{{styles|safe}}</style>
+
+{%for stylesheet in prefetchedStylesheets%}
+<style>{{stylesheet|safe}}</style>
+{%endfor%}
+
+<body>
+
+{{content|safe}}
+
+{%if script%}<script src="{{script|url}}"></script>{%endif%}
+
+<script type="module">
+function highlightHash() {
+  addEventListener('hashchange', highlightHash)
+  
+  const $hash = location.hash && document.querySelector(location.hash)
+  if (!$hash) return
+  
+  if ($hash instanceof HTMLDetailsElement) $hash.open = true
+  
+  $hash.tabIndex = 0
+  $hash.focus()
+  
+  $hash.addEventListener('blur', e => {
+    $hash.tabindex = -1
+  }, { once: true })
+}
+
+highlightHash()
+
+addEventListener('keyup', e => {
+  if (e.shiftKey === true) {
+    switch (e.keyCode) {
+      case 69: // E
+        window.location = 'https://github.com/DenizAksimsek/www/edit/master/{{page.inputPath}}'
+        break
+    }
+  }
+})
+</script>
+
+

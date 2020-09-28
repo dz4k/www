@@ -1,0 +1,7 @@
+
+{%for tag in tags%}
+{%if tag != "all"%}
+<a class="p-category" 
+  href="{{'/archive/' + tag | url}}">{{tag}}</a><sup>{{collections[tag].length}}</sup>{{', ' if not loop.last}}
+{%endif%}
+{%endfor%}

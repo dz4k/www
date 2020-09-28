@@ -1,0 +1,8 @@
+---
+permalink: _redirects
+eleventyExcludeFromCollections: yes
+---
+
+{%set latest = (collections.all | reverse)[0]%}
+/latest/        {{latest.url|url}}
+

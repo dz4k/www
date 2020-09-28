@@ -1,0 +1,48 @@
+---
+layout: base
+---
+
+<header>
+  <a href="/">&nwarr; Home</a>
+  <details class="nav-expander">
+  	<summary>Menu</summary>
+  	<div class="menu">
+  	{%markdown%}
+- [Home](/)
+- [Posts](/archive/)
+	+ By tag: {%for coll in functions.topTags(collections)-%}
+			[{{coll}}](/archive/{{coll}}/){{', ' if not loop.last}}
+		{%-endfor%}
+- [Links](/links/)
+	+ [Blogroll](/links/#blogroll)
+	+ [Bookmarks](/links/#bookmarks)
+- [Search](/search/)
+
+## Me Elsewhere
+
+- [Twitter](https://twitter.com/DenizAksimsek)
+- [GitHub](https://github.com/DenizAksimsek)
+- [DEV](https://dev.to/DenizAksimsek)
+
+## My Other Sites
+
+- [Ankara Railway Map](https://ankarametro.denizaksimsek.com/)
+- [Public Folder](https://public.denizaksimsek.com/)
+- [Cats](https://cats.denizaksimsek.com/)
+  	{%endmarkdown%}
+  	</div>
+  </details>
+</header>
+
+<main>{{content|safe}}</main>
+
+<footer>
+  <p> <a href="/">&nwarr; Home</a>
+
+  <p> All dates/times on this page are UTC+03 unless otherwise specified.
+  
+  <p> This website is made with <a href="//11ty.dev">Eleventy</a> and hosted on <a href="//netlify.com">Netlify</a>.
+  
+  <p>&copy; 2020 <a class="h-card" href="/">Deniz Akşimşek</a>
+</footer>
+

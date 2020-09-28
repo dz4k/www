@@ -1,0 +1,11 @@
+_build/
+node_modules/
+.vscode/
+
+*.swp
+*.swo
+*~
+
+
+# Local Netlify folder
+.netlify

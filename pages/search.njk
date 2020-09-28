@@ -1,0 +1,80 @@
+---
+title: Search
+permalink: /search/
+layout: layout
+---
+
+
+<style>
+#search-form {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  width: 100%;
+}
+
+label {
+  display: contents;
+}
+
+input[name=q] {
+  height: 100%;
+  box-sizing: border-box;
+  grid-column: 2;
+
+  margin-left: 2ch;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  background: none;
+  border: 1px solid var(--primary);
+  border-right: none;
+
+}
+
+input[name=q]:focus,
+input[name=q]:hover,
+input[name=q]:active {
+  border: 1px solid var(--secondary);
+  box-shadow: 1px 2px 0 0 var(--copy);
+}
+
+input[type=submit] {
+  grid-column: 3;
+  padding: 0 1ch;
+  font-family: inherit;
+  font-size: inherit;
+  background: var(--secondary);
+  border: 1px solid var(--copy);
+  color: var(--bg);
+}
+
+input[type=submit]:focus,
+input[type=submit]:hover,
+input[type=submit]:active {
+  box-shadow: 1px 2px 0 0 var(--copy);
+  background: var(--primary);
+}
+
+input[type=submit]:active {
+  box-shadow: none;
+}
+</style>
+
+<form id=search-form class="search-form" action="https://duckduckgo.com/" method="get">
+  <input type=hidden name=kj value="#F7F0E7">
+  <input type=hidden name=ka value=n>
+  <input type=hidden name=ku value=1>
+  <input type=hidden name=k7 value="#F7F0E7">
+  <input type=hidden name=k9 value="#ff6600">
+  <input type=hidden name=kx value="#0587BB">
+  <input type=hidden name=k8 value="#000000">
+  <input type=hidden name=t value=www.denizaksimsek.com>
+  <input type=hidden name=ia value=web>
+  <input type=hidden name=kw value=n>
+  <input type=hidden name=km value=m>
+  <input type=hidden name=ko value=s>
+  <label>Search for: <input type="text" name="q" class=searchbox></label>
+  <input type="submit" class=submit value="go">
+</form>
+
