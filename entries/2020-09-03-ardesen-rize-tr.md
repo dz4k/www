@@ -8,7 +8,7 @@ A few pics from there.
 
 <!-- endexcerpt -->
 
-{%img "/assets/photos/IMG20200825184721.jpg",
+{%img uPhoto,
 	"Sunset over the sea, reflecting off a nearby car"%}
 
 {%img "/assets/photos/IMG20200902180736.jpg", 
