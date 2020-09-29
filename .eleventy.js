@@ -65,6 +65,9 @@ function addFilters(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode('markdown', str => mdLib.render(str))
 
+  // TODO: add basic formatting
+  eleventyConfig.addFilter('basicFormatting', str => str)
+
   eleventyConfig.addFilter('isJustWhitespace', str => !/[^\s]/.test(str))
 
   eleventyConfig.addFilter('keys', Object.keys)

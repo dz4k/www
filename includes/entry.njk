@@ -26,4 +26,39 @@ This article is syndicated to <a class="u-syndication"
 </section>
 {%endif%}
 
+<section class="comments-section">
+<h2>Comments</h2>
+<form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
+	action="/did-comment" method="POST">
+
+	<input name="path" type="hidden" value="{{page.outputPath}}">
+	<input name="robotuz-eyvallah" type="hidden">
+
+	<label for="contents">Your comment / <span lang="tr">Yorumunuz</span></label>
+	<div>
+		<textarea name="contents" required class="commentinput"></textarea>
+	</div>
+</form>
+<small>
+	<p>
+	Sign your comment however you want.
+	<p lang="tr">
+	Yorumunuzu istediğiniz gibi imzalayın.
+</small>
+
+<hr>
+<ol class="commentlist">
+{%for comment in comments[page.outputPath]%}
+<li>
+	<p class='metadata'>
+		<time datetime="{{comment.date|moment('YYYYMMDDTHHmmssZZ')}}">
+			{{comment.date|moment('DD/MM/YYYY HH.mm')}}
+		</time>
+	</p>
+
+	<blockquote>{{comment.contents|basicFormatting}}</blockquote>
+{%endfor%}
+</ol>
+</section>
+
 </article>
