@@ -1,5 +1,5 @@
 ---
-title: Street sign at Gülyalı, Ordu, Turkey
+title: Street sign in Gülyalı, Ordu, Turkey
 date: 20200903T1642+0300
 tags: [place,design]
 uPhoto: /assets/photos/IMG20200903164220.jpeg
