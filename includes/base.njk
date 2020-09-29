@@ -42,7 +42,7 @@
 {%if page.excerpt%}<meta property="og:description"
   content="{{page.excerpt|markdown|striptags|safe}}">{%endif%}
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{{'summary_large_image' if uPhoto else 'summary'}}">
 <meta name="twitter:site" content="@DenizAksimsek">
 <meta name="twitter:creator" content="@DenizAksimsek">
 
