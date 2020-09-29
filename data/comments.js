@@ -17,7 +17,9 @@ module.exports = async () => {
 
 	const rv = {}
 	for (let comment of comments) {
-		const arr = comments[comment.path] || (comments[comment.path] = [])
+		const arr = comments[comment.data.path]
+			|| (comments[comment.data.path] = [])
+			
 		arr.push({
 			date: comment.created_at,
 			contents: comment.data.contents
