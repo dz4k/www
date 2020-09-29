@@ -24,5 +24,7 @@ module.exports = async () => {
 		})
 	}
 
+	console.log(rv)
+
 	return rv
 }
