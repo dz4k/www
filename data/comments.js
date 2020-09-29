@@ -11,6 +11,8 @@ module.exports = async () => {
 
 	const comments = await fetch(url).then(res => res.json())
 
+	if (!(comments instanceof Array)) return {}
+
 	const rv = {}
 	for (let comment of comments) {
 		const arr = comments[comment.path] || (comments[comment.path] = [])
