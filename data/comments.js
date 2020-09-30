@@ -10,6 +10,13 @@ const mockComments = {
 		{
 			date: "20200930T103000Z",
 			contents: "I agree with alexius,\n\nthis is amazing(tm) -- twitter.com/EfixGG https://twitter.com/EfixGG"
+		},
+		{
+			date: "20200930T110000Z",
+			contents: `Hello!
+This is me testing comment formatting.
+
+-- (c) (r) (tm) <= <- -> => ....... "Hello!" \`code\` <img src=x onerror="alert('xss')">`
 		}
 	]
 }

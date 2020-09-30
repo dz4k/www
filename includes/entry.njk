@@ -50,7 +50,7 @@ This article is syndicated to <a class="u-syndication"
 {%for comment in comments[page.url]%}
 <li>
 	<blockquote class="unblockquote">
-		{{comment.contents|basicFormatting|safe}}
+		{{comment.contents|escape|basicFormatting|safe}}
 	</blockquote>
 
 	<p class="metadata">

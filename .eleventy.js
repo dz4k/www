@@ -4,8 +4,8 @@ module.exports = function (eleventyConfig) {
   addPassthroughCopy(eleventyConfig)
   addCustomCollections(eleventyConfig)
   addHtmlMinification(eleventyConfig)
-  addFilters(eleventyConfig)
   addTemplateCustomizations(eleventyConfig)
+  addFilters(eleventyConfig)
   addResponsiveImages(eleventyConfig)
   // addOptimizations(eleventyConfig)
 
@@ -67,13 +67,7 @@ function addFilters(eleventyConfig) {
 
   const linkifyHtml = require('linkifyjs/html')
   eleventyConfig.addFilter('basicFormatting', str => {
-    const htmlEscaped = str.replace(/&/, "&amp;")
-      .replace(/</, "&lt;")
-      .replace(/>/, "&gt;")
-      .replace(/"/, "&quot;")
-      .replace(/'/, "&amp;")
-
-    str = htmlEscaped.replace(/\n/, "<br>")
+    str = str.replace(/$/m, "<br>")
       .replace(/&quot;(.*)&quot;/, "<q>$1</q>")
       .replace(/--/, "&mdash;")
       .replace(/\.\.\.+/, "&hellip;")
@@ -89,6 +83,7 @@ function addFilters(eleventyConfig) {
 
     str = linkifyHtml(str, { defaultProtocol: 'https' })
 
+    console.log(str)
     return str
   })
 
@@ -125,7 +120,7 @@ function addTemplateCustomizations(eleventyConfig) {
 
   function addNunjucksCustomizations() {
     const Nunjucks = require("nunjucks");
-    eleventyConfig.setLibrary('njk', Nunjucks.configure('includes', {
+    eleventyConfig.setLibrary('njk', global.njk = Nunjucks.configure('includes', {
       tags: { commentStart: '{##', commentEnd: '##}' }
     }))
   }
