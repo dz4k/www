@@ -31,13 +31,15 @@ This article is syndicated to <a class="u-syndication"
 <form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 	action="/did-comment" method="POST">
 
-	<input name="path" type="hidden" value="{{page.outputPath}}">
+	<input name="path" type="hidden" value="{{page.url}}">
 	<input name="robotuz-eyvallah" type="hidden">
 
 	<label for="contents">Your comment / <span lang="tr">Yorumunuz</span></label>
 	<div>
 		<textarea name="contents" required class="commentinput"></textarea>
 	</div>
+
+	<input type="submit" value="Submit">
 </form>
 <small>
 	<p>
@@ -48,7 +50,7 @@ This article is syndicated to <a class="u-syndication"
 
 <hr>
 <ol class="commentlist">
-{%for comment in comments[page.outputPath]%}
+{%for comment in comments[page.url]%}
 <li>
 	<p class='metadata'>
 		<time datetime="{{comment.date|moment('YYYYMMDDTHHmmssZZ')}}">
