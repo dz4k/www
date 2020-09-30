@@ -281,6 +281,59 @@ img[align=right] {
 
 
 
+
+/* Comments */
+
+.comments-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "label  submit"
+    "input  input";
+  gap: calc(var(--line-height) / 2) 0;
+}
+
+.comments-form .commentinput {
+  grid-area: input;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  font: inherit;
+
+  background: inherit;
+  border: 3px solid var(--secondary);
+}
+
+.comments-form .commentinput:focus {
+  border-color: transparent;
+}
+
+.comments-form > .submit {
+  grid-area: submit;
+
+  height: var(--line-height);
+
+  font: inherit;
+
+  background: var(--secondary);
+  border: none;
+  color: var(--bg);
+}
+
+.commentslist {
+  padding-left: 0;
+}
+
+.commentslist li {
+  list-style: none;
+}
+
+
+.commentslist li .metadata {
+  margin-top: calc(0rem - var(--line-height));
+}
+
 /* Focus */
 
 * {
@@ -290,4 +343,14 @@ img[align=right] {
 :focus {
   outline: 3px solid var(--primary);
   box-shadow: 0 0 6px 3px var(--primary);
+}
+
+
+
+
+/* Utils & overrides */
+
+.unblockquote {
+  border: none;
+  padding: 0;
 }

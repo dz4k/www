@@ -29,36 +29,35 @@ This article is syndicated to <a class="u-syndication"
 <section class="comments-section">
 <h2>Comments</h2>
 <form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
-	action="/did-comment" method="POST">
+	action="/did-comment" method="POST" class="comments-form">
 
 	<input name="path" type="hidden" value="{{page.url}}">
 	<input name="robotuz-eyvallah" type="hidden">
 
-	<label for="contents">Your comment / <span lang="tr">Yorumunuz</span></label>
-	<div>
-		<textarea name="contents" required class="commentinput"></textarea>
-	</div>
-
-	<input type="submit" value="Submit">
+	
+	<label for="contents">Post a comment</label>
+	<textarea name="contents" required cols="4" class="commentinput"></textarea>
+	<input type="submit" class="submit" value="Submit">
 </form>
-<small>
-	<p>
-	Sign your comment however you want.
-	<p lang="tr">
-	Yorumunuzu istediğiniz gibi imzalayın.
-</small>
+
+<small>Sign your comment however you want.</small>
 
 <hr>
-<ol class="commentlist">
+
+<h3>{{comments[page.url].length|d(0)}} Comments</h3>
+
+<ol class="commentslist">
 {%for comment in comments[page.url]%}
 <li>
-	<p class='metadata'>
+	<blockquote class="unblockquote">
+		{{comment.contents|basicFormatting|safe}}
+	</blockquote>
+
+	<p class="metadata">
 		<time datetime="{{comment.date|moment('YYYYMMDDTHHmmssZZ')}}">
 			{{comment.date|moment('DD/MM/YYYY HH.mm')}}
 		</time>
 	</p>
-
-	<blockquote>{{comment.contents|basicFormatting}}</blockquote>
 {%endfor%}
 </ol>
 </section>

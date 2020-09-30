@@ -21,6 +21,7 @@
     "cssnano": "^4.1.10",
     "eleventy-plugin-local-respimg": "^0.3.1",
     "html-minifier": "^4.0.0",
+    "linkifyjs": "^2.1.9",
     "markdown-it": "^11.0.1",
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-footnote": "^3.0.2",

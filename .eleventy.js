@@ -65,8 +65,32 @@ function addFilters(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode('markdown', str => mdLib.render(str))
 
-  // TODO: add basic formatting
-  eleventyConfig.addFilter('basicFormatting', str => str)
+  const linkifyHtml = require('linkifyjs/html')
+  eleventyConfig.addFilter('basicFormatting', str => {
+    const htmlEscaped = str.replace(/&/, "&amp;")
+      .replace(/</, "&lt;")
+      .replace(/>/, "&gt;")
+      .replace(/"/, "&quot;")
+      .replace(/'/, "&amp;")
+
+    str = htmlEscaped.replace(/\n/, "<br>")
+      .replace(/&quot;(.*)&quot;/, "<q>$1</q>")
+      .replace(/--/, "&mdash;")
+      .replace(/\.\.\.+/, "&hellip;")
+      .replace(/\(c\)/, "&copy;")
+      .replace(/\(c\)/, "&copy;")
+      .replace(/\(tm\)/, "&trade;")
+      .replace(/\(r\)/, "&reg;")
+      .replace(/<-/, "&larr;")
+      .replace(/->/, "&rarr;")
+      .replace(/<=/, "&lArr;")
+      .replace(/=>/, "&rArr;")
+      .replace(/`(.*)`/, "<code>$1</code>")
+
+    str = linkifyHtml(str, { defaultProtocol: 'https' })
+
+    return str
+  })
 
   eleventyConfig.addFilter('isJustWhitespace', str => !/[^\s]/.test(str))
 
