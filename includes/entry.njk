@@ -60,13 +60,14 @@ This article is syndicated to <a class="u-syndication"
 
 	{%if comment.replies and comment.replies.length > 0%}
 	<ol class="commentslist">
-		{%for reply in comment.replies|rejectattr('reply')%}
+		{%for reply in comment.replies
+			|selectattr('reply', 'sameas', comment.date)%}
 			{{rendercomment(reply)}}
 		{%endfor%}
 	</ol>
 	{%endif%}
 
-	<details><summary>Reply...</summary>
+	<details><summary class="metadata">Reply...</summary>
 		<form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 			action="/did-comment" method="POST" class="comments-form">
 

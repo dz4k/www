@@ -352,10 +352,13 @@ button, input[type=submit] {
 
 .commentslist > li > .commentslist {
   padding-left: 2ch;
+  border-left: 1px solid var(--primary);
+  margin-bottom: var(--line-height);
 }
 
-.commentslist li .metadata {
+.commentslist li p.metadata {
   margin-top: calc(0rem - var(--line-height));
+  margin-bottom: 0;
 }
 
 /* Focus */
