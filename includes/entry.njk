@@ -83,11 +83,13 @@ This article is syndicated to <a class="u-syndication"
 	</details>
 {%endmacro%}
 
+{%if comments[page.url]%}
 <ol class="commentslist">
 {%for comment in comments[page.url]|rejectattr('reply')%}
 {{comment(comment)}}
 {%endfor%}
 </ol>
+{%endif%}
 </section>
 
 </article>
