@@ -51,7 +51,7 @@ module.exports = async () => {
 		arr.unshift(commentModel)
 	}
 
-	for (const arr of rv) for (const commentModel of arr) {
+	for (const path in rv) for (const commentModel of rv[path]) {
 		if (commentModel.reply) {
 			// TODO: this should be a binary search
 			arr
