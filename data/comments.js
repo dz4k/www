@@ -38,7 +38,7 @@ module.exports = async () => {
 	if (!(comments instanceof Array)) return {}
 
 	const rv = {}
-	for (let comment of comments) {
+	for (let comment of comments.reverse) {
 		const arr = rv[comment.data.path] || (rv[comment.data.path] = [])
 		
 		const commentModel = {
@@ -56,7 +56,7 @@ module.exports = async () => {
 				.replies.push(commentModel)
 		}
 
-		arr.push(commentModel)
+		arr.unshift(commentModel)
 	}
 
 	console.log(rv)
