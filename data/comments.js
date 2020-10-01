@@ -48,7 +48,7 @@ module.exports = async () => {
 			replies: []
 		}
 
-		if ('reply' in comment.data) {
+		if (comment.data.reply) {
 			// TODO: this should be a binary search
 			arr
 				.find(existingCommentModel => 
