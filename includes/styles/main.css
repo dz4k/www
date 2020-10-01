@@ -247,12 +247,13 @@ input[type=url],
 input[type=week],
 textarea {
   height: var(--line-height);
-  
+
   font: inherit;
 
   background: var(--bg);
   border: 3px solid var(--secondary);
 }
+textarea { height: auto; }
 
 input:focus, textarea:focus {
   border-color: transparent;
