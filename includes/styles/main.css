@@ -225,7 +225,47 @@ img[align=right] {
   margin-left: auto;
 }
 
+form {
+  background: #eee;
+  padding: .6rem;
+  border: 1px solid #bbb;
 
+  gap: calc(var(--line-height) / 2) 0;
+}
+
+input[type=date],
+input[type=datetime-local],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+textarea {
+  box-sizing: border-box;
+
+  font: inherit;
+
+  background: var(--bg);
+  border: 3px solid var(--secondary);
+}
+
+input:focus, textarea:focus {
+  border-color: transparent;
+}
+
+button, input[type=submit] {
+  height: var(--line-height);
+
+  font: inherit;
+
+  background: var(--secondary);
+  border: none;
+  color: var(--bg);
+}
 
 
 
@@ -292,42 +332,19 @@ img[align=right] {
   grid-template-areas: 
     "label  submit"
     "input  input";
-  gap: calc(var(--line-height) / 2) 0;
 }
 
 .comments-form .commentinput {
   grid-area: input;
-
-  box-sizing: border-box;
   width: 100%;
-
-  font: inherit;
-
-  background: inherit;
-  border: 3px solid var(--secondary);
-}
-
-.comments-form .commentinput:focus {
-  border-color: transparent;
 }
 
 .comments-form > .submit {
   grid-area: submit;
-
-  height: var(--line-height);
-
-  font: inherit;
-
-  background: var(--secondary);
-  border: none;
-  color: var(--bg);
 }
 
 .commentslist {
   padding-left: 0;
-}
-
-.commentslist li {
   list-style: none;
 }
 
