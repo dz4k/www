@@ -22,14 +22,16 @@ This is me testing comment formatting.
 }
 
 module.exports = async () => {
-	if (!('NETLIFY_API_KEY' in process.env)) return mockComments
-
 	const apiKey = process.env.NETLIFY_API_KEY
 	const formId = process.env.COMMENTS_FORM_ID
+	if (!(apiKey && formId)) {
+		return mockComments
+	}
 
 	const url = `https://api.netlify.com/api/v1/forms/${formId}/submissions/?access_token=${apiKey}`
 
 	const comments = await fetch(url).then(res => res.json())
+		.catch(e => mockComments)
 
 	console.log(comments)
 
