@@ -38,7 +38,7 @@ module.exports = async () => {
 	if (!(comments instanceof Array)) return {}
 
 	const rv = {}
-	for (let comment of comments.reverse) {
+	for (let comment of comments.reverse()) {
 		const arr = rv[comment.data.path] || (rv[comment.data.path] = [])
 		
 		const commentModel = {
