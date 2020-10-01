@@ -45,7 +45,7 @@ This article is syndicated to <a class="u-syndication"
 
 <h3>{{comments[page.url].length|d(0)}} Comments</h3>
 
-{%macro comment(comment)%}
+{%macro rendercomment(comment)%}
 <li>
 	<blockquote class="unblockquote">
 		{{comment.contents|basicFormatting|safe}}
@@ -60,13 +60,12 @@ This article is syndicated to <a class="u-syndication"
 	{%if comment.replies and comment.replies.length > 0%}
 	<ol class="commentslist">
 		{%for reply in comment.replies|rejectattr('reply')%}
-			{{comment(reply)}}
+			{{rendercomment(reply)}}
 		{%endfor%}
 	</ol>
 	{%endif%}
 
-	<details>
-		<summary>Reply...</summary>
+	<details><summary>Reply...</summary>
 		<form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 			action="/did-comment" method="POST" class="comments-form">
 
@@ -86,7 +85,7 @@ This article is syndicated to <a class="u-syndication"
 {%if comments[page.url]%}
 <ol class="commentslist">
 {%for comment in comments[page.url]|rejectattr('reply')%}
-{{comment(comment)}}
+{{rendercomment(comment)}}
 {%endfor%}
 </ol>
 {%endif%}
