@@ -25,7 +25,7 @@ See ankarametro.denizaksimsek.com for PDF and sketches.
 </ins>
 
 <figure style="width:96vw;margin-left:50%;transform:translateX(-50%);max-height:none;">
-<a href="https://ankarametro.denizaksimsek.com/metro5.svg" style="font-size:.75em; float: right">Expand</a>
-<object type="image/svg+xml" data="https://ankarametro.denizaksimsek.com/metro5.svg" style="width: 100%; background: white;"><img src="https://ankarametro.denizaksimsek.com/metro5.svg"></object>
+<a href="https://ankarametro.denizaksimsek.com/metro6.svg" style="font-size:.75em; float: right">Expand</a>
+<object type="image/svg+xml" data="https://ankarametro.denizaksimsek.com/metro6.svg" style="width: 100%; background: white;"><img src="https://ankarametro.denizaksimsek.com/metro5.svg"></object>
 </figure>
 
