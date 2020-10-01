@@ -48,15 +48,17 @@ module.exports = async () => {
 			replies: []
 		}
 
-		if (comment.data.reply) {
+		arr.unshift(commentModel)
+	}
+
+	for (const arr of rv) for (const commentModel of arr) {
+		if (commentModel.reply) {
 			// TODO: this should be a binary search
 			arr
 				.find(existingCommentModel => 
-					existingCommentModel.date === comment.data.reply)
+					existingCommentModel.date === commentModel.reply)
 				.replies.push(commentModel)
 		}
-
-		arr.unshift(commentModel)
 	}
 
 	console.log(rv)
