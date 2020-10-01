@@ -40,11 +40,23 @@ module.exports = async () => {
 	const rv = {}
 	for (let comment of comments) {
 		const arr = rv[comment.data.path] || (rv[comment.data.path] = [])
-			
-		arr.push({
+		
+		const commentModel = {
 			date: comment.created_at,
-			contents: comment.data.contents
-		})
+			contents: comment.data.contents,
+			reply: comment.data.reply,
+			replies: []
+		}
+
+		if ('reply' in comment.data) {
+			// TODO: this should be a binary search
+			arr
+				.find(existingCommentModel => 
+					existingCommentModel.date === comment.data.reply)
+				.replies.push(commentModel)
+		}
+
+		arr.push(commentModel)
 	}
 
 	console.log(rv)

@@ -350,6 +350,9 @@ button, input[type=submit] {
   list-style: none;
 }
 
+.commentslist > li > .commentslist {
+  padding-left: 2ch;
+}
 
 .commentslist li .metadata {
   margin-top: calc(0rem - var(--line-height));

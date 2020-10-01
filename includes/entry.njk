@@ -33,7 +33,6 @@ This article is syndicated to <a class="u-syndication"
 
 	<input name="path" type="hidden" value="{{page.url}}">
 	<input name="robotuz-eyvallah" type="hidden">
-
 	
 	<label for="contents">Post a comment</label>
 	<textarea name="contents" required cols="4" class="commentinput"></textarea>
@@ -46,8 +45,7 @@ This article is syndicated to <a class="u-syndication"
 
 <h3>{{comments[page.url].length|d(0)}} Comments</h3>
 
-<ol class="commentslist">
-{%for comment in comments[page.url]%}
+{%macro comment(comment)%}
 <li>
 	<blockquote class="unblockquote">
 		{{comment.contents|basicFormatting|safe}}
@@ -58,6 +56,34 @@ This article is syndicated to <a class="u-syndication"
 			{{comment.date|moment('DD/MM/YYYY HH.mm')}}
 		</time>
 	</p>
+
+	{%if comment.replies and comment.replies.length > 0%}
+	<ol class="commentslist">
+		{%for reply in comment.replies%}{{comment(reply)}}{%endfor%}
+	</ol>
+	{%endif%}
+
+	<details>
+		<summary>Reply...</summary>
+		<form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
+			action="/did-comment" method="POST" class="comments-form">
+
+			<input name="path" type="hidden" value="{{page.url}}">
+			<input name="robotuz-eyvallah" type="hidden">
+			<input name="reply" type="hidden" 
+				value="{{comment.date|moment('YYYYMMDDTHHmmssZZ')}}">
+			
+			<label for="contents">Post a reply</label>
+			<textarea name="contents" required cols="4" class="commentinput">
+			</textarea>
+			<input type="submit" class="submit" value="Submit">
+		</form>
+	</details>
+{%endmacro%}
+
+<ol class="commentslist">
+{%for comment in comments[page.url]|rejectattr('reply')%}
+{{comment(comment)}}
 {%endfor%}
 </ol>
 </section>
