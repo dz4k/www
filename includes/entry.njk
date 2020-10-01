@@ -74,7 +74,7 @@ This article is syndicated to <a class="u-syndication"
 			<input name="path" type="hidden" value="{{page.url}}">
 			<input name="robotuz-eyvallah" type="hidden">
 			<input name="reply" type="hidden" 
-				value="{{comment.date|moment('YYYYMMDDTHHmmssZZ')}}">
+				value="{{comment.date|moment('YYYY-MM-DDTHH:mm:ss.SSS[Z]', 'Z')}}">
 			
 			<label for="contents">Post a reply</label>
 			<textarea name="contents" required cols="4" class="commentinput">

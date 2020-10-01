@@ -57,8 +57,8 @@ function addHtmlMinification(eleventyConfig) {
 function addFilters(eleventyConfig) {
   const moment = require('moment')
 
-  eleventyConfig.addFilter('moment', (date, format) => {
-    return moment(date).utcOffset("+0300").format(format)
+  eleventyConfig.addFilter('moment', (date, format, tz = "+0300") => {
+    return moment(date).utcOffset(tz).format(format)
   })
 
   eleventyConfig.addFilter('markdown', str => mdLib.render(str))
