@@ -6,7 +6,7 @@ html {
   --secondary: #0587bb;
   --line-height: 1.2rem;
   --font-copy: "IBM Plex Sans Condensed", sans-serif;
-  --font-mono: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
+  --font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
     monospace;
   background-color: var(--bg);
   color: var(--copy);
