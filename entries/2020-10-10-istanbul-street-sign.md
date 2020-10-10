@@ -8,6 +8,8 @@ türkçe: '/2020/istanbul-sokak-tabelasi/'
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 
+[ordu-street-sign]:		/2020/ordu-street-sign/
+
 <!-- endexcerpt -->
 
 {%capture alttext%}
@@ -24,4 +26,3 @@ While I didn't get to explore İstanbul due to the pandemic, I had an opportunit
 
 Although these two signs are on a post, many were on the sides of buildings. I don't like this much as it makes them harder to find. At least they don't nail them to trees like in Samsun though.
 
-[ordu-street-sign]:		/2020/ordu-street-sign/
