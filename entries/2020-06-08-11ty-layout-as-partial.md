@@ -1,9 +1,10 @@
 ---
 title: "Eleventy — Using A Layout As A Partial (The Most Useful Things...)"
-tags:
-- programming
-- eleventy
-date: 2020-06-08T14:50+0300
+tags: [
+  'programming'
+  'eleventy'
+]
+date: '2020-06-08T14:50+0300'
 ---
 
 On this website, I have both a <a href="/notes/">Notes</a> page and pages for each individual note. I wanted to use the same template for both, but I ran into an issue: accessing frontmatter data.

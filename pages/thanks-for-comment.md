@@ -1,6 +1,6 @@
 ---
-permalink: /did-comment/
-layout: base.njk
+permalink: '/did-comment/'
+layout: 'base.njk'
 eleventyExcludeFromCollections: true
 ---
 

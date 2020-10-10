@@ -1,6 +1,6 @@
 ---
 title: "Tip: Instantly Edit Your Eleventy Site on Github"
-tags: [eleventy, website, tips, js]
+tags: ['eleventy', 'website', 'tips', 'js']
 ---
 
 You're looking at the blog post you made yesterday, when suddenly a typo catches your eye. What is the fastest way to fix it? ([Skip to code]({{page.url}}/#the-code)).

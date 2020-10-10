@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: 'base'
 ---
 
 <header>
@@ -10,8 +10,8 @@ layout: base
   	{%markdown%}
 - [Home](/)
 - [Posts](/archive/)
-	+ By tag: {%for coll in functions.topTags(collections)-%}
-			[{{coll}}](/archive/{{coll}}/){{', ' if not loop.last}}
+	+ By tag: {%for tag, coll in collections-%}
+			[{{tag}}](/archive/{{tag}}/){style=font-style:italic}{{', ' if not loop.last}}
 		{%-endfor%}
 - [Links](/links/)
 	+ [Blogroll](/links/#blogroll)

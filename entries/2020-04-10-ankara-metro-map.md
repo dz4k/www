@@ -1,12 +1,11 @@
 ---
-title: Ankara Railway Map
-date: 2020-04-10
-tags:
-- Türkçe
-uPhoto: https://raw.githubusercontent.com/asyncsus/ankara-rail-map/master/metro4.svg
+title: 'Ankara Railway Map'
+date: '2020-04-10'
+tags: 'Türkçe'
+uPhoto: 'https://raw.githubusercontent.com/asyncsus/ankara-rail-map/master/metro4.svg'
 syndication:
-  Twitter: https://twitter.com/asyncsus/status/1261960560347877376
-permalink: /ankara-metro-map/
+  Twitter: 'https://twitter.com/asyncsus/status/1261960560347877376'
+permalink: '/ankara-metro-map/'
 dynamicPermalink: false
 ---
 

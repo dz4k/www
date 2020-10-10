@@ -1,9 +1,10 @@
 ---
-title: Eleventy — Dynamically Inlining Google Fonts
-date: 2020-07-24T14:33+03:00
-tags: 
-- website
-- eleventy
+title: 'Eleventy — Dynamically Inlining Google Fonts'
+date: '2020-07-24T14:33+03:00'
+tags: [
+  'website'
+  'eleventy'
+]
 ---
 
 All in the name of Lighthouse scores.

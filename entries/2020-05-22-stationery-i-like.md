@@ -1,8 +1,7 @@
 ---
-title: Stationery I like
-date: 2020-05-22
-tags:
-- stationery
+title: 'Stationery I like'
+date: '2020-05-22'
+tags: ['stationery']
 ---
 
 Reviews for things I used, and a wishlist I try to keep small. Last edited <time>2020-22-08</time>

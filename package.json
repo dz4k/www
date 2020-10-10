@@ -29,5 +29,7 @@
     "node-fetch": "^2.6.1",
     "postcss": "^8.0.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "coffeescript": "^2.5.1"
+  }
 }

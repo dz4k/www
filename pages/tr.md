@@ -1,11 +1,11 @@
 ---
-title: Deniz Akşimşek
-permalink: /tr/
-layout: layout
-eleventyExcludeFromCollections: yes
+title: 'Deniz Akşimşek'
+permalink: '/tr/'
+layout: 'layout'
+eleventyExcludeFromCollections: true
 ---
 
-{%include "partials/picture-of-me.md"%}
+{%include partials/picture-of-me.md%}
 
 [ **TR** | [EN](/) ]
 

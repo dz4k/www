@@ -1,11 +1,11 @@
 ---
 pagination:
-  data: collections
+  data: 'collections'
   size: 1
-  alias: tag
+  alias: 'tag'
 layout: false
-permalink: /feed/{%if tag != 'all'%}{{tag}}/{%endif%}feed.rss
-urlOrigin: https://www.denizaksimsek.com
+permalink: '/feed/{%if tag != "all"%}{{tag}}/{%endif%}feed.rss'
+urlOrigin: 'https://www.denizaksimsek.com'
 ---
 
 {%set collection = collections[tag]%}

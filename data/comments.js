@@ -39,8 +39,6 @@ module.exports = async () => {
 		comments = await fetch(url).then(res => res.json())
 			.catch(e => mockComments)
 
-		console.log(comments)
-
 		if (!(comments instanceof Array)) return {}
 	
 		rv = {}
@@ -68,8 +66,6 @@ module.exports = async () => {
 			repliedComment && repliedComment.replies.push(commentModel)
 		}
 	}
-
-	console.log(rv)
 
 	return rv
 }

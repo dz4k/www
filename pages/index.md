@@ -1,16 +1,16 @@
 ---
-title: Deniz Akşimşek
-layout: layout
-permalink: index.html
-eleventyExcludeFromCollections: yes
+title: 'Deniz Akşimşek'
+layout: 'layout'
+permalink: 'index.html'
+eleventyExcludeFromCollections: true
 ---
 
-{%set tagWeb = collections.website.length%}
-{%set tagPlace = collections.place.length%}
-{%set latestEntries = (collections.post|sort(true,false,'date')).slice(0, 3)%}
+{%assign tagWeb = collections.website.length%}
+{%assign tagPlace = collections.place.length%}
+{%assign latestEntries = (collections.post|reverse|slice:0, 3%}
 
 
-{%include "partials/picture-of-me.md"%}
+{%include partials/picture-of-me.md%}
 
 [ [TR](/tr/) | **EN** ]
 
@@ -23,7 +23,7 @@ I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 
 {%for entry in latestEntries%}
-- <time>{{entry.date|moment('DD/MM')}}</time> [{{entry.data.title}}]({{entry.url|url}})
+- <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
 - [and more...](/archive/)
 

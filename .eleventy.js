@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: { input: '.', output: '_site', includes: 'includes', data: 'data' },
-    markdownTemplateEngine: 'njk',
+    // markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
   }
 }
@@ -118,7 +118,7 @@ function addFilters(eleventyConfig) {
 function addTemplateCustomizations(eleventyConfig) {
   addMarkdownLibraryOptions()
   addNunjucksCustomizations()
-  addExcerpts()
+  addFrontmatterCustomizations()
   addPlugins()
 
   function addMarkdownLibraryOptions() {
@@ -132,10 +132,15 @@ function addTemplateCustomizations(eleventyConfig) {
     }))
   }
 
-  function addExcerpts() {
+  function addFrontmatterCustomizations() {
     eleventyConfig.setFrontMatterParsingOptions({
       excerpt: true,
-      excerpt_separator: '<!-- endexcerpt -->'
+      excerpt_separator: '<!-- endexcerpt -->',
+
+      language: 'coffee', 
+      engines: {
+        coffee: require('coffeescript').eval
+      }
     })
   }
 

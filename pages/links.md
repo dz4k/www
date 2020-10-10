@@ -1,8 +1,8 @@
 ---
-title: Links
-permalink: /links/
-layout: layout
-eleventyExcludeFromCollections: yes
+title: 'Links'
+permalink: '/links/'
+layout: 'layout'
+eleventyExcludeFromCollections: true
 ---
 
 # Links

@@ -1,4 +1,4 @@
 {
 	"layout": "entry.njk",
-	"permalink": "/{{page.date|moment('YYYY')}}/{{page.fileSlug|slug}}/"
+	"permalink": "/{{page.date|moment: 'YYYY'}}/{{page.fileSlug|slug}}/"
 }

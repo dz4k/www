@@ -1,7 +1,8 @@
 ---
-title: Road To The IndieWeb
-date: 20200826T1523+0300
-tags: [website,indieweb]
+title: 'Road To The IndieWeb'
+date: '20200826T1523+0300'
+tags: ['website', 'indieweb']
+eleventyExcludeFromCollections: true
 ---
 
 or, Why I uninstalled Twitter from my phone.
