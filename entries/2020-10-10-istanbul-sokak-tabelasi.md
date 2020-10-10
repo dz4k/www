@@ -8,10 +8,8 @@ english: '/2020/istanbul-street-sign/'
 
 {%capture alttext%}
 Bir direk tepesinde ön öne gelmiş iki sokak tabelası. Her biri kırmızı ve altında bir ince beyaz, bir de kalın yeşil şerit var.
-
 Öndekinde yazan:
 "KÖKNAR CADDESİ ↞↠, [beyaz şeritte:] MEHMET AKİF MAHALLESİ, [yeşil şeritte:] ÇEKMEKÖY (TN:40 )".
-
 Arkadakinde yazan:
 "BİL... SOKAĞI, [beyaz şeritte:] MEHMET AKİF MAHALLESİ, [yeşil şeritte:] ÇEKMEKÖY (TN:60 )"
 {%endcapture%}

@@ -8,10 +8,8 @@ türkçe: '/2020/istanbul-sokak-tabelasi/'
 
 {%capture alttext%}
 A post with two signs on it, one partially covering the other. The signs are colored red with a thin white strip, then a thick green strip at the bottom.
-
 The front one says:
 "KÖKNAR CADDESİ ↞↠, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip] ÇEKMEKÖY (TN:40 )".
-
 The one behind says:
 "BİL... SOKAĞI, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip] ÇEKMEKÖY (TN:60 )"
 {%endcapture%}
