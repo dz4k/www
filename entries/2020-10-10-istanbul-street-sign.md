@@ -6,6 +6,10 @@ uPhoto: '/assets/photos/IMG20201007085906-02.jpeg'
 türkçe: '/2020/istanbul-sokak-tabelasi/'
 ---
 
+I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
+
+<!-- endexcerpt -->
+
 {%capture alttext%}
 A post with two signs on it, one partially covering the other. The signs are colored red with a thin white strip, then a thick green strip at the bottom.
 The front one says:
@@ -15,10 +19,6 @@ The one behind says:
 {%endcapture%}
 
 {%img uPhoto, alttext%}
-
-I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
-
-<!-- endexcerpt -->
 
 While I didn't get to explore İstanbul due to the pandemic, I had an opportunity to see one of these for myself, with the custom-made _Kent_{lang=tr} typeface and the district color codes (as you can see, I was in the lime green Çekmeköy district). When I saw one IRL, I realized that the letters are embossed --- this doesn't show through in photos.
 

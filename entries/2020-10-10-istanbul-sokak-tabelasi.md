@@ -6,6 +6,10 @@ uPhoto: '/assets/photos/IMG20201007085906-02.jpeg'
 english: '/2020/istanbul-street-sign/'
 ---
 
+[Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
+
+<!-- endexcerpt -->
+
 {%capture alttext%}
 Bir direk tepesinde ön öne gelmiş iki sokak tabelası. Her biri kırmızı ve altında bir ince beyaz, bir de kalın yeşil şerit var.
 Öndekinde yazan:
@@ -14,10 +18,6 @@ Arkadakinde yazan:
 "BİL... SOKAĞI, [beyaz şeritte:] MEHMET AKİF MAHALLESİ, [yeşil şeritte:] ÇEKMEKÖY (TN:60 )"
 {%endcapture%}
 {%img uPhoto, alttext%}
-
-[Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
-
-<!-- endexcerpt -->
 
 Pandemi yüzünden İstanbul'da gezemedim ama bu tabelaları gerçekte görme fırsatım oldu. Özel tasarım _Kent_ yazıtipi ve ilçe renk kodlarını biliyordum ama tabelaların kabartmalı olduğu fotoğraflarda belli olmuyor.
 
