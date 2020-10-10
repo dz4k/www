@@ -104,9 +104,13 @@ function addFilters(eleventyConfig) {
   eleventyConfig.addShortcode('img', (src, alt, {
   	title = true, link = true, figure = false
   } = {}) => {
+  	if (figure) return `<figure>
+      <img alt="" src="${src}>
+      <figcaption>${alt}</figcaption>
+    </figure>`
+    
   	let rv = `![${alt}](${src}${title ? ` "${alt}"` : ""})`
   	if (link) rv = `[${rv}](${src})`
-  	if (figure) rv = `<figure>\n\n${rv}\n\n<figcaption>${alt}</figcaption></figure>`
   	return rv
   })
 
