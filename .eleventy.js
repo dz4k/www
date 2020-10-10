@@ -65,13 +65,17 @@ function addFilters(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode('markdown', str => mdLib.render(str))
 
-  const linkifyHtml = require('linkifyjs/html')
-  eleventyConfig.addFilter('basicFormatting', str => {
-    str = str.replace(/&/g, "&amp;")
+  function esc(str) {
+    return str.replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;")
+  }
+
+  const linkifyHtml = require('linkifyjs/html')
+  eleventyConfig.addFilter('basicFormatting', str => {
+    str = esc(str)
 
     str = str.replace(/\n/g, "<br>")
       .replace(/&quot;(.*)&quot;/g, "<q>$1</q>")
@@ -104,11 +108,12 @@ function addFilters(eleventyConfig) {
   } = {}) => {
   	if (opts.includes('figure')) return `<figure>
       <img alt="" src="${src}">
-      <figcaption>${alt}</figcaption>
+      <figcaption>${esc(alt)}</figcaption>
     </figure>`
 
-  	let rv = `![${alt}](${src}${title ? ` "${alt}"` : ""})`
-  	if (link) rv = `[${rv}](${src})`
+  	let rv = `<img alt="${esc(alt)}" src="${src}"
+      ${title ? `title="${esc(alt)}"` : ""}>`
+  	if (link) rv = `<a href="${src}">${rv}</a>`
   	return rv
   })
 
