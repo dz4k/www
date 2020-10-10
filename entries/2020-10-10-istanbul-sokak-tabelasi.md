@@ -15,7 +15,7 @@ Bir direk tepesinde ön öne gelmiş iki sokak tabelası. Her biri kırmızı ve
 Arkadakinde yazan:
 "BİL... SOKAĞI, [beyaz şeritte:] MEHMET AKİF MAHALLESİ, [yeşil şeritte:] ÇEKMEKÖY (TN:60 )"
 {%endcapture%}
-{%img uPhoto, alttext%}
+{%img uPhoto, alttext, 'figure'%}
 
 [Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
 

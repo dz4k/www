@@ -72,7 +72,6 @@ function addFilters(eleventyConfig) {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;")
-    console.log(str)
 
     str = str.replace(/\n/g, "<br>")
       .replace(/&quot;(.*)&quot;/g, "<q>$1</q>")
@@ -90,7 +89,6 @@ function addFilters(eleventyConfig) {
 
     str = linkifyHtml(str, { defaultProtocol: 'https' })
 
-    console.log(str)
     return str
   })
 
@@ -101,14 +99,14 @@ function addFilters(eleventyConfig) {
   eleventyConfig.addFilter('absoluteUrl', relUrl => new URL(relUrl, 
     'https://www.denizaksimsek.com/').href)
 
-  eleventyConfig.addShortcode('img', (src, alt, {
-  	title = true, link = true, figure = false
+  eleventyConfig.addShortcode('img', (src, alt, opts = '', {
+  	title = true, link = true
   } = {}) => {
-  	if (figure) return `<figure>
-      <img alt="" src="${src}>
+  	if (opts.includes('figure')) return `<figure>
+      <img alt="" src="${src}">
       <figcaption>${alt}</figcaption>
     </figure>`
-    
+
   	let rv = `![${alt}](${src}${title ? ` "${alt}"` : ""})`
   	if (link) rv = `[${rv}](${src})`
   	return rv

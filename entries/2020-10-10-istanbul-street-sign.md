@@ -16,7 +16,7 @@ The one behind says:
 "BİL... SOKAĞI, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip] ÇEKMEKÖY (TN:60 )"
 {%endcapture%}
 
-{%img uPhoto, alttext%}
+{%img uPhoto, alttext, 'figure'%}
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 
