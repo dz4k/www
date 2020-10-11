@@ -1,6 +1,7 @@
 ---
 title: 'Deniz Akşimşek'
 permalink: '/tr/'
+lang: 'tr'
 layout: 'layout'
 eleventyExcludeFromCollections: true
 ---

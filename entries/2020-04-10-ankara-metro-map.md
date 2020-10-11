@@ -1,7 +1,7 @@
 ---
 title: 'Ankara Railway Map'
 date: '2020-04-10'
-tags: 'Türkçe'
+lang: 'tr'
 uPhoto: 'https://raw.githubusercontent.com/asyncsus/ankara-rail-map/master/metro4.svg'
 syndication:
   Twitter: 'https://twitter.com/asyncsus/status/1261960560347877376'

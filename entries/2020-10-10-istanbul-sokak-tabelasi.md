@@ -1,9 +1,10 @@
 ---
-title: 'İstanbul\'da bir sokak tabelası'
-date: '2020-10-10T19:27:39+03:00'
-tags: ['place', 'design', 'Türkçe']
-uPhoto: '/assets/photos/IMG20201007085906-02.jpeg'
-english: '/2020/istanbul-street-sign/'
+title:		'İstanbul\'da bir sokak tabelası'
+date:		'2020-10-10T19:27:39+03:00'
+lang:		'tr'
+tags:		['place', 'design']
+uPhoto:		'/assets/photos/IMG20201007085906-02.jpeg'
+english:	'/2020/istanbul-street-sign/'
 ---
 
 [Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.

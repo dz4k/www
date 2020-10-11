@@ -3,20 +3,36 @@ layout: 'base'
 ---
 
 <header>
-  <a href="/">&nwarr; Home</a>
+  <a href="/">&nwarr; {{'Anasayfa' if lang == 'tr' else 'Home'}}</a>
   <details class="nav-expander">
-  	<summary>Menu</summary>
+  	<summary>{{'Menü' if lang == 'tr' else 'Menu'}}</summary>
   	<div class="menu">
+
+
   	{%markdown%}
+{%if lang == 'tr'%}
+- [Anasayfa](/)
+- [Blog yazıları](/archive/)
+  + Etikete göre: {%set tags = collections|keys%}{%include 'partials/tags.njk'%}
+- [Bağlantılar](/links/)
+
+## Başka Yerlerde Ben
+
+- [Twitter](https://twitter.com/DenizAksimsek)
+- [GitHub](https://github.com/DenizAksimsek)
+- [DEV](https://dev.to/DenizAksimsek)
+
+## Diğer Sitelerim
+
+- [Ankara Raylı Sistemler Haritası](https://ankarametro.denizaksimsek.com/)
+- [Paylaşılan Klasör](https://public.denizaksimsek.com/)
+
+{%else%}
+
 - [Home](/)
 - [Posts](/archive/)
-	+ By tag: {%for tag, coll in collections-%}
-			[{{tag}}](/archive/{{tag}}/){style=font-style:italic}{{', ' if not loop.last}}
-		{%-endfor%}
+  + By tag: {%set tags = collections|keys%}{%include 'partials/tags.njk'%}
 - [Links](/links/)
-	+ [Blogroll](/links/#blogroll)
-	+ [Bookmarks](/links/#bookmarks)
-- [Search](/search/)
 
 ## Me Elsewhere
 
@@ -28,7 +44,8 @@ layout: 'base'
 
 - [Ankara Railway Map](https://ankarametro.denizaksimsek.com/)
 - [Public Folder](https://public.denizaksimsek.com/)
-- [Cats](https://cats.denizaksimsek.com/)
+
+{%endif%}
   	{%endmarkdown%}
   	</div>
   </details>
@@ -37,6 +54,15 @@ layout: 'base'
 <main>{{content|safe}}</main>
 
 <footer>
+{%if lang == 'tr'%}
+  <p> <a href="/">&nwarr; Anasayfa</a>
+
+  <p> Bu sitedeki tüm tarih/saatler UTC+03 zaman dilimindedir (aksi belirtilmediğinde)
+  
+  <p> Bu site <a href="//11ty.dev">Eleventy</a> ve <a href="//netlify.com">Netlify</a> ile yapılmıştır.
+  
+  <p>&copy; 2020 <a class="h-card" href="/">Deniz Akşimşek</a>
+{%else%}
   <p> <a href="/">&nwarr; Home</a>
 
   <p> All dates/times on this page are UTC+03 unless otherwise specified.
@@ -44,5 +70,6 @@ layout: 'base'
   <p> This website is made with <a href="//11ty.dev">Eleventy</a> and hosted on <a href="//netlify.com">Netlify</a>.
   
   <p>&copy; 2020 <a class="h-card" href="/">Deniz Akşimşek</a>
+{%endif%}
 </footer>
 

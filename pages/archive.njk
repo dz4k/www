@@ -5,6 +5,8 @@ pagination:
   alias: 'tag'
 permalink: '/archive/{%if tag !== "all"%}{{tag}}/{%endif%}'
 layout: 'layout'
+eleventyComputed:
+	lang: (data) -> if data.tag == 'Türkçe' then 'tr' else 'en'
 ---
 
 {%set collection = collections[tag]%}
@@ -17,7 +19,7 @@ layout: 'layout'
 
 {%else%}
 
-<h1>Tag: {{tag}}</h1>
+<h1>{{tag}}<sup>{{collection.length}}</sup></h1>
 
 {%endif%}
 

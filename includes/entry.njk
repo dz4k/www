@@ -1,5 +1,8 @@
 ---
 layout: 'layout'
+eleventyComputed:
+	syndicationLinks: (data) ->
+		DEV: data.devToSyndication[data.page.url]
 ---
 
 <article class="h-entry">
@@ -19,7 +22,7 @@ layout: 'layout'
 <p><a href="{{türkçe|url}}" lang="tr">Türkçe</a>
 {%endif%}
 
-<div class="e-content" {%if 'Türkçe' in tags%}lang="tr"{%endif%}>
+<div class="e-content">
 {{content|safe}}
 </div>
 
@@ -28,15 +31,17 @@ layout: 'layout'
 {%include "partials/tags.njk"%}
 </section>
 
-{%if devToSyndication[page.url] !== undefined%}
-<section class="syndication-links">
-This article is syndicated to <a class="u-syndication" 
-    href="{{devToSyndication[page.url]}}">DEV</a>, where you can comment on it.
-</section>
+{%if syndicationLinks.length > 0%}
+	<section class="syndication-links">
+	{%for silo, link in syndicationLinks%}
+		<a class="u-syndication" href="{{link}}">{{silo}}</a>
+		{%if not loop.last%} | {%endif%}
+	{%endfor%}
+	</section>
 {%endif%}
 
 <section class="comments-section">
-<h2>Comments</h2>
+<h2>{{'Yorumlar' if lang=='tr' else 'Comments'}}</h2>
 <form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 	action="/did-comment" method="POST" class="comments-form">
 
@@ -44,16 +49,23 @@ This article is syndicated to <a class="u-syndication"
 	<input name="robotuz-eyvallah" type="hidden">
 	<input name="reply" type="hidden">
 	
-	<label for="contents">Post a comment</label>
+	<label for="contents">
+		{{'Yorum yaz' if lang=='tr' else 'Post a comment'}}
+	</label>
 	<textarea name="contents" required cols="4" class="commentinput"></textarea>
-	<input type="submit" class="submit" value="Submit">
+	<input type="submit" class="submit" 
+		value="{{'Gönder' if lang=='tr' else 'Submit'}}">
 </form>
 
-<small>Sign your comment however you want.</small>
+<small>
+{%if lang=='tr'%}
+Yorumunuzu istediğiniz gibi imzalayın.
+{%else%}
+Sign your comment however you want.
+{%endif%}
+</small>
 
 <hr>
-
-<h3>{{comments[page.url].length|d(0)}} Comments</h3>
 
 {%macro rendercomment(comment)%}
 <li>
@@ -76,7 +88,10 @@ This article is syndicated to <a class="u-syndication"
 	</ol>
 	{%endif%}
 
-	<details><summary class="metadata">Reply...</summary>
+	<details>
+		<summary class="metadata">
+			{{'Yanıtla...' if lang=='tr' else 'Reply...'}}
+		</summary>
 		<form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 			action="/did-comment" method="POST" class="comments-form">
 
@@ -85,7 +100,9 @@ This article is syndicated to <a class="u-syndication"
 			<input name="reply" type="hidden" 
 				value="{{comment.date|moment('YYYY-MM-DDTHH:mm:ss.SSS[Z]', 'Z')}}">
 			
-			<label for="contents">Post a reply</label>
+			<label for="contents">
+				{{'Cevap yaz' if lang=='tr' else 'Post a reply'}}
+			</label>
 			<textarea name="contents" required cols="4" class="commentinput">
 			</textarea>
 			<input type="submit" class="submit" value="Submit">
@@ -94,7 +111,7 @@ This article is syndicated to <a class="u-syndication"
 {%endmacro%}
 
 {%if comments[page.url]%}
-<ol class="commentslist">
+<ol reversed class="commentslist">
 {%for comment in comments[page.url]|rejectattr('reply')%}
 {{rendercomment(comment)}}
 {%endfor%}

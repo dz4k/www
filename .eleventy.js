@@ -5,26 +5,95 @@ module.exports = function (eleventyConfig) {
   addCustomCollections(eleventyConfig)
   addHtmlMinification(eleventyConfig)
   addTemplateCustomizations(eleventyConfig)
+  addCustomDataFormats(eleventyConfig)
   addFilters(eleventyConfig)
   addResponsiveImages(eleventyConfig)
   // addOptimizations(eleventyConfig)
 
   return {
     dir: { input: '.', output: '_site', includes: 'includes', data: 'data' },
-    // markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
   }
 }
 
-const markdownIt = require("markdown-it")
-const mdLib = markdownIt({
-  html: true,
-  breaks: true,
-  linkify: true,
-  typographer: true,
-})
-mdLib.use(require("markdown-it-attrs"))
-mdLib.use(require('markdown-it-footnote'))
+const util = {
+  get markdownLibrary() {
+    if ('_markdownLibrary' in this) return this._markdownLibrary
+
+    const mdLib = require("markdown-it")({
+      html: true,
+      breaks: true,
+      linkify: true,
+      typographer: true,
+    })
+
+    mdLib.use(require("markdown-it-attrs"))
+    mdLib.use(require('markdown-it-footnote'))
+
+    return this._markdownLibrary = mdLib
+  },
+
+  esc(str) {
+    return String(str).replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;")
+  },
+
+  basicFormatting(str) {
+    str = this.esc(str)
+
+    str = str.replace(/\n/g, "<br>")
+      .replace(/&quot;(.*)&quot;/g, "<q>$1</q>")
+      .replace(/--/g, "&mdash;")
+      .replace(/\.\.\.+/g, "&hellip;")
+      .replace(/\(c\)/g, "&copy;")
+      .replace(/\(c\)/g, "&copy;")
+      .replace(/\(tm\)/g, "&trade;")
+      .replace(/\(r\)/g, "&reg;")
+      .replace(/&lt;-/g, "&larr;")
+      .replace(/-&gt;/g, "&rarr;")
+      .replace(/&lt;=/g, "&lArr;")
+      .replace(/=&gt;/g, "&rArr;")
+      .replace(/`(.*)`/g, "<code>$1</code>")
+
+    const linkifyHtml = require('linkifyjs/html')
+    str = linkifyHtml(str, { defaultProtocol: 'https' })
+
+    return str
+  },
+
+  SafeHtml: class {
+    constructor(str) { this.str = str }
+    toString() { return this.str }
+  },
+
+  html(strs, ...parts) {
+    let rv = []
+
+    for (let i = 0; i < strs.length; i++) {
+      rv.push(strs[i], 
+        parts[i] instanceof util.SafeHtml ? parts[i] : this.esc(parts[i]))
+    }
+
+    rv.pop() // remove `undefined` at the end
+    return new util.SafeHtml(rv.join(''))
+  },
+
+  img(src, alt) {
+    return util.html`<a href="${src}">
+      <img src="${src}" alt="${alt}" title="${alt}">
+    </a>`
+  },
+
+  coffee(...args) {
+    return require('coffeescript').eval(...args)
+  }
+}
+
+for (const fn in util) {
+  if (util[fn] instanceof Function) util[fn] = util[fn].bind(util)
+}
 
 function addPassthroughCopy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
@@ -33,6 +102,9 @@ function addPassthroughCopy(eleventyConfig) {
 function addCustomCollections(eleventyConfig) {
   eleventyConfig.addCollection('post',
     coll => coll.getFilteredByGlob('entries/*'))
+
+  eleventyConfig.addCollection('Türkçe',
+      coll => coll.getAll().filter(item => item.data.lang === 'tr'))
 }
 
 function addHtmlMinification(eleventyConfig) {
@@ -61,82 +133,37 @@ function addFilters(eleventyConfig) {
     return moment(date).utcOffset(tz).format(format)
   })
 
-  eleventyConfig.addFilter('markdown', str => mdLib.render(str))
+  eleventyConfig.addFilter('markdown',
+    str => util.markdownLibrary.render(str))
 
-  eleventyConfig.addPairedShortcode('markdown', str => mdLib.render(str))
+  eleventyConfig.addPairedShortcode('markdown', 
+    str => util.markdownLibrary.render(str))
 
-  function esc(str) {
-    return str.replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;")
-  }
-
-  const linkifyHtml = require('linkifyjs/html')
-  eleventyConfig.addFilter('basicFormatting', str => {
-    str = esc(str)
-
-    str = str.replace(/\n/g, "<br>")
-      .replace(/&quot;(.*)&quot;/g, "<q>$1</q>")
-      .replace(/--/g, "&mdash;")
-      .replace(/\.\.\.+/g, "&hellip;")
-      .replace(/\(c\)/g, "&copy;")
-      .replace(/\(c\)/g, "&copy;")
-      .replace(/\(tm\)/g, "&trade;")
-      .replace(/\(r\)/g, "&reg;")
-      .replace(/&lt;-/g, "&larr;")
-      .replace(/-&gt;/g, "&rarr;")
-      .replace(/&lt;=/g, "&lArr;")
-      .replace(/=&gt;/g, "&rArr;")
-      .replace(/`(.*)`/g, "<code>$1</code>")
-
-    str = linkifyHtml(str, { defaultProtocol: 'https' })
-
-    return str
-  })
-
-  eleventyConfig.addFilter('isJustWhitespace', str => !/[^\s]/.test(str))
+  eleventyConfig.addFilter('basicFormatting', util.basicFormatting)
 
   eleventyConfig.addFilter('keys', Object.keys)
 
   eleventyConfig.addFilter('absoluteUrl', relUrl => new URL(relUrl, 
     'https://www.denizaksimsek.com/').href)
 
-  eleventyConfig.addShortcode('img', (src, alt, opts = '', {
-  	title = true, link = true
-  } = {}) => {
-  	if (opts.includes('figure')) return `<figure>
-      <img alt="" src="${src}">
-      <figcaption>${esc(alt)}</figcaption>
-    </figure>`
+  eleventyConfig.addShortcode('img', util.img)
 
-  	let rv = `<img alt="${esc(alt)}" src="${src}"
-      ${title ? `title="${esc(alt)}"` : ""}>`
-  	if (link) rv = `<a href="${src}">${rv}</a>`
-  	return rv
+  eleventyConfig.addShortcode('_', (lang, ...args) => {
+    let strings = {}
+    for (let i = 0; i < args.length - 1; i += 2) {
+      if (args[i] == lang) return args[i + 1]
+    }
+    return args[args.length - 1]
   })
-
-  eleventyConfig.addFilter('function', (code, ...args) => 
-    new Function(...args, code)
-  )
 }
 
 function addTemplateCustomizations(eleventyConfig) {
   addMarkdownLibraryOptions()
-  addNunjucksCustomizations()
   addFrontmatterCustomizations()
   addPlugins()
 
   function addMarkdownLibraryOptions() {
-    eleventyConfig.setLibrary("md", mdLib)
-  }
-
-  function addNunjucksCustomizations() {
-    const Nunjucks = require("nunjucks");
-    eleventyConfig.setLibrary('njk', global.njk = Nunjucks.configure('includes', {
-      tags: { commentStart: '{##', commentEnd: '##}' }
-    }))
+    eleventyConfig.setLibrary("md", util.markdownLibrary)
   }
 
   function addFrontmatterCustomizations() {
@@ -146,7 +173,7 @@ function addTemplateCustomizations(eleventyConfig) {
 
       language: 'coffee', 
       engines: {
-        coffee: require('coffeescript').eval
+        coffee: util.coffee
       }
     })
   }
@@ -154,6 +181,10 @@ function addTemplateCustomizations(eleventyConfig) {
   function addPlugins() {
     eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   }
+}
+
+function addCustomDataFormats(eleventyConfig) {
+  eleventyConfig.addDataExtension('coffee', util.coffee)
 }
 
 function addResponsiveImages(eleventyConfig) {
