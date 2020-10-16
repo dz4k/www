@@ -8,6 +8,8 @@ I've started using CoffeeScript instead of YAML for frontmatter, and it works li
 
 <!-- endexcerpt -->
 
+{%raw%}
+
 ## Markdown with Frontmatter
 
 As far as I know, Jekyll is the origin of using a YAML block at the top of a Markdown file for metadata. It's not hard to imagine why this became popular --- associating prose with data is a common use case, and though they have their issues, both Markdown and YAML look pretty[^1].
@@ -53,6 +55,7 @@ Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in 
   <!-- … -->
 ```
 
+
 [computed-data-docs]:	https://www.11ty.dev/docs/data-computed/
 [js-frontmatter-docs]:	https://www.11ty.dev/docs/data-frontmatter/#javascript-front-matter
 
@@ -96,7 +99,6 @@ türkçe: '/2020/istanbul-sokak-tabelasi/'
 
 The CoffeeScript code above is actually fully YAML-compatible! This keeps my templates portable. And with computed data:
 
-{%raw%}
 ```md
 ---
 layout: 'layout'
@@ -112,8 +114,9 @@ eleventyComputed:
 		{%if not loop.last%} | {%endif%}
 	{%endfor%}
 ```
-{%endraw%}
 
 I think that computed frontmatter gives a nice balance of logic-less[^2] and logic-full templates.
 
 [^2]:	Logicless templates: For people who will never need to make an HTML monthly calendar!
+
+{%endraw%}
