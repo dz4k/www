@@ -50,8 +50,7 @@ Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in 
 <html>
 <!-- … -->
 <body>
-  <h1>{{ title }}</h1>
-  <p>Published on {{ currentDate }}</p>
+   <p>This website was last generated on {{ currentDate }}</p>
   <!-- … -->
 ```
 
