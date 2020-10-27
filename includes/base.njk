@@ -46,12 +46,7 @@
 <meta name="twitter:site" content="@DenizAksimsek">
 <meta name="twitter:creator" content="@DenizAksimsek">
 
-{%set styles%}
-  {%include "styles/main.css"%}
-{%endset%}
-
-<style>{{styles|safe}}</style>
-
+<style>{%include "styles/main.css"%}</style>
 {%for stylesheet in prefetchedStylesheets%}
 <style>{{stylesheet|safe}}</style>
 {%endfor%}
@@ -85,7 +80,7 @@ addEventListener('keyup', e => {
   if (e.shiftKey === true) {
     switch (e.keyCode) {
       case 69: // E
-        window.location = 'https://github.com/DenizAksimsek/www/edit/master/{{page.inputPath}}'
+        window.location = 'https://github.com/DenizAksimsek/www/edit/main/{{page.inputPath}}'
         break
     }
   }
