@@ -41,6 +41,10 @@ Things I want (curse you, JetPens)
 -   [Kuretake Fudegokochi Brush Pen](https://www.jetpens.com/Kuretake-Fudegokochi-Brush-Pen-Extra-Fine-Black/pd/2659)
 -   [Pentel Artist Brush Sign Pen](https://www.wellappointeddesk.com/2019/11/pen-review-pentel-artist-brush-sign-pen/)
 
+### Notebooks {#i-want-notebooks}
+
+-   [Sorta Notebinder](https://www.sorta.la/)
+
 ### Pen Cases {#i-want-pen-cases}
 
 -   [Sonic Sma Sta Standing Pen Case](https://www.jetpens.com/Sonic-Sma-Sta-Standing-Pen-Cases/ct/4885)
@@ -49,5 +53,6 @@ Things I want (curse you, JetPens)
 
 ### Miscellaneous {#i-want-more}
 
+-   [Papier Tigre A4 Clipboard](https://milligram.com/products/papier-tigre-a4-clipboard)
 -   [Nakabayashi Magnetic Bookmark Rulers](https://to.jetpens.com/2UHjXxq)
 -   [Raymay Pencut Mini Scissors](https://www.jetpens.com/Raymay-Pencut-Mini-Scissors/ct/1623)
