@@ -11,15 +11,12 @@
 
 <meta name="generator" content="@11ty/eleventy">
 
-<link rel="micropub" href="https://mastr-cntrl-dza.herokuapp.com/micropub">
-<link rel="microsub" href="https://aperture.p3k.io/microsub/558">
 <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 <link href="https://tokens.indieauth.com/token" rel="token_endpoint">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" href="/assets/favicon.svg">
-<link rel="stylesheet" href="{{stylesheet}}">
 
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,9 +44,6 @@
 <meta name="twitter:creator" content="@DenizAksimsek">
 
 <style>{%include "styles/main.css"%}</style>
-{%for stylesheet in prefetchedStylesheets%}
-<style>{{stylesheet|safe}}</style>
-{%endfor%}
 
 <body>
 
@@ -57,27 +51,8 @@
 
 {%if script%}<script src="{{script|url}}"></script>{%endif%}
 
-<script type="module">
-function highlightHash() {
-  addEventListener('hashchange', highlightHash)
-  
-  const $hash = location.hash && document.querySelector(location.hash)
-  if (!$hash) return
-  
-  if ($hash instanceof HTMLDetailsElement) $hash.open = true
-  
-  $hash.tabIndex = 0
-  $hash.focus()
-  
-  $hash.addEventListener('blur', e => {
-    $hash.tabindex = -1
-  }, { once: true })
-}
-
-highlightHash()
-
-addEventListener('keyup', e => {
-  if (e.shiftKey === true) {
+<script>addEventListener('keyup',e => {
+  if (e.shiftKey) {
     switch (e.keyCode) {
       case 69: // E
         window.location = 'https://github.com/DenizAksimsek/www/edit/main/{{page.inputPath}}'

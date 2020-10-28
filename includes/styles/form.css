@@ -1,0 +1,29 @@
+form {
+    background: #eee;
+    padding: .6rem;
+    border: 1px solid #bbb;
+    gap: calc(var(--line-height) / 2);
+}
+
+input[type=date], input[type=datetime-local], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+    height: var(--line-height);
+    font: inherit;
+    background: var(--bg);
+    border: 3px solid var(--secondary);
+}
+
+textarea {
+    height: auto;
+}
+
+input:focus, textarea:focus {
+    border-color: transparent;
+}
+
+button, input[type=submit] {
+    height: var(--line-height);
+    font: inherit;
+    background: var(--secondary);
+    border: none;
+    color: var(--bg);
+}

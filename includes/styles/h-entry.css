@@ -1,0 +1,24 @@
+.h-entry header {
+    margin-top: 3em;
+}
+
+.h-entry .p-name {
+    font-weight: bold;
+}
+
+.h-entry .dt-published {
+    font-size: .8em;
+}
+
+.metadata {
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+.tags-list, .p-category, .p-category+sup, .syndication-links, .u-syndication {
+    font-style: italic;
+}
+
+.entry-list .h-entry {
+    margin: calc(2 * var(--line-height)) 0;
+}

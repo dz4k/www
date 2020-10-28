@@ -1,0 +1,30 @@
+.comments-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "label  submit" "input  input";
+}
+
+.comments-form .commentinput {
+    grid-area: input;
+    width: 100%;
+}
+
+.comments-form>.submit {
+    grid-area: submit;
+}
+
+.commentslist {
+    padding-left: 0;
+    list-style: none;
+}
+
+.commentslist>li>.commentslist {
+    padding-left: 2ch;
+    border-left: 1px solid var(--primary);
+    margin-bottom: var(--line-height);
+}
+
+.commentslist li p.metadata {
+    margin-top: calc(0rem - var(--line-height));
+    margin-bottom: 0;
+}
