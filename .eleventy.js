@@ -81,7 +81,7 @@ const util = {
   },
 
   img(src, alt) {
-    return util.html`<a href="${src}">
+    return util.html`<a class="image-link" href="${src}">
       <img src="${src}" alt="${alt}" title="${alt}">
     </a>`
   },

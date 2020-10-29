@@ -51,6 +51,10 @@ a:hover, button:hover, input:hover, :focus {
   vertical-align: bottom;
 }
 
+.image-link {
+  display: block;
+}
+
 .unblockquote {
   border: none;
   padding: 0;
