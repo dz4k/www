@@ -4,6 +4,7 @@ html {
   --copy: #2d1e14;
   --primary: #ff6600;
   --secondary: #0587bb;
+  --accent: var(--primary);
   --line-height: 1.2rem;
   --font-copy: "IBM Plex Sans Condensed", sans-serif;
   --font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
@@ -39,9 +40,15 @@ body > footer {
   line-height: inherit;
 }
 
-:focus {
-  outline: 3px solid var(--primary);
-  box-shadow: 0 0 6px 3px var(--primary);
+a:hover, button:hover, input:hover, :focus {
+  outline: 3px solid var(--accent);
+  box-shadow: 0 0 6px 3px var(--accent);
+}
+
+.img-inline {
+  height: 1em;
+  width: auto;
+  vertical-align: bottom;
 }
 
 .unblockquote {

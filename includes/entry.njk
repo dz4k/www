@@ -7,12 +7,13 @@ eleventyComputed:
 
 <article class="h-entry">
 
+{%if uPhoto%}<link class="u-photo" href="{{uPhoto}}">{%endif%}
+
 <header>
+<h1 class="p-name">{{title}}</h1>
 <a class="u-url" href="{{page.url|url}}">
   <time class="dt-published">{{page.date|moment('DD/MM/YYYY')}}</time>
 </a>
-{%if uPhoto%}<link class="u-photo" href="{{uPhoto}}">{%endif%}
-<h1 class="p-name">{{title}}</h1>
 </header>
 
 {%if english%}

@@ -1,5 +1,10 @@
+
 .h-entry header {
     margin-top: 3em;
+}
+
+.h-entry h1 {
+    margin-bottom: 0;
 }
 
 .h-entry .p-name {
@@ -7,7 +12,7 @@
 }
 
 .h-entry .dt-published {
-    font-size: .8em;
+
 }
 
 .metadata {

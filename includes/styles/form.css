@@ -24,6 +24,7 @@ button, input[type=submit] {
     height: var(--line-height);
     font: inherit;
     background: var(--secondary);
+    --accent: var(--secondary);
     border: none;
     color: var(--bg);
 }
