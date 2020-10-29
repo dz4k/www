@@ -4,15 +4,16 @@
 }
 
 .h-entry h1 {
-    margin-bottom: 0;
+    display: inline;
+    margin-right: .4ch;
 }
 
 .h-entry .p-name {
     font-weight: bold;
 }
 
-.h-entry .dt-published {
-
+.h-entry .u-url {
+    text-decoration: none;
 }
 
 .metadata {
