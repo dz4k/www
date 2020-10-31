@@ -20,14 +20,10 @@ html {
 * {
   line-height: var(--line-height);
   box-sizing: border-box;
-  transition: box-shadow .1s ease;
-}
-
-@media print {
-  {%include "./print.css"%}
 }
 
 body {
+  box-sizing: content-box;
   max-width: 700px;
   margin: auto;
   padding: 1ch;
@@ -38,11 +34,6 @@ body > footer {
   margin-top: calc(2 * var(--line-height));
   font-size: .8rem;
   line-height: inherit;
-}
-
-a:hover, button:hover, input:hover, :focus {
-  outline: 3px solid var(--accent);
-  box-shadow: 0 0 6px 3px var(--accent);
 }
 
 .img-inline {

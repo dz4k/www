@@ -16,10 +16,6 @@ textarea {
     height: auto;
 }
 
-input:focus, textarea:focus {
-    border-color: transparent;
-}
-
 button, input[type=submit] {
     height: var(--line-height);
     font: inherit;
