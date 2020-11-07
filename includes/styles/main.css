@@ -59,4 +59,5 @@ body > footer {
 {%for stylesheet in prefetchedStylesheets%}
 {{stylesheet|safe}}
 {%endfor%}
+
 {{style|safe}}

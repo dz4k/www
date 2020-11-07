@@ -17,14 +17,12 @@ style: """
     """
 ---
 
-{%assign tagWeb = collections.website.length%}
-{%assign tagPlace = collections.place.length%}
-{%assign latestEntries = (collections.post|reverse|slice:0, 4%}
+{%assign latestEntries = collections.post|reverse|slice:0, 4%}
 
 
 ![A picture of me](/assets/me.jpeg){.picture-of-me width=120 height=120 sizes=120px}
 
-I am **Deniz**, a person. I'm into [web development]<sup>{{tagWeb}}</sup>, [programming languages] and visual design. Though I'm not a photographer by any means, I often find myself near [nice landscapes]<sup>{{tagPlace}}</sup> and [cats].
+I am **Deniz**, a person. I'm into [web development], [programming languages] and visual design. Though I'm not a photographer by any means, I often find myself near [nice landscapes] and [cats].
 
 
 I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.

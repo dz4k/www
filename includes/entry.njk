@@ -32,6 +32,11 @@ eleventyComputed:
 {%include "partials/tags.njk"%}
 </section>
 
+<div style="border: 1px solid var(--secondary); padding: var(--line-height);">
+{%set entry = collections.all | getPreviousCollectionItem(page)%}
+{%include "partials/entry.njk"%}
+</div>
+
 {%if syndicationLinks.length > 0%}
 	<section class="syndication-links">
 	{%for silo, link in syndicationLinks%}
