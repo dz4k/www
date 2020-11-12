@@ -38,7 +38,7 @@ On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 
 ## Elsewhere
 
-Other than this website, I am occasionally found on [Twitter] and [DEV]. If you need to contact me though, I'd much prefer if you [email me]. I also have a [GitHub] account.
+Other than this website, I am occasionally found on [Twitter]{rel=me} and [DEV]{rel=me}. If you need to contact me though, I'd much prefer if you [email me]{rel=me}. I also have a [GitHub]{rel=me} account.
 
 * * *
 
