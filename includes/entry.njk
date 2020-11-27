@@ -32,12 +32,9 @@ eleventyComputed:
 {%include "partials/tags.njk"%}
 </section>
 
-<div style="
-		border: 1px solid var(--copy);
-		padding: var(--line-height);
-		padding-bottom: 0;
-		margin: var(--line-height) 0;">
-	<span style="float:left;margin-right:.5ch">Read next: </span>
+<div class="read-next" onclick="
+	event.target.closest('.read-next a') == null && this.querySelector('.u-url').click()">
+	<span class="postlabel">Read next: </span>
 	{%set entry = collections.all | getPreviousCollectionItem(page)
 		| d(collections.all[collections.all.length-1])%}
 	{%include "partials/entry.njk"%}
