@@ -30,10 +30,11 @@
 }
 
 .read-next {
-	border: 1px solid var(--copy);
-	padding: var(--line-height);
-	padding-bottom: 0;
+    border: 1px solid var(--copy);
+    padding: var(--line-height);
+    padding-bottom: 0;
     margin: var(--line-height) 0;
+    cursor: pointer;
 }
 
 .read-next .label {
