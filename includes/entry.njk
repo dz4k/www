@@ -33,7 +33,7 @@ eleventyComputed:
 </section>
 
 <div class="read-next" onclick="
-	e.target.closest('.read-next a') == null && this.querySelector('.u-url').click()">
+	event.target.closest('.read-next a') == null && this.querySelector('.u-url').click()">
 	<span class="postlabel">Read next: </span>
 	{%set entry = collections.all | getPreviousCollectionItem(page)
 		| d(collections.all[collections.all.length-1])%}
