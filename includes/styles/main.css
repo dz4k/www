@@ -56,8 +56,4 @@ body > footer {
 {% include "./h-entry.css" %}
 {% include "./comments.css" %}
 
-{%for stylesheet in prefetchedStylesheets%}
-{{stylesheet|safe}}
-{%endfor%}
-
 {{style|safe}}

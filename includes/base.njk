@@ -43,8 +43,12 @@
 <meta name="twitter:site" content="@DenizAksimsek">
 <meta name="twitter:creator" content="@DenizAksimsek">
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>{%include "styles/main.css"%}</style>
 <style>{{style|safe}}</style>
+{%for stylesheet in prefetchedStylesheets%}
+<style>{{stylesheet|safe}}</style>
+{%endfor%}
 <link rel="stylesheet" href="/assets/styles.css" media="print">
 
 <body>
