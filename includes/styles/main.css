@@ -55,5 +55,4 @@ body > footer {
 {% include "./form.css" %}
 {% include "./h-entry.css" %}
 {% include "./comments.css" %}
-
-{{style|safe}}
+{% include "./print.css" %}
