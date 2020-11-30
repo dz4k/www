@@ -55,4 +55,4 @@ body > footer {
 {% include "./form.css" %}
 {% include "./h-entry.css" %}
 {% include "./comments.css" %}
-{% include "./print.css" %}
+@media print { {% include "./print.css" %} }
