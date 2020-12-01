@@ -1,4 +1,11 @@
 
+{%include "./font.css"%}
+{% include "./base-el.css" %}
+{% include "./form.css" %}
+{% include "./h-entry.css" %}
+{% include "./comments.css" %}
+@media print { {% include "./print.css" %} }
+
 html {
   --bg: ghostwhite;
   --copy: #2d1e14;
@@ -51,8 +58,3 @@ body > footer {
   padding: 0;
 }
 
-{% include "./base-el.css" %}
-{% include "./form.css" %}
-{% include "./h-entry.css" %}
-{% include "./comments.css" %}
-@media print { {% include "./print.css" %} }
