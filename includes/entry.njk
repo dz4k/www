@@ -50,7 +50,7 @@ eleventyComputed:
 {%endif%}
 
 <details class="comments-section">
-<summary><h2>{{'Yorumlar' if lang=='tr' else 'Comments'}}</h2></summary>
+<summary>{{'Yorumlar' if lang=='tr' else 'Comments'}}</summary>
 <form netlify name="Comments" netlify-honeypot="robotuz-eyvallah"
 	action="/did-comment" method="POST" class="comments-form">
 
