@@ -13,5 +13,5 @@ module.exports = function(tags, collections) {
 }
 
 function intersperse(x, arr) {
-	return arr.reduce((acc, cur) => (acc.push(x, cur), acc), [])
+	return arr.reduce((acc, cur) => (acc.push(x, cur), acc), []).shift()
 }
