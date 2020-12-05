@@ -53,7 +53,7 @@ module.exports = class {
 				this.querySelector('.u-url').click()})`,
 			},
 			h('span.postlabel', 'Read next: '),
-			entry(entryToRead),
+			"TODO port entry partial",
 		)
 	}
 
