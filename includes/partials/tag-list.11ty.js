@@ -13,5 +13,14 @@ module.exports = function(tags, collections) {
 }
 
 function intersperse(x, arr) {
-	return arr.reduce((acc, cur) => (acc.push(x, cur), acc), []).shift()
+	const rv = []
+	let first = true
+	for (const v of arr) {
+		if (!first) {
+			rv.push(x)
+		}
+		first = false
+		rv.push(v)
+	}
+	return rv
 }
