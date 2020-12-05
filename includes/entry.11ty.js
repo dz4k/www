@@ -38,7 +38,7 @@ module.exports = class {
 	readNext({collections, page, tags}) {
 		let coll
 		for (const tag in tags) {
-			if (collections[tag].length > 1) {
+			if (collections[tag] && collections[tag].length > 1) {
 				coll = collections[tag]
 				break
 			}
