@@ -2,6 +2,7 @@
 const h = require('hyperscript')
 const moment = require('moment')
 const tagList = require('./partials/tag-list.11ty.js')
+const entry = require('./partials/entry.11ty.js')
 
 module.exports = class {
 	data() {
@@ -36,7 +37,8 @@ module.exports = class {
 		if ('türkçe' in data) return h('p', a('Türkçe', data.türkçe))
 	}
 
-	readNext({collections, page, tags}) {
+	readNext(data) {
+		const {collections, page, tags} = data
 		let coll
 		for (const tag in tags) {
 			if (collections[tag] && collections[tag].length > 1) {
@@ -53,8 +55,7 @@ module.exports = class {
 			onclick: `event.target.closest('.read-next a') == null &&
 				this.querySelector('.u-url').click()})`,
 			},
-			h('span.postlabel', 'Read next: '),
-			"TODO port entry partial",
+			entry(data, entryToRead, {beforeTitle: "Read next: "}),
 		)
 	}
 
