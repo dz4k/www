@@ -30,6 +30,7 @@
     "postcss": "^8.0.9"
   },
   "dependencies": {
-    "coffeescript": "^2.5.1"
+    "coffeescript": "^2.5.1",
+    "hyperscript": "^2.0.2"
   }
 }
