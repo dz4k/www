@@ -12,7 +12,7 @@ module.exports = class {
 
 	render(data) {
 		const {page, title, uPhoto, content, tags, collections} = data
-		return h('article.h-entry', 
+		return h('article.h-entry',
 			h('link.u-photo', {href: uPhoto}),
 			h('header',
 				h('h1.p-name', title),
@@ -69,7 +69,7 @@ module.exports = class {
 			this.commentForm(data),
 			h('small', data.lang == 'tr' ?
 				'Yorumunuzu istediğiniz gibi imzalayın.' :
-				'Sign your comment however you want.')
+				'Sign your comment however you want.'),
 			h('hr'),
 			this.commentList(data.comments[data.page.url])
 		)
