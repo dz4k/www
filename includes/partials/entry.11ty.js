@@ -8,6 +8,7 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 	return h('article.h-entry',
 		h("p",
 			beforeTitle, h('a.p-name.u-url', {href: entry.url}, entry.data.title),
+			' ',
 			h('time.dt-published', moment(entry.date).format('DD/MM/YYYY')),
 		),
 		
