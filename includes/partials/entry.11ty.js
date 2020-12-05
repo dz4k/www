@@ -12,6 +12,6 @@ module.exports = function({collections}, entry, {beforeTitle} = {}) {
 		h('time.dt-published', moment(entry.date).format('DD/MM/YYYY')),
 		entry.data.page.excerpt ? h('p.p-summary',
 			{innerHTML: this.markdown(entry.data.page.excerpt)}) : '', // striptags?
-		h('p', tagList(tags, collections)),
+		h('p', tagList(entry.data.tags, collections)),
 	)
 }
