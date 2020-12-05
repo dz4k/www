@@ -60,7 +60,9 @@ module.exports = class {
 
 	syndication({page, devToSyndication}) {
 		return h('section.syndication-links',
-			a('DEV Community', devToSyndication[page.url], {className: 'u-syndication'})
+			page.url in devToSyndication ?
+				a('DEV: '+devToSyndication[page.url], devToSyndication[page.url],
+					{className: 'u-syndication'}) : ''
 		)
 	}
 
@@ -121,7 +123,7 @@ module.exports = class {
 }
 
 function a(content, href, attrs = {}) {
-	return h('a', {href: href, ...attrs}, content)
+	return h('a', {href, ...attrs}, content)
 }
 
 function dtPublished(date) {
