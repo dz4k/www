@@ -1,6 +1,6 @@
 
 const h = require('hyperscript')
-const striptags = require('./helpers/striptags')
+const striptags = require('./helpers/striptags.js')
 
 const styles = Object.values(
   require('@cloudcmd/read-files-sync')('./includes/styles')
@@ -122,7 +122,7 @@ module.exports = class {
 
   styles(data) {
     return [
-      h('style', {innerHTML: styles}),
+      h('style', {innerHTML: styles.join('')}),
       'style' in data ? h('style', {innerHTML: data.style}) : '',
       ...data.prefetchedStylesheets.map(sty => h('style', {innerHTML: sty}))
     ]
