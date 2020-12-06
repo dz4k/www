@@ -31,12 +31,7 @@
 
 .read-next {
     border: 1px solid var(--copy);
-    padding: var(--line-height);
-    padding-bottom: 0;
+    padding: 0 var(--line-height);
     margin: var(--line-height) 0;
     cursor: pointer;
-}
-
-.read-next .postlabel {
-    float:left;margin-right:.5ch
 }

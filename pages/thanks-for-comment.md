@@ -1,6 +1,6 @@
 ---
 permalink: '/did-comment/'
-layout: 'base.njk'
+layout: 'base'
 eleventyExcludeFromCollections: true
 ---
 
