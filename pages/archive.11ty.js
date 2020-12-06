@@ -10,7 +10,7 @@ module.exports = class {
 				data: 'collections', size: 1, alias: tag
 			},
 			layout: 'layout',
-			permalink: ({tag}) => tag === 'all' ? '/archive/' : `/archive/${tag}/`
+			permalink: ({tag}) => tag === 'all' ? '/archive/' : `/archive/${tag}/`,
 			eleventyComputed: {
 				lang: ({tag}) => tag === 'Türkçe' ? 'tr' : 'en'
 			}
