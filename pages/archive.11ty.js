@@ -7,7 +7,7 @@ module.exports = class {
 	data() {
 		return {
 			pagination: {
-				data: 'collections', size: 1, alias: tag
+				data: 'collections', size: 1, alias: 'tag'
 			},
 			layout: 'layout',
 			permalink: ({tag}) => tag === 'all' ? '/archive/' : `/archive/${tag}/`,
