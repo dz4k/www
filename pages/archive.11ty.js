@@ -43,27 +43,3 @@ module.exports = class {
 		)
 	}
 }
-
-{%set collection = collections[tag]%}
-
-{%if tag == 'all'%}
-
-<h1>Archive</h1>
-
-<p><b>By tag:</b> {%set tags = collections|keys%}{%include "partials/tags.njk"%}
-
-{%else%}
-
-<h1>{{tag}}<sup>{{collection.length}}</sup></h1>
-
-{%endif%}
-
-<p>RSS: <code>https://www.denizaksimsek.com/feed/{%if tag != 'all'%}{{tag}}/{%endif%}feed.rss</code>
-
-<ol reversed class="entry-list">
-
-{%for entry in collection|reverse%}
-<li> {%include 'partials/entry.njk'%}
-{%endfor%}
-
-</ul>
