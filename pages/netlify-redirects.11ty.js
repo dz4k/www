@@ -17,9 +17,9 @@ module.exports = class {
 
 	oldLinks() {
 		return [
-			['/20200902T1254/',	'/2020/css-additional-box-shadow/']
-			['/20200827T2005/',	'/2020/ardesen-rize-tr/']
-			['/20200826T1523/',	'/2020/road-to-indieweb/']
+			['/20200902T1254/',	'/2020/css-additional-box-shadow/'],
+			['/20200827T2005/',	'/2020/ardesen-rize-tr/'],
+			['/20200826T1523/',	'/2020/road-to-indieweb/'],
 		]
 	}
 
