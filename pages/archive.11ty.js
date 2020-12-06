@@ -21,7 +21,7 @@ module.exports = class {
 		const {collections, tag} = data
 		const coll = collections[tag]
 
-		return [
+		return h('div',
 			tag === 'all' ? [
 					h('h1', 'Archive'),
 					h('p',
@@ -34,7 +34,7 @@ module.exports = class {
 					h('li', entry(data, en, {processExcerpt: this.markdown}))
 				)
 			)
-		]
+		)
 	}
 
 	rss({tag}) {
