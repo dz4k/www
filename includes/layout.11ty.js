@@ -7,7 +7,7 @@ module.exports = class {
   }
 
   render(data) {
-    const {content} = data
+    const {content, lang} = data
 
     return h('div',
       h('header', h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek'))),
