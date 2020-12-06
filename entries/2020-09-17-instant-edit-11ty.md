@@ -1,4 +1,4 @@
-	---
+---
 title: "Tip: Instantly Edit Your Eleventy Site on Github"
 tags: ['eleventy', 'website', 'tips', 'js']
 ---
