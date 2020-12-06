@@ -34,7 +34,7 @@ module.exports = class {
 					h('li', entry(data, en, {processExcerpt: this.markdown}))
 				)
 			)
-		)
+		).outerHTML
 	}
 
 	rss({tag}) {
