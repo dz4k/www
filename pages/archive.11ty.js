@@ -37,7 +37,7 @@ module.exports = class {
 		]
 	}
 
-	rss(data) {
+	rss({tag}) {
 		return h('p', 'RSS: ', h('code',
 			`https://www.denizaksimsek.com/feed/${tag !== 'all' ? tag+'/' : ''}feed.rss`)
 		)
