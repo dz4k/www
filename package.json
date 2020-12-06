@@ -30,6 +30,7 @@
     "postcss": "^8.0.9"
   },
   "dependencies": {
+    "@cloudcmd/read-files-sync": "^2.0.2",
     "coffeescript": "^2.5.1",
     "hyperscript": "^2.0.2"
   }

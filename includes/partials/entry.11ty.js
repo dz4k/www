@@ -2,6 +2,7 @@
 const h = require('hyperscript')
 const moment = require('moment')
 const tagList = require('./tag-list.11ty.js')
+const striptags = require('../helpers/striptags')
 
 // this is the most horrifying function signature ever
 module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = {}) {
@@ -18,8 +19,3 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 	)
 }
 
-// !!! ONLY USE WITH TRUSTED INPUT !!!
-// https://gist.github.com/muhittin/3358070
-function striptags(text) {
-	return text.replace(/(<([^>]+)>)/ig,"")
-}
