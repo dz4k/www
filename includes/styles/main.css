@@ -37,7 +37,7 @@ body {
   position: relative;
 }
 
-body > footer {
+.site-footer {
   margin-top: calc(2 * var(--line-height));
   font-size: .8rem;
   line-height: inherit;

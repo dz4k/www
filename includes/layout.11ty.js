@@ -12,7 +12,7 @@ module.exports = class {
     return h('div',
       h('header', h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek'))),
       h('main', {innerHTML: content}),
-      h('footer',
+      h('footer.site-footer',
         h('div', {
           innerHTML: lang === 'tr' ? `
             <p> Bu sitedeki tüm tarih/saatler UTC+03 zaman dilimindedir (aksi belirtilmediğinde)
