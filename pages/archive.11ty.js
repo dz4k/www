@@ -27,10 +27,10 @@ module.exports = class {
 					h('p',
 						h('b', 'By tag: '),
 						tagList(Object.keys(collections), collections))
-				] : h('h1', tag, h('sup', collection.length)),
+				] : h('h1', tag, h('sup', coll.length)),
 			this.rss(data),
 			h('ol.entry-list', {reversed: 'reversed'},
-				collection.slice().reverse().map(en =>
+				coll.slice().reverse().map(en =>
 					h('li', entry(data, en, {processExcerpt: this.markdown}))
 				)
 			)
