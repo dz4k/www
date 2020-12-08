@@ -3,7 +3,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('njk,md,css')
   addPassthroughCopy(eleventyConfig)
   addCustomCollections(eleventyConfig)
-  addHtmlMinification(eleventyConfig)
+  // addHtmlMinification(eleventyConfig)
   addTemplateCustomizations(eleventyConfig)
   addCustomDataFormats(eleventyConfig)
   addFilters(eleventyConfig)
