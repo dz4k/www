@@ -5,7 +5,7 @@ html {
   --primary: #ff6600;
   --secondary: #0587bb;
   --accent: var(--primary);
-  --line-height: 1.2rem;
+  --line-height: 23px;
   --font-copy: "IBM Plex Sans Condensed", sans-serif;
   --font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
   monospace;
@@ -26,7 +26,7 @@ body {
   box-sizing: content-box;
   max-width: 700px;
   margin: auto;
-  padding: 1ch;
+  padding: calc(.5 * var(--line-height));
   position: relative;
 }
 
