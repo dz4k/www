@@ -115,7 +115,7 @@ module.exports = class {
     ]
     return fonts.map(font => h('link', {
       rel: 'preload',
-      attrs: { as: 'font' }, // maybe hyperscript was a mistake...
+      attrs: { as: 'font', crossorigin: 'anonymous' }, // maybe hyperscript was a mistake...
       href: font,
     }))
   }
