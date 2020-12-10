@@ -36,7 +36,7 @@ module.exports = class {
 
   body(data) {
     return h('body', {innerHTML: data.content}, 
-      h('script', /*js*/`
+      h('script', {innerHTML: /*js*/`
         addEventListener('keyup',e => {
           if (e.shiftKey) {
             switch (e.keyCode) {
@@ -46,7 +46,7 @@ module.exports = class {
             }
           }
         })
-      `)
+      `})
     )
   }
 
