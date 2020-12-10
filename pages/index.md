@@ -7,8 +7,8 @@ style: """
     .picture-of-me {
         display: block;
         overflow: hidden;
-        width: 10ch;
-        height: 10ch;
+        width: 100px;
+        height: 100px;
         margin: 3em 1em 2em auto;
         transform: rotateZ(5deg);
         padding: 1ch;
