@@ -7,7 +7,7 @@ style: """
     .picture-of-me {
         display: block;
         width: 10ch;
-        height: auto;
+        height: 10ch;
         margin: 3em 1em 2em auto;
         transform: rotateZ(5deg);
         padding: 1ch;
