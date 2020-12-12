@@ -47,7 +47,7 @@ Other than this website, I am occasionally found on [Twitter]{rel=me} and [DEV]{
 
 I made a thing. It's a map of urban railways in Ankara. It lives on <https://ankarametro.denizaksimsek.com> and it's way better than the official one.
 
---- Deniz Akşimşek <<d.aksimsek1@outlook.com>> {style="text-align: end"}
+--- Deniz Akşimşek <<deniz@denizaksimsek.com>> {style="text-align: end"}
 
 [web development]:        /archive/website/
 [programming languages]:  /archive/pl/
@@ -58,5 +58,5 @@ I made a thing. It's a map of urban railways in Ankara. It lives on <https://ank
 [Links]:                  /links/
 [Twitter]:                //twitter.com/DenizAksimsek/
 [DEV]:                    //dev.to/dza/
-[email me]:               mailto:dza@denizaksimsek.com
+[email me]:               mailto:deniz@denizaksimsek.com
 [GitHub]:                 //github.com/DenizAksimsek/
