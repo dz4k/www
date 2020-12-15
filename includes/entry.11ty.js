@@ -12,7 +12,6 @@ module.exports = class {
 	}
 
 	render(data) {
-		console.log(Object.keys(data))
 		const {page, title, uPhoto, content, tags, collections} = data
 		return h('article.h-entry',
 			h('link.u-photo', {href: uPhoto}),
