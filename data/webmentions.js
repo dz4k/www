@@ -7,7 +7,8 @@ token=${process.env.WEBMENTION_IO_TOKEN}`
 
 // TODO the same thing is implemented in devToSyndication.js. Factor it out.
 function relativeUrl(url) {
-	new URL(url).pathname
+	const urlObj = new URL(url)
+	return urlObj.pathname
 }
 
 function groupByPage(wmData) {
