@@ -30,7 +30,7 @@ module.exports = class {
 			this.readNext(data),
 			this.syndication(data),
 			// this.comments(data),
-			this.webmentions(data),
+			webmentions(data),
 		).outerHTML
 	}
 
