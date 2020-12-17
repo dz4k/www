@@ -16,13 +16,13 @@ function groupByPage(wmData) {
 	for (const wm of wmData.children) {
 		const relUrl = relativeUrl(wm['wm-target'])
 		console.log(relUrl)
-		(rv[relUrl] || (rv[relUrl] = []).push(wm)
+		(rv[relUrl] || (rv[relUrl] = [])).push(wm)
 	}
+	console.log(rv)
 	return rv
 }
 
 module.exports = () =>
 	fetch(url).then(res => res.json())
 		.then(data => groupByPage(data))
-		.then(data => {console.log(data); return data}))
 		.catch(e => ({}))
