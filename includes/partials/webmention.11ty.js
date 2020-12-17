@@ -16,7 +16,7 @@ module.exports = function render(data, wm) {
 				href: wm.url, rel: 'noopener noreferrer', target: '_blank'
 			},
 				h('time.dt-published', { datetime: wm.published }, 
-					moment(wm.published).format('DD/MM/YYYY HH.mm'),
+					moment(wm.published || wm['wm-received']).format('DD/MM/YYYY HH.mm'),
 				),
 				' (link)',
 			),
