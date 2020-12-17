@@ -71,7 +71,7 @@ module.exports = class {
     ]
   }
 
-  webmention(data) {
+  webmentions(data) {
     return [
       h('link', { rel: "webmention",  href: "https://webmention.io/www.denizaksimsek.com/webmention" }),
       h('link', { rel: "pingback", href: "https://webmention.io/www.denizaksimsek.com/xmlrpc" }),
