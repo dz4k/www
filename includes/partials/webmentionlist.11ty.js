@@ -8,7 +8,7 @@ module.exports = function render(data) {
 	if (!wms) return ''
 
 	return h('section.webmentions',
-		h('h2', webmentions.length, )
+		h('h2', webmentions.length, ' mentions'),
 		h('ol.webmentions-list', { reversed: 'reversed' },
 			wms.map(wm => h('li', webmention(data, wm)))
 		)
