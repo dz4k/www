@@ -1,8 +1,10 @@
 
 const h = require('hyperscript')
 const moment = require('moment')
+
 const tagList = require('./partials/tag-list.11ty.js')
 const entry = require('./partials/entry.11ty.js')
+const webmentions = require('./partials/webmentionlist.11ty.js')
 
 module.exports = class {
 	data() {
@@ -27,7 +29,8 @@ module.exports = class {
 			tagList(tags, collections),
 			this.readNext(data),
 			this.syndication(data),
-			this.comments(data),
+			// this.comments(data),
+			this.webmentions(data),
 		).outerHTML
 	}
 
