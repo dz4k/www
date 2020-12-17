@@ -3,6 +3,7 @@ const h = require('hyperscript')
 const moment = require('moment')
 
 module.exports = function render(data, wm) {
+	console.log(wm.content)
 	return h(`article.webmention.h-cite#wm-${wm['wm-id']}`,
 		h('.metadata',
 			wm.author ? h('span.p-author.h-card',
