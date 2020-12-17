@@ -13,6 +13,8 @@ module.exports = function render(data, wm) {
 					wm.author.name)
 				) : h('em', 'Anonymous'),
 
+			', '
+
 			h('a.u-url', {
 				href: wm.url, rel: 'noopener noreferrer', target: '_blank'
 			},
