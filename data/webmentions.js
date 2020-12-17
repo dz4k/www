@@ -21,6 +21,6 @@ function groupByPage(wmData) {
 
 module.exports = () =>
 	fetch(url).then(res => res.json())
-		.then(data => (console.log(data), data))
 		.then(data => groupByPage(data))
+		.then(data => (console.log(data), data))
 		.catch(e => ({}))
