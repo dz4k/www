@@ -27,6 +27,7 @@ module.exports = class {
       this.viewport(data),
       this.description(data),
       this.indieauth(data),
+      this.webmention(data),
       this.theme(data),
       this.cards(data),
       this.preloadFonts(data),
@@ -67,6 +68,13 @@ module.exports = class {
     return [
       h('link', {rel: 'authorization_endpoint', href: 'https://indieauth.com/auth'}),
       h('link', {rel: 'token_endpoint', href: 'https://tokens.indieauth.com/token'}),
+    ]
+  }
+
+  webmention(data) {
+    return [
+      h('link', { rel: "webmention",  href: "https://webmention.io/www.denizaksimsek.com/webmention" }),
+      h('link', { rel: "pingback", href: "https://webmention.io/www.denizaksimsek.com/xmlrpc" }),
     ]
   }
 
