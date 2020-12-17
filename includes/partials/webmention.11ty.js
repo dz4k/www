@@ -23,6 +23,6 @@ module.exports = function render(data, wm) {
 			),
 		),
 
-		h('blockquote.unblockquote.p-content', { innerHTML: wm.content.html })
+		h('blockquote.unblockquote.p-content', { innerHTML: wm.content.html }, wm.content.text)
 	)
 }
