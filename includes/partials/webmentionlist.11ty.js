@@ -8,7 +8,7 @@ const aboutWm = "https://indieweb.org/Webmention"
 function commentparade(pageUrl) {
 	return h('a', { href: `https://quill.p3k.io/?dontask=1\
 &me=https://commentpara.de\
-&reply=https%3a%2f%2fwww.denizaksimsek.com%2f${encodeURIComponent(pageUrl)}` }, 'commentpara.de')
+&reply=https%3a%2f%2fwww.denizaksimsek.com${encodeURIComponent(pageUrl)}` }, 'commentpara.de')
 }
 
 function accepts(data) {
