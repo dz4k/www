@@ -12,8 +12,9 @@ function commentparade(pageUrl) {
 }
 
 function accepts() {
-	h('p', 'This website accepts ', h('a', { href: aboutWm }, 'Webmentions'), '.',
-		'Send one from your site, or anonymously from ', commentparade(data.page.url), '.'),
+	return h('p', 'This website accepts ', h('a', { href: aboutWm }, 'Webmentions'), '.',
+		'Send one from your site, or anonymously from ', commentparade(data.page.url), '.')
+}
 
 module.exports = function render(data) {
 	const { webmentions: { [data.page.url]: wms } } = data
