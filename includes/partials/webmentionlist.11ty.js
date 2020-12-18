@@ -12,7 +12,7 @@ function commentparade(pageUrl) {
 }
 
 function accepts(data) {
-	return h('p', 'This website accepts ', h('a', { href: aboutWm }, 'Webmentions'), '.',
+	return h('p', 'This website accepts ', h('a', { href: aboutWm }, 'Webmentions'), '. ',
 		'Send one from your site, or anonymously from ', commentparade(data.page.url), '.')
 }
 
