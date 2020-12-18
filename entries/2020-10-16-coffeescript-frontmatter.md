@@ -4,7 +4,9 @@ date: '2020-10-16T17:12+0300'
 tags: ['eleventy']
 ---
 
-I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream.
+I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman](endorsed).
+
+[endorsed]: https://twitter.com/zachleat/status/1340057504567488513
 
 <!-- endexcerpt -->
 
