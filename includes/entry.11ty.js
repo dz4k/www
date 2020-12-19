@@ -58,7 +58,7 @@ module.exports = class {
 			onclick: `event.target.closest('.read-next a') == null &&
 				this.querySelector('.u-url').click()})`,
 			},
-			entry(data, entryToRead, {beforeTitle: "Read next: ",
+			entry(data, entryToRead, {beforeTitle: this.intl.read_next_colon,
 				processExcerpt: this.markdown}),
 		)
 	}

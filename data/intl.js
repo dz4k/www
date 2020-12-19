@@ -21,6 +21,8 @@ const translations = {
 			on <a href="//netlify.com">Netlify</a>.`,
 	},
 
+	read_next_colon: { tr: 'Sıradaki: ', en: 'Up next: ' },
+
 	sign_your_comment: {
 		tr: 'Yorumunuzu istediğiniz gibi imzalayın.',
 		en: 'Sign your comment however you want.',
