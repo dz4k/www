@@ -3,7 +3,8 @@ const h = require('hyperscript')
 const moment = require('moment')
 
 module.exports = function render(data, wm) {
-	console.log(wm.content)
+	const intl = data.intl.for(data.lang)
+
 	return h(`article.webmention.h-cite#wm-${wm['wm-id']}`,
 		h('.metadata',
 			wm.author ? h('span.p-author.h-card',
@@ -11,7 +12,7 @@ module.exports = function render(data, wm) {
 					href: wm.author.url, rel: 'noopener noreferrer', target: '_blank'
 				},
 					wm.author.name)
-				) : h('em', 'Anonymous'),
+				) : h('em', intl.anonymous),
 
 			', ',
 

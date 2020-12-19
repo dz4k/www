@@ -15,6 +15,8 @@ module.exports = class {
 
 	render(data) {
 		const {page, title, uPhoto, content, tags, collections} = data
+		this.intl = data.intl.for(data.lang)
+
 		return h('article.h-entry',
 			h('link.u-photo', {href: uPhoto}),
 			h('header',
@@ -29,7 +31,6 @@ module.exports = class {
 			tagList(tags, collections),
 			this.readNext(data),
 			this.syndication(data),
-			// this.comments(data),
 			webmentions(data),
 		).outerHTML
 	}
@@ -67,61 +68,6 @@ module.exports = class {
 			page.url in devToSyndication ?
 				a('DEV: '+devToSyndication[page.url], devToSyndication[page.url],
 					{className: 'u-syndication'}) : ''
-		)
-	}
-
-	comments(data) {
-		return h('section.comments-section',
-			h('h2', 'Comments'),
-			this.commentForm(data),
-			h('small', data.lang == 'tr' ?
-				'Yorumunuzu istediğiniz gibi imzalayın.' :
-				'Sign your comment however you want.'),
-			h('hr'),
-			this.commentList(data.comments[data.page.url])
-		)
-	}
-
-	commentForm(data, replyTo) {
-		const {lang, page: {url}} = data
-		return h('form.comments-form', {
-			netlify: 'netlify',
-			name: 'Comments',
-			'netlify-honeypot': 'robotuz-eyvallah',
-			action: '/did-comment',
-			method: 'POST',
-		}, [
-			h('input', {name: 'path', type: 'hidden', value: data.page.url}),
-			h('input', {name: 'robotuz-eyvallah', type: 'hidden'}),
-			h('input', {name: 'reply', type: 'hidden'}),
-
-			h('label', {htmlFor: 'contents'}, 'Post a comment'),
-			h('textarea.commentinput', {name: 'contents', required: 'required', rows: 4}),
-
-			h('input.submit', {type: 'submit', value: 'Submit'}),
-		])
-	}
-
-	commentList(data, comments, replyTo) {
-		if (!comments) return []
-		return h('ol.commentslist', {reversed: 'reversed'},
-			comments.where(comment => comment.replyTo === replyTo)
-				.map(comment => this.comment(data, comment))
-		)
-	}
-
-	comment(data, comment) {
-		return h('li',
-			h('blockquote.unblockquote', {innerHTML: basicFormatting(comment.contents)}),
-			h('p.metadata',
-				h('time.dt-published', moment(date).format('DD/MM/YYYY HH.mm'))
-			),
-			comment.replies && comment.replies.length > 0 &&
-				this.commentList(comment.replies.where(reply => reply.reply === comment.date)),
-
-			h('details', h('summary.metadata', 'Reply...'),
-				this.commentForm(data, moment(comment.date).utcOffset('Z').format('YYYY-MM-DDTHH:mm:ss.SSS[Z]'))
-			)
 		)
 	}
 }

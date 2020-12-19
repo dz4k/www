@@ -19,13 +19,14 @@ module.exports = class {
 
 	render(data) {
 		const {collections, tag} = data
+		const intl = data.intl.for(data.lang)
 		const coll = collections[tag]
 
 		return h('div',
 			tag === 'all' ? [
-					h('h1', 'Archive'),
+					h('h1', intl.archive),
 					h('p',
-						h('b', 'By tag: '),
+						h('b', intl.by_tag_colon),
 						tagList(Object.keys(collections), collections))
 				] : h('h1', tag, h('sup', coll.length)),
 			this.rss(data),
