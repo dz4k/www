@@ -15,11 +15,14 @@ module.exports = function render(data) {
 	const { webmentions: { [data.page.url]: wms } } = data
 	const intl = data.intl.for(data.lang)
 
-	if (!wms || wms.length < 1) return accepts(data)
+	if (!wms || wms.length < 1) return h('p',
+		intl.this_website_accepts_webmentions(
+			aboutWmUrl, commentparade(data.page.url)))
 
 	return h('section.webmentions',
 		h('h2', `Mentions (${wms.length})`),
-		intl.this_website_accepts_webmentions(aboutWmUrl, commentparade(data.page.url)),
+		h('p', intl.this_website_accepts_webmentions(
+			aboutWmUrl, commentparade(data.page.url))),
 		h('ol.webmentions-list', { reversed: 'reversed' },
 			wms.map(wm => h('li', webmention(data, wm)))
 		)
