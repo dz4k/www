@@ -5,9 +5,7 @@ module.exports = function(tags, collections) {
 	return intersperse(' ', 
 		(tags || []).filter(tag => tag != 'all')
 			.map(tag =>
-				h('a.p-category', {href: `/archive/${tag}`},
-					'#', tag, h('sup', collections[tag].length)
-				)
+				h('a.p-category', {href: `/archive/${tag}`}, '#', tag)
 			)
 		)
 }
