@@ -1,5 +1,5 @@
 ---
-permalink: /bookmarks/
+permalink: '/bookmarks/'
 ---
 
 # Bookmarks
