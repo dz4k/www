@@ -2,7 +2,7 @@
 const h = require('hyperscript')
 
 module.exports = function(tags, collections) {
-	return intersperse(', ', 
+	return intersperse(' ', 
 		(tags || []).filter(tag => tag != 'all')
 			.map(tag =>
 				h('a.p-category', {href: `/archive/${tag}`},
