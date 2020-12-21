@@ -1,5 +1,6 @@
 ---
 permalink: '/bookmarks/'
+layout: 'layout'
 ---
 
 # Bookmarks
