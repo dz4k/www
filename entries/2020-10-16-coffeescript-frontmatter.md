@@ -66,7 +66,7 @@ If only there was a language that had the expressive power of JS, and the visual
 
 ## CoffeeScript All The Time!
 
-CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uese to parse frontmatter. Compared to YAML, it's not much more verbose:
+CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uses to parse frontmatter. Compared to YAML, it's not much more verbose:
 
 <div style="display:grid;grid-template-columns:1fr 1fr; gap: 2ch">
 
