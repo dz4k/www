@@ -14,7 +14,9 @@ Last edited 22/12/2020
 	> Reasonable System for JavaScript Structure
 
 -	[Thread about Locality of Behaviour](https://twitter.com/htmx_org/status/1336108136923480065)
-
+	
+	<details><summary>Transcript</summary>
+	
 	*	[htmx.org][]
 		> prediction/hope: trading off Don't Repeat Yourself & Separation of Concerns against Locality of Behaviour (LoB) is going to be one of the major tech discussions of 2021
 		> 
@@ -34,6 +36,8 @@ Last edited 22/12/2020
 				
 				-	[Edouard][]
 					> Exactly 🙏
+	
+	</details>
 
 [htmx.org]: https://twitter.com/htmx_org
 [Edouard]: https://twitter.com/inouire
