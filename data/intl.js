@@ -7,7 +7,7 @@ const translations = {
 
 	archive: { tr: 'Arşiv', en: 'Archive' },
 
-	by_tag_comma: { tr: 'Etikete göre: ', en: 'By tag: ' },
+	by_tag_colon: { tr: 'Etikete göre: ', en: 'By tag: ' },
 
 	footer_message: {
 		tr: `
