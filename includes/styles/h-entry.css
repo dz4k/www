@@ -21,8 +21,8 @@
     text-transform: uppercase;
 }
 
-.tags-list, .p-category, .p-category+sup, .syndication-links, .u-syndication {
-    font-style: italic;
+:not(:not(.tags-list, .p-category, .p-category+sup, .syndication-links, .u-syndication)):not(:hover) {
+    text-decoration: none;
 }
 
 .entry-list .h-entry {
