@@ -6,7 +6,7 @@ module.exports = function(tags, collections) {
 		(tags || []).filter(tag => tag != 'all')
 			.map(tag =>
 				h('a.p-category', {href: `/archive/${tag}`},
-					tag, h('sup', collections[tag].length)
+					'#', tag, h('sup', collections[tag].length)
 				)
 			)
 		)
