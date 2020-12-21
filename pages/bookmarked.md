@@ -8,6 +8,10 @@ Last edited 22/12/2020
 
 ## Programming
 
+-	[RSJS](https://ricostacruz.com/rsjs/)
+	
+	> Reasonable System for JavaScript Structure
+
 -	[Thread about Locality of Behaviour](https://twitter.com/htmx_org/status/1336108136923480065)
 
 	*	[htmx.org][]
