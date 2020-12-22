@@ -1,56 +1,93 @@
 ---
-title: 'Bookmarks'
-permalink: '/links/'
+permalink: '/bookmarks/'
 layout: 'layout'
-excerpt: ''
-tags: []
 ---
 
 # Bookmarks
 
-## Blogs
-
--	jlelse's Blog <https://jlelse.blog>
--	Transit Maps <https://www.transitmap.net/>
-
-## Rail maps
-
--	TfL line diagram standard <http://content.tfl.gov.uk/tfl-line-diagram-standard.pdf>
--	How to design transit maps <https://cambooth.net/how-to-design-a-transit-diagram/> #tutorial
-
-## Cool software
-
--	Margin <https://margin.love>
-	+	> Lightweight markup designed for an open mind. The plain text language for list-making, note-taking, and to-dos. Thinkers determine their own organizational models. Infinitely extensible, inherently readable.
--	Polymath <https://jwmza.com/polymath/>
-	+	> Polymath is a markup language (like Markdown, LaTeX, or HTML) and a static site generator specialized in aesthetically presenting a wide variety of information: text, mathematics, code, photos, videos, you name it.
--	Planner (for Elementary OS) <https://appcenter.elementary.io/com.github.alainm23.planner/>
-  + > Everyone needs a task manager and Planner adapts to anyone's needs
--	MetaCtrl apps <https://metactrl.com/>
-	+	> MetaCtrl apps enable automatic background smart file sync between your Android device and popular cloud storage services: Google Drive, Microsoft OneDrive, Dropbox, Box, MEGA, pCloud, Yandex Disk. Their official apps are surprisingly dumb. They have no or very limited automatic sync. Everthing is manual. Our apps are here to fill the gap. Check them out on Google Play Store!
--	Zelta <https://www.zelta.gq/>
-	+ > Zelta is an open source, secure, anonymous and feature rich messaging service for the terminal.
+Last edited 22/12/2020
 
 ## Programming
 
+-	[RSJS](https://ricostacruz.com/rsjs/)
+	
+	> Reasonable System for JavaScript Structure
+
+-	[Thread about Locality of Behaviour](https://twitter.com/htmx_org/status/1336108136923480065)
+	
+	<details><summary>Transcript</summary>
+	
+	*	[htmx.org][]
+		> prediction/hope: trading off Don't Repeat Yourself & Separation of Concerns against Locality of Behaviour (LoB) is going to be one of the major tech discussions of 2021
+		> 
+		> <https://htmx.org/essays/locality-of-behaviour/>
+	
+		+	[Edouard][]
+			> My trade off: DRY & SoC for low level stuff, LoB for front level ones.
+		
+			*	[htmx.org][]
+				> great point! 
+				>
+				> the principle you give more emphasis to is context sensitive:
+				>
+				> churny front end code, likely to be viewed & edited by multiple people should favour Locality of Behaviour
+				>
+				> more stable & encapsulated back end code: DRY & SoC
+				
+				-	[Edouard][]
+					> Exactly 🙏
+	
+	</details>
+
+[htmx.org]: https://twitter.com/htmx_org
+[Edouard]: https://twitter.com/inouire
+
 ### Programming Languages
 
--	Ierusalimschy, Roberto & Figueiredo, Luiz & Celes, Waldemar. (2005). The Implementation of Lua 5.0. J. UCS. 11. 1159-1176. <https://www.lua.org/doc/jucs05.pdf> #pdf #research-paper
--	Savage, Martin. (2018). On callback hell. <https://qed-lang.org/qed/update/2018/11/09/on-callback-hell.html> #blogpost
+-	[jq Manual](https://stedolan.github.io/jq/manual/)
 
-### iCalendar
+	> A jq program is a "filter". It takes an input, and produces an output. There are a lot of builtin filters for extracting a particular field of an object, or converting a number to a string, or various other standard tasks.
+	
+	A good programming language for the web (client code, server code, compile-to-JS) should look at jq for inspiration. The associative array is the essential data structure of Web applications, and also what a JSON object is.
 
--	iCalendar Validator <https://icalendar.org/validator.html>
--	Outputting iCal with PHP <http://blog.pamelafox.org/2013/04/outputting-ical-with-php.html> 
+-	[On callback hell](https://qed-lang.org/qed/update/2018/11/09/on-callback-hell.html) and [A 'new', seamless concurrency model](https://qed-lang.org/article/2019/06/27/coroutines.html)
 
-### Miscellaneous
+	Related is the concept of [function color](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/). A conceptually simple solution is proposed.
+	
+## Cool Software
 
--	RSJS <https://ricostacruz.com/rsjs/>
-	+ > Reasonable System for JavaScript Structure
--	Heron, Joy & Dohmen, Lucas & Tilkov, Stefan. (2020). JavaScript? Yes, but in moderation. <https://www.innoq.com/en/articles/2020/01/javascript-in-ma%C3%9Fen/>
-	+	> A modern web application is obviously implemented in JavaScript and will generate its HTML on the client within the browser. It only communicates with the server by retrieving data in a JSON format from an HTTP/REST API endpoint - this, it seems, is the common wisdom of today. But are server-side HTML and progressive enhancement really out of date? Quite the contrary is true - we can use these technologies to create applications which are often much better than those which we could create with the Framework of the Week for creating single page apps.
--	Moore, Jon. (2012).  Using HTML as the Media Type for your API. <https://blog.jonm.dev/posts/using-html-as-the-media-type-for-your-api/>
--	`jq` reference manual <https://stedolan.github.io/jq/manual/>
--	Available Domains List <http://availabledomainslist.com/>
--	How to clear the Twitter Card cache <https://benrmatthews.com/how-to-clear-twitter-card-cache-show-right-image/>
--	"Static" Comments with Gulp, Hugo & Netlify <https://ttntm.me/blog/static-blog-comments-hugo/>
+-	[Margin: Lightweight markup designed for an open mind](https://margin.love/)
+
+	> Margin is a lightweight markup language for hierarchically structured thought, like notes and to-do lists.
+	>
+	> Its platform-independent structure is both human- and machine-readable.
+	
+	The sheer simplicity and expressiveness! 
+	
+-	[Polymath](https://jwmza.com/polymath/)
+
+	> Polymath is a markup language (like Markdown, LaTeX, or HTML) and a static site generator specialized in aesthetically presenting a wide variety of information: text, mathematics, code, photos, videos, you name it.
+	
+	It's like if LaTeX cheated on Markdown with RTF.
+	
+-	[Planner on elementary App Store](https://appcenter.elementary.io/com.github.alainm23.planner/)
+
+	> Everyone needs a task manager and Planner adapts to anyone's needs
+	
+	We love a well-designed FOSS application. I will definitely try it when I eventually move to elementary OS.
+	
+-	[Search My Site](https://searchmysite.net/)
+
+	A search engine that favors personal websites.
+
+## Design
+
+-	[TfL Line Diagram Standard](http://content.tfl.gov.uk/tfl-line-diagram-standard.pdf)
+
+	It's great to see how the pros do it. 
+
+-	[Tutorial: How To Design a Transit Diagram](https://cambooth.net/how-to-design-a-transit-diagram/)
+
+	Would have been nice if I saw this before starting <ankarametro.denizaksimsek.com>...
+
+
