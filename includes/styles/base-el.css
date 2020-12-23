@@ -31,43 +31,7 @@ pre {
     font-size: inherit;
     line-height: inherit;
 }
-  
-sub { 
-    font-feature-settings: "subs" 1; 
-}
-  
-@supports (font-variant-position: sub) {
-    sub {
-        font-feature-settings: normal;
-        font-variant-position: sub;
-    }
-}
-  
-@supports ((font-variant-position: sub) or (font-feature-settings: "subs" 1)) {
-    sub {
-        vertical-align: inherit;
-        font-size: inherit;
-    }
-}
-  
-sup {
-    font-feature-settings:"sups" 1; 
-}
-  
-@supports (font-variant-position:super) {
-    sup {
-        font-feature-settings: normal;
-        font-variant-position: super;
-    }
-}
-  
-@supports ((font-variant-position: super) or (font-feature-settings: "sups" 1)) {
-    sup {
-        vertical-align: inherit;
-        font-size: inherit;
-    }
-}
-  
+
 img {
     max-width: 100%;
     max-height: 100vh;
@@ -85,21 +49,6 @@ table {
 }
   
 th { text-align: left; }
-  
-td, th {
-    vertical-align: top;
-  
-}
-  
-:is(td, th):not(:last-child) {
-    padding-right: 2ch;
-}
-  
-[scope=colgroup] {
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
   
 blockquote {
     padding-left: 1ch;
@@ -121,14 +70,3 @@ hr::after {
     display: block;
     font-size: 1.8em;
 }
-  
-img[align=middle] {
-    display: block;
-    margin: auto;  color: var(--primary);
-}
-  
-img[align=right] {
-    display: block;
-    margin-left: auto;
-}
-
