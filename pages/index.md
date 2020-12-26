@@ -18,7 +18,7 @@ style: """
     """
 ---
 
-{%assign latestEntries = collections.post|reverse|slice:0, 4%}
+{%assign latestEntries = collections.posts|reverse|slice:0, 4%}
 
 
 ![A picture of me](/assets/me.jpeg){.picture-of-me width=120 height=120 sizes=120px}
