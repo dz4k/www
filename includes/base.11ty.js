@@ -117,9 +117,9 @@ module.exports = class {
   preloadFonts(data) {
     const fonts = [
       '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-regular.woff2',
-      '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-italic.woff2',
+      // '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-italic.woff2',
       '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-700.woff2',
-      '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-700italic.woff2',
+      // '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-700italic.woff2',
     ]
     return fonts.map(font => h('link', {
       rel: 'preload',
