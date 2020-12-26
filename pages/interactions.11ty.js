@@ -6,11 +6,9 @@ module.exports = class {
   data() {
     return {
     	pagination: {
-	      data: '',
+	      data: 'collections.interactions',
 	      size: 1,
 	      alias: 'interaction',
-	      before: data => [...data.like, ...data.repost]
-	        .sort((a, b) => b.date - a.date).reverse()
     	}
     }
   }
