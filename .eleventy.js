@@ -100,8 +100,11 @@ function addPassthroughCopy(eleventyConfig) {
 }
 
 function addCustomCollections(eleventyConfig) {
-  eleventyConfig.addCollection('post',
-    coll => coll.getFilteredByGlob('entries/*'))
+  eleventyConfig.addCollection('posts',
+      coll => coll.getFilteredByGlob('posts/*'))
+
+  eleventyConfig.addCollection('interactions',
+      coll => coll.getFilteredByGlob('interactions/*'))
 
   eleventyConfig.addCollection('Türkçe',
       coll => coll.getAll().filter(item => item.data.lang === 'tr'))
@@ -184,7 +187,8 @@ function addTemplateCustomizations(eleventyConfig) {
 }
 
 function addCustomDataFormats(eleventyConfig) {
-  eleventyConfig.addDataExtension('coffee', util.coffee)
+  const toml = require('toml')
+  eleventyConfig.addDataExtension('toml', s => toml.parse(s))
 }
 
 function addResponsiveImages(eleventyConfig) {

@@ -17,9 +17,32 @@ module.exports = class {
 		const {page, title, uPhoto, content, tags, collections} = data
 		this.intl = data.intl.for(data.lang)
 
+		else if (collections.interactions.contains(entry)) excerpt = entry.templateContent
+		if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
+		if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
+		excerpt = striptags(excerpt || '')
+
 		return h('article.h-entry',
 			h('link.u-photo', {href: uPhoto}),
+			
 			h('header',
+				'likeOf' in data ? h('p',
+					'❤ ',
+					h('a.u-like-of', {href: data.likeOf}, data.likeOf),
+				) : []
+				
+
+				'repostOf' in data ? h('p',
+					this.intl.repost_of,
+					h('a.u-repost-of', {href: data.repostOf}, data.repostOf),
+				) : []
+
+				'replyTo' in data ? h('p',
+					this.intl.reply_to,
+					h('a.u-reply-to', {href: data.replyTo}, data.replyTo),
+					'replyCtx' in data ? h('blockquote', data.replyCtx)
+				) : []
+
 				h('h1.p-name', title),
 				h('a.u-url', {href: page.url}, dtPublished(page.date))
 			),

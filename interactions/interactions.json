@@ -1,0 +1,4 @@
+{
+	"layout": "entry",
+	"permalink": "/interactions/{{page.date|moment('YYYYMMDDTHHmm')}}"
+}
