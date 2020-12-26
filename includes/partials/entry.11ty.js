@@ -23,19 +23,19 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 		'likeOf' in entry.data ? h('p',
 			'❤ ',
 			h('a.u-like-of', {href: entry.data.likeOf}, entry.data.likeOf),
-		) : []
+		) : [],
 		
 
 		'repostOf' in entry.data ? h('p',
 			'Reposted ',
 			h('a.u-repost-of', {href: entry.data.repostOf}, entry.data.repostOf),
-		) : []
+		) : [],
 
 		'replyTo' in entry.data ? h('p',
 			data.intl.for(entry.data.lang).reply_to,
 			h('a.u-reply-to', {href: entry.data.replyTo}, entry.data.replyTo),
 			'replyCtx' in entry.data ? h('blockquote', entry.data.replyCtx)
-		) : []
+		) : [],
 
 		entry.data.page.excerpt ? h('p.p-summary',
 			{innerHTML: excerpt}) : [],
