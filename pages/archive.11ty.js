@@ -12,7 +12,7 @@ module.exports = class {
 			layout: 'layout',
 			permalink: ({tag}) =>
 				tag === 'posts' ? '/archive/' :
-				tag === 'all' ? false :
+				tag === 'all' ? '/.no-thank-you' :
 				`/archive/${tag}/`,
 			eleventyComputed: {
 				lang: ({tag}) => tag === 'Türkçe' ? 'tr' : 'en'
