@@ -34,7 +34,7 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 		'replyTo' in entry.data ? h('p',
 			data.intl.for(entry.data.lang).reply_to,
 			h('a.u-reply-to', {href: entry.data.replyTo}, entry.data.replyTo),
-			'replyCtx' in entry.data ? h('blockquote', entry.data.replyCtx)
+			'replyCtx' in entry.data ? h('blockquote', entry.data.replyCtx) : [],
 		) : [],
 
 		entry.data.page.excerpt ? h('p.p-summary',
