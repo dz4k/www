@@ -8,9 +8,9 @@ const striptags = require('../helpers/striptags')
 module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = {}) {
 
 	let excerpt
-	else if (collections.interactions.contains(entry)) excerpt = entry.templateContent
-	if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
-	if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
+	if (collections.interactions.contains(entry)) excerpt = entry.templateContent
+	else if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
+	else if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
 	excerpt = striptags(excerpt || '')
 
 	return h('article.h-entry',
