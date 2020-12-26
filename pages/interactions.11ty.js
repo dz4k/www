@@ -4,12 +4,14 @@ const entry = require('../includes/partials/entry.11ty.js')
 
 module.exports = class {
   data() {
-    pagination: {
-      data:'',
-      size: 1,
-      alias: 'interaction',
-      before: data => [...data.like, ...data.repost]
-        .sort((a, b) => b.date - a.date).reverse()
+    return {
+    	pagination: {
+	      data: '',
+	      size: 1,
+	      alias: 'interaction',
+	      before: data => [...data.like, ...data.repost]
+	        .sort((a, b) => b.date - a.date).reverse()
+    	}
     }
   }
 
