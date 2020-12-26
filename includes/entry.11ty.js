@@ -40,7 +40,7 @@ module.exports = class {
 				'replyTo' in data ? h('p',
 					this.intl.reply_to,
 					h('a.u-reply-to', {href: data.replyTo}, data.replyTo),
-					'replyCtx' in data ? h('blockquote', data.replyCtx)
+					'replyCtx' in data ? h('blockquote', data.replyCtx) : [],
 				) : [],
 
 				h('h1.p-name', title),
