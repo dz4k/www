@@ -5,6 +5,7 @@ const moment = require('moment')
 const tagList = require('./partials/tag-list.11ty.js')
 const entry = require('./partials/entry.11ty.js')
 const webmentions = require('./partials/webmentionlist.11ty.js')
+const striptags = require('helpers/striptags')
 
 module.exports = class {
 	data() {
