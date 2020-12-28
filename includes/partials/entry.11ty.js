@@ -18,7 +18,7 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 			beforeTitle, h('a.p-name', {href: entry.url}, entry.data.title),
 			' ',
 			h('a.u-url', {href: entry.url},
-			  h('time.dt-published', moment(entry.date).format('DD/MM/YYYY')),
+			  h('time.dt-published', moment(entry.date).format('DD/MM/YYYY'))),
 		),
 
 		'likeOf' in entry.data ? h('p',
