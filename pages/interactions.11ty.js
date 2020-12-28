@@ -9,7 +9,8 @@ module.exports = class {
 	      data: 'collections.interactions',
 	      size: 1,
 	      alias: 'interaction',
-    	}
+    	},
+	permalink: data => `/interactions/${data.page.slug}/`
     }
   }
 
