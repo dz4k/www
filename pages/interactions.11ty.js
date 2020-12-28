@@ -10,7 +10,7 @@ module.exports = class {
 	      size: 1,
 	      alias: 'interaction',
     	},
-	permalink: data => `/interactions/${data.page.slug}/`
+	permalink: data => `/interactions/${data.page.fileSlug}/`
     }
   }
 
