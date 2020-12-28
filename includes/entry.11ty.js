@@ -17,6 +17,7 @@ module.exports = class {
 		const {page, title, uPhoto, content, tags, collections} = data
 		this.intl = data.intl.for(data.lang)
 
+		let excerpt
 		if (this.getCollectionItem(collections.interactions, data.page)) excerpt = content
 		if ('excerpt' in data.page) excerpt = this.markdown(data.page.excerpt)
 		if ('excerpt' in data) excerpt = this.markdown(data.excerpt)
