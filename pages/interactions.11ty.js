@@ -14,7 +14,7 @@ module.exports = class {
   }
 
   render(data) {
-  	return h('',
+  	return h('div',
   		h('h1', 'Interactions'),
   		data.collections.interactions.map(ixn => entry(data, ixn, {
   			processExcerpt: this.markdown
