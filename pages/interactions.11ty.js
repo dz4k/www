@@ -5,12 +5,8 @@ const entry = require('../includes/partials/entry.11ty.js')
 module.exports = class {
   data() {
     return {
-    	pagination: {
-	      data: 'collections.interactions',
-	      size: 1,
-	      alias: 'interaction',
-    	},
-	permalink: data => `/interactions/${data.interaction.data.page.fileSlug}/`
+	permalink: '/interactions/',
+	layout: 'layout',
     }
   }
 
@@ -20,6 +16,6 @@ module.exports = class {
   		data.collections.interactions.map(ixn => entry(data, ixn, {
   			processExcerpt: this.markdown
   		}))
-  	)
+  	).outerHTML
   }
 }
