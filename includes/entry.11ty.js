@@ -17,7 +17,7 @@ module.exports = class {
 		const {page, title, uPhoto, content, tags, collections} = data
 		this.intl = data.intl.for(data.lang)
 
-		if (collections.interactions.includes(this.getCollectionItem(data.page))) excerpt = content
+		if (this.getCollectionItem(collections.interactions, data.page))) excerpt = content
 		if ('excerpt' in data.page) excerpt = processExcerpt(data.page.excerpt)
 		if ('excerpt' in data) excerpt = processExcerpt(data.excerpt)
 		excerpt = striptags(excerpt || '')
