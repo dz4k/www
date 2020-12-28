@@ -18,8 +18,8 @@ module.exports = class {
 		this.intl = data.intl.for(data.lang)
 
 		if (this.getCollectionItem(collections.interactions, data.page)) excerpt = content
-		if ('excerpt' in data.page) excerpt = processExcerpt(data.page.excerpt)
-		if ('excerpt' in data) excerpt = processExcerpt(data.excerpt)
+		if ('excerpt' in data.page) excerpt = this.markdown(data.page.excerpt)
+		if ('excerpt' in data) excerpt = this.markdown(data.excerpt)
 		excerpt = striptags(excerpt || '')
 
 		return h('article.h-entry',
