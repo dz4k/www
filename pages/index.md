@@ -35,7 +35,7 @@ On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 {%for entry in latestEntries%}
 - <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
-- [and more...](/archive/){style="color:var(--secondary)"}
+- [and more...](/archive/)
 
 ## Elsewhere
 
