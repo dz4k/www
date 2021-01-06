@@ -74,7 +74,6 @@ CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the lib
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  
   display:grid;
   grid-template-columns:1fr 1fr;
   gap: 2ch">
