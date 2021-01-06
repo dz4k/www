@@ -5,6 +5,8 @@ code, pre, kbd, samp, xmp {
   
 a {
     color: currentColor;
+    text-decoration: none;
+    box-shadow: 0 1px 2px 0 #ff0;
 }
   
 h1, h2, h3, h4 {
@@ -55,9 +57,7 @@ blockquote {
     padding-right: 1ch;
     margin-left: 0;
     margin-right: 0;
-    --border-inline: 3px double var(--secondary);
-    border-left: var(--border-inline);
-    border-right: var(--border-inline);
+    border-left: 3px double var(--primary);
 }
   
 hr {

@@ -1,7 +1,7 @@
 
 html {
-  --bg: ghostwhite;
-  --copy: #2d1e14;
+  --copy: ghostwhite;
+  --bg: #2d1e14;
   --primary: #ff6600;
   --secondary: #0587bb;
   --accent: var(--primary);
