@@ -70,7 +70,7 @@ CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the lib
 
 <div style="width: 92vw; display:grid;grid-template-columns:1fr 1fr; gap: 2ch">
 
-```md
+```
 ---
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03:00
@@ -84,7 +84,7 @@ türkçe: /2020/istanbul-sokak-tabelasi/
 <!-- YAML -->
 ```
 
-```md
+```
 ---
 title: 'Street sign in İstanbul'
 date: '2020-10-10T19:27:39+03:00'
