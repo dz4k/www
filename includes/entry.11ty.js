@@ -18,8 +18,8 @@ module.exports = class {
 		this.intl = data.intl.for(data.lang)
 		const processExcerpt = this.markdown
 
-		if ('excerpt' in page) excerpt = processExcerpt(entry.data.page.excerpt)
-		if ('excerpt' in data) excerpt = processExcerpt(entry.data.excerpt)
+		if ('excerpt' in page) excerpt = processExcerpt(page.excerpt)
+		if ('excerpt' in data) excerpt = processExcerpt(data.excerpt)
 		excerpt = striptags(excerpt || '')
 
 		return h('article.h-entry',
