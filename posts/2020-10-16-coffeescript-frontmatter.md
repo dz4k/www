@@ -69,6 +69,7 @@ If only there was a language that had the expressive power of JS, and the visual
 CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uses to parse frontmatter. Compared to YAML, it's not much more verbose:
 
 <div style="width: 100vw;
+  max-width: 100%;
   position: relative;
   left: 50%;
   right: 50%;
