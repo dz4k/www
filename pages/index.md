@@ -6,14 +6,14 @@ eleventyExcludeFromCollections: true
 style: """
     .picture-of-me {
         display: block;
-        overflow: hidden;
+        box-sizing: content-box;
         width: 100px;
         height: 100px;
-        margin: 3em 1em 2em auto;
+        margin: 2em 0;
         transform: rotateZ(5deg);
-        padding: 1ch;
-        box-shadow: .1em .5em .5em 0 #888, 0 0 .2em 0 #888;
-        background: white;
+        padding: 1ch 1ch 2ch 1ch;
+        box-shadow: .1em .5em .5em 0 #000, 0 0 .2em 0 #000;
+        background: #eee;
     }
     """
 ---
