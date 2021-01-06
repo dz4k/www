@@ -15,6 +15,7 @@ html {
   font-size: 120%;
   tab-size: 2;
   hyphens: auto;
+  overflow-y: scroll;
 }
 
 * {
@@ -28,6 +29,7 @@ body {
   margin: auto;
   padding: calc(.5 * var(--line-height));
   position: relative;
+  overflow-y: scroll;
 }
 
 .site-footer {
