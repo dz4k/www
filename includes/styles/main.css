@@ -29,7 +29,6 @@ body {
   margin: auto;
   padding: calc(.5 * var(--line-height));
   position: relative;
-  overflow-y: scroll;
 }
 
 .site-footer {
