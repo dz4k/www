@@ -6,7 +6,7 @@ html {
   --secondary: #0587bb;
   --accent: var(--primary);
   --line-height: 23px;
-  --font-copy: "IBM Plex Sans Condensed", "Arial Narrow", "Roboto Condensed", "Helvetica Condensed", sans-serif;
+  --font-copy: "IBM Plex Sans Condensed", "IBM Plex Sans Condensed Invisible Ink", "Arial Narrow", "Roboto Condensed", "Helvetica Condensed", sans-serif;
   --font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
   monospace;
   background-color: var(--bg);
