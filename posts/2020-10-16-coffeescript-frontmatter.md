@@ -22,7 +22,7 @@ As far as I know, Jekyll is the origin of using a YAML block at the top of a Mar
 
 Eleventy uses frontmatter blocks (delimited by `---`) for all kinds of files. Markdown posts, HTML partials and Nunjucks/EJS/Liquid/... templates can all have them. The data in the frontmatter can then be used in templates. In the following, `title` is not a reserved name:
 
-```md
+```
 ---
 title: 'A Blog Post'
 ---
@@ -39,7 +39,7 @@ We could have used `name`, `heading` or `kdsad983erj33`.
 
 Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in the frontmatter. As YAML doesn't have functions, you are expected to use JS (well, you can use template strings I guess...):
 
-```md
+```html
 ---js
 {
   title: "My page title",
@@ -100,7 +100,7 @@ türkçe: '/2020/istanbul-sokak-tabelasi/'
 
 The CoffeeScript code above is actually fully YAML-compatible! This keeps my templates portable. And with computed data:
 
-```md
+```liquid
 ---
 layout: 'layout'
 eleventyComputed:
