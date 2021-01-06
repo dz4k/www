@@ -5,7 +5,7 @@ html {
   --primary: #ff6600;
   --secondary: #0587bb;
   --accent: var(--primary);
-  --line-height: 23px;
+  --line-height: 28px;
   --font-copy: "IBM Plex Sans Condensed", "IBM Plex Sans Condensed Invisible Ink", "Arial Narrow", "Roboto Condensed", "Helvetica Condensed", sans-serif;
   --font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier,
   monospace;
@@ -24,10 +24,15 @@ html {
 
 body {
   box-sizing: content-box;
-  max-width: 700px;
+
   margin: auto;
   padding: calc(.5 * var(--line-height));
   position: relative;
+}
+
+.site-header, main, .site-footer {
+  max-width: 700px;
+  margin-left: 4vw; 
 }
 
 .site-footer {
