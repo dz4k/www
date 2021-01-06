@@ -18,6 +18,7 @@ module.exports = class {
 		this.intl = data.intl.for(data.lang)
 		const processExcerpt = this.markdown
 
+		let excerpt
 		if ('excerpt' in page) excerpt = processExcerpt(page.excerpt)
 		if ('excerpt' in data) excerpt = processExcerpt(data.excerpt)
 		excerpt = striptags(excerpt || '')
