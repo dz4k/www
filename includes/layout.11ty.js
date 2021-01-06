@@ -11,7 +11,7 @@ module.exports = class {
     const intl = data.intl.for(data.lang)
 
     return h('div',
-      h('header', h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek'))),
+      h('header.site-header', h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek'))),
       h('main', {innerHTML: content}),
       h('footer.site-footer',
         h('div', {innerHTML: intl.footer_message}),

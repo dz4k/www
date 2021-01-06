@@ -5,6 +5,7 @@ const moment = require('moment')
 const tagList = require('./partials/tag-list.11ty.js')
 const entry = require('./partials/entry.11ty.js')
 const webmentions = require('./partials/webmentionlist.11ty.js')
+const striptags = require('./helpers/striptags')
 
 module.exports = class {
 	data() {
@@ -17,9 +18,10 @@ module.exports = class {
 		const {page, title, uPhoto, content, tags, collections} = data
 		this.intl = data.intl.for(data.lang)
 
-		if (collections.interactions.contains(entry)) excerpt = entry.templateContent
-		if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
-		if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
+		let excerpt
+		if (this.getCollectionItem(collections.interactions, data.page)) excerpt = content
+		if ('excerpt' in data.page) excerpt = this.markdown(data.page.excerpt)
+		if ('excerpt' in data) excerpt = this.markdown(data.excerpt)
 		excerpt = striptags(excerpt || '')
 
 		return h('article.h-entry',
