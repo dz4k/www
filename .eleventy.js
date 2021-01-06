@@ -103,9 +103,6 @@ function addCustomCollections(eleventyConfig) {
   eleventyConfig.addCollection('posts',
       coll => coll.getFilteredByGlob('posts/*'))
 
-  eleventyConfig.addCollection('interactions',
-      coll => coll.getFilteredByGlob('interactions/*'))
-
   eleventyConfig.addCollection('Türkçe',
       coll => coll.getAll().filter(item => item.data.lang === 'tr'))
 }
