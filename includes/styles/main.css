@@ -27,7 +27,7 @@ body {
   position: relative;
 }
 
-main, header, footer {
+main, .site-header, .site-footer {
   padding-left: 4vw;
 }
 
