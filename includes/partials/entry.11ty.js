@@ -8,17 +8,16 @@ const striptags = require('../helpers/striptags')
 module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = {}) {
 
 	let excerpt
-	if (collections.interactions.includes(entry)) excerpt = entry.templateContent
+	if (collections.interactions.contains(entry)) excerpt = entry.templateContent
 	if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
 	if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
 	excerpt = striptags(excerpt || '')
 
 	return h('article.h-entry',
 		h("p",
-			beforeTitle, h('a.p-name', {href: entry.url}, entry.data.title),
+			beforeTitle, h('a.p-name.u-url', {href: entry.url}, entry.data.title),
 			' ',
-			h('a.u-url', {href: entry.url},
-			  h('time.dt-published', moment(entry.date).format('DD/MM/YYYY'))),
+			h('time.dt-published', moment(entry.date).format('DD/MM/YYYY')),
 		),
 
 		'likeOf' in entry.data ? h('p',
