@@ -130,9 +130,8 @@ module.exports = class {
 
   styles(data) {
     return [
-      h('style', {innerHTML: styles.join('')}),
+      styles.map(sty => h('style', {innerHTML: sty})),
       'style' in data ? h('style', {innerHTML: data.style}) : '',
-      ...data.prefetchedStylesheets.map(sty => h('style', {innerHTML: sty}))
     ]
   }
 }

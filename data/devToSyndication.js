@@ -7,7 +7,7 @@ function makeRelativeUrl(url) {
 }
 
 module.exports = fetch('https://dev.to/api/articles?username=dza')
-    .then(res => res.json())
-    .then(articles => articles.map(
-        ({canonical_url, url}) => [makeRelativeUrl(canonical_url), url]))
-    .then(Object.fromEntries)
+	.then(res => res.json())
+	.then(articles => articles.map(
+		({canonical_url, url}) => [makeRelativeUrl(canonical_url), url]))
+	.then(Object.fromEntries)

@@ -1,37 +1,43 @@
 
 .h-entry header {
-    margin-top: 3em;
+	margin-top: 3em;
 }
 
 .h-entry h1 {
-    display: inline;
-    margin-right: .4ch;
+	display: inline;
+	margin-right: .4ch;
 }
 
 .h-entry .p-name {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .h-entry .u-url {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .metadata {
-    font-size: .8em;
-    text-transform: uppercase;
+	font-variant: all-small-caps;
 }
 
-:not(:not(.tags-list, .p-category, .p-category+sup, .syndication-links, .u-syndication)):not(:hover) {
-    text-decoration: none;
+/* :is() polyfill! */
+:not(:not(
+	.tags-list,
+	.p-category,
+	.p-category+sup,
+	.syndication-links,
+	.u-syndication
+)):not(:hover) {
+	text-decoration: none;
 }
 
 .entry-list .h-entry {
-    margin: calc(2 * var(--line-height)) 0;
+	margin: 2em 0;
 }
 
 .read-next {
-    border: 1px solid var(--copy);
-    padding: 0 var(--line-height);
-    margin: var(--line-height) 0;
-    cursor: pointer;
+	border: 1px solid var(--copy);
+	padding: 0 1em;
+	margin: 1em 0;
+	cursor: pointer;
 }
