@@ -11,7 +11,7 @@ On this website, I have both a <a href="/notes/">Notes</a> page and pages for ea
 
 <!-- endexcerpt -->
 
-In Eleventy, frontmatter data for the current page is merged into the [data cascade](https://www.11ty.dev/docs/data-cascade/) and made available on the teplate global scope, whereas collection items have a `data` property. This made it hard to write templates that work with both the `page` object and collection items.
+In Eleventy, frontmatter data for the current page is merged into the [data cascade](https://www.11ty.dev/docs/data-cascade/) and made available on the template global scope, whereas collection items have a `data` property. This made it hard to write templates that work with both the `page` object and collection items.
 
 Solution
 --------
