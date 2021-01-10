@@ -20,9 +20,14 @@ html {
 	box-sizing: border-box;
 }
 
-.site-header, main, .site-footer {
+main, .site-footer {
 	max-width: 700px;
 	margin-left: 4vw; 
+}
+
+.site-header {
+	max-width: 100%;
+	margin-left: 4vw;
 }
 
 .site-header {
