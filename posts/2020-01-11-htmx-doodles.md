@@ -13,9 +13,7 @@ style:
 ![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg)
 
 <div class=img-block>
-
-![On HTMX, see transcript](/assets/htmx-doodles/consult-your-doctor.jpeg)
-
+<img alt="On HTMX, see transcript" src=/assets/htmx-doodles/consult-your-doctor.jpeg>
 <details><summary>Transcript</summary>
 
 ### Server-Side App
@@ -45,13 +43,10 @@ style:
 <small>Consult your doctor to find out if htmx s right for you. Side effects may include arguing about REST on HN.</small>
 
 </details>
-
 </div>
 
 <div class=img-block>
-
-![2040. See transcript](/assets/htmx-doodles/2040.jpeg)
-
+<img alt="2040. See transcript" src=/assets/htmx-doodles/2040.jpeg>
 <details><summary>Transcript</summary>
 
 The year is 2040.
@@ -61,5 +56,4 @@ htmx is a W3C recommendation and _hyperscript is an ECMA standard.
 War has long ceased, API churn is nought but a distant memory.
 
 </details>
-
 </div>
