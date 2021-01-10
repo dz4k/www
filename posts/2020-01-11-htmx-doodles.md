@@ -1,7 +1,7 @@
 ---
 title: 'HTMX Doodles'
 date: '2020-01-11T00:47+03'
-tags: ['webdev', htmx', 'drawing']
+tags: ['webdev', 'htmx', 'drawing']
 excerpt: ''
 uPhoto: '/assets/htmx-doodles/hypertext-man.jpeg'
 ---
