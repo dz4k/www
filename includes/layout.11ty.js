@@ -14,7 +14,7 @@ module.exports = class {
       h('header.site-header',
         h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek')),
         h('img', { src: '/assets/me.qr.svg', style: {
-          float: 'right', width: '14ch', marginRight: '.5em'
+          float: 'right', width: '14ch', 'margin-right': '.5em'
         } })
        ),
       h('main', {innerHTML: content}),
