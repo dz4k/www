@@ -53,6 +53,6 @@ details {
 	border: 1px solid #ccc;
 }
 
-details summary {
+details:not([open]) {
 	background: #444;
 }
