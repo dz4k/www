@@ -49,7 +49,7 @@ blockquote {
 }
 
 details {
-	border: 1px #ccc;
+	border: 1px solid #ccc;
 }
 
 details summary {
