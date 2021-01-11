@@ -29,6 +29,10 @@ img {
 	object-fit: contain;
 }
 
+picture {
+	display: contents;
+}
+
 ul, ol {
 	padding-left: 2ch;
 }
