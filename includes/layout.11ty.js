@@ -12,11 +12,10 @@ module.exports = class {
 
     return h('div',
       h('header.site-header',
-        h('strong', h('a.h-card', {href: '/'}, 'Deniz Akşimşek')),
-        h('img', { src: '/assets/me.qr.svg', style: {
-          float: 'right', width: '14ch', 'margin-right': '.5em'
-        } })
-       ),
+        h('a.h-card', {href: '/'},
+          h('img.p-name', { alt: 'Deniz Akşimşek', src: '/assets/logo.png', width: 31*5, height: 17*5 }),
+        ),
+      ),
       h('main', {innerHTML: content}),
       h('footer.site-footer',
         h('div', {innerHTML: intl.footer_message}),
