@@ -16,7 +16,7 @@ module.exports = class {
           h('img.p-name', {
             alt: 'Deniz Akşimşek', src: '/assets/logo.png', get title() { return this.alt },
             width: 62, height: 34,
-            style: { 'image-rendering': 'crisp-edges', 'width': '62px', 'height': '34px' },
+            style: { 'image-rendering': 'crisp-edges', 'width': '93px', 'height': '51px' },
           }),
         ),
       ),
