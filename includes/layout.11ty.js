@@ -13,7 +13,10 @@ module.exports = class {
     return h('div',
       h('header.site-header',
         h('a.h-card', {href: '/'},
-          h('img.p-name', { alt: 'Deniz Akşimşek', src: '/assets/logo.png', width: 31*5, height: 17*5 }),
+          h('img.p-name', {
+            alt: 'Deniz Akşimşek', src: '/assets/logo.png', width: 62, height: 34,
+            style: { 'image-rendering': 'crisp-edges', 'width': '62px', 'height': '34px' },
+          }),
         ),
       ),
       h('main', {innerHTML: content}),
