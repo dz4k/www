@@ -12,7 +12,7 @@ module.exports = class {
 
     return h('div',
       h('header.site-header',
-        h('a', {href: '/'}. 'Home'),
+        h('a', {href: '/'}, 'Home'),
       ),
       h('main', {innerHTML: content}),
       h('footer.site-footer',
