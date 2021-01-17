@@ -20,8 +20,12 @@ style: """
 
 {%assign latestEntries = collections.posts|reverse|slice:0, 4%}
 
+<div class=h-card>
+<a rel=me href=https://denizaksimsek.com/>
 
-![A picture of me](/assets/me.jpeg){.picture-of-me width=120 height=120 sizes=120px}
+![Deniz Akşimşek](/assets/me.jpeg){.picture-of-me.u-photo.p-name width=120 height=120 sizes=120px}
+
+</a></div>
 
 I am **Deniz**, a person. I'm into [web development], [programming languages] and [design]. Though I'm not a photographer by any means, I often find myself near [nice landscapes] and [cats].
 
