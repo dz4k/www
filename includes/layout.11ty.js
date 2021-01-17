@@ -12,13 +12,7 @@ module.exports = class {
 
     return h('div',
       h('header.site-header',
-        h('a.h-card', {href: '/'},
-          h('img.p-name', {
-            alt: 'Deniz Akşimşek', src: '/assets/logo.png', get title() { return this.alt },
-            width: 62, height: 34,
-            style: { 'image-rendering': 'crisp-edges', 'width': '93px', 'height': '51px' },
-          }),
-        ),
+        h('a', {href: '/'}. 'Home'),
       ),
       h('main', {innerHTML: content}),
       h('footer.site-footer',
