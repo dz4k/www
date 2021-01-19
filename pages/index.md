@@ -15,6 +15,12 @@ style: """
         box-shadow: .1em .5em .5em 0 #000, 0 0 .2em 0 #000;
         background: #eee;
     }
+    .put-in-box {
+        border: 1px solid black;
+        padding: 1em;
+    }
+    .put-in-box:first-child { margin-top: 0 }
+    .put-in-box:last-child { margin-bottom: 0 }
     """
 ---
 
@@ -45,13 +51,16 @@ On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 
 Other than this website, I am occasionally found on [Twitter]{rel=me} and [DEV]{rel=me}. If you need to contact me though, I'd much prefer if you [email me]{rel=me}. I also have a [GitHub]{rel=me} account.
 
-* * *
+--- Deniz Akşimşek <<deniz@denizaksimsek.com>> {style="text-align: end"}
+
+<div class="put-in-box">
 
 ## Ankara Railway Map
 
 I made a thing. It's a map of urban railways in Ankara. It lives on <https://ankarametro.denizaksimsek.com> and it's way better than the official one.
 
---- Deniz Akşimşek <<deniz@denizaksimsek.com>> {style="text-align: end"}
+</div>
+
 
 [web development]:        /archive/website/
 [programming languages]:  /archive/pl/
