@@ -19,9 +19,8 @@ style: """
         border: 1px solid var(--primary);
         padding: 1em;
     }
-    .put-in-box:first-child { margin-top: 0 }
-    .put-in-box:la
-    st-child { margin-bottom: 0 }
+    .put-in-box *:first-child { margin-top: 0 }
+    .put-in-box *:last-child { margin-bottom: 0 }
     """
 ---
 
