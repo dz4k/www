@@ -55,7 +55,7 @@ I made a thing. It's a map of urban railways in Ankara. It lives on <https://ank
 
 [web development]:        /archive/website/
 [programming languages]:  /archive/pl/
-[design]:                   /archive/design/
+[design]:                 /archive/design/
 [nice landscapes]:        /archive/place/
 [cats]:                   //cats.denizaksimsek.com
 [TEDU]:                   //www.tedu.edu.tr/

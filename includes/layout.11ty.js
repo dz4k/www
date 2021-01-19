@@ -7,11 +7,11 @@ module.exports = class {
   }
 
   render(data) {
-    const {content, lang} = data
+    const {page, content, lang} = data
     const intl = data.intl.for(data.lang)
 
     return h('div',
-      h('header.site-header',
+      page.url !== '/' && h('header.site-header',
         h('a', {href: '/'}, 'Home'),
       ),
       h('main', {innerHTML: content}),
