@@ -23,7 +23,7 @@ style: """
 <div class=h-card>
 <a rel=me href=https://denizaksimsek.com/>
 
-![Deniz Akşimşek](/assets/me.jpeg){.picture-of-me.u-photo.p-name width=120 height=120 sizes=120px}
+![Deniz Akşimşek](/assets/me.jpeg){.picture-of-me .u-photo .p-name width=120 height=120 sizes=120px}
 
 </a></div>
 
