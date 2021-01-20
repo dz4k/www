@@ -16,15 +16,15 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 Solution
 --------
 
-> \[...] the most useful things are usually cloaked in an air ofnonchalance, even in documentation.
+> \[...] the most useful things are usually cloaked in an air of nonchalance, even in documentation.
 >
 > <footer>
 >
-> <cite>YouTube user [Bantu Tu](bantu-tu), commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)](missing-semester)</cite>
+> <cite>YouTube user [Bantu Tu][bantu-tu], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>
 >
 ></footer>
 
-[bantu-tu]: https://www.youtube.com/channel/UCjknfwYaYZvv94AjL10NO0Q\
+[bantu-tu]: https://www.youtube.com/channel/UCjknfwYaYZvv94AjL10NO0Q
 [missing-semester]: https://www.youtube.com/watch?v=a6Q8Na575qc
 
 The solution to my problem was right there in the Eleventy docs, staring at me, its description phrased such that it couldn't possibly be of use to anyone.
