@@ -25,7 +25,6 @@ module.exports = class {
       h('meta', {charset: 'UTF-8'}),
       h('title', title || 'Deniz Akşimşek'),
       this.viewport(data),
-      this.description(data),
       this.indieauth(data),
       this.webmention(data),
       this.theme(data),
@@ -56,12 +55,6 @@ module.exports = class {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1.0'
     })
-  }
-
-  description(data) {
-    const excerpt = data.excerpt || data.page.excerpt || data.content
-    const content = striptags(this.markdown(excerpt))
-    return h('meta', {name: 'description', content})
   }
 
   indieauth(data) {
@@ -100,14 +93,12 @@ module.exports = class {
   }
 
   cards(data) {
-    const {title, page: {url, excerpt}, uPhoto} = data
+    const {title, page: {url}, uPhoto} = data
     return [
       h('meta', {property: 'og:title', content: title}),
       h('meta', {property: 'og:url', content: `https://denizaksimsek.com${url}`}),
       h('meta', {property: 'og:type', content: 'article'}),
       uPhoto && h('meta', {property: 'og:image', content: `https://www.denizaksimsek.com${uPhoto}`}),
-      excerpt && h('meta', {property: 'og:description', content: striptags(this.markdown(excerpt))}),
-
       h('meta', {name: 'twitter:card', content: uPhoto ? 'summary_large_image' : 'summary'}),
       h('meta', {name: 'twitter:site', content: '@DenizAksimsek'}),
       h('meta', {name: 'twitter:creator', content: '@DenizAksimsek'}),

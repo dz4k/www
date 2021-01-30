@@ -6,8 +6,6 @@ tags: ['stationery']
 
 Reviews for things I used, and a wishlist I try to keep small. Last edited <time>2020-22-08</time>
 
-<!-- endexcerpt -->
-
 Things I have used
 ------------------
 

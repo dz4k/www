@@ -5,8 +5,6 @@ tags: ['eleventy', 'website', 'tips', 'js']
 
 You're looking at the blog post you made yesterday, when suddenly a typo catches your eye. What is the fastest way to fix it? ([Skip to code]({{page.url}}/#the-code)).
 
-<!-- endexcerpt -->
-
 **Note:** This tip assumes you use GitHub. It could likely be adapted easily for other Git providers.
 
 Add the following to your base layout (note the `{%raw%}{{}}{%endraw%}` and replace `<username>/<repo>` with the repo for the site):

@@ -14,8 +14,6 @@ WIP, Accepting feedback.
 
 Henüz bitmedi, eleştiriye açık.
 
-<!-- endexcerpt -->
-
 <ins>
 
 See ankarametro.denizaksimsek.com for PDF and sketches.

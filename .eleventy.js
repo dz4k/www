@@ -139,8 +139,6 @@ function addFilters(eleventyConfig) {
   eleventyConfig.addPairedShortcode('markdown', 
     str => util.markdownLibrary.render(str))
 
-  eleventyConfig.addFilter('basicFormatting', util.basicFormatting)
-
   eleventyConfig.addFilter('keys', Object.keys)
 
   eleventyConfig.addFilter('absoluteUrl', relUrl => new URL(relUrl, 
@@ -168,9 +166,6 @@ function addTemplateCustomizations(eleventyConfig) {
 
   function addFrontmatterCustomizations() {
     eleventyConfig.setFrontMatterParsingOptions({
-      excerpt: true,
-      excerpt_separator: '<!-- endexcerpt -->',
-
       language: 'coffee', 
       engines: {
         coffee: util.coffee

@@ -5,15 +5,10 @@ const tagList = require('./tag-list.11ty.js')
 const striptags = require('../helpers/striptags')
 
 // this is the most horrifying function signature ever
-module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = {}) {
-
-	let excerpt
-	if ('excerpt' in entry.data.page) excerpt = processExcerpt(entry.data.page.excerpt)
-	if ('excerpt' in entry.data) excerpt = processExcerpt(entry.data.excerpt)
-	excerpt = striptags(excerpt || '')
+module.exports = function({collections}, entry, {beforeTitle} = {}) {
 
 	return h('article.h-entry',
-		h("p",
+		h("span",
 			beforeTitle, h('a.p-name.u-url', {href: entry.url}, entry.data.title),
 			' ',
 			h('time.dt-published', moment(entry.date).format('DD/MM/YYYY')),
@@ -36,9 +31,7 @@ module.exports = function({collections}, entry, {beforeTitle, processExcerpt} = 
 			'replyCtx' in entry.data ? h('blockquote', entry.data.replyCtx) : [],
 		) : [],
 
-		entry.data.page.excerpt ? h('p.p-summary',
-			{innerHTML: excerpt}) : [],
-		h('p', tagList(entry.data.tags, collections)),
+		h('span', tagList(entry.data.tags, collections)),
 	)
 }
 

@@ -8,8 +8,6 @@ I've started using CoffeeScript instead of YAML for frontmatter, and it works li
 
 [endorsed]: https://twitter.com/zachleat/status/1340057504567488513
 
-<!-- endexcerpt -->
-
 {%raw%}
 
 ## Markdown with Frontmatter

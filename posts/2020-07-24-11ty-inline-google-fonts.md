@@ -9,8 +9,6 @@ tags: [
 
 All in the name of Lighthouse scores.
 
-<!-- endexcerpt -->
-
 When you add Google Fonts to your website by copying the link from the fonts.google.com website, you create a request chain. That is, after loading the HTML of your page, the browser then needs to request a bit of CSS from Google, and only then can it start loading the fonts themselves. A simple solution to this is to copy the CSS returned by Google and paste it into a &lt;style> element in your page. However, I like to change fonts quite frequently, and I'd like to automate this process. This is easy with Eleventy.
 
 A JavaScript data file

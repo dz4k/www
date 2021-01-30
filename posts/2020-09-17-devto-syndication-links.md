@@ -6,7 +6,7 @@ date: '20200917T2110+0300'
 
 [rsspub]:  https://dev.to/settings/publishing-from-rss
 
-I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. <!-- endexcerpt -->This allows people to post comments under my posts, many of which might contain useful info. To allow my millions of readers (!) to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts. 
+I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow my millions of readers (!) to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts. 
 
 ([Skip to code](#the-code))
 

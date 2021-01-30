@@ -9,8 +9,6 @@ date: '2020-06-08T14:50+0300'
 
 On this website, I have both a <a href="/notes/">Notes</a> page and pages for each individual note. I wanted to use the same template for both, but I ran into an issue: accessing frontmatter data.
 
-<!-- endexcerpt -->
-
 In Eleventy, frontmatter data for the current page is merged into the [data cascade](https://www.11ty.dev/docs/data-cascade/) and made available on the template global scope, whereas collection items have a `data` property. This made it hard to write templates that work with both the `page` object and collection items.
 
 Solution

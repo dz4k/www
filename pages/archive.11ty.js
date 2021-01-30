@@ -35,7 +35,7 @@ module.exports = class {
 			this.rss(data),
 			h('ol.entry-list', {reversed: 'reversed'},
 				coll.map(en =>
-					h('li', entry(data, en, {processExcerpt: this.markdown}))
+					h('li', entry(data, en))
 				)
 			)
 		).outerHTML

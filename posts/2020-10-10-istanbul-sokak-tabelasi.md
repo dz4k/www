@@ -11,8 +11,6 @@ english:	'/2020/istanbul-street-sign/'
 
 [ordu-street-sign]:		/2020/ordu-street-sign/
 
-<!-- endexcerpt -->
-
 {%capture alttext%}
 Bir direk tepesinde ön öne gelmiş iki sokak tabelası. Her biri kırmızı ve altında bir ince beyaz, bir de kalın yeşil şerit var.
 Öndekinde yazan:

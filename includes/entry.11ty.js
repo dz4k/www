@@ -17,12 +17,6 @@ module.exports = class {
 	render(data) {
 		const {page, title, uPhoto, content, tags, collections} = data
 		this.intl = data.intl.for(data.lang)
-		const processExcerpt = this.markdown
-
-		let excerpt
-		if ('excerpt' in page) excerpt = processExcerpt(page.excerpt)
-		if ('excerpt' in data) excerpt = processExcerpt(data.excerpt)
-		excerpt = striptags(excerpt || '')
 
 		return h('article.h-entry',
 			h('link.u-photo', {href: uPhoto}),
@@ -83,7 +77,7 @@ module.exports = class {
 			onclick: `event.target.closest('.read-next a') == null &&
 				this.querySelector('.u-url').click()})`,
 			},
-			entry(data, entryToRead, {beforeTitle: this.intl.read_next_colon, processExcerpt: this.markdown}),
+			entry(data, entryToRead, {beforeTitle: this.intl.read_next_colon}),
 		)
 	}
 

@@ -10,8 +10,6 @@ I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] an
 
 [ordu-street-sign]:		/2020/ordu-street-sign/
 
-<!-- endexcerpt -->
-
 {%capture alttext%}
 A post with two signs on it, one partially covering the other. The signs are colored red with a thin white strip, then a thick green strip at the bottom.
 The front one says:
