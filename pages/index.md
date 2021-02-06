@@ -35,9 +35,11 @@ style: """
 
 <deniz@denizaksimsek.com>{rel=me .u-email} | Twitter: [@DenizAksimsek][twitter]{rel=me} | GitHub: [dz4k][github]{rel=me} | DEV: [dza][devto]{rel=me}
 
+I am **Deniz**, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
+{.p-note}
+
 </div>
 
-I am **Deniz**, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 
 <section class=h-feed>
 
