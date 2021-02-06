@@ -53,7 +53,7 @@ I am **Deniz**, a person. I'm into web development, programming languages and de
 
 ## Ankara Railway Map
 
-I made a thing. It's a map of urban railways in Ankara. It lives on <https://ankarametro.denizaksimsek.com> and it's way better than the official one.
+I made a thing. It's a map of urban railways in Ankara. It lives on <https://ankarametro.dz4k.com> and it's way better than the official one.
 
 </div>
 
