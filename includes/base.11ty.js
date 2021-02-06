@@ -106,10 +106,10 @@ module.exports = class {
 
   preloadFonts(data) {
     const fonts = [
-      '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-regular.woff2',
-      // '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-italic.woff2',
-      '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-700.woff2',
-      // '/assets/fonts/ibm-plex-sans-condensed-v7-latin-ext_latin-700italic.woff2',
+      '/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff',
+      // '/assets/fonts/Atkinson-Hyperlegible-Italic-102.woff',
+      '/assets/fonts/Atkinson-Hyperlegible-Bold-102.woff',
+      // '/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff',
     ]
     return fonts.map(font => h('link', {
       rel: 'preload',

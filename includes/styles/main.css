@@ -5,8 +5,8 @@ html {
 	--primary: #ff6600;
 	--secondary: #0587bb;
 	--accent: var(--primary);
-	--font-copy: "IBM Plex Sans Condensed", "Arial Narrow", "Roboto Condensed", "Helvetica Condensed", sans-serif;
-	--font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	--font-copy: "Atkinson Hyperlegible", sans-serif;
+	--font-monospace: "Cascadia Code", Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 	background-color: var(--bg);
 	color: var(--copy);
 	font-family: var(--font-copy);
