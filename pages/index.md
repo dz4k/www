@@ -4,7 +4,7 @@ layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
 style: """
-    .h-card {
+    .me-elsewhere {
         width: 92vw;
     }
     .picture-of-me {
@@ -34,6 +34,7 @@ style: """
 # [Deniz Akşimşek](https://denizaksimsek.com/){rel=me .p-name .u-url} #
 
 <deniz@denizaksimsek.com>{rel=me .u-email} | Twitter: [@DenizAksimsek][twitter]{rel=me} | GitHub: [dz4k][github]{rel=me} | DEV: [dza][devto]{rel=me}
+{.me-elsewhere}
 
 I am **Deniz**, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 {.p-note}
