@@ -1,14 +1,11 @@
 ---
-pagination:
-  data: 'collections'
-  size: 1
-  alias: 'tag'
+
 layout: false
-permalink: '/feed/{%if tag != "all"%}{{tag}}/{%endif%}feed.rss'
+permalink: '/feed/feed.rss'
 urlOrigin: 'https://www.denizaksimsek.com'
 ---
 
-{%set collection = collections[tag]%}
+{% set collection = collections.posts %}
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

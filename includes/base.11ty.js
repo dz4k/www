@@ -1,6 +1,5 @@
 
 const h = require('hyperscript')
-const striptags = require('./helpers/striptags.js')
 
 const styles = Object.values(
   require('@cloudcmd/read-files-sync')('./includes/styles')

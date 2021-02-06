@@ -1,8 +1,6 @@
 
 const h = require('hyperscript')
 const moment = require('moment')
-const tagList = require('./tag-list.11ty.js')
-const striptags = require('../helpers/striptags')
 
 // this is the most horrifying function signature ever
 module.exports = function({collections}, entry, {beforeTitle} = {}) {
@@ -30,8 +28,6 @@ module.exports = function({collections}, entry, {beforeTitle} = {}) {
 			h('a.u-reply-to', {href: entry.data.replyTo}, entry.data.replyTo),
 			'replyCtx' in entry.data ? h('blockquote', entry.data.replyCtx) : [],
 		) : [],
-
-		h('span', tagList(entry.data.tags, collections)),
 	)
 }
 

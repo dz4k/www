@@ -5,10 +5,6 @@ const translations = {
 
 	anonymous: { tr: 'Anonim', en: 'Anonymous' },
 
-	archive: { tr: 'Arşiv', en: 'Archive' },
-
-	by_tag_colon: { tr: 'Etikete göre: ', en: 'By tag: ' },
-
 	footer_message: {
 		tr: `
 			<p> Bu sitedeki tüm tarih/saatler UTC+03 zaman dilimindedir (aksi
@@ -22,11 +18,6 @@ const translations = {
 	},
 
 	read_next_colon: { tr: 'Sıradaki: ', en: 'Up next: ' },
-
-	sign_your_comment: {
-		tr: 'Yorumunuzu istediğiniz gibi imzalayın.',
-		en: 'Sign your comment however you want.',
-	},
 
 	this_website_accepts_webmentions: {
 		tr: (aboutWm, $commentparade) => [

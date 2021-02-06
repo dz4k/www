@@ -2,10 +2,8 @@
 const h = require('hyperscript')
 const moment = require('moment')
 
-const tagList = require('./partials/tag-list.11ty.js')
 const entry = require('./partials/entry.11ty.js')
 const webmentions = require('./partials/webmentionlist.11ty.js')
-const striptags = require('./helpers/striptags')
 
 module.exports = class {
 	data() {
@@ -40,16 +38,15 @@ module.exports = class {
 				) : [],
 
 				h('h1.p-name', title),
-				h('a.u-url', {href: page.url}, dtPublished(page.date))
+				h('a.u-url', {href: page.url}, dtPublished(page.date)),
+				h('p.p-author h-card', h('a', {href: '/'}, 'Deniz Akşimşek')),
 			),
 			
 			this.otherLanguageLink(data),
 
 			h('div.e-content', {innerHTML: content}),
 
-			tagList(tags, collections),
 			this.readNext(data),
-			this.syndication(data),
 			webmentions(data),
 		).outerHTML
 	}
@@ -78,14 +75,6 @@ module.exports = class {
 				this.querySelector('.u-url').click()})`,
 			},
 			entry(data, entryToRead, {beforeTitle: this.intl.read_next_colon}),
-		)
-	}
-
-	syndication({page, devToSyndication}) {
-		return h('section.syndication-links',
-			page.url in devToSyndication ?
-				a('DEV: '+devToSyndication[page.url], devToSyndication[page.url],
-					{className: 'u-syndication'}) : ''
 		)
 	}
 }
