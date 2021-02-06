@@ -40,7 +40,7 @@ I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 
 On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 
-{%for entry in collections.posts|reverse%}
+{%for entry in collections.posts reversed%}
 - <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
 
