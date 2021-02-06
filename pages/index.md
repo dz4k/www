@@ -38,7 +38,7 @@ I am **Deniz**, a person. I'm into web development, programming languages and de
 
 <section class=h-feed>
 
-## Blog ## {.p-name}
+## Blog {.p-name}
 
 {%for entry in collections.posts reversed%}
 - <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
