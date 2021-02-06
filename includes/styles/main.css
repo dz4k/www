@@ -10,7 +10,6 @@ html {
 	background-color: var(--bg);
 	color: var(--copy);
 	font-family: var(--font-copy);
-	font-size: 120%;
 	line-height: 1.8;
 	tab-size: 2;
 	hyphens: auto;
