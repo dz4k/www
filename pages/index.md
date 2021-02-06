@@ -24,8 +24,6 @@ style: """
     """
 ---
 
-{%assign latestEntries = collections.posts|reverse|slice:0, 4%}
-
 <div class=h-card>
 <a rel=me href=https://denizaksimsek.com/>
 
@@ -42,10 +40,9 @@ I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 
 On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
 
-{%for entry in latestEntries%}
+{%for entry in collections.posts|reverse%}
 - <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
-- [and more...](/archive/)
 
 ## Elsewhere
 
