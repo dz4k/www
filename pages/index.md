@@ -4,6 +4,9 @@ layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
 style: """
+    .h-card {
+        width: 92vw;
+    }
     .picture-of-me {
         display: block;
         box-sizing: content-box;
