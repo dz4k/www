@@ -30,10 +30,7 @@ style: """
 
 # [Deniz Akşimşek](https://denizaksimsek.com/){rel=me .p-name .u-url} #
 
-<deniz@denizaksimsek.com>{rel=me .u-email} | 
-Twitter: [@DenizAksimsek][twitter]{rel=me} | 
-GitHub: [dz4k][github]{rel=me} | 
-DEV: [dza][devto]{rel=me}
+<deniz@denizaksimsek.com>{rel=me .u-email} | Twitter: [@DenizAksimsek][twitter]{rel=me} | GitHub: [dz4k][github]{rel=me} | DEV: [dza][devto]{rel=me}
 
 </div>
 
