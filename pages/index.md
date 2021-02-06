@@ -25,30 +25,29 @@ style: """
 ---
 
 <div class=h-card>
-<a rel=me href=https://denizaksimsek.com/>
 
-![Deniz Akşimşek](/assets/me.jpeg){.picture-of-me .u-photo .p-name width=120 height=120 sizes=120px}
+![Deniz Akşimşek](/assets/me.jpeg){.picture-of-me .u-photo width=120 height=120 sizes=120px}
 
-</a></div>
+# [Deniz Akşimşek](https://denizaksimsek.com/){rel=me .p-name .u-url} #
 
-I am **Deniz**, a person. I'm into [web development], [programming languages] and [design]. Though I'm not a photographer by any means, I often find myself near [nice landscapes] and [cats].
+<deniz@denizaksimsek.com>{rel=me .u-email} | 
+Twitter: [@DenizAksimsek][twitter]{rel=me} | 
+GitHub: [dz4k][github]{rel=me} | 
+DEV: [dza][devto]{rel=me}
 
+</div>
 
-I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
+I am **Deniz**, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
 
-## Blog
+<section class=h-feed>
 
-On occasion, I write blogposts, sometimes in Turkish. Here are the last few:
+## Blog ## {.p-name}
 
 {%for entry in collections.posts reversed%}
 - <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
 
-## Elsewhere
-
-Other than this website, I am occasionally found on [Twitter]{rel=me} and [DEV]{rel=me}. If you need to contact me though, I'd much prefer if you [email me]{rel=me}. I also have a [GitHub]{rel=me} account.
-
---- Deniz Akşimşek <<deniz@denizaksimsek.com>> {style="text-align: end"}
+</section>
 
 <div class="put-in-box">
 
@@ -65,8 +64,7 @@ I made a thing. It's a map of urban railways in Ankara. It lives on <https://ank
 [nice landscapes]:        /archive/place/
 [cats]:                   //cats.denizaksimsek.com
 [TEDU]:                   //www.tedu.edu.tr/
-[Links]:                  /links/
 [Twitter]:                //twitter.com/DenizAksimsek/
-[DEV]:                    //dev.to/dza/
+[devto]:                    //dev.to/dza/
 [email me]:               mailto:deniz@denizaksimsek.com
 [GitHub]:                 //github.com/DenizAksimsek/
