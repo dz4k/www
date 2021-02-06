@@ -11,9 +11,6 @@ module.exports = class {
     const intl = data.intl.for(data.lang)
 
     return h('div',
-      page.url === '/' ? '' : h('header.site-header',
-        h('a', {href: '/'}, 'Home'),
-      ),
       h('main', {innerHTML: content}),
       h('footer.site-footer',
         h('div', {innerHTML: intl.footer_message}),
