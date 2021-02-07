@@ -58,7 +58,7 @@ details {
 }
 
 details:not([open]) {
-	background: #444;
+	background: #88888888;
 }
 
 time {
