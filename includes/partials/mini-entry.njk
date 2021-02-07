@@ -5,19 +5,5 @@
 
 <span>
 	<time datetime="{{e.date | isodatetime}}">{{e.date | datefmt('yyyy/MM/dd HH:mm')}}</time>
-	<a href="{{e.url}}">
-		{%- if d.title -%}
-			{% set l = d.title %}
-		{%- endif -%}
-		{%- if d.replyTo -%}
-			{% set l = "Re." + (d.replyTo.name|d(d.replyTo)) %}
-		{%- endif -%}
-		{%- if d.repostOf -%}
-			{% set l = "Bookmark:" + (d.repostOf.name|d(d.repostOf)) %}
-		{%- endif -%}
-		{%- if d.likeOf -%}
-			{% set l = "❤" + (d.likeOf.name|d(d.likeOf)) %}
-		{%- endif -%}
-
-		{{ l }}</a>
+	<a href="{{e.url}}">{{d.tagline}}</a>
 </span>
