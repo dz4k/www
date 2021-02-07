@@ -52,12 +52,13 @@ function addFilters(eleventyConfig) {
     str => util.markdownLibrary.render(str))
 
   const { DateTime } = require('luxon')
+  const dateify = d => d instanceof Date ? DateTime.fromJSDate(d) : typeof d == 'string' ? DateTime.fromISO(d) : DateTime.local()
 
-  eleventyConfig.addFilter('datefmt', (date, fmt) => DateTime.fromJSDate(date).toFormat(fmt))
+  eleventyConfig.addFilter('datefmt', (date, fmt) => dateify(date).toFormat(fmt))
 
-  eleventyConfig.addFilter('isodate', (date) => DateTime.fromJSDate(date).toISODate())
-  eleventyConfig.addFilter('isodatetime', (date) => DateTime.fromJSDate(date).toISO())
-  eleventyConfig.addFilter('isotime', (date) => DateTime.fromJSDate(date).toISOTime())
+  eleventyConfig.addFilter('isodate', (date) => dateify(date).toISODate())
+  eleventyConfig.addFilter('isodatetime', (date) => dateify(date).toISO())
+  eleventyConfig.addFilter('isotime', (date) => dateify(date).toISOTime())
 
   eleventyConfig.addShortcode('img', (src, alt) => {
     return `<a class="image-link" href="${src}">
@@ -83,7 +84,7 @@ function addResponsiveImages(eleventyConfig) {
       resize: {
         min: 200, // Minimum width to resize an image to
         max: 1200, // Maximum width to resize an image to
-        step: 150, // Width difference between each resized image
+        step: 200, // Width difference between each resized image
       },
       gifToVideo: false, // Convert GIFs to MP4 videos
       sizes: 'calc(100vw - 1.2em), (min-width: 768px) 700px', // Default image `sizes` attribute

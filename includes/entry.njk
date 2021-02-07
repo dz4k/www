@@ -1,0 +1,52 @@
+
+
+{% set e = entry %}
+{% set d = e.data %}
+
+<article class=h-entry>
+	<link class=u-photo href="{{d.uPhoto}}">
+	<header>
+
+		{% if d.title %}
+		<h1 class="p-name">{{d.title}}</h1>
+		{% endif %}
+
+		{% if d.likeOf %}
+		<p>❤ <a class=u-like-of 
+			href="{{d.likeOf.url|d(likeOf)}}"
+			>{{d.likeOf.name|d(d.likeOf)}}</a></p>
+		{% endif %}
+
+		{% if d.repostOf %}
+		<p>❤ <a class=u-repost-of 
+			href="{{d.repostOf.url|d(d.repostOf)}}"
+			>{{d.repostOf.name|d(d.repostOf)}}</a></p>
+		{% endif %}
+
+		{% if d.replyTo %}
+		<p>❤ <a class=u-reply-to 
+			href="{{d.replyTo.url|d(d.replyTo)}}"
+			>{{d.replyTo.name|d(d.replyTo)}}</a></p>
+		{% endif %}
+
+		<p><a href="{{e.url}}" class="u-url">
+			<time class="dt-published" datetime="{{e.date | isodatetime}}">{{e.date | isodate | replace('-', '/')}}</time>
+		</a></p>
+
+		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
+
+		{% if d.english %}
+		<p><a rel=alternate href="{{d.english}}" hreflang=en>English</a></p>
+		{% endif %}
+
+		{% if d.türkçe %}
+		<p><a rel=alternate href="{{d.türkçe}}" hreflang=tr>Türkçe</a></p>
+		{% endif %}
+
+	</header>
+
+	<div class=e-content>{{e.templateContent|safe}}</div>
+
+	{% include "partials/webmentions.njk" %}
+
+</article>

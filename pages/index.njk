@@ -1,0 +1,63 @@
+---
+title: 'Deniz Akşimşek'
+layout: 'layout'
+permalink: 'index.html'
+eleventyExcludeFromCollections: true
+style: >
+    .me-elsewhere {
+        width: 92vw;
+    }
+    .picture-of-me {
+        display: block;
+        box-sizing: content-box;
+        width: 200px;
+        height: 200px;
+        margin: 2em 1ch;
+        transform: rotateZ(5deg);
+        padding: 1ch 1ch 2ch 1ch;
+        box-shadow: .1em .5em .5em 0 #000, 0 0 .2em 0 #000;
+        background: #eee;
+    }
+    .put-in-box {
+        border: 1px solid var(--primary);
+        padding: 1em;
+    }
+    .put-in-box *:first-child { margin-top: 0 }
+    .put-in-box *:last-child { margin-bottom: 0 }
+    time {
+        display: inline-block;
+        font-variant-caps: small-caps;
+        width: 6ch;
+        text-align: right; 
+    }
+    ul { list-style: none }
+---
+
+<div class=h-card>
+    <img
+        alt="Deniz Akşimşek"
+        src=/assets/me.jpeg
+        class="picture-of-me u-photo"
+        width=200 height=200
+        sizes=200px>
+
+<h1><a href=https://denizaksimsek.com/
+    rel=me class="p-name u-url u-uid"
+    >Deniz Akşimşek</a></h1>
+
+<p class=me-elsewhere>
+    <a href=mailto:deniz@denizaksimsek.com rel=me class=u-email
+        >deniz@denizaksimsek.com</a> | 
+    Twitter: <a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a> | 
+    GitHub: <a href=//github.com/dz4k/ rel=me>dz4k</a> |
+    DEV: <a href=//dev.to/dz4k rel=me>dz4k</a>
+
+<p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr>TEDU</a> in Ankara, Turkey.
+
+</div>
+
+<section>
+{%for entry in collections.posts|reverse%}
+{%include "entry.njk"%}
+{%endfor%}
+</section>

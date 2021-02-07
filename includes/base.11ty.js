@@ -1,9 +1,6 @@
 
 const h = require('hyperscript')
-
-const styles = Object.values(
-  require('@cloudcmd/read-files-sync')('./includes/styles')
-)
+const fs = require('fs')
 
 module.exports = class {
   render(data) {
@@ -119,9 +116,14 @@ module.exports = class {
   }
 
   styles(data) {
+    const inlined = ['base-el.css', 'main.css', 'font.css']
+    const linked = ['prism-theme.css']
+
     return [
-      styles.map(sty => h('style', {innerHTML: sty})),
-      'style' in data ? h('style', {innerHTML: data.style}) : '',
+      ...inlined.map(filename => h('style', {
+        innerHTML: fs.readFileSync(__dirname + '/../styles/' + filename)})),
+      h('style', {innerHTML: data.style}),
+      h('link', {rel: 'stylesheet', href: '/styles/prism-theme.css'})
     ]
   }
 }

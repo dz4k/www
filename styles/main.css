@@ -44,3 +44,7 @@ main, .site-footer {
 	border: none;
 	padding: 0;
 }
+
+.smallcaps {
+	font-variant-caps: small-caps;
+}

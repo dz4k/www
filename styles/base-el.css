@@ -64,3 +64,20 @@ details:not([open]) {
 time {
 	font-variant-numeric: tabular-nums;
 }
+
+@media print {
+	body {
+		max-width: unset;
+		padding: 0;
+		margin: 0
+	}
+
+	@page {
+		margin: 3em
+	}
+
+	img, pre, figure, table {
+		page-break-inside: avoid
+	}
+
+}
