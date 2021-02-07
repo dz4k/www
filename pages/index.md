@@ -33,7 +33,7 @@ style: """
 
 # [Deniz Akşimşek](https://denizaksimsek.com/){rel=me .p-name .u-url} #
 
-<deniz@denizaksimsek.com>{rel=me .u-email} | Twitter: [@DenizAksimsek][twitter]{rel=me} | GitHub: [dz4k][github]{rel=me} | DEV: [dza][devto]{rel=me}
+<deniz@denizaksimsek.com>{rel=me .u-email} | Twitter: [@DenizAksimsek][twitter]{rel=me} | GitHub: [dz4k][github]{rel=me} | DEV: [dz4k][devto]{rel=me}
 {.me-elsewhere}
 
 I am **Deniz**, a person. I'm into web development, programming languages and design. I'm currently studying Computer Engineering at [TEDU] in Ankara, Turkey.
@@ -68,6 +68,6 @@ I made a thing. It's a map of urban railways in Ankara. It lives on <https://ank
 [cats]:                   //cats.denizaksimsek.com
 [TEDU]:                   //www.tedu.edu.tr/
 [Twitter]:                //twitter.com/DenizAksimsek/
-[devto]:                    //dev.to/dza/
+[devto]:                    https://dev.to/dz4k
 [email me]:               mailto:deniz@denizaksimsek.com
 [GitHub]:                 //github.com/DenizAksimsek/
