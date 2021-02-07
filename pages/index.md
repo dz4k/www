@@ -61,13 +61,9 @@ I made a thing. It's a map of urban railways in Ankara. It lives on <https://ank
 </div>
 
 
-[web development]:        /archive/website/
-[programming languages]:  /archive/pl/
-[design]:                 /archive/design/
-[nice landscapes]:        /archive/place/
-[cats]:                   //cats.denizaksimsek.com
-[TEDU]:                   //www.tedu.edu.tr/
-[Twitter]:                //twitter.com/DenizAksimsek/
-[devto]:                    https://dev.to/dz4k
-[email me]:               mailto:deniz@denizaksimsek.com
-[GitHub]:                 //github.com/DenizAksimsek/
+[cats]: //cats.denizaksimsek.com
+[TEDU]: //www.tedu.edu.tr/
+[Twitter]: //twitter.com/DenizAksimsek/
+[devto]: https://dev.to/dz4k
+[email me]: mailto:deniz@denizaksimsek.com
+[GitHub]: //github.com/dz4k/
