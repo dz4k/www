@@ -4,9 +4,6 @@ layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
 style: >
-    .me-elsewhere {
-        width: 92vw;
-    }
     .picture-of-me {
         display: block;
         box-sizing: content-box;
@@ -25,12 +22,11 @@ style: >
     .put-in-box *:first-child { margin-top: 0 }
     .put-in-box *:last-child { margin-bottom: 0 }
     time {
+        font-size: .8em;
         display: inline-block;
-        font-variant-caps: small-caps;
-        width: 6ch;
-        text-align: right; 
     }
-    ul { list-style: none }
+    ol { list-style: none; padding: 0 }
+    ol li { margin: 1em 0 }
 ---
 
 <div class=h-card>
@@ -56,8 +52,8 @@ style: >
 
 </div>
 
-<section>
+<ol reversed>
 {%for entry in collections.posts|reverse%}
-{%include "entry.njk"%}
+<li>{%include "partials/mini-entry.njk"%}
 {%endfor%}
-</section>
+</ol>

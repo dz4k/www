@@ -9,7 +9,7 @@
 		<a class="u-url" href="{{wm.url}}" rel='noopener noreferrer'
 			target='_blank'>
 			<time class="dt-published" datetime="{{wm.published | d(wm['wm-received'])}}">{{
-					wm['wm-received'] | datefmt('yyyy/MM/dd hh:mm')
+					wm['wm-received'] | datefmt('yyyy/MM/dd HH:mm')
 				}}</time>
 			 (link)</a>
 	</header>
@@ -20,8 +20,6 @@
 {% endmacro %}
 
 {% set wms = webmentions[e.url] %}
-
-{{wms|dump}}
 
 {% if wms.length > 0 %}
 

@@ -15,11 +15,9 @@ function groupByPage(wmData) {
 	const rv = {}
 	for (const wm of wmData.children) {
 		const relUrl = relativeUrl(wm['wm-target'])
-		console.log(relUrl)
 		rv[relUrl] || (rv[relUrl] = [])
 		rv[relUrl].push(wm)
 	}
-	console.log(rv)
 	return rv
 }
 

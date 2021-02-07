@@ -1,0 +1,19 @@
+
+
+{% set e = entry %}
+{% set d = e.data %}
+
+<span>
+	<time datetime="{{e.date | isodatetime}}">{{e.date | datefmt('yyyy/MM/dd HH:mm')}}</time>
+	<a href="{{e.url}}">
+		{%- if d.title -%}
+			{{d.title}}
+		{%- elif d.replyTo -%}
+			Re. {{d.replyTo.name|d(d.replyTo)}}
+		{%- elif d.repostOf -%}
+			Bookmark: {{d.repostOf.name|d(d.repostOf)}}
+		{%- elif d.likeOf -%}
+			❤ {{d.likeOf.name|d(d.likeOf)}}
+		{% endif %}
+	</a>
+</span>
