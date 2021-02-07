@@ -19,7 +19,7 @@ module.exports = class {
 
     return h('head',
       h('meta', {charset: 'UTF-8'}),
-      h('title', title || 'Deniz Akşimşek'),
+      h('title', tagline || title || 'Deniz Akşimşek'),
       this.viewport(data),
       this.indieauth(data),
       this.webmention(data),
