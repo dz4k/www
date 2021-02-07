@@ -1,34 +1,26 @@
 ---
-
 layout: false
-permalink: '/feed/feed.rss'
-urlOrigin: 'https://www.denizaksimsek.com'
+permalink: '/feed.xml'
 ---
-
-{% set collection = collections.posts %}
-
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{tag+' -- ' if tag != 'all'}}Deniz Akşimşek</title>
-    <link>{{urlOrigin}}{{page.url|url}}</link>
-    <description>Blog posts from Deniz Akşimşek{%if tag != 'all'%} tagged {{tag}}{%endif%}.</description>
-    <generator>Eleventy -- 11ty.dev</generator>
-    <language>tr</language>
-    <managingEditor>d.aksimsek1@outlook.com (Deniz Akşimşek)</managingEditor>
-    <webMaster>d.aksimsek1@outlook.com (Deniz Akşimşek)</webMaster>
-    <copyright>TODO:</copyright>
-    <lastBuildDate>{{currentDate|moment("ddd, DD MMM YYYY HH:mm:ss ZZ")}}</lastBuildDate>
-    <atom:link href="{{urlOrigin}}{{page.url|url}}" rel="self" type="application/rss+xml" />
-    {%for entry in collection%}
-    <item>
-      <title>{{entry.data.title}}</title> 
-      <link>{{urlOrigin}}{{entry.url|url}}</link>
-      <pubDate>{{entry.date|moment("ddd, DD MMM YYYY HH:mm:ss ZZ")}}</pubDate>
-      <author>d.aksimsek1@outlook.com (Deniz Akşimşek)</author>
-      <guid>{{urlOrigin}}{{entry.url|url}}</guid>
-      <description><![CDATA[{{entry.templateContent|safe}}]]></description>
-      {%for tag in item.data.tags%}<category>{{tag}}</category>{%endfor%}
-    </item>
-    {%endfor%}
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Deniz Akşimşek</title>
+  <link href="https://denizaksimsek.com{{permalink}}" rel="self"/>
+  <link href="https://denizaksimsek.com/"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://denizaksimsek.com/</id>
+  <author>
+    <name>Deniz Akşimşek</name>
+    <email>deniz@denizaksimsek.com</email>
+  </author>
+  {%- for post in collections.posts | reverse %}
+  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl('https://denizaksimsek.com') }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

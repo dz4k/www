@@ -1,7 +1,7 @@
 ---
 title: "Eleventy — Using A Layout As A Partial (The Most Useful Things...)"
 tags: [
-  'programming'
+  'programming',
   'eleventy'
 ]
 date: '2020-06-08T14:50+0300'

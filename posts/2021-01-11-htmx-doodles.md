@@ -2,12 +2,9 @@
 title: 'HTMX Doodles'
 date: '2021-01-11T00:47+03'
 tags: ['webdev', 'htmx', 'drawing']
-excerpt: ''
 uPhoto: '/assets/htmx-doodles/hypertext-man.jpeg'
-style:
-	'''
+style: >
 	.img-block { margin: 3em 0; }
-	'''
 ---
 
 ![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg)

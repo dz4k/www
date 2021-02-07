@@ -20,19 +20,19 @@
     "autoprefixer": "^10.0.0",
     "cssnano": "^4.1.10",
     "eleventy-plugin-local-respimg": "^0.3.1",
-    "html-minifier": "^4.0.0",
     "linkifyjs": "^2.1.9",
     "markdown-it": "^11.0.1",
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-footnote": "^3.0.2",
     "moment": "^2.25.3",
-    "node-fetch": "^2.6.1",
-    "postcss": "^8.0.9"
+    "node-fetch": "^2.6.1"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@cloudcmd/read-files-sync": "^2.0.2",
     "coffeescript": "^2.5.1",
     "hyperscript": "^2.0.2",
+    "luxon": "^1.25.0",
     "toml": "^3.0.0"
   }
 }

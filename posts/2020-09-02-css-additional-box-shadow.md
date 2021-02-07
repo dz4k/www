@@ -2,8 +2,8 @@
 title: 'CSS — Adding Additional Box Shadows'
 date: '2020-09-02T12:54:44+03:00'
 tags: [
-  'website'
-  'css'
+  'website',
+  'css',
   'workaround'
 ]
 ---

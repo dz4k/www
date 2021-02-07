@@ -1,4 +1,0 @@
-{
-	"layout": "entry.11ty.js",
-	"permalink": "/{{page.date|moment: 'YYYY'}}/{{page.fileSlug|slug}}/"
-}

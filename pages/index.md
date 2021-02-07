@@ -3,7 +3,8 @@ title: 'Deniz Akşimşek'
 layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
-style: """
+templateEngineOverride: njk,md
+style: >
     .me-elsewhere {
         width: 92vw;
     }
@@ -24,7 +25,6 @@ style: """
     }
     .put-in-box *:first-child { margin-top: 0 }
     .put-in-box *:last-child { margin-bottom: 0 }
-    """
 ---
 
 <div class=h-card>
@@ -46,8 +46,13 @@ I am **Deniz**, a person. I'm into web development, programming languages and de
 
 ## Blog {.p-name}
 
-{%for entry in collections.posts reversed%}
-- <time>{{entry.date|moment: 'DD/MM'}}</time> [{{entry.data.title}}]({{entry.url|url}})
+{%set year = 0%}
+{%for entry in collections.posts|reverse%}
+{%if entry.date.getYear() !== year%}
+{%set year = entry.date.getYear()%}
+### {{entry.date | datefmt('yyyy')}}
+{%endif-%}
+- <time datetime="{{entry.date|isodatetime}}">{{entry.date|datefmt('MMM dd')}}</time> [{{entry.data.title}}]({{entry.url|url}})
 {%-endfor%}
 
 </section>
