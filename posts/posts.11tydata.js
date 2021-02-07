@@ -11,7 +11,7 @@ module.exports = {
 		},
 		tagline: (d) => d.title ? d.title :
 			d.replyTo ? "Re." + (d.replyTo.name || d.replyTo) :
-			d.repostOf ? "Repostkey: "value",  " + (d.repostOf.name || d.repostOf) :
+			d.repostOf ? "Repost: " + (d.repostOf.name || d.repostOf) :
 			d.likeOf ? "Like ❤️ " + (d.likeOf.name || d.likeOf) : undefined,
 	}
 }
