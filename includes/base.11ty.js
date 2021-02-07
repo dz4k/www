@@ -15,7 +15,7 @@ module.exports = class {
   }
 
   head(data) {
-    const {title} = data
+    const {title, tagline} = data
 
     return h('head',
       h('meta', {charset: 'UTF-8'}),
