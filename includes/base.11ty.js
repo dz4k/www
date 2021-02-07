@@ -83,7 +83,7 @@ module.exports = class {
         rel,
         type: 'image/svg+xml',
         sizes: '512x512',
-        href: '/assets/favicon.svg'
+        href: '/assets/logo.png'
       })),
     ]
   }
