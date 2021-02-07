@@ -10,7 +10,7 @@ module.exports = {
 			else return `/${year}/${dt.toFormat('MMddHHmmss')}/`
 		},
 		tagline: (d) => d.title ? d.title :
-			d.replyTo ? "Re." + (d.replyTo.name || d.replyTo) :
+			d.replyTo ? "Re: " + (d.replyTo.name || d.replyTo) :
 			d.repostOf ? "Repost: " + (d.repostOf.name || d.repostOf) :
 			d.likeOf ? "Like ❤️ " + (d.likeOf.name || d.likeOf) : undefined,
 	}
