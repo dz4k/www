@@ -1,5 +1,6 @@
 ---
 permalink: /deleted/
+layout: base
 ---
 
 Whatever was here is not here anymore.
