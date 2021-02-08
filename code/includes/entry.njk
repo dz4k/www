@@ -4,8 +4,11 @@
 {% set d = e.data %}
 
 <article class=h-entry>
-	<link class=u-photo href="{{d.uPhoto}}">
 	<header class=entry-header>
+		
+		{% if u-photo %}
+		<link class=u-photo href="{{d.uPhoto}}">
+		{% endif %}
 
 		{% if d.title %}
 		<h1 class="p-name">{{d.title}}</h1>
