@@ -1,7 +1,6 @@
 ---
-title: 'Ardeşen, Rize, Turkey'
-tags: ['place']
-uPhoto: '/assets/photos/IMG20200825184721.jpg'
+title: Ardeşen, Rize, Turkey
+uPhoto: /assets/photos/IMG20200825184721.jpg
 ---
 
 A few pics from there.

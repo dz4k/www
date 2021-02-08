@@ -1,7 +1,6 @@
 ---
-title: 'Çobanlı Pier, Samsun, Turkey'
-tags: ['place']
-uPhoto: '/assets/photos/IMG20200913191508.jpg'
+title: Çobanlı Pier, Samsun, Turkey
+uPhoto: /assets/photos/IMG20200913191508.jpg
 ---
 
 Nothing gets me quite like city lights reflecting off water. Though it's usually rainwater on asphalt.

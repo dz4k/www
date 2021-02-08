@@ -1,11 +1,10 @@
 ---
 title: "Tip: Instantly Edit Your Eleventy Site on Github"
-tags: ['eleventy', 'website', 'tips', 'js']
 syndication:
   DEV: https://dev.to/dz4k/tip-instantly-edit-your-eleventy-site-on-github-5cme
 ---
 
-You're looking at the blog post you made yesterday, when suddenly a typo catches your eye. What is the fastest way to fix it? ([Skip to code]({{page.url}}/#the-code)).
+You're looking at the blog post you made yesterday, when suddenly a typo catches your eye. What is the fastest way to fix it? ([Skip to code](#the-code)).
 
 **Note:** This tip assumes you use GitHub. It could likely be adapted easily for other Git providers.
 
@@ -17,7 +16,7 @@ Add the following to your base layout (note the `{%raw%}{{}}{%endraw%}` and repl
     if (e.shiftKey === true) {
       switch (e.keyCode) {
       case 69: // E
-        window.location = 'https://github.com/<username>/<repo>/edit/master/{%raw%}{{page.inputPath}}{%endraw%}'
+        window.location = 'https://github.com/<username>/<repo>/edit/main/{%raw%}{{page.inputPath}}{%endraw%}'
         break
       }
     }

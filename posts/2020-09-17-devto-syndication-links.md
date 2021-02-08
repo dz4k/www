@@ -1,14 +1,11 @@
 ---
-title: 'Add Syndication Links On Your Personal Site Using Dev.to API'
-tags: ['website', 'dev.to', 'eleventy']
-date: '20200917T2110+0300'
+title: Add Syndication Links On Your Personal Site Using Dev.to API
+date: 20200917T2110+0300
 syndication:
   DEV: https://dev.to/dz4k/add-syndication-links-on-your-personal-site-using-dev-to-api-395
 ---
 
-[rsspub]:  https://dev.to/settings/publishing-from-rss
-
-I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow my millions of readers (!) to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts. 
+I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow any readers to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts. 
 
 ([Skip to code](#the-code))
 
@@ -89,3 +86,5 @@ module.exports = fetch('https://dev.to/api/articles?username=dza')
         ({canonical_url, url}) => [makeRelativeUrl(canonical_url), url]))
     .then(Object.fromEntries)
 ```
+
+[rsspub]:  https://dev.to/settings/publishing-from-rss

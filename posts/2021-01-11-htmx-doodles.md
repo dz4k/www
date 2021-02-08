@@ -1,8 +1,7 @@
 ---
-title: 'HTMX Doodles'
-date: '2021-01-11T00:47+03'
-tags: ['webdev', 'htmx', 'drawing']
-uPhoto: '/assets/htmx-doodles/hypertext-man.jpeg'
+title: HTMX Doodles
+date: 2021-01-11T00:47+03
+uPhoto: /assets/htmx-doodles/hypertext-man.jpeg
 style: >
 	.img-block { margin: 3em 0; }
 ---
@@ -49,8 +48,6 @@ style: >
 The year is 2040.
 
 htmx is a W3C recommendation and _hyperscript is an ECMA standard.
-
 War has long ceased, API churn is nought but a distant memory.
-
 </details>
 </div>
