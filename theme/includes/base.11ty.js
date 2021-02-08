@@ -126,7 +126,7 @@ module.exports = class {
         rel: 'stylesheet',
         href: '/styles/paperweight-prism-theme.css',
         media: 'none',
-        onload: 'this.media='all';this.onload=null'} })
+        onload: "this.media='all';this.onload=null"} })
     ]
   }
 }
