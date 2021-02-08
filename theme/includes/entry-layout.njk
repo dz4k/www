@@ -2,7 +2,7 @@
 (() => {
 	const { DateTime } = require('luxon')
 	return {
-		layout: "layout.njk",
+		layout: "layout",
 		eleventyComputed: {
 			permalink: ({page, title}) => {
 				const dt = DateTime.fromJSDate(page.date)
