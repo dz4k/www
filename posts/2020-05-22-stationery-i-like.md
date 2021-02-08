@@ -9,9 +9,7 @@ Reviews for things I used, and a wishlist I try to keep small. Last edited <time
 Things I have used
 ------------------
 
--   ![The Uni-ball Air Micro](/assets/various/uniball-air-micro.png){style="height:1em;width:auto;float:right"}
-
-    ### [Uni-ball Air Micro --- Rollerball Pen](https://www.uniball.com.tr/urunler/roller/uniball-air/uba-188-m){#uniball-air-micro}
+-   ### [Uni-ball Air Micro --- Rollerball Pen](https://www.uniball.com.tr/urunler/roller/uniball-air/uba-188-m){#uniball-air-micro}
 
     Has a tip made of some kind of plastic, super smooth to write, deep black ink with shading effect. The Micro ones have a nicer looking design.
 
