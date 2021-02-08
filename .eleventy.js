@@ -41,7 +41,10 @@ function addPassthroughCopy(eleventyConfig) {
 
 function addCustomCollections(eleventyConfig) {
   eleventyConfig.addCollection('posts',
-      coll => coll.getFilteredByGlob('posts/*'))
+      coll => coll.getFilteredByGlob('posts/*').filter(post => !post.data.deleted))
+
+  eleventyConfig.addCollection('deleted', coll => coll.getAll()
+    .filter(entry => entry.data.deleted))
 }
 
 function addFilters(eleventyConfig) {

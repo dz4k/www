@@ -7,3 +7,9 @@ eleventyExcludeFromCollections: true
 /20200827T2005/	/2020/ardesen-rize-tr/
 /20200826T1523/	/2020/road-to-indieweb/
 /latest/	{{ (collections.all | last).url }}
+
+{% for post in collections.deleted %}
+{{ post.url }} /deleted/ 410
+{% endfor %}
+
+
