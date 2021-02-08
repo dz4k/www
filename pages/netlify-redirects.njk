@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
 /latest/	{{ (collections.posts | last).url }}
 
 {% for post in collections.deleted %}
-{{ post.url }} /deleted/index.html 410
+{{ post.url }} /deleted/ 410
 {% endfor %}
 
 

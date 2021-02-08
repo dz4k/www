@@ -1,7 +1,7 @@
+---js
 const { DateTime } = require('luxon')
-
-module.exports = {
-	layout: "entry-layout.njk",
+{
+	layout: "layout.njk",
 	eleventyComputed: {
 		permalink: ({page, title}) => {
 			const dt = DateTime.fromJSDate(page.date)
@@ -15,3 +15,8 @@ module.exports = {
 			d.likeOf ? "Like ❤️ " + (d.likeOf.name || d.likeOf) : undefined,
 	}
 }
+---
+
+{% set entry = collections.all | getCollectionItem(page) %}
+
+{% include "entry.njk" %}
