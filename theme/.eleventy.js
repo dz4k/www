@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
   return {
-    dir: { input: '..', output: '../_site', includes: 'theme/includes', data: 'theme/data' },
+    dir: { output: '../_site', includes: 'includes', data: 'data' },
   }
 }
 
