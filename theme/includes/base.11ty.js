@@ -122,7 +122,11 @@ module.exports = class {
       ...inlined.map(filename => h('style', {
         innerHTML: fs.readFileSync(__dirname + '/../styles/' + filename)})),
       h('style', {innerHTML: data.style}),
-      h('link', {rel: 'stylesheet', href: '/styles/paperweight-prism-theme.css'})
+      h('link', { attrs: {
+        rel: 'stylesheet',
+        href: '/styles/paperweight-prism-theme.css',
+        media: 'none',
+        onload: 'this.media='all';this.onload=null'} })
     ]
   }
 }
