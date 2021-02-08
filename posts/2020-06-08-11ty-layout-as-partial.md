@@ -5,6 +5,8 @@ tags: [
   'eleventy'
 ]
 date: '2020-06-08T14:50+0300'
+syndication:
+  DEV: https://dev.to/dz4k/eleventy-using-a-layout-as-a-partial-the-most-useful-things-182n
 ---
 
 On this website, I have both a <a href="/notes/">Notes</a> page and pages for each individual note. I wanted to use the same template for both, but I ran into an issue: accessing frontmatter data.

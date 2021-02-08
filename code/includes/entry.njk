@@ -5,7 +5,7 @@
 
 <article class=h-entry>
 	<link class=u-photo href="{{d.uPhoto}}">
-	<header>
+	<header class=entry-header>
 
 		{% if d.title %}
 		<h1 class="p-name">{{d.title}}</h1>
@@ -18,13 +18,13 @@
 		{% endif %}
 
 		{% if d.repostOf %}
-		<p>Repost: <a class=u-repost-of 
+		<p>Repost 🔁 <a class=u-repost-of 
 			href="{{d.repostOf.url|d(d.repostOf)}}"
 			>{{d.repostOf.name|d(d.repostOf)}}</a></p>
 		{% endif %}
 
-		{% if d.replyTo %}
-		<p>Re. <a class=u-reply-to 
+		{% if d.replyTo and not d.replyTo.context %}
+		<p>Re. ↪ <a class=u-reply-to 
 			href="{{d.replyTo.url|d(d.replyTo)}}"
 			>{{d.replyTo.name|d(d.replyTo)}}</a></p>
 		{% endif %}
@@ -43,7 +43,21 @@
 		<p><a rel=alternate href="{{d.türkçe}}" hreflang=tr>Türkçe</a></p>
 		{% endif %}
 
+		{% if d.syndication %}
+		<p>also on {% for key, val in syndication %}
+			<a href="{{ val }}">{{ key }}</a>{{ ' | ' if not loop.last }}
+		{% endfor %}</p>
+		{% endif %}
+
 	</header>
+
+	{% if d.replyTo and d.replyTo.context %}
+	<div class=replycontext>
+		<p>↪ Reply to <cite><a class=u-reply-to href="{{d.replyTo.url}}"
+			>{{ d.replyTo.name | d(d.replyTo.url) }}</a></cite>:</p>
+		<blockquote>{{ d.replyTo.context | markdown | safe }}</blockquote>
+	</div>
+	{% endif %}
 
 	<div class=e-content>{{e.templateContent|safe}}</div>
 

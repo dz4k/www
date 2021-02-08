@@ -2,6 +2,8 @@
 title: 'Add Syndication Links On Your Personal Site Using Dev.to API'
 tags: ['website', 'dev.to', 'eleventy']
 date: '20200917T2110+0300'
+syndication:
+  DEV: https://dev.to/dz4k/add-syndication-links-on-your-personal-site-using-dev-to-api-395
 ---
 
 [rsspub]:  https://dev.to/settings/publishing-from-rss

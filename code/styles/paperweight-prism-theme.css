@@ -1,0 +1,101 @@
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * with minor edits from Deniz
+ */
+
+code,
+pre {
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.4rem;
+
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre {
+	overflow: auto;
+	width: 92vw;
+}
+
+/* Inline code */
+:not(pre) > code {
+	white-space: normal;
+}
+
+/* Normal */
+.token.number 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.attr-value,
+.token.variable {
+
+}
+
+/* Bold */
+.token.boolean,
+.token.keyword, 
+.token.punctuation,
+.token.tag,
+.token.selector,
+.token.atrule {
+	font-weight: bold;
+}
+
+/* Italic */
+.token.property,
+.token.symbol,
+.token.constant,
+.token.attr-name,
+.token.string,
+.token.regex,
+.token.char,
+.token.builtin,
+.token.function {
+	font-style: italic;
+}
+
+/* Faded out*/
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.deleted, 
+.token.inserted {
+	opacity: .6;
+}
+
+
+.token.important,
+.token.bold 
+{
+	font-weight: bold;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.token.italic 
+{
+	font-style: italic;
+}
+
+.token.entity 
+{
+	cursor: help;
+}

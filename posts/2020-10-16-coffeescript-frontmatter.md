@@ -2,6 +2,8 @@
 title: 'Eleventy + Markdown + CoffeeScript = ❤'
 date: '2020-10-16T17:12+0300'
 tags: 'eleventy'
+syndication:
+  DEV: https://dev.to/dz4k/eleventy-markdown-coffeescript-p5a
 ---
 
 I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman](endorsed).

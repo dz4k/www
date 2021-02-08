@@ -36,6 +36,7 @@ const util = {
 
 function addPassthroughCopy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
+  eleventyConfig.addPassthroughCopy({ 'code/styles': '/styles/' })
 }
 
 function addCustomCollections(eleventyConfig) {

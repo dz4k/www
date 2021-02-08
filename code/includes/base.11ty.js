@@ -117,13 +117,12 @@ module.exports = class {
 
   styles(data) {
     const inlined = ['base-el.css', 'main.css', 'font.css']
-    const linked = ['prism-theme.css']
 
     return [
       ...inlined.map(filename => h('style', {
         innerHTML: fs.readFileSync(__dirname + '/../styles/' + filename)})),
       h('style', {innerHTML: data.style}),
-      h('link', {rel: 'stylesheet', href: '/styles/prism-theme.css'})
+      h('link', {rel: 'stylesheet', href: '/styles/paperweight-prism-theme.css'})
     ]
   }
 }

@@ -51,6 +51,11 @@ main, .site-footer {
 	display: block;
 }
 
+.entry-header > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .unblockquote {
 	border: none;
 	padding: 0;

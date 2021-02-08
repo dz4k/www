@@ -5,6 +5,8 @@ tags: [
   'website',
   'eleventy'
 ]
+syndication:
+  DEV: https://dev.to/dz4k/eleventy-dynamically-inlining-google-fonts-2geg
 ---
 
 <ins>

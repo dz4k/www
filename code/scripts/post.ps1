@@ -17,8 +17,6 @@ $prop = @{
 $h = (Invoke-WebRequest $url).Content | ConvertFrom-Html
 $title = $h.SelectNodes("//title")[0].InnerText
 
-$url = $url
-
 if ($action -eq 'reply') {
     $replycontext = "<!doctype html><meta charset=utf-8><blockquote>" + `
         $h.SelectNodes("//*[contains(@class,'e-content')]")[0].InnerHtml | `
@@ -35,11 +33,13 @@ $filename = "$psscriptroot/../posts/$slug.md"
         "${prop}:"
         "  name: `"$title`""
         "  url: $url"
+    if ($replycontext) {
+        "  context: |"
+        $replycontext.Split("`n") | %{ "    $_" } }
     } else {
         "${prop}: $url"
     }
     "---"
-    if ($replycontext) { "`n"+$replycontext }
 } | set-content $filename
 
-$filename
+write-host "$verb `"$title`" <$url> : $filename"
