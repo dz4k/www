@@ -3,8 +3,6 @@ const h = require('hyperscript')
 
 const translations = {
 
-	anonymous: { tr: 'Anonim', en: 'Anonymous' },
-
 	footer_message: {
 		tr: `
 			<p> Bu sitedeki tüm tarih/saatler UTC+03 zaman dilimindedir (aksi
@@ -16,8 +14,6 @@ const translations = {
 			<p> This website is made with <a href="//11ty.dev">Eleventy</a> and hosted
 			on <a href="//netlify.com">Netlify</a>.`,
 	},
-
-	read_next_colon: { tr: 'Sıradaki: ', en: 'Up next: ' },
 
 	this_website_accepts_webmentions: {
 		tr: (aboutWm, $commentparade) => [
