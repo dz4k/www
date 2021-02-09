@@ -1,6 +1,6 @@
 ---
 title: Add Syndication Links On Your Personal Site Using Dev.to API
-date: 20200917T2110+0300
+date: 2020-09-17T21:10+03
 syndication:
   DEV: https://dev.to/dz4k/add-syndication-links-on-your-personal-site-using-dev-to-api-395
 ---

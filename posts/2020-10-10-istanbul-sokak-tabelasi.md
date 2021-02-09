@@ -1,6 +1,6 @@
 ---
 title: İstanbul'da bir sokak tabelası
-date: 2020-10-10T19:27:39+03:00
+date: 2020-10-10T19:27:39+03
 lang: tr
 uPhoto: /assets/photos/IMG20201007085906-02.jpeg
 english: /2020/istanbul-street-sign/

@@ -1,6 +1,6 @@
 ---
 title: Street sign in Gülyalı, Ordu, Turkey
-date: 20200903T1642+0300
+date: 2020-09-03T16:42+03
 uPhoto: /assets/photos/IMG20200903164220.jpeg
 ---
 

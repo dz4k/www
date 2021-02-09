@@ -1,6 +1,6 @@
 ---
 title: CSS — Adding Additional Box Shadows
-date: 2020-09-02T12:54:44+03:00
+date: 2020-09-02T12:54:44+03
 syndication:
   DEV: https://dev.to/dz4k/css-adding-additional-box-shadows-2lob
 ---

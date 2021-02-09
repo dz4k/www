@@ -1,6 +1,6 @@
 ---
 title: Eleventy — Dynamically Inlining Google Fonts
-date: 2020-07-24T14:33+03:00
+date: 2020-07-24T14:33+03
 syndication:
   DEV: https://dev.to/dz4k/eleventy-dynamically-inlining-google-fonts-2geg
 ---
