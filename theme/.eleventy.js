@@ -52,12 +52,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('isodatetime', date => dateify(date).toISO())
   eleventyConfig.addFilter('isotime', date => dateify(date).toISOTime())
 
-  eleventyConfig.addShortcode('img', (src, alt) => {
-    return `<a class="image-link" href="${src}">
-      <img src="${src}" alt="${alt}" title="${alt}">
-    </a>`
-  })
-
   // RESPONSIVE IMAGES
 
   Array.prototype.flat = function () {
