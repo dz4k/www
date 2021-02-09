@@ -1,0 +1,10 @@
+
+{% set strings = intl.for(lang) %}
+
+<main>{{ content | safe }}</main>
+
+<footer class=site-footer>
+	{{ strings.footerMessage | safe }}
+	<p>&copy; 2020 <a class="h-card" href="/">Deniz Akþimþek</a>
+</footer>
+
