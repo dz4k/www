@@ -3,35 +3,52 @@ title: 'Deniz Akşimşek'
 layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
-style: >
+---
+
+<style>
     time {
         font-size: .8em;
         display: inline-block;
     }
     ol { list-style: none; padding: 0 }
     ol li { margin: 1em 0 }
----
+    dt, dd { display: inline; margin: 0; }
+    dt {
+        font-weight: bold;
+        opacity: 0.6;
+    }
+    dd+dt {
+        margin-left: 1em;
+    }
+</style>
 
 <div class="h-feed">
 
 <link href="https://denizaksimsek.com/" class="u-url">
 
 <div class="p-author h-card">
-    <img
-        class=u-photo
-        src=/assets/me-full.jpeg
-        alt="Deniz Akşimşek">
+    
+<img
+    class=u-photo
+    src=/assets/me-full.jpeg
+    alt="Deniz Akşimşek"
+    style="max-height: 50vh; object-fit: cover; object-position: top;">
 
 <h1><a href=https://denizaksimsek.com/
     rel=me class="p-name u-url u-uid"
     >Deniz Akşimşek</a></h1>
 
-<p class=me-elsewhere>
-    <a href=mailto:deniz@denizaksimsek.com rel=me class=u-email
-        >deniz@denizaksimsek.com</a> | 
-    Twitter: <a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a> | 
-    GitHub: <a href=//github.com/dz4k/ rel=me>dz4k</a> |
-    DEV: <a href=//dev.to/dz4k rel=me>dz4k</a>
+<dl class=me-elsewhere>
+    <dt>Email
+    <dd><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email
+        >deniz@denizaksimsek.com</a>
+    <dt>Twitter
+    <dd><a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a>
+    <dt>GitHub
+    <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
+    <dt>DEV
+    <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
+</dl>
 
 <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr>TEDU</a> in Ankara, Turkey.
 

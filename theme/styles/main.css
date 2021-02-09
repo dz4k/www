@@ -4,7 +4,6 @@ html {
 	--copy: #1e1e1e;
 	--primary: #ff6600;
 	--secondary: #005c82;
-	--accent: var(--secondary);
 	--font-copy: "Atkinson Hyperlegible", sans-serif;
 	--font-monospace: "Cascadia Code", Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 	background-color: var(--bg);
@@ -19,10 +18,8 @@ html {
 	html {
 		--copy: ghostwhite;
 		--bg: #1e1e1e;
-	}
-
-	a {
-		--accent: var(--primary);
+		--primary: #005c82;
+		--secondary: #ff6600;
 	}
 }
 
