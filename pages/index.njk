@@ -4,10 +4,6 @@ layout: 'layout'
 permalink: 'index.html'
 eleventyExcludeFromCollections: true
 style: >
-    .picture-of-me {
-        width: 150px;
-        height: 150px;
-    }
     time {
         font-size: .8em;
         display: inline-block;
@@ -22,11 +18,9 @@ style: >
 
 <div class="p-author h-card">
     <img
-        alt="Deniz Akşimşek"
-        src=/assets/me.jpeg
-        class="picture-of-me u-photo"
-        width=150 height=150
-        sizes=200px>
+        class=u-photo
+        src=/assets/me-full.jpeg
+        alt="Deniz Akşimşek">
 
 <h1><a href=https://denizaksimsek.com/
     rel=me class="p-name u-url u-uid"
@@ -43,6 +37,6 @@ style: >
 
 </div>
 
-{% include "partials/feed.njk" %}
+{% include "partials/posts-list.njk" %}
 
 </div>

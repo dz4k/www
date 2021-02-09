@@ -1,6 +1,7 @@
 ---
 permalink: /deleted/
 layout: base
+eleventyExcludeFromCollections: true
 ---
 
 Whatever was here is not here anymore.

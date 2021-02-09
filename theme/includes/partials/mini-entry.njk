@@ -1,9 +1,9 @@
 
-
 {% set e = entry %}
 {% set d = e.data %}
 
 <span class=h-entry>
-	<time class=dt-published datetime="{{e.date | isodatetime}}">{{e.date | datefmt('yyyy/MM/dd HH:mm')}}</time>
-	<a class="u-url u-uid {{'p-name' if d.title}}" href="https://denizaksimsek.com{{e.url}}">{{d.tagline}}</a>
+	<time class=dt-published datetime="{{ e.date | isodatetime }}"
+		>{{ e.date | datefmt('yyyy/MM/dd HH:mm') }}</time>
+	<a class="u-url u-uid{{ ' p-name' if d.title }}" href="https://denizaksimsek.com{{ e.url }}">{{ d.tagline }}</a>
 </span>

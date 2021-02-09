@@ -1,5 +1,4 @@
 
-
 {% set e = entry %}
 {% set d = e.data %}
 
@@ -7,62 +6,67 @@
 	<header class=entry-header>
 		
 		{% if u-photo %}
-		<link class=u-photo href="{{d.uPhoto}}">
+			<link class=u-photo href="{{ d.uPhoto }}">
 		{% endif %}
 
 		{% if d.title %}
-		<h1 class="p-name">{{d.title}}</h1>
+			<h1 class="p-name">{{ d.title }}</h1>
 		{% endif %}
 
 		{% if d.likeOf %}
-		<p>Like ❤️ <a class=u-like-of 
-			href="{{d.likeOf.url|d(likeOf)}}"
-			>{{d.likeOf.name|d(d.likeOf)}}</a></p>
+			<p>Like ❤️
+				<a class=u-like-of 
+					href="{{ d.likeOf.url | d(likeOf) }}"
+					>{{ d.likeOf.name | d(d.likeOf) }}</a></p>
 		{% endif %}
 
 		{% if d.repostOf %}
-		<p>Repost 🔁 <a class=u-repost-of 
-			href="{{d.repostOf.url|d(d.repostOf)}}"
-			>{{d.repostOf.name|d(d.repostOf)}}</a></p>
+			<p>Repost 🔁
+				<a class=u-repost-of 
+					href="{{ d.repostOf.url | d(d.repostOf) }}"
+					>{{ d.repostOf.name | d(d.repostOf) }}</a></p>
 		{% endif %}
 
 		{% if d.replyTo and not d.replyTo.context %}
-		<p>Re. ↪ <a class=u-reply-to 
-			href="{{d.replyTo.url|d(d.replyTo)}}"
-			>{{d.replyTo.name|d(d.replyTo)}}</a></p>
+			<p>Re. ↪
+				<a class=u-reply-to 
+					href="{{ d.replyTo.url | d(d.replyTo) }}"
+					>{{ d.replyTo.name | d(d.replyTo) }}</a></p>
 		{% endif %}
 
-		<p><a href="{{e.url}}" class="u-url">
-			<time class="dt-published" datetime="{{e.date | isodatetime}}">{{e.date | datefmt('yyyy/MM/dd hh:mm')}}</time>
+		<p><a href="{{ e.url }}" class="u-url">
+			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
+				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time>
 		</a></p>
 
 		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
 
 		{% if d.english %}
-		<p><a rel=alternate href="{{d.english}}" hreflang=en>English</a></p>
+			<p><a rel=alternate href="{{ d.english }}" hreflang=en>English</a>
+			</p>
 		{% endif %}
 
 		{% if d.türkçe %}
-		<p><a rel=alternate href="{{d.türkçe}}" hreflang=tr>Türkçe</a></p>
+			<p><a rel=alternate href="{{ d.türkçe }}" hreflang=tr>Türkçe</a></p>
 		{% endif %}
 
 		{% if d.syndication %}
-		<p>also on {% for key, val in syndication %}
-			<a href="{{ val }}">{{ key }}</a>{{ ' | ' if not loop.last }}
-		{% endfor %}</p>
+			<p>also on {% for key, val in syndication %}
+				<a href="{{ val }}">{{ key }}</a>{{ ' | ' if not loop.last }}
+			{% endfor %}</p>
 		{% endif %}
 
 	</header>
 
 	{% if d.replyTo and d.replyTo.context %}
-	<div class=replycontext>
-		<p>↪ Reply to <cite><a class=u-reply-to href="{{d.replyTo.url}}"
-			>{{ d.replyTo.name | d(d.replyTo.url) }}</a></cite>:</p>
-		<blockquote>{{ d.replyTo.context | markdown | safe }}</blockquote>
-	</div>
+		<div class=replycontext>
+			<p>↪ Reply to <cite><a class=u-reply-to href="{{ d.replyTo.url }}"
+				>{{ d.replyTo.name | d(d.replyTo.url) }}</a></cite>:</p>
+			<blockquote>{{ d.replyTo.context | markdown | safe }}</blockquote>
+		</div>
 	{% endif %}
 
-	<div class=e-content>{{e.templateContent|safe}}</div>
+	<div class=e-content>{{ e.templateContent|safe }}</div>
 
 	{% include "partials/webmentions.njk" %}
 

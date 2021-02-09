@@ -1,21 +1,23 @@
 
 {% macro webmention(wm) %}
-<article class="webmention h-cite" id="wm-{{wm['wm-id']}}">
-	<header>
-		<span class="p-author h-card"><a class=u-url
-				href="{{wm.author.url}}" rel='noopener noreferrer'
-				target='_blank'>{{wm.author.name}}</a></span>,
 
-		<a class="u-url" href="{{wm.url}}" rel='noopener noreferrer'
-			target='_blank'>
-			<time class="dt-published" datetime="{{wm.published | d(wm['wm-received'])}}">{{
-					wm['wm-received'] | datefmt('yyyy/MM/dd HH:mm')
-				}}</time>
-			 (link)</a>
-	</header>
-	
-	<blockquote class=p-content>{{wm.content.text}}</blockquote>
-</article>
+	{% set published = wm.published | d(wm['wm-received']) %}
+
+	<article class="webmention h-cite" id="wm-{{ wm['wm-id'] }}">
+		<header>
+			<span class="p-author h-card"><a class=u-url
+				href="{{ wm.author.url }}" rel='noopener noreferrer' 
+				target='_blank'>{{ wm.author.name }}</a></span>,
+
+			<a class="u-url" href="{{ wm.url }}" rel='noopener noreferrer'
+				target='_blank'>
+				<time class="dt-published" datetime="{{ published }}"
+					>{{ published | datefmt('yyyy/MM/dd HH:mm') }}</time>
+				(link)</a>
+		</header>
+		
+		<blockquote class=p-content>{{ wm.content.text }}</blockquote>
+	</article>
 
 {% endmacro %}
 
@@ -25,16 +27,19 @@
 
 	{% if layout == 'entry-layout.njk' %}
 
-	<section class="webmentions" id="webmentions">
-		<h2>Webmentions ({{wms.length}})</h2>
-		<ol reversed class="webmention-list">
-			{% for wm in wms %}<li>{{ webmention(wm) }}{% endfor %}
-		</ol>
-	</section>
+		<section class="webmentions" id="webmentions">
+			<h2>Webmentions ({{ wms.length }})</h2>
+			<ol reversed class="webmention-list">
+				{% for wm in wms %}
+					<li>{{ webmention(wm) }}
+				{% endfor %}
+			</ol>
+		</section>
 
 	{% else %}
 
-	<p><a href="{{e.url}}#webmentions">{{wms.length}} Webmentions</a></p>
+		<p><a href="{{ e.url }}#webmentions">{{ wms.length }} Webmentions</a>
+		</p>
 
 	{% endif %}
 

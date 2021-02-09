@@ -1,5 +1,6 @@
+
 <ol reversed>
-{%for entry in collections.posts|reverse%}
-<li>{%include "partials/mini-entry.njk"%}
-{%endfor%}
+{%- for entry in collections.posts | reverse %}
+	<li>{% include "partials/mini-entry.njk" %}
+{%- endfor %}
 </ol>

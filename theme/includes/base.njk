@@ -4,7 +4,9 @@
 <title>Deniz Akşimşek</title>
 <meta name=viewport content=width=device-width,initial-scale=1.0>
 
-<!-- Preloading fonts -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    Preloading fonts 
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 {% for font in [
 	"/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff",
@@ -14,44 +16,63 @@
 <link rel=preload href="{{ font }}" as=font crossorigin=anonymous>
 {% endfor %}
 
-<!-- Styles -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    Styles
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 <style>
 {% include "../styles/base-el.css" %}
 {% include "../styles/main.css" %}
 {% include "../styles/font.css" %}
+{{ style | safe }}
 </style>
 <link rel=stylesheet href=/styles/paperweight-prism-theme.css media=none
       onload=media=all;onload=null>
 
-<!-- Theme -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    Theme
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 <meta name=theme-color content=#f60>
 <link rel="shortcut icon" href=/assets/me.jpeg>
 
-<!-- IndieAuth -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    IndieAuth 
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 
-<!-- Webmention -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    Webmention
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 <link rel="webmention" href="https://webmention.io/www.denizaksimsek.com/webmention">
 <link rel="pingback" href="https://webmention.io/www.denizaksimsek.com/xmlrpc">
 
-<!-- Cards -->
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    Cards 
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 {% if collections.posts | getCollectionItem(page) %}
-<meta property=og:title content="{{ tagline }}">
-<meta property=og:url   content=https://denizaksimsek.com{{ page.url }}>
-<meta property=og:type  content=article>
-{% if uPhoto %}
-	<meta property=og:image content="{{ uPhoto }}">
+    <meta property=og:title content="{{ tagline }}">
+    <meta property=og:url content=https://denizaksimsek.com{{ page.url }}>
+    <meta property=og:type content=article>
+    {% if uPhoto %}
+    	<meta property=og:image content="{{ uPhoto }}">
+    {% endif %}
 {% endif %}
 
-<meta name=twitter:card    content="{{ 'summary_large_image' if uPhoto else 'summary' }}">
-<meta name=twitter:site    content=@DenizAksimsek>
+<meta name=twitter:card content="summary{{ '_large_image' if uPhoto }}">
+<meta name=twitter:site content=@DenizAksimsek>
 <meta name=twitter:creator content=@DenizAksimsek>
+
+<!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+    <body>
+    <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 {{ content | safe }}
 
+<script>
+{{ script | safe }}
+</script>
