@@ -5,21 +5,29 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 module.exports = function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('njk,md,css')
 
-  // PASSTHROUGH COPY
+  /****************************************************************************
+   PASSTHROUGH COPY
+   ****************************************************************************/
 
   eleventyConfig.addPassthroughCopy('assets')
   eleventyConfig.addPassthroughCopy({ 'theme/styles': '/styles/' })
   eleventyConfig.addPassthroughCopy({ 'theme/fonts': '/assets/fonts/' })
 
-  // COLLECTIONS
+  /****************************************************************************
+   COLLECTIONS
+   ****************************************************************************/
 
-  eleventyConfig.addCollection('posts',
-      coll => coll.getFilteredByGlob('posts/*').filter(post => !post.data.deleted))
+  eleventyConfig.addCollection('posts', collectionApi => collectionApi
+    .getFilteredByGlob('posts/*')
+    .filter(post => !post.data.deleted))
 
-  eleventyConfig.addCollection('deleted', coll => coll.getAll()
+  eleventyConfig.addCollection('deleted', collectionApi => collectionApi
+    .getAll()
     .filter(entry => entry.data.deleted))
 
-  // MARKDOWN
+  /****************************************************************************
+   MARKDOWN
+   ****************************************************************************/
 
   const markdownLibrary = require("markdown-it")({
     html: true,
@@ -32,7 +40,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLibrary)
 
-  // FILTERS AND SHORTCODES
+  /****************************************************************************
+   FILTERS AND SHORTCODES
+   ****************************************************************************/
 
   eleventyConfig.addFilter('markdown',
     str => markdownLibrary.render(str))
@@ -40,19 +50,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode('markdown', 
     str => markdownLibrary.render(str))
 
-  const dateify = d => 
-    d instanceof Date ?
-      DateTime.fromJSDate(d) :
-    typeof d == 'string' ?
-      DateTime.fromISO(d) :
-      DateTime.local()
+  const luxify = d => 
+    d instanceof Date    ? DateTime.fromJSDate(d) :
+    typeof d == 'string' ? DateTime.fromISO(d) :
+    /* else */             DateTime.local()
 
-  eleventyConfig.addFilter('datefmt', (date, fmt) => dateify(date).toFormat(fmt))
-  eleventyConfig.addFilter('isodate', date => dateify(date).toISODate())
-  eleventyConfig.addFilter('isodatetime', date => dateify(date).toISO())
-  eleventyConfig.addFilter('isotime', date => dateify(date).toISOTime())
+  eleventyConfig.addFilter('datefmt', (date, fmt) => luxify(date).toFormat(fmt))
+  eleventyConfig.addFilter('isodate', date => luxify(date).toISODate())
+  eleventyConfig.addFilter('isodatetime', date => luxify(date).toISO())
+  eleventyConfig.addFilter('isotime', date => luxify(date).toISOTime())
 
-  // RESPONSIVE IMAGES
+  /****************************************************************************
+   RESPONSIVE IMAGES
+   ****************************************************************************/
 
   Array.prototype.flat = function () {
     return this.reduce((acc, cur) => acc.concat(cur), [])
@@ -65,12 +75,16 @@ module.exports = function (eleventyConfig) {
     },
   })
 
-  // PLUGINS
+  /****************************************************************************
+   PLUGINS
+   ****************************************************************************/
 
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
-  // CONFIG
+  /****************************************************************************
+   CONFIG
+   ****************************************************************************/
 
   return {
     dir: { output: '_site', includes: 'theme/includes', data: 'theme/data' },
