@@ -12,13 +12,18 @@ eleventyExcludeFromCollections: true
     }
     ol { list-style: none; padding: 0 }
     ol li { margin: 1em 0 }
+    .me-elsewhere {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 -.6em;
+    }
+    .me-elsewhere > * {
+        margin: 0 .6em;
+    }
     dt, dd { display: inline; margin: 0; }
     dt {
         font-weight: bold;
         opacity: 0.6;
-    }
-    dd+dt {
-        margin-left: 1em;
     }
 </style>
 
@@ -39,15 +44,23 @@ eleventyExcludeFromCollections: true
     >Deniz Akşimşek</a></h1>
 
 <dl class=me-elsewhere>
-    <dt>Email
-    <dd><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email
-        >deniz@denizaksimsek.com</a>
-    <dt>Twitter
-    <dd><a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a>
-    <dt>GitHub
-    <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
-    <dt>DEV
-    <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
+    <div>
+        <dt>Email
+        <dd><a href=mailto:deniz@denizaksimsek.com rel=me 
+            class=u-email>deniz@denizaksimsek.com</a>
+    </div>
+    <div>
+        <dt>Twitter
+        <dd><a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a>
+    </div>
+    <div>
+        <dt>GitHub
+        <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
+    </div>
+    <div>
+        <dt>DEV
+        <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
+    </div>
 </dl>
 
 <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr>TEDU</a> in Ankara, Turkey.
