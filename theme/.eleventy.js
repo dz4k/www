@@ -14,6 +14,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'theme/fonts': '/assets/fonts/' })
 
   /****************************************************************************
+   LAYOUTS
+   ****************************************************************************/  
+
+  eleventyConfig.addLayoutAlias('entry', 'entry-layout.njk')
+  eleventyConfig.addLayoutAlias('page', 'layout.njk')
+
+  /****************************************************************************
    COLLECTIONS
    ****************************************************************************/
 
