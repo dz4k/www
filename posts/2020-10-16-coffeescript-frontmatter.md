@@ -6,7 +6,7 @@ syndication:
 templateEngineOverride: md
 ---
 
-I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman](endorsed).
+I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman][endorsed].
 
 ## Markdown with Frontmatter
 

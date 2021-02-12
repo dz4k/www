@@ -1,6 +1,6 @@
 ---
 permalink: /deleted/
-layout: base
+layout: page
 eleventyExcludeFromCollections: true
 ---
 
