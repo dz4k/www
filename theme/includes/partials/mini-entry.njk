@@ -6,4 +6,5 @@
 	<time class=dt-published datetime="{{ e.date | isodatetime }}"
 		>{{ e.date | datefmt('yyyy/MM/dd HH:mm') }}</time>
 	<a class="u-url u-uid{{ ' p-name' if d.title }}" href="https://denizaksimsek.com{{ e.url }}">{{ d.tagline | d(e.templateContent | striptags | truncate(72) | safe) }}</a>
+	{% if d.uPhoto %}(📷){% endif %}
 </span>
