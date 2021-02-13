@@ -20,5 +20,5 @@
 ---
 
 {% set entry = collections.all | getCollectionItem(page) %}
-
+{% set isEntryPage = true %}
 {% include "partials/entry.njk" %}

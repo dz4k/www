@@ -13,33 +13,11 @@
 			<h1 class="p-name">{{ d.title }}</h1>
 		{% endif %}
 
-		{% if d.likeOf %}
-			<p>Like ❤️
-				<a class=u-like-of 
-					href="{{ d.likeOf.url | d(likeOf) }}"
-					>{{ d.likeOf.name | d(d.likeOf) }}</a></p>
+		{% include "partials/entry-detail.njk" %}
+
+		{% if isLayout %}
+			<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
 		{% endif %}
-
-		{% if d.repostOf %}
-			<p>Repost 🔁
-				<a class=u-repost-of 
-					href="{{ d.repostOf.url | d(d.repostOf) }}"
-					>{{ d.repostOf.name | d(d.repostOf) }}</a></p>
-		{% endif %}
-
-		{% if d.replyTo and not d.replyTo.context %}
-			<p>Re. ↪
-				<a class=u-reply-to 
-					href="{{ d.replyTo.url | d(d.replyTo) }}"
-					>{{ d.replyTo.name | d(d.replyTo) }}</a></p>
-		{% endif %}
-
-		<p><a href="{{ e.url }}" class="u-url">
-			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
-				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time>
-		</a></p>
-
-		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
 
 		{% if d.english %}
 			<p><a rel=alternate href="{{ d.english }}" hreflang=en>English</a>
