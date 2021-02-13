@@ -2,24 +2,8 @@
 {% set e = entry %}
 {% set d = e.data %}
 
-<article class=h-entry>
-	<header class=entry-header>
-
-		{% if d.title %}
-			<h1 class="p-name">{{ d.title }}</h1>
-		{% endif %}
-
-		{% set noReplyContext = true %}
-		{% include "partials/entry-detail.njk" %}
-
-	</header>
-
-	{% if d.uPhoto %}
-		<img class=u-photo src="{{ d.uPhoto }}" alt="">
-	{% endif %}
-
-	{% if not d.title %}
-		<div class=e-content>{{ content | d(e.templateContent) | safe }}</div>
-	{% endif %}
-
-</article>
+<span class=h-entry>
+	<time class=dt-published datetime="{{ e.date | isodatetime }}"
+		>{{ e.date | datefmt('yyyy/MM/dd HH:mm') }}</time>
+	<a class="u-url u-uid{{ ' p-name' if d.title }}" href="https://denizaksimsek.com{{ e.url }}">{{ d.tagline | d(e.templateContent | striptags | truncate(72) | safe) }}</a>
+</span>
