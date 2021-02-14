@@ -24,9 +24,9 @@ module.exports = function (eleventyConfig) {
    COLLECTIONS
    ****************************************************************************/
 
-  eleventyConfig.addCollection('posts', collectionApi => collectionApi
-    .getFilteredByGlob('posts/*')
-    .filter(post => !post.data.deleted))
+  eleventyConfig.addCollection('entries', collectionApi => collectionApi
+    .getFilteredByGlob('entries/*')
+    .filter(entry => !entry.data.deleted))
 
   eleventyConfig.addCollection('deleted', collectionApi => collectionApi
     .getAll()

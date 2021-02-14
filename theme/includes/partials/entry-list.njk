@@ -1,6 +1,6 @@
 
 <ol class="entry-list" reversed>
-{%- for entry in collections.posts | reverse %}
+{%- for entry in collections.entries | reverse %}
 	{% set e = entry %}
 	{% set d = e.data %}
 	<li>
@@ -10,6 +10,7 @@
 				<a href="{{ e.url }}"><h1 class="p-name">{{ d.title }}</h1></a>
 				{% if d.uPhoto %}
 					<img class="u-photo" src="{{ d.uPhoto }}" alt="">
+				{% endif %}
 			{% else %}
 				{% include "partials/entry-detail.njk" %}
 				<div class="e-content">

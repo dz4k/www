@@ -13,12 +13,12 @@ https://dz4k.com/* https://denizaksimsek.com/:splat 301!
 /20200827T2005/	/2020/ardesen-rize-tr/
 /20200826T1523/	/2020/road-to-indieweb/
 
-{# Latest post bookmark #}
-/latest/	{{ (collections.posts | last).url }}
+{# Latest entry bookmark #}
+/latest/	{{ (collections.entries | last).url }}
 
 {# HTTP 410 Gone for deleted posts #}
-{% for post in collections.deleted %}
-{{ post.url }} /deleted/ 410
+{% for entry in collections.deleted %}
+{{ entry.url }} /deleted/ 410
 {% endfor %}
 
 

@@ -4,7 +4,8 @@
 	return {
 		layout: "layout.njk",
 		eleventyComputed: {
-			permalink: ({page, title}) => {
+			permalink: ({page, title, deleted}) => {
+				if (deleted) return false
 				const dt = DateTime.fromJSDate(page.date)
 				const year = dt.year
 				if (title) return `/${year}/${page.fileSlug}/`
