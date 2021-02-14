@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "my personal website (adding this so npm stops warning me)",
   "scripts": {
-    "build": "npx @11ty/eleventy --config=theme/eleventy.js",
-    "serve": "npx @11ty/eleventy --config=theme/eleventy.js --serve"
+    "build": "npx @11ty/eleventy --config=theme/.eleventy.js",
+    "serve": "npx @11ty/eleventy --config=theme/.eleventy.js --serve"
   },
   "repository": {
     "type": "git",
