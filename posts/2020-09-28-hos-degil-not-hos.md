@@ -1,5 +1,4 @@
 ---
-title: Hoş Değil (Not Hos)
 date: 2019-12-05T09:58:28+03
 ---
 
