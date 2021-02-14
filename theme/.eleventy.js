@@ -67,6 +67,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('isodatetime', date => luxify(date).toISO())
   eleventyConfig.addFilter('isotime', date => luxify(date).toISOTime())
 
+  eleventyConfig.addFilter('truncateUrl', url => {
+    if (typeof url !== 'string') return url
+    url = new URL(url)
+    const path = url.pathname.split('/')
+    const dotdotdot = path.length > 2 || url.query || url.hash
+    if (path.length > 2) {
+      url.pathname = `${path.slice(0, 2).join('/')}/`
+    }
+    url.query = null
+    url.hash = ''
+    return url.href + (dotdotdot ? '…' : '')
+  })
+
   /****************************************************************************
    RESPONSIVE IMAGES
    ****************************************************************************/

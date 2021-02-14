@@ -9,14 +9,10 @@
 			<link class=u-photo href="{{ d.uPhoto }}">
 		{% endif %}
 
-		{% if d.title %}
-			<h1 class="p-name">{{ d.title }}</h1>
-		{% endif %}
-
 		{% include "partials/entry-detail.njk" %}
 
-		{% if isEntryPage %}
-			<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
+		{% if d.title %}
+			<h1 class="p-name">{{ d.title }}</h1>
 		{% endif %}
 
 		{% if d.english %}

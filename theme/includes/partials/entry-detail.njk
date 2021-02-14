@@ -1,26 +1,32 @@
+	<p class="entry-detail">
+
+		<a href="{{ e.url }}" class="u-url">
+			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
+				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
+
+		{% if isEntryPage %}
+			| <a class="p-author h-card" href="/">Deniz Akşimşek</a>
+		{% endif %}
+	
 		{% if d.likeOf %}
-			<p>Like ❤️
+			| Like ❤️
 				<a class=u-like-of 
 					href="{{ d.likeOf.url | d(likeOf) }}"
-					>{{ d.likeOf.name | d(d.likeOf) }}</a></p>
+					>{{ d.likeOf.name | d(d.likeOf | truncateUrl) }}</a>
 		{% endif %}
 
 		{% if d.repostOf %}
-			<p>Repost 🔁
+			| Repost 🔁
 				<a class=u-repost-of 
 					href="{{ d.repostOf.url | d(d.repostOf) }}"
-					>{{ d.repostOf.name | d(d.repostOf) }}</a></p>
+					>{{ d.repostOf.name | d(d.repostOf | truncateUrl) }}</a>
 		{% endif %}
 
 		{% if d.replyTo and (noReplyContext or not d.replyTo.context) %}
-			<p>Re. ↪
+			| Re. ↪
 				<a class=u-reply-to 
 					href="{{ d.replyTo.url | d(d.replyTo) }}"
-					>{{ d.replyTo.name | d(d.replyTo) }}</a></p>
+					>{{ d.replyTo.name | d(d.replyTo | truncateUrl) }}</a>
 		{% endif %}
 
-		<p><a href="{{ e.url }}" class="u-url">
-			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
-				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time>
-		</a></p>
-
+	</p>

@@ -1,6 +1,19 @@
 
-<ol reversed>
+<ol class="entry-list" reversed>
 {%- for entry in collections.posts | reverse %}
-	<li>{% include "partials/mini-entry.njk" %}
+	{% set e = entry %}
+	{% set d = e.data %}
+	<li>
+		<article class="h-entry">
+			{% if d.title %}
+				{% include "partials/entry-detail.njk" %}
+				<a href="{{ e.url }}"><h1 class="p-name">{{ d.title }}</h1></a>
+			{% else %}
+				{% include "partials/entry-detail.njk" %}
+				<div class="e-content">
+					{{ e.templateContent | safe }}
+				</div>
+			{% endif %}
+		</article>
 {%- endfor %}
 </ol>

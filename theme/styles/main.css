@@ -9,9 +9,6 @@ html {
 	background-color: var(--bg);
 	color: var(--copy);
 	font-family: var(--font-copy);
-	line-height: 1.8;
-	tab-size: 2;
-	hyphens: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,15 +43,6 @@ main, .site-footer {
 
 .image-link {
 	display: block;
-}
-
-.entry-header {
-	text-align: center;
-}
-
-.entry-header > * {
-	margin-top: 0;
-	margin-bottom: 0;
 }
 
 .unblockquote {

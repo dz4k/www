@@ -6,32 +6,37 @@ eleventyExcludeFromCollections: true
 ---
 
 <style>
-    time {
-        font-size: .8em;
-        display: inline-block;
-    }
-    ol { list-style: none; padding: 0 }
-    ol li { margin: 1em 0 }
     .me-elsewhere {
         display: flex;
         flex-flow: row wrap;
-        margin: 0 -.6em;
+        margin-left: -0.6em;
+        margin-right: -0.6em;
     }
     .me-elsewhere > * {
         margin: 0 .6em;
     }
-    dt, dd { display: inline; margin: 0; }
-    dt {
+    .me-elsewhere dt, dd { display: inline; margin: 0; }
+    .me-elsewhere dt {
         font-weight: bold;
         opacity: 0.6;
     }
+    
+    .entry-list { list-style: none; padding: 0 }
+    .entry-list li { margin: 1em 0 }
+    .entry-list .h-entry {
+        border-bottom: .1em solid var(--primary);
+        margin-block: 1em;
+    }
+    
+    .h-entry h1 {
+        font-size: 1.2em;
+        margin: 1rem 0;
+    }
 </style>
 
-<div class="h-feed">
 
-<link href="https://denizaksimsek.com/" class="u-url">
 
-<div class="p-author h-card">
+<section class="p-author h-card">
     
     <img
         class=u-photo
@@ -69,8 +74,10 @@ eleventyExcludeFromCollections: true
 
     <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in Ankara, Turkey.
 
-</div>
+</section>
 
+<section id="blog" class="h-feed">
+<h2 class="p-name">Blog</h2>
+<link href="https://denizaksimsek.com/#blog" class="u-url u-uid">
 {% include "partials/posts-list.njk" %}
-
-</div>
+</section>
