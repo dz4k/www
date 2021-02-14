@@ -9,7 +9,7 @@
 			<link class=u-photo href="{{ d.uPhoto }}">
 		{% endif %}
 
-		{% include "partials/entry-detail.njk" %}
+		{% include "entry-detail.njk" %}
 
 		{% if d.title %}
 			<h1 class="p-name">{{ d.title }}</h1>
@@ -42,6 +42,6 @@
 
 	<div class=e-content>{{ content | d(e.templateContent) | safe }}</div>
 
-	{% include "partials/webmentions.njk" %}
+	{% include "webmentions.njk" %}
 
 </article>
