@@ -5,9 +5,11 @@
 	{% set d = e.data %}
 	<li>
 		<article class="h-entry">
+			{% include "partials/entry-detail.njk" %}
 			{% if d.title %}
-				{% include "partials/entry-detail.njk" %}
 				<a href="{{ e.url }}"><h1 class="p-name">{{ d.title }}</h1></a>
+				{% if d.uPhoto %}
+					<img class="u-photo" src="{{ d.uPhoto }}" alt="">
 			{% else %}
 				{% include "partials/entry-detail.njk" %}
 				<div class="e-content">
