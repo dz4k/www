@@ -1,10 +1,13 @@
 
-param ([switch]$prod)
+param ([switch]$Production, [switch]$NoBuild)
 
-$commands = 
-"cd ~/www",
-"git pull",
-"npm run build",
-"ntl deploy $($prod ? '--prod' : '')"
+$commands = & { 
+    if (-not $NoBuild) {
+        "cd ~/www"
+        "git pull"
+        "npm run build"
+    }
+    "ntl deploy $($Production ? '--prod' : '')"
+}
 
 ssh dza@p.dz4k.com ($commands -join ' && ')
