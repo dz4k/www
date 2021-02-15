@@ -6,6 +6,12 @@
 
 		{% if isEntryPage %}
 			| <a class="p-author h-card" href="/">Deniz Akşimşek</a>
+		{% else %}
+			<span hidden class="p-author h-card">
+				<a class="u-url p-name"
+					href="https://denizaksimsek.com">Deniz Akşimşek</a>
+				<a class="u-photo" href="/assets/me.jpeg"></a>
+			</span>
 		{% endif %}
 	
 		{% if d.likeOf %}
