@@ -4,6 +4,7 @@ html {
 	--copy: #1e1e1e;
 	--primary: #ff6600;
 	--secondary: #005c82;
+	--highlight: #ff0;
 	--font-copy: "Atkinson Hyperlegible", sans-serif;
 	--font-monospace: "Cascadia Code", Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 	background-color: var(--bg);
@@ -17,6 +18,7 @@ html {
 		--bg: #1e1e1e;
 		--primary: #005c82;
 		--secondary: #ff6600;
+		--highlight: #550;
 	}
 }
 

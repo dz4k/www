@@ -81,3 +81,7 @@ time {
 	}
 
 }
+
+:target {
+	background: var(--highlight);
+}
