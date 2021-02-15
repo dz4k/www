@@ -17,8 +17,8 @@ module.exports = function (eleventyConfig) {
    LAYOUTS
    ****************************************************************************/  
 
-  eleventyConfig.addLayoutAlias('entry', 'layout/entry-layout.njk')
   eleventyConfig.addLayoutAlias('page', 'layout/layout.njk')
+  eleventyConfig.addLayoutAlias('entry', 'layout/entry-layout.njk')
 
   /****************************************************************************
    COLLECTIONS
