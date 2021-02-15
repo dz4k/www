@@ -1,7 +1,10 @@
 
 param ([switch]$prod)
 
-ssh dza@p.dz4k.com "
-	git pull && \
-	npm run build && \
-	ntl deploy $($prod ? '--prod' : '')"
+$commands = 
+"cd ~/www",
+"git pull",
+"npm run build",
+"ntl deploy $($prod ? '--prod' : '')"
+
+ssh dza@p.dz4k.com ($commands -join ' && ')
