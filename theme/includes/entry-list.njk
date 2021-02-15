@@ -5,6 +5,7 @@
 	{% set d = e.data %}
 	<li>
 		<article class="h-entry">
+			{% set hideReplyContext = true %}
 			{% if d.title %}
 				{% if d.uPhoto %}
 					<img class="u-photo thumbnail" src="{{ d.uPhoto }}" alt="">
