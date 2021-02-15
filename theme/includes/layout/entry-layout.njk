@@ -2,7 +2,7 @@
 (() => {
 	const { DateTime } = require('luxon')
 	return {
-		layout: "layout.njk",
+		layout: "layout/layout.njk",
 		eleventyComputed: {
 			permalink: ({page, title, deleted}) => {
 				if (deleted) return false
