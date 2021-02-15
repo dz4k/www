@@ -45,6 +45,13 @@ main, .site-footer {
 	display: block;
 }
 
+.thumbnail {
+	float: right;
+	margin: auto;
+	max-height: 4em;
+	width: auto;
+}
+
 .unblockquote {
 	border: none;
 	padding: 0;
