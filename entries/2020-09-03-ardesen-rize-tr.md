@@ -1,12 +1,14 @@
 ---
 title: Ardeşen, Rize, Turkey
 date: 2020-09-02T22:40:22+03
-uPhoto: /assets/photos/IMG20200825184721.jpg
+uPhoto:
+  src: /assets/photos/IMG20200825184721.jpg
+  alt: Sunset over the sea, reflecting off a nearby car
 ---
 
 A few pics from there.
 
-![Sunset over the sea, reflecting off a nearby car]({{uPhoto}})
+![{{uPhoto.alt}}]({{uPhoto.src}})
 
 ![The dark clouds are painted yellow by the sun, the sea is set ablaze](/assets/photos/IMG20200902180736.jpg)
 

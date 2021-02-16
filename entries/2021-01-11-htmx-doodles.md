@@ -1,7 +1,9 @@
 ---
 title: HTMX Doodles
 date: 2021-01-11T00:47+03
-uPhoto: /assets/htmx-doodles/hypertext-man.jpeg
+uPhoto:
+  src: /assets/htmx-doodles/hypertext-man.jpeg
+  alt: Hypertext Man!
 style: >
 	.img-block { margin: 3em 0; }
 ---

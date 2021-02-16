@@ -8,7 +8,9 @@
 			{% set hideReplyContext = true %}
 			{% if d.title %}
 				{% if d.uPhoto %}
-					<img class="u-photo thumbnail" src="{{ d.uPhoto }}" alt="">
+					<img class="u-photo thumbnail"
+						src="{{ d.uPhoto.src | d(d.uPhoto) }}"
+						alt="{{ d.uPhoto.alt }}">
 				{% endif %}
 				{% include "entry-detail.njk" %}
 				<a href="{{ e.url }}"><h1 class="p-name">{{ d.title }}</h1></a>

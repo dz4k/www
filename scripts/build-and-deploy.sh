@@ -1,0 +1,1 @@
+cd ~/www && git pull && npm run build && ntl deploy
