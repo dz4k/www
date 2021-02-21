@@ -1,11 +1,7 @@
 	<p class="entry-detail">
 
-		<a href="{{ e.url }}" class="u-url">
-			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
-				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
-
 		{% if isEntryPage %}
-			| <a class="p-author h-card" href="/">Deniz Akşimşek</a>
+			<a class="p-author h-card" href="/">Deniz Akşimşek</a> |
 		{% else %}
 			<span hidden class="p-author h-card">
 				<a class="u-url p-name"
@@ -14,6 +10,11 @@
 			</span>
 		{% endif %}
 	
+
+		<a href="{{ e.url }}" class="u-url">
+			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
+				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
+
 		{% if d.likeOf %}
 			| Like ❤️
 				<a class=u-like-of 
