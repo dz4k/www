@@ -5,7 +5,7 @@
 	font-weight: 400;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Arimo-Regular.ttf') format('ttf');
+		url('/assets/fonts/Arimo-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -14,7 +14,7 @@
 	font-weight: 400;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Arimo-Italic.ttf') format('ttf');
+		url('/assets/fonts/Arimo-Italic.woff') format('woff');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Arimo-Bold.woff') format('ttf');
+		url('/assets/fonts/Arimo-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -32,5 +32,5 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Arimo-BoldItalic.woff') format('ttf');
+		url('/assets/fonts/Arimo-BoldItalic.woff') format('woff');
 }
