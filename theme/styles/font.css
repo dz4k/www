@@ -1,36 +1,36 @@
 
 @font-face {
-	font-family: 'Atkinson Hyperlegible';
+	font-family: 'Arimo';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url('/assets/fonts/Arimo-Regular.ttf') format('ttf');
 }
 
 @font-face {
-	font-family: 'Atkinson Hyperlegible';
+	font-family: 'Arimo';
 	font-style: italic;
 	font-weight: 400;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Atkinson-Hyperlegible-Italic-102.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url('/assets/fonts/Arimo-Italic.ttf') format('ttf');
 }
 
 @font-face {
-	font-family: 'Atkinson Hyperlegible';
+	font-family: 'Arimo';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Atkinson-Hyperlegible-Bold-102.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url('/assets/fonts/Arimo-Bold.woff') format('ttf');
 }
 
 @font-face {
-	font-family: 'Atkinson Hyperlegible';
+	font-family: 'Arimo';
 	font-style: italic;
 	font-weight: 700;
 	font-display: swap;
 	src: local(''),
-		url('/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url('/assets/fonts/Arimo-BoldItalic.woff') format('ttf');
 }
