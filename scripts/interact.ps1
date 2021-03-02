@@ -23,7 +23,7 @@ if ($action -eq 'reply') {
         pandoc -f html -t markdown
 }
 
-$filename = "$psscriptroot/../posts/$slug.md"
+$filename = "$psscriptroot/../entries/$slug.md"
 
 & {
 
