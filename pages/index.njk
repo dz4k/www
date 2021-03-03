@@ -20,41 +20,30 @@ eleventyExcludeFromCollections: true
         font-weight: bold;
         opacity: 0.6;
     }
-    
-    .entry-list li { margin: 1em 0 }
+
+    .entry-list {
+	border-collapse: collapse;
+    }
+
     .entry-list .h-entry {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: 'detail image' 'body image';
-
-        border: .1em solid var(--primary);
-        border-radius: 1em;
         padding: 1em;
-        margin-block: 1em;
+        border: 1px solid var(--secondary);
     }
 
-    .h-entry > * {
-        grid-column: 1;
-    }
-    .h-entry .e-content {
-        margin-top: 1em;
+    .entry-list .h-entry:first-child {
+	border-radius: .5em .5em 0 0;
     }
 
-    .h-entry > picture {
-        grid-area: image;
+    .entry-list .h-entry:last-child {
+	border-radius: 0 0 .5em .5em;
     }
 
-    .h-entry .u-photo {
-        max-width: 3em;
-        height: 3em;
-        overflow: visible;
-        object-fit: cover;
-        margin-left: 1em;
+    .p-name {
+        font-weight: bold;
     }
-    
-    .h-entry h1 {
-        font-size: 1.2em;
-        margin: 1rem 0;
+
+    .thumbnail {
+	max-height: 3em;
     }
 </style>
 

@@ -40,7 +40,9 @@
 		</div>
 	{% endif %}
 
-	<div class=e-content>{{ content | d(e.templateContent) | safe }}</div>
+	{% if content.trim() !== '' %}
+		<div class=e-content>{{ content | d(e.templateContent) | safe }}</div>
+	{% endif %}
 
 	{% include "webmentions.njk" %}
 

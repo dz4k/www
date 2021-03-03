@@ -26,6 +26,10 @@ body {
 	padding: 2rem;
 }
 
+.entry-detail {
+	max-width: none;
+}
+
 .site-footer {
 	margin-top: 2em;
 	font-size: .8rem;
