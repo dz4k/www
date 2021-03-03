@@ -1,6 +1,15 @@
 
+.e-content > * + *, .prose > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
 a {
 	color: var(--secondary);
+}
+
+p,
+li {
+  max-width: 60ch;
 }
 
 h1, h2, h3, h4 {
@@ -23,18 +32,11 @@ h3 {
 }
 
 img {
+	display: block;
 	max-width: 100%;
 	max-height: 75vh;
 	height: auto;
 	object-fit: contain;
-}
-
-picture {
-	display: contents;
-}
-
-ul, ol {
-	padding-left: 2ch;
 }
 
 table {
@@ -45,16 +47,8 @@ table {
 th { text-align: left; }
 
 blockquote {
-	padding-left: 1ch;
-	padding-right: 1ch;
-	margin-left: 0;
-	margin-right: 0;
 	border-left: 3px double var(--primary);
-}
-
-details {
-	padding: 1em;
-	border: 1px solid #ccc;
+	padding-left: 1em;
 }
 
 details:not([open]) {

@@ -1,5 +1,5 @@
 
-<ol class="entry-list" reversed>
+<ol class="entry-list" reversed role=list>
 {%- for entry in collections.entries | reverse %}
 	{% set e = entry %}
 	{% set d = e.data %}
@@ -13,7 +13,7 @@
 						alt="{{ d.uPhoto.alt }}">
 				{% endif %}
 				{% include "entry-detail.njk" %}
-				<a href="{{ e.url }}"><h1 class="p-name">{{ d.title }}</h1></a>
+				<a href="{{ e.url }}" class="p-name">{{ d.title }}</a>
 			{% else %}
 				{% include "entry-detail.njk" %}
 				<div class="e-content">

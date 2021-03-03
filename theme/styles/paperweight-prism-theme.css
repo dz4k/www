@@ -6,7 +6,7 @@
 code,
 pre {
 	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: var(--font-monospace);
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;

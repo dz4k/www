@@ -6,7 +6,7 @@ html {
 	--secondary: #005c82;
 	--highlight: #ff0;
 	--font-copy: Arimo, Arial, sans-serif;
-	--font-monospace: "Cascadia Code", Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	--font-monospace: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 	background-color: var(--bg);
 	color: var(--copy);
 	font-family: var(--font-copy);
@@ -22,13 +22,8 @@ html {
 	}
 }
 
-* {
-	box-sizing: border-box;
-}
-
-main, .site-footer {
-	max-width: 700px;
-	margin: auto; 
+body {
+	padding: 2rem;
 }
 
 .site-footer {
@@ -38,27 +33,13 @@ main, .site-footer {
 }
 
 .img-inline {
+	display: inline;
 	height: 1em;
 	width: auto;
 	vertical-align: bottom;
 }
 
-.image-link {
-	display: block;
-}
-
-.thumbnail {
-	float: right;
-	margin: auto;
-	max-height: 4em;
-	width: auto;
-}
-
 .unblockquote {
 	border: none;
 	padding: 0;
-}
-
-.smallcaps {
-	font-variant-caps: small-caps;
 }

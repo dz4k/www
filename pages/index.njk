@@ -21,11 +21,35 @@ eleventyExcludeFromCollections: true
         opacity: 0.6;
     }
     
-    .entry-list { list-style: none; padding: 0 }
     .entry-list li { margin: 1em 0 }
     .entry-list .h-entry {
-        border-bottom: .1em solid var(--primary);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 'detail image' 'body image';
+
+        border: .1em solid var(--primary);
+        border-radius: 1em;
+        padding: 1em;
         margin-block: 1em;
+    }
+
+    .h-entry > * {
+        grid-column: 1;
+    }
+    .h-entry .e-content {
+        margin-top: 1em;
+    }
+
+    .h-entry > picture {
+        grid-area: image;
+    }
+
+    .h-entry .u-photo {
+        max-width: 3em;
+        height: 3em;
+        overflow: visible;
+        object-fit: cover;
+        margin-left: 1em;
     }
     
     .h-entry h1 {
@@ -44,9 +68,9 @@ eleventyExcludeFromCollections: true
         alt="Deniz Akşimşek"
         style="
             max-height: 44vh;
-            object-fit: cover;
             object-position: top;
-            border-radius: .5em;">
+            border-radius: .5em;
+            width: auto;">
 
     <h1><a href=https://denizaksimsek.com/
         rel=me class="p-name u-url u-uid"
