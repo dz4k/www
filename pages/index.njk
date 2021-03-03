@@ -6,6 +6,17 @@ eleventyExcludeFromCollections: true
 ---
 
 <style>
+	.h-card > * + * {
+		margin-top: 1em;
+	}
+
+	.h-card .u-photo {
+		max-height: 44vh;
+		object-position: top;
+		border-radius: .5em; 
+		width: auto;
+	}
+
     .me-elsewhere {
         display: flex;
         flex-flow: row wrap;
@@ -21,21 +32,8 @@ eleventyExcludeFromCollections: true
         opacity: 0.6;
     }
 
-    .entry-list {
-	border-collapse: collapse;
-    }
-
     .entry-list .h-entry {
-        padding: 1em;
-        border: 1px solid var(--secondary);
-    }
-
-    .entry-list .h-entry:first-child {
-	border-radius: .5em .5em 0 0;
-    }
-
-    .entry-list .h-entry:last-child {
-	border-radius: 0 0 .5em .5em;
+        margin: 3em 0;
     }
 
     .p-name {
@@ -43,24 +41,15 @@ eleventyExcludeFromCollections: true
     }
 
     .thumbnail {
-	max-height: 3em;
+        max-height: 3em;
+        float: left;
+        margin-right: 1em;
     }
 </style>
 
 
 
-<section class="p-author h-card">
-    
-    <img
-        class=u-photo
-        src=/assets/me-full.jpeg
-        alt="Deniz Akşimşek"
-        style="
-            max-height: 44vh;
-            object-position: top;
-            border-radius: .5em;
-            width: auto;">
-
+<section class="p-author h-card">    
     <h1><a href=https://denizaksimsek.com/
         rel=me class="p-name u-url u-uid"
         >Deniz Akşimşek</a></h1>
@@ -88,13 +77,13 @@ eleventyExcludeFromCollections: true
             <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
         </div>
     </dl>
+    <img class=u-photo src=/assets/me-full.jpeg 
+    	alt="Me @ Atakule, Ankara, Turkey">
 
     <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in Ankara, Turkey.
-
 </section>
 
 <section id="blog" class="h-feed">
-<h2 class="p-name">Blog</h2>
-<link href="https://denizaksimsek.com/#blog" class="u-url u-uid">
-{% include "entry-list.njk" %}
+	<link href="https://denizaksimsek.com/#blog" class="u-url u-uid">
+	{% include "entry-list.njk" %}
 </section>

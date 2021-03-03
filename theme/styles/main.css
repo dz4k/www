@@ -28,6 +28,11 @@ body {
 
 .entry-detail {
 	max-width: none;
+	padding-bottom: .5em;
+}
+
+.entry-header {
+	margin-bottom: 2em;
 }
 
 .site-footer {

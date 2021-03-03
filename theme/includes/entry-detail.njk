@@ -1,5 +1,7 @@
 	<p class="entry-detail">
 
+		[
+
 		{% if isEntryPage %}
 			<a class="p-author h-card" href="/">Deniz Akşimşek</a> |
 		{% else %}
@@ -36,5 +38,7 @@
 					>{{ d.replyTo.name 
 						| d(d.replyTo.url | d(d.replyTo) | truncateUrl) }}</a>
 		{% endif %}
+
+		]
 
 	</p>

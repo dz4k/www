@@ -1,15 +1,21 @@
 
-.e-content > * + *, .prose > * + * {
+.e-content > * + *, .prose > * + *, blockquote > * + * {
   margin-top: var(--flow-space, 1em);
 }
 
 a {
-	color: var(--secondary);
+	color: var(--copy);
 }
 
 p,
 li {
   max-width: 60ch;
+}
+
+blockquote {
+	padding: 0 0 .2em 1em;
+	border-left: 1px solid var(--secondary);
+	border-radius: 1em;
 }
 
 h1, h2, h3, h4 {
@@ -35,6 +41,7 @@ img {
 	display: block;
 	max-width: 100%;
 	max-height: 45vh;
+	width: auto;
 	height: auto;
 	object-fit: contain;
 	object-position: top left;
@@ -46,11 +53,6 @@ table {
 }
 
 th { text-align: left; }
-
-blockquote {
-	border-left: 3px double var(--primary);
-	padding-left: 1em;
-}
 
 details:not([open]) {
 	background: #88888888;
