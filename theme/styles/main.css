@@ -10,6 +10,8 @@ html {
 	background-color: var(--bg);
 	color: var(--copy);
 	font-family: var(--font-copy);
+
+	scrollbar-color: var(--primary) var(--bg);
 }
 
 @media (prefers-color-scheme: dark) {
