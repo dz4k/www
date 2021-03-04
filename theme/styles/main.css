@@ -28,6 +28,11 @@ body {
 	padding: 2rem;
 }
 
+.read-more-link {
+	white-space: pre;
+	font-style: italic;
+}
+
 .entry-detail {
 	max-width: none;
 	padding-bottom: .5em;

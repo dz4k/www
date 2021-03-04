@@ -15,7 +15,13 @@
 			<a href="{{ e.url }}" class="p-name">{{ d.title }}</a>
 		{% else %}
 			{% include "entry-detail.njk" %}
-			{% if (e.templateContent | trim) !== '' %}
+			{% if e.data.summary %}
+				<p>
+					<span class="p-summary">{{ e.data.summary | safe }}</span>
+					<a class="read-more-link"
+						href="{{ e.url }}">Read more&hellip;</a>
+				</p>
+			{% elif (e.templateContent | trim) !== '' %}
 				<div class="e-content">
 					{{ e.templateContent | safe }}
 				</div>
