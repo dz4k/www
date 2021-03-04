@@ -1,4 +1,8 @@
 
+body {
+	overflow-y: scroll;
+}
+
 .e-content > * + *, .prose > * + *, blockquote > * + * {
   margin-top: var(--flow-space, 1em);
 }
