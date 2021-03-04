@@ -1,6 +1,6 @@
 	<p class="entry-detail">
 
-		[
+		<span class="decor">[</span>
 
 		{% if isEntryPage %}
 			<a class="p-author h-card" href="/">Deniz Akşimşek</a> |
@@ -31,6 +31,13 @@
 					>{{ d.repostOf.name | d(d.repostOf | truncateUrl) }}</a>
 		{% endif %}
 
+		{% if d.bookmarkOf %}
+			| Bookmark 🔖
+				<a class=u-bookmark-of 
+					href="{{ d.bookmarkOf.url | d(d.bookmarkOf) }}"
+					>{{ d.bookmarkOf.name | d(d.bookmarkOf | truncateUrl) }}</a>
+		{% endif %}
+
 		{% if d.replyTo and (hideReplyContext or not d.replyTo.context) %}
 			| Re. ↪
 				<a class=u-reply-to 
@@ -39,6 +46,6 @@
 						| d(d.replyTo.url | d(d.replyTo) | truncateUrl) }}</a>
 		{% endif %}
 
-		]
+		<span class="decor">]</span>
 
 	</p>
