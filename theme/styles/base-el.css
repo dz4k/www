@@ -62,6 +62,11 @@ details:not([open]) {
 	background: #88888888;
 }
 
+mark {
+	color: var(--copy);
+	background: var(--highlight);
+}
+
 time {
 	font-variant-numeric: tabular-nums;
 }
