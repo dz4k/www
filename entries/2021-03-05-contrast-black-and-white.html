@@ -1,0 +1,80 @@
+---
+title: "Colors That Contrast With Both Black And White"
+repostOf:
+  url: https://web.archive.org/web/20160214165231/trace.wisc.edu/contrast-ratio-examples/PassingMidColorSamples_4-5to1.htm
+  name: Colors that have a contrast ratio of at least 4.5:1 on both Black and White
+templateEngineOverride: njk
+---
+
+<style>
+	.colors {
+		display: grid;
+		grid-template-columns: repeat(72, 11px); /* 72 makes a nice grid */
+		overflow-x: auto;
+		position: relative;
+
+		padding-left: var(--page-padding) !important;
+		margin-left: calc(0px - var(--page-padding));
+		margin-right: calc(0px - var(--page-padding));
+
+		scrollbar-color: #888 var(--bg);
+		scrollbar-width: thin;
+	}
+
+	.colors li {
+		background: var(--color);
+		height: 11px;
+		width: 11px;
+		border: 1px solid var(--bg);
+		border-top: none; border-left: none;
+		color: transparent;
+		cursor: pointer;
+		line-height: 0;
+	}
+
+	.selected-color {
+		position: sticky;
+		top: 0;
+		z-index: 100000;
+		font-size: 1.2em;
+		text-align: center;
+		font-weight: bold;
+		height: 3em;
+		padding: 0 1em;
+		text-shadow: 0 1.5em 0 var(--color, #888);
+		color: var(--color, #888);
+		background: linear-gradient(#fff, #fff 50%, #000 50%);
+		outline: 1px solid black;
+		width: max-content;
+		min-width: 20ch;
+	}
+
+	li.active {
+		border-radius: 50%;
+	}
+</style>
+
+<div class=selected-color>
+	Select a color...
+</div>
+
+<ul role=list class=colors>
+	{% for color in colors %}
+	<li style="--color:{{ color }}" title="{{ color }}">{{ color }}
+	{% endfor %}
+</ul>
+
+<script defer>
+	const $ = document.querySelector.bind(document)
+	const colors = $('.colors'), selectedColor = $('.selected-color')
+	colors.onclick = e => {
+		const active = colors.querySelector('.active')
+		const li = event.target.closest('li')
+		if (active === li) return
+		active && active.classList.remove('active')
+		li.classList.add('active')
+
+		selectedColor.innerText = li.innerText
+		selectedColor.style.setProperty('--color', li.innerText)
+	}
+</script>
