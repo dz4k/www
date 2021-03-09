@@ -77,9 +77,29 @@ lang: en
 
 {{ content | safe }}
 
+<script id="bling-dza">
+	window.$ = document.querySelector.bind(document)
+	Element.prototype.$ = Element.prototype.querySelector
+
+	window.$$ = document.querySelectorAll.bind(document)
+	Element.prototype.$$ = Element.prototype.querySelectorAll
+
+	Node.prototype.on = window.on = function (...args) {
+		this.addEventListener(...args)
+	}
+
+	Object.setPrototypeOf(NodeList.prototype, Array.prototype)
+
+	NodeList.prototype.on = NodeList.prototype.addEventListener = function (...args) {
+		this.forEach(elem => elem.on(...args))
+	}
+                                        	                                        	                        </script>
+                                        	                                        }
+                                        }
+
 <script>
 {
-	document.querySelectorAll('img').addEventListener('click', function (e) {
+	$$('img').on('click', function (e) {
 		window.open(this.src, '_blank').focus()
 	})
 }
