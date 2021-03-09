@@ -9,9 +9,9 @@
 					href="https://denizaksimsek.com">Deniz Akşimşek</a>
 				<a class="u-photo" href="/assets/me.jpeg"></a>
 			</span>
+			{%- set foo='just removing whitespace' -%}
 		{% endif -%}
 	
-		{%- set foo='bar' -%}
 		<a href="{{ e.url }}" class="u-url">
 			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
 				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
