@@ -6,29 +6,45 @@ eleventyExcludeFromCollections: true
 ---
 
 <style>
-	.h-card > * + * {
-		margin-top: 1em;
+	.me {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-areas:
+			'avatar name'
+			'avatar elsewhere'
+			'.      note';
+		gap: 1em;
 	}
-
-	.h-card h1 {
+	
+	.me h1 {
+		grid-area: name;
+		
 		font-size: min(10vw, 4rem);
-		line-height: 1;
+		line-height: .7;
 		margin-top: 0;
 	}
 
-	.h-card .p-name {
+	.me .p-name {
 		color: var(--primary);
 		text-decoration: none;
 	}
 
-	.h-card .u-photo {
-		max-height: 44vh;
-		object-position: top;
-		border-radius: .5em; 
-		width: auto;
+	.me picture {
+		grid-area: avatar;
+	}
+
+	.me .u-photo {
+		border-radius: .4em; 
+		width: 5em;
+	}
+
+	.me .p-note {
+		grid-area: note;
 	}
 
     .me-elsewhere {
+    	grid-area: elsewhere;
+    	
         display: flex;
         flex-flow: row wrap;
         margin-left: -0.6em;
@@ -43,11 +59,26 @@ eleventyExcludeFromCollections: true
         opacity: 0.6;
     }
 
+    @media (max-width: 660px) {
+    	.me {
+    		grid-template-columns: 1fr;
+    		grid-template-areas: 'avatar' 'name' 'elsewhere' 'note';
+    	}
+
+    	.me h1 {
+    		line-height: 1;
+    	}
+
+		.me-elsewhere div {
+    		margin-top: .25em;
+    	}
+    }
+
     .entry-list .h-entry {
         margin: 3em 0;
     }
 
-    .p-name {
+    .h-entry .p-name {
         font-weight: bold;
     }
 
@@ -61,7 +92,10 @@ eleventyExcludeFromCollections: true
 
 
 
-<section class="p-author h-card">    
+<section class="p-author h-card me">
+    <img class=u-photo src=/assets/me.jpeg 
+    	alt="Me @ Atakule, Ankara, Turkey">
+
     <h1><a href=https://denizaksimsek.com/
         rel=me class="p-name u-url u-uid"
         >Deniz Akşimşek</a></h1>
@@ -89,8 +123,6 @@ eleventyExcludeFromCollections: true
             <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
         </div>
     </dl>
-    <img class=u-photo src=/assets/me-full.jpeg 
-    	alt="Me @ Atakule, Ankara, Turkey">
 
     <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in Ankara, Turkey.
 </section>
