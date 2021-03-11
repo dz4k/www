@@ -4,9 +4,14 @@ eleventyExcludeFromCollections: true
 ---
 
 https://dz4k.com/* https://denizaksimsek.com/:splat 301!
-http://dz4k.com/* http://denizaksimsek.com/:splat 301!
+http://dz4k.com/* https://denizaksimsek.com/:splat 301!
 
 /2020/ankara-metro-map/ https://ankarametro.dz4k.com
+
+{# Shortlinks #}
+{% for post in collections.posts %}
+https://dz4k.com/{{ post.shortlink }} https://denizaksimsek.com{{ post.url }} 301
+{% endfor %}
 
 {# Legacy redirects #}
 /archive/ /

@@ -22,14 +22,15 @@ templateEngineOverride: njk
 	}
 
 	.colors li {
-		background: var(--color);
+		display: block;
+		overflow: hidden;
 		height: 11px;
 		width: 11px;
 		border: 1px solid var(--bg);
-		border-top: none; border-left: none;
+		border-left: none; border-top: none;
+		background: var(--color);
 		color: transparent;
 		cursor: pointer;
-		line-height: 0;
 	}
 
 	.selected-color {
