@@ -12,8 +12,8 @@
 			{%- set foo='just removing whitespace' -%}
 		{% endif -%}
 	
-		<a href="{{ e.url }}" class="u-url">
-			<time class="dt-published" datetime="{{ e.date | isodatetime }}"
+		<a href="{{ e.url }}" class="u-url"
+			><time class="dt-published" datetime="{{ e.date | isodatetime }}"
 				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
 
 		{%- if d.likeOf %}
