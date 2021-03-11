@@ -77,32 +77,15 @@ lang: en
 
 {{ content | safe }}
 
-<script id="bling-dza">
-	window.$ = document.querySelector.bind(document)
-	Element.prototype.$ = Element.prototype.querySelector
+<script src="/assets/_hs/core.js"></script>
+<script src="/assets/_hs/web.js"></script>
 
-	window.$$ = document.querySelectorAll.bind(document)
-	Element.prototype.$$ = Element.prototype.querySelectorAll
+<template _="
+	on click from <img/> 
+		call window.open(event.target.src, '_blank')
+		call it.focus()
+"></template>
 
-	Node.prototype.on = window.on = function (...args) {
-		this.addEventListener(...args)
-	}
-
-	Object.setPrototypeOf(NodeList.prototype, Array.prototype)
-
-	NodeList.prototype.on = NodeList.prototype.addEventListener = function (...args) {
-		this.forEach(elem => elem.on(...args))
-	}
-                                        	                                        	                        </script>
-                                        	                                        }
-                                        }
-
-<script>
-{
-	$$('img').on('click', function (e) {
-		window.open(this.src, '_blank').focus()
-	})
-}
-
-{{ script | safe }}
+<script type=text/hyperscript>
+	{{ script | safe }}
 </script>

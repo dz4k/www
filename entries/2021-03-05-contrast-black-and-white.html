@@ -33,7 +33,7 @@ templateEngineOverride: njk
 		cursor: pointer;
 	}
 
-	.selected-color {
+	#selected-color {
 		position: sticky;
 		top: 0;
 		z-index: 100000;
@@ -55,27 +55,18 @@ templateEngineOverride: njk
 	}
 </style>
 
-<div class=selected-color>
+<div id=selected-color>
 	Select a color...
 </div>
 
-<ul role=list class=colors>
+<ul role=list class=colors _="
+	on click
+		set li to event.target.closest('li')
+		remove .active from .active then add .active to li
+		set #selected-color.innerText to li.innerText
+		call #selected-color.style.setProperty('--color', li.innerText)
+	">
 	{% for color in colors %}
 	<li style="--color:{{ color }}" title="{{ color }}">{{ color }}
 	{% endfor %}
 </ul>
-
-<script defer>
-	const $ = document.querySelector.bind(document)
-	const colors = $('.colors'), selectedColor = $('.selected-color')
-	colors.onclick = e => {
-		const active = colors.querySelector('.active')
-		const li = event.target.closest('li')
-		if (active === li) return
-		active && active.classList.remove('active')
-		li.classList.add('active')
-
-		selectedColor.innerText = li.innerText
-		selectedColor.style.setProperty('--color', li.innerText)
-	}
-</script>
