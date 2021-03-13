@@ -60,11 +60,12 @@ templateEngineOverride: njk
 </div>
 
 <ul role=list class=colors _="
-	on click
-		set li to event.target.closest('li')
-		remove .active from .active then add .active to li
-		set #selected-color.innerText to li.innerText
-		call #selected-color.style.setProperty('--color', li.innerText)
+	on click 
+		with closest <li/> to target
+			take .active
+			set #selected-color.innerText to my.innerText
+			add {'--color': my.innerText} to #selected-color
+		end
 	">
 	{% for color in colors %}
 	<li style="--color:{{ color }}" title="{{ color }}">{{ color }}
