@@ -3,6 +3,9 @@ title: "The Implementation of HDB, the _hyperscript debugger"
 date: 2021-03-17
 templateEngineOverride: njk,md
 noHyperscript: true
+syndication:
+  Twitter: https://twitter.com/DenizAksimsek/status/1372244813928660993
+  Hacker News: https://news.ycombinator.com/item?id=26494553
 ---
 
 <script src="/assets/js/core.js"></script>
