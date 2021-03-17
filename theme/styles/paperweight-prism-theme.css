@@ -53,8 +53,6 @@ pre {
 /* Bold */
 .token.boolean,
 .token.keyword, 
-.token.punctuation,
-.token.tag,
 .token.selector,
 .token.atrule {
 	font-weight: bold;
@@ -80,7 +78,8 @@ pre {
 .token.doctype,
 .token.cdata,
 .token.deleted, 
-.token.inserted {
+.token.inserted,
+.token.tag > .token.punctuation {
 	opacity: .6;
 }
 

@@ -26,10 +26,12 @@ h1, h2, h3, h4 {
 	font-weight: bold;
 	font-size: 1rem;
 	margin-top: 1.5rem;
+	margin-left: calc(var(--page-padding) / -2);
 }
 
 h1 {
 	font-size: 2em;
+	margin-left: 0;
 }
 
 h2 {
@@ -69,6 +71,12 @@ mark {
 
 time {
 	font-variant-numeric: tabular-nums;
+}
+
+figcaption {
+	font-style: italic;
+	font-size: .8em;
+	opacity: .8;
 }
 
 @media print {

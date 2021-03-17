@@ -9,7 +9,7 @@ You're looking at the blog post you made yesterday, when suddenly a typo catches
 
 **Note:** This tip assumes you use GitHub. It could likely be adapted easily for other Git providers.
 
-Add the following to your base layout (note the `{%raw%}{{}}{%endraw%}` and replace `<username>/<repo>` with the repo for the site):
+Add the following to your base layout (note the `\{{}}` and replace `<username>/<repo>` with the repo for the site):
 
 ```html
 <script>

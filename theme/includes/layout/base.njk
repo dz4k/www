@@ -76,15 +76,3 @@ lang: en
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 {{ content | safe }}
-
-<script src="/assets/_hyperscript.min.js"></script>
-
-<template _="
-	on click from <img/> 
-		call window.open(event.target.src, '_blank')
-		call it.focus()
-"></template>
-
-<script type=text/hyperscript>
-	{{ script | safe }}
-</script>

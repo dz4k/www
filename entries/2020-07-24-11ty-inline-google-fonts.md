@@ -31,10 +31,10 @@ module.exports = fetch(url).then(res => res.text())
 
 And include it in our base layout.
 
-{%raw%}
+{{{{raw}}}}
 ```liquid
 <style type="text/css">{{googleFontsStylesheet|safe}}</style>
 ```
-{%endraw%}
+{{{{/raw}}}}
 
 Enjoy your improved Lighthouse scores!

@@ -39,7 +39,7 @@ This will give us an object like this:
 
 Now let's try using it in our templates:
 
-{%raw%}
+{{{{raw}}}}
 ```liquid
 {%if devToSyndication[page.url]%}
 <section class="syndication-links">
@@ -48,7 +48,7 @@ This article is syndicated to <a class="u-syndication"
 </section>
 {%endif%}
 ```
-{%endraw%}
+{{{{/raw}}}}
 
 Small problem: the `page.url` property Eleventy provides us is a relative URL, whereas the URLs we got from DEV are absolute. 
 

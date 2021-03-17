@@ -80,6 +80,15 @@ module.exports = function (eleventyConfig) {
     return url.href + (dotdotdot ? '…' : '')
   })
 
+  eleventyConfig.addPairedShortcode('fig', (body, caption, link) =>
+`<figure><figcaption>${
+	link ? `<a href="${link}">${caption}</a>` : caption
+}</figcaption>
+
+${body}
+
+</figure>`)
+
   /****************************************************************************
    RESPONSIVE IMAGES
    ****************************************************************************/
@@ -108,5 +117,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: { output: '_site', includes: 'theme/includes', data: 'theme/data' },
+    htmlTemplateEngine: 'hbs',
+    markdownTemplateEngine: 'hbs'
   }
 }
