@@ -6,6 +6,7 @@ noHyperscript: true
 syndication:
   Twitter: https://twitter.com/DenizAksimsek/status/1372244813928660993
   Hacker News: https://news.ycombinator.com/item?id=26494553
+  DEV: https://dev.to/dz4k/the-implementation-of-hdb-the-hyperscript-debugger-5hf4
 ---
 
 <script src="/assets/js/core.js"></script>
@@ -193,7 +194,7 @@ There are a lot of elements listening to `load or step from hdb.bus`, so I conso
 
 We define some functions.
 
-{% fig "hdb.js ln. 112", ""%}
+{% fig "hdb.js ln. 112", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L112"%}
 ```html
 def highlightDebugCode
 	set start to hdb.cmd.startToken.start
@@ -310,5 +311,7 @@ In just 360 lines, we have a basic debugger. This speaks volumes to the flexibil
 
 [_hyperscript]: https://hyperscript.org
 [hdb-src]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js
+[continue-exec]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L54
+[HALT]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/core.js#L1221
 [template literals]: https://hyperscript.org/expressions/string/
 [internal event bus]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L10
