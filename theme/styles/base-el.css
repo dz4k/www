@@ -85,10 +85,6 @@ details:not([open]) {
 	background: #88888888;
 }
 
-code {
-	margin: 0 .5ch;
-}
-
 mark {
 	color: var(--copy);
 	background: var(--highlight);

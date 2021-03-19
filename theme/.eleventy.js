@@ -40,6 +40,7 @@ module.exports = function (eleventyConfig) {
     html: true,
     linkify: true,
     typographer: true,
+    anchorPrefix: 'h-',
   })
 
   markdownLibrary.use(require("markdown-it-attrs"))

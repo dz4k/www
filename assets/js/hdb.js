@@ -146,7 +146,19 @@
 	</script>
 
 	<header>
-		<h2 class="titlebar">HDB///_hyperscript/debugger</h2>
+		<h2 class="titlebar" _="
+		on mousedown(clientX, clientY)
+			measure my x, y
+			set xoff to clientX - x
+			set yoff to clientY - y
+			repeat until event mouseup from document
+				wait for mousemove(clientX, clientY) from document
+				add {
+					left: \`\${clientX - xoff}px\`,
+					top:  \`\${clientY - yoff}px\`
+				} to hdbUI
+			end
+		">HDB///_hyperscript/debugger</h2>
 		<ul role="toolbar" class="toolbar">
 		<li><button _="on click call hdb.continueExec()">Continue</button></li
 		><li><button _="on click call hdb.stepOver()">Step Over</button></li>

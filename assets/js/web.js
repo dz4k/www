@@ -533,7 +533,6 @@
                 op: function (context, root, valueToPut) {
                     if (symbolWrite) {
                         putInto(context, prop, valueToPut);
-                        context[target.name] = valueToPut;
                     } else {
                         if (operation === "into") {
                             runtime.forEach(root, function (elt) {
@@ -564,18 +563,52 @@
         }
     })
 
+    function parsePseudopossessiveTarget(parser, runtime, tokens) {
+    	if (tokens.matchToken('the') ||
+            tokens.matchToken('element') ||
+            tokens.matchToken('elements') ||
+            tokens.currentToken().type === "CLASS_REF" ||
+            tokens.currentToken().type === "ID_REF" ||
+            (tokens.currentToken().op && tokens.currentToken().value === "<")) {
+
+            parser.possessivesDisabled = true;
+            try {
+                var targets = parser.parseElement("expression", tokens);
+            } finally {
+                delete parser.possessivesDisabled;
+            }
+            // optional possessive
+            if (tokens.matchOpToken("'")) {
+                tokens.requireToken("s");
+            }
+        } else if (tokens.currentToken().type === "IDENTIFIER" && tokens.currentToken().value === 'its') {
+            var identifier = tokens.matchToken('its');
+            var targets =  {
+                type: "pseudopossessiveIts",
+                token: identifier,
+                name: identifier.value,
+                evaluate: function (context) {
+                    return runtime.resolveSymbol("it", context);
+                }
+            };
+        } else {
+            tokens.matchToken('my') || tokens.matchToken('me'); // consume optional 'my'
+            var targets = parser.parseElement("implicitMeTarget", tokens);
+        }
+		return targets;
+    }
+
     _hyperscript.addCommand("transition", function(parser, runtime, tokens) {
         if (tokens.matchToken("transition")) {
-            if (tokens.matchToken('element') || tokens.matchToken('elements')) {
-                var targets = parser.parseElement("expression", tokens);
-            } else {
-                var targets = parser.parseElement("implicitMeTarget", tokens);
-            }
+        	var targets = parsePseudopossessiveTarget(parser, runtime, tokens);
+            
             var properties = [];
             var from = [];
             var to = [];
             var currentToken = tokens.currentToken();
-            while (!parser.commandBoundary(currentToken) && currentToken.value !== "using") {
+            while (!parser.commandBoundary(currentToken) &&
+                     currentToken.value !== "over" &&
+                     currentToken.value !== "using") {
 
                 properties.push(parser.requireElement("stringLike", tokens));
 
@@ -588,19 +621,27 @@
                 to.push(parser.requireElement("stringLike", tokens));
                 currentToken = tokens.currentToken();
             }
-            if (tokens.matchToken("using")) {
+            if (tokens.matchToken("over")) {
+                var over = parser.requireElement("timeExpression", tokens);
+            } else if (tokens.matchToken("using")) {
                 var using = parser.requireElement("expression", tokens);
             }
 
             var transition = {
                 to: to,
-                args: [targets, properties, from, to, using],
-                op: function (context, targets, properties, from, to, using) {
+                args: [targets, properties, from, to, using, over],
+                op: function (context, targets, properties, from, to, using, over) {
                     var promises = [];
                     runtime.forEach(targets, function(target){
                         var promise = new Promise(function (resolve, reject) {
                             var initialTransition = target.style.transition;
-                            target.style.transition = using || _hyperscript.config.defaultTransition;
+                            if (over) {
+                                target.style.transition = 'all ' + over + 'ms ease-in';
+                            } else if (using) {
+                                target.style.transition = using;
+                            } else {
+                                target.style.transition = _hyperscript.config.defaultTransition;
+                            }
                             var internalData = runtime.getInternalData(target);
                             var computedStyles = getComputedStyle(target);
 
@@ -656,6 +697,51 @@
             return transition
         }
     });
+
+	_hyperscript.addCommand('measure', function (parser, runtime, tokens) {
+		if (!tokens.matchToken('measure')) return;
+
+        var target = parsePseudopossessiveTarget(parser, runtime, tokens);
+
+		var propsToMeasure = [];
+		if (!parser.commandBoundary(tokens.currentToken())) do {
+			propsToMeasure.push(tokens.matchTokenType('IDENTIFIER').value);
+		} while (tokens.matchOpToken(','));
+
+		return {
+			properties: propsToMeasure,
+			args: [target],
+			op: function (ctx, target) {
+				if (0 in target) target = target[0]; // not measuring multiple elts
+				var rect = target.getBoundingClientRect();
+				var scroll = {
+					top: target.scrollTop, left: target.scrollLeft,
+					topMax: target.scrollTopMax, leftMax: target.scrollLeftMax,
+					height: target.scrollHeight, width: target.scrollWidth,
+				};
+				
+				ctx.result = {
+					x: rect.x, y: rect.y,
+					left: rect.left, top: rect.top,
+					right: rect.right, bottom: rect.bottom,
+					width: rect.width, height: rect.height,
+					bounds: rect,
+					
+					scrollLeft: scroll.left, scrollTop: scroll.top,
+					scrollLeftMax: scroll.leftMax, scrollTopMax: scroll.topMax,
+					scrollWidth: scroll.width, scrollHeight: scroll.height,
+					scroll: scroll
+				};
+
+				runtime.forEach(propsToMeasure, function(prop) {
+					if (prop in ctx.result) ctx[prop] = ctx.result[prop];
+					else throw "No such measurement as " + prop
+				})
+
+				return runtime.findNext(this, ctx);
+			}
+		}
+	})
 
     _hyperscript.addLeafExpression('closestExpr', function (parser, runtime, tokens) {
         if (tokens.matchToken('closest')) {
