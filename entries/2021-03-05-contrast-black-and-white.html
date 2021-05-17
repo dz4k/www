@@ -6,10 +6,10 @@ repostOf:
 templateEngineOverride: njk
 ---
 
+<script src="https://unpkg.com/hyperscript.org@0.0.8/dist/_hyperscript.min.js"></script>
+
 <style>
-	.colors {
-		display: grid;
-		grid-template-columns: repeat(72, 11px); /* 72 makes a nice grid */
+	.colors-container {
 		overflow-x: auto;
 		position: relative;
 
@@ -19,6 +19,20 @@ templateEngineOverride: njk
 
 		scrollbar-color: #888 var(--bg);
 		scrollbar-width: thin;
+		
+		width: 80vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -40vw;
+		margin-right: -40vw;
+	}
+
+	.colors {
+		width: min-content;
+		margin: auto;
+		display: grid;
+		grid-template-columns: repeat(72, 11px); /* 72 makes a nice grid */
 	}
 
 	.colors li {
@@ -44,9 +58,10 @@ templateEngineOverride: njk
 		padding: 0 1em;
 		text-shadow: 0 1.5em 0 var(--color, #888);
 		color: var(--color, #888);
-		background: linear-gradient(#fff, #fff 50%, #000 50%);
+		background: linear-gradient(#000, #000 50%, #fff 50%);
 		outline: 1px solid black;
 		width: max-content;
+		margin: auto;
 		min-width: 20ch;
 	}
 
@@ -59,15 +74,16 @@ templateEngineOverride: njk
 	Select a color...
 </div>
 
+<div class=colors-container>
 <ul role=list class=colors _="
 	on click 
-		with closest <li/> to target
+		tell closest <li/> to the target
+			set #selected-color's innerText to the target's innerText
+			add {'--color': the target's innerText} to the #selected-color
 			take .active
-			set #selected-color.innerText to my.innerText
-			add {'--color': my.innerText} to #selected-color
-		end
 	">
 	{% for color in colors %}
 	<li style="--color:{{ color }}" title="{{ color }}">{{ color }}
 	{% endfor %}
 </ul>
+</div>

@@ -1,0 +1,175 @@
+
+body {
+	overflow-y: scroll;
+}
+
+.e-content   > * + *,
+.prose       > * + *,
+blockquote   > * + *,
+figcaption   > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+a {
+	color: currentColor;
+}
+
+blockquote {
+	padding: 0 0 .2em 1em;
+	border-left: 1px solid var(--secondary);
+	border-radius: 1em;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: normal;
+	line-height: 2em;
+
+	counter-reset: h2;
+}
+
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	counter-increment: h2;
+	counter-reset: h3;
+}
+
+h2::before {
+	content: counter(h2) ' ';
+	display: inline-block;
+	min-width: 4ch;
+}
+
+h3 {
+	counter-increment: h3;
+	counter-reset: h4;
+}
+
+h3::before {
+	content: counter(h2) '.' counter(h3) ' ';
+	display: inline-block;
+	min-width: 4ch;
+}
+
+h4::before {
+	content: counter(h2) '.' counter(h3) '.' counter(h4) ' ';
+	display: inline-block;
+	min-width: 4ch;
+}
+
+.-no-number-headings h1:before,
+.-no-number-headings h2:before,
+.-no-number-headings h3:before,
+.-no-number-headings h4:before {
+	all: initial;
+}
+
+hr {
+	border: .5px solid var(--grayed);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	max-height: 80vh;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	object-position: top left;
+	border: 1px solid var(--copy);
+}
+
+table {
+	display: block;
+	overflow-x: auto;
+}
+
+th { text-align: left; }
+
+details[open] {
+	
+}
+
+mark {
+	color: var(--copy);
+	background: var(--highlight);
+}
+
+ins {
+	text-decoration: none;
+	background: var(--insert);
+}
+
+time {
+	font-variant-numeric: tabular-nums;
+}
+
+.fitted-figure {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: calc(var(--line-height) / 2) 2ch;
+}
+
+.fitted-figure :not(figcaption) {
+	flex-shrink: none;
+}
+
+.fitted-figure figcaption {
+	flex-shrink: 4;
+	flex-grow: 1;
+	flex-basis: 15ch;
+}
+
+figcaption {
+	font-style: italic;
+	color: var(--grayed);
+}
+
+button, input[type="submit"] {
+	background: none;
+	border: 1px solid var(--primary);
+	color: currentColor;
+	font: inherit;
+	height: var(--line-height);
+	margin: 0;
+	padding: 0 .5ch;
+}
+
+button:active:active, input[type="submit"]:active:active {
+	border-color:var(--primary);
+	background: var(--primary);
+	color: ghostwhite;
+}
+
+button:hover, input[type="submit"]:hover,
+button:focus, input[type="submit"]:focus {
+	border-color: var(--copy);
+}
+
+@media print {
+	body {
+		max-width: unset;
+		padding: 0;
+		margin: 0;
+	}
+
+	@page {
+		margin: 3em;
+	}
+
+	img, pre, figure, table {
+		page-break-inside: avoid;
+	}
+
+}
+
+:target {
+	background: var(--highlight);
+}

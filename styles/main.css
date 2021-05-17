@@ -1,0 +1,88 @@
+
+html {
+	--bg: ghostwhite;
+	--copy: #000;
+	--grayed: #666;
+	--primary: #E13200;
+	--secondary: #006AFF;
+	--highlight: #ff0;
+	--insert: #6f9;
+	--font-copy: 'Inria Sans', 'Bahnschrift', sans-serif;
+	--font-monospace: 'Consolas', 'Menlo', 'Ubuntu Mono', monospace;
+	--line-height: 1.8rem;
+	background-color: var(--bg);
+	color: var(--copy);
+	font-family: var(--font-copy);
+	line-height: var(--line-height);
+	scrollbar-color: var(--primary) var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--bg: #000;
+		--copy: ghostwhite;
+		--grayed: #999;
+		--highlight: #440;
+		--insert: #007125;
+	}
+
+	[data-img-color-scheme=light] {
+		filter: invert(100%) hue-rotate(180deg);
+	}
+
+	[data-img-color-scheme=dark] {
+		filter: none;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	[data-img-color-scheme=dark] {
+		filter: invert(100%) hue-rotate(180deg);
+	}
+}
+
+body {
+	--page-padding: 2rem;
+	padding: var(--page-padding);
+	max-width: calc(80ch + 2 * var(--page-padding));
+	margin: auto;
+}
+
+.read-more-link {
+	white-space: pre;
+	font-style: italic;
+}
+
+.entry-list > * {
+	margin-top: var(--line-height);
+}
+
+.entry-detail {
+	max-width: none;
+	color: var(--grayed);
+	font-style: italic;
+	font-size: calc(1em * 14 / 16);
+	line-height: 1.8rem;
+	padding-top: calc(var(--line-height) - 1.8rem);
+}
+
+.entry-header {
+	margin-bottom: 2em;
+}
+
+.h-entry > .p-name {
+	font-weight: bold;
+}
+
+.site-footer {
+	margin-top: 2em;
+}
+
+.unblockquote {
+	border: none;
+	padding: 0;
+}
+
+.noital {
+	font-style: normal;
+}

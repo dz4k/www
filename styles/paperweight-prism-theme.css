@@ -5,7 +5,6 @@
 
 code,
 pre {
-	background: none;
 	font-family: var(--font-monospace);
 	text-align: left;
 	white-space: pre;
@@ -27,16 +26,11 @@ pre {
 /* Code blocks */
 pre {
 	overflow: auto;
-	margin-left:  calc(0px - var(--page-padding));
-	margin-right: calc(0px - var(--page-padding));
-	padding-left:  var(--page-padding);
-	padding-right: var(--page-padding);
 }
 
 /* Inline code */
 :not(pre) > code {
 	white-space: normal;
-	margin: 0 .5ch;
 }
 
 /* Normal */

@@ -4,15 +4,16 @@ date: 2021-01-11T00:47+03
 uPhoto:
   src: /assets/htmx-doodles/hypertext-man.jpeg
   alt: Hypertext Man!
+  colorscheme: light
 style: >
 	.img-block { margin: 3em 0; }
 ---
 
-![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg)
+![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg){data-img-color-scheme=light}
 
 <div class=img-block>
-<img alt="On HTMX, see transcript" src=/assets/htmx-doodles/consult-your-doctor.jpeg>
-<details><summary>Transcript</summary>
+<img data-img-color-scheme=light alt="On HTMX, see transcript" src=/assets/htmx-doodles/consult-your-doctor.jpeg>
+<details class="-no-number-headings"><summary>Transcript</summary>
 
 ### Server-Side App
 
@@ -44,7 +45,7 @@ style: >
 </div>
 
 <div class=img-block>
-<img alt="2040. See transcript" src=/assets/htmx-doodles/2040.jpeg>
+<img data-img-color-scheme=light alt="2040. See transcript" src=/assets/htmx-doodles/2040.jpeg>
 <details><summary>Transcript</summary>
 
 The year is 2040.

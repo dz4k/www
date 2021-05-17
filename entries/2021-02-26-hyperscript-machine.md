@@ -5,4 +5,4 @@ uPhoto:
   alt: The Hyperscript Machine -- half computer, half microwave.
 ---
 
-![{{ uPhoto.alt }}]({{uPhoto.src}})
+![{{ uPhoto.alt }}]({{uPhoto.src}}){data-img-color-scheme=light}

@@ -13,8 +13,9 @@ lang: en
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 {% for font in [
-	"/assets/fonts/Arimo-Regular.woff",
-	"/assets/fonts/Arimo-Bold.woff"
+	"/assets/fonts/InriaSans-Regular.ttf",
+	"/assets/fonts/InriaSans-Bold.ttf",
+	"/assets/fonts/InriaSans-Italic.ttf"
 	] 
 %}
 <link rel=preload href="{{ font }}" as=font crossorigin=anonymous>
@@ -24,12 +25,7 @@ lang: en
     Styles
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-<style>
-{% include "../../styles/font.css" %}
-{% include "../../styles/reset.css" %}
-{% include "../../styles/base-el.css" %}
-{% include "../../styles/main.css" %}
-</style>
+<link rel=stylesheet href=/styles/styles.css>
 <link rel=stylesheet href=/styles/paperweight-prism-theme.css media=none
       onload=media='all';onload=null>
 

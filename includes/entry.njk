@@ -25,8 +25,8 @@
 		{% endif %}
 
 		{% if d.syndication %}
-			<p>also on {% for key, val in syndication %}
-				<a href="{{ val }}">{{ key }}</a>{{ ' | ' if not loop.last }}
+			<p class="entry-detail">also on {% for key, val in syndication %}
+				<a class="u-syndication" href="{{ val }}">{{ key }}</a>{{ ' | ' if not loop.last }}
 			{% endfor %}</p>
 		{% endif %}
 

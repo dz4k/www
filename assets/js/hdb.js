@@ -106,7 +106,7 @@
 	var ui = `
 <div class="hdb" _="
 	on load or step from hdb.bus send update to me
-	on continue from hdb.bus remove #hyperscript-hdb-ui-wrapper-">
+	on continue from hdb.bus log 'done' then remove me.getRootNode().host">
 
 	<script type="text/hyperscript">
 	def highlightDebugCode
@@ -147,15 +147,15 @@
 
 	<header>
 		<h2 class="titlebar" _="
-		on mousedown(clientX, clientY)
+		on pointerdown(clientX, clientY)
 			measure my x, y
 			set xoff to clientX - x
 			set yoff to clientY - y
-			repeat until event mouseup from document
-				wait for mousemove(clientX, clientY) from document
+			repeat until event pointerup from document
+				wait for pointermove or pointerup from document
 				add {
-					left: \`\${clientX - xoff}px\`,
-					top:  \`\${clientY - yoff}px\`
+					left: \`\${its clientX - xoff}px\`,
+					top:  \`\${its clientY - yoff}px\`
 				} to hdbUI
 			end
 		">HDB///_hyperscript/debugger</h2>
@@ -168,22 +168,23 @@
 	<section class="sec-eval">
 		<h3>Evaluate Expression</h3>
 		<form class="eval-form"  _="
-			on submit call event.preventDefault()
-			get the first <input/> in me
-			then call _hyperscript(its.value, hdb.ctx)
-			then call prettyPrint(it)
-			then put it into the <output/> in me">
+		    on submit
+			  get the first <input/> in me
+			  then call _hyperscript(its.value, hdb.ctx)
+			  then call prettyPrint(it)
+			  then put it into the <output/> in me
+			  then halt">
 			<input type="text" id="eval-expr" placeholder="e.g. target.innerText">
 			<button type="submit">Go</button>
 			<output id="eval-output"><em>The value will show up here</em></output>
 	</section>
 
 	<section class="sec-code">
-		<h3 _="on update from hdbUI
+		<h3 _="on update from .hdb
 			put 'Debugging <code>'+hdb.cmd.parent.displayName+'</code>' into me"></h3>
 
 		<div class="code-container">
-			<pre class="code" _="on update from hdbUI
+			<pre class="code" _="on update from .hdb
 			                          if hdb.cmd.programSource
 				                        put highlightDebugCode() into my.innerHTML
 				                        scrollIntoView({ block: 'nearest' }) the
@@ -196,7 +197,7 @@
 		<h3>Context</h3>
 
 		<dl class="context" _="
-			on update from hdbUI
+			on update from .hdb
 			set my.innerHTML to ''
 			repeat for var in Object.keys(hdb.ctx) if var != 'meta'
 				get '<dt>'+var+'<dd>'+prettyPrint(hdb.ctx[var])
@@ -235,6 +236,7 @@
 		background: linear-gradient(to bottom, #eee, #ccc);
 		border-bottom: 1px solid #888;
 		border-radius: .3em .3em 0 0;
+		touch-action: none;
 	}
 
 	.toolbar {
@@ -363,11 +365,9 @@
 		var node = document.createElement('div');
 		var shadow = node.attachShadow({ mode: 'open' });
 		node.style = 'all: initial';
-		node.id = 'hyperscript-hdb-ui-wrapper-';
 		shadow.innerHTML = ui;
 		document.body.appendChild(node);
-		window.hdbUI = shadow.querySelector('.hdb');
-		_hyperscript.processNode(hdbUI);
+		_hyperscript.processNode(shadow.querySelector('.hdb'));
 	}
 })()
 

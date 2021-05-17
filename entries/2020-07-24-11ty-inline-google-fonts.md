@@ -5,11 +5,7 @@ syndication:
   DEV: https://dev.to/dz4k/eleventy-dynamically-inlining-google-fonts-2geg
 ---
 
-<ins>
-
-**Update <time>2021-02-07</time>:** I have learned since writing this post that this is a bad idea, since Google Fonts will serve different CSS based on the browser. If you want fast loading, vendor your fonts and use `<link rel=preload>`{.language-html}. 
-
-</ins>
+ <ins> **Update <time>2021-02-07</time>:** I have learned since writing this post that this is a bad idea, since Google Fonts will serve different CSS based on the browser. If you want fast loading, vendor your fonts and use `<link rel=preload>`{.language-html}. </ins>
 
 All in the name of Lighthouse scores.
 

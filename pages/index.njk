@@ -7,124 +7,66 @@ eleventyExcludeFromCollections: true
 
 <style>
 	.me {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-areas:
-			'avatar name'
-			'avatar elsewhere'
-			'.      note';
-		gap: 1em;
-	}
-	
-	.me h1 {
-		grid-area: name;
-		
-		font-size: min(10vw, 4rem);
-		line-height: .7;
-		margin-top: 0;
+		text-align: center;
 	}
 
-	.me .p-name {
-		color: var(--primary);
-		text-decoration: none;
+	.me-elsewhere {
+		display: flex;
+		gap: 0 1ch;
+		flex-flow: row wrap;
+		justify-content: center;
 	}
 
-	.me picture {
-		grid-area: avatar;
+	.me-elsewhere dt, dd {
+		display: inline;
+	}
+
+	.me-elsewhere dt {
+		color: var(--grayed);
+		font-weight: bold;
 	}
 
 	.me .u-photo {
-		border-radius: .4em; 
-		width: 5em;
+		margin: var(--line-height) auto;
+		height: 6em;
+		width: 6em;
 	}
 
-	.me .p-note {
-		grid-area: note;
+	.me h1 {
+		font-size: 2em;
+		line-height: 2em;
 	}
 
-    .me-elsewhere {
-    	grid-area: elsewhere;
-    	
-        display: flex;
-        flex-flow: row wrap;
-        margin-left: -0.6em;
-        margin-right: -0.6em;
-    }
-    .me-elsewhere > * {
-        margin: 0 .6em;
-    }
-    .me-elsewhere dt, dd { display: inline; margin: 0; }
-    .me-elsewhere dt {
-        font-weight: bold;
-        opacity: 0.6;
-    }
-
-    @media (max-width: 660px) {
-    	.me {
-    		grid-template-columns: 1fr;
-    		grid-template-areas: 'avatar' 'name' 'elsewhere' 'note';
-    	}
-
-    	.me h1 {
-    		line-height: 1;
-    	}
-
-		.me-elsewhere div {
-    		margin-top: .25em;
-    	}
-    }
-
-    .entry-list .h-entry {
-        margin: 3em 0;
-    }
-
-    .h-entry .p-name {
-        font-weight: bold;
-    }
-
-    .thumbnail {
-        max-height: 3em;
-        float: left;
-        margin-right: 1em;
-        margin-top: .3em;
-    }
+	.me .p-name {
+		text-decoration: none;
+	}
 </style>
 
-
-
 <section class="p-author h-card me">
-    <img class=u-photo src=/assets/me.jpeg 
-    	alt="Me @ Atakule, Ankara, Turkey">
-
     <h1><a href=https://denizaksimsek.com/
-        rel=me class="p-name u-url u-uid"
+        rel=me class="p-name u-url u-uid" lang="tr"
         >Deniz Akşimşek</a></h1>
 
     <dl class=me-elsewhere>
         <div>
-            <dt>Email
-            <dd><a href=mailto:deniz@denizaksimsek.com rel=me 
+            <dt> Email <dd><a href=mailto:deniz@denizaksimsek.com rel=me 
                 class=u-email>deniz@denizaksimsek.com</a>
         </div>
         <div>
-            <dt>Twitter
-            <dd><a href=//twitter.com/DenizAksimsek/ rel=me>@DenizAksimsek</a>
+            <dt> Twitter <dd><a href=//twitter.com/DenizAksimsek/ rel=me
+            	>DenizAksimsek</a>
         </div>
         <div>
-            <dt>Mastodon
-            <dd><a href=https://mastodon.dz4k.com/web/accounts/1 rel=me>@dz4k@mastodon.dz4k.com</a>
+            <dt> GitHub <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
         </div>
         <div>
-            <dt>GitHub
-            <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
-        </div>
-        <div>
-            <dt>DEV
-            <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
+            <dt> DEV <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
         </div>
     </dl>
 
-    <p class=p-note>I am <strong>Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in Ankara, Turkey.
+    <p class=p-note>I am <strong lang="tr">Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in <span lang="tr">Ankara</span>, Turkey.
+
+    <img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey">
 </section>
 
 <section id="blog" class="h-feed">

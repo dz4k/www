@@ -1,6 +1,5 @@
 	<p class="entry-detail">
 
-		<span class="decor">[</span>&nbsp;
 		{%- if isEntryPage -%}
 			<a class="p-author h-card" href="/">Deniz Akşimşek</a> |
 		{% else -%}
@@ -17,33 +16,32 @@
 				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
 
 		{%- if d.likeOf %}
-			| Like ❤️
+			| Like <span class=noital>❤️</span>
 				<a class=u-like-of 
 					href="{{ d.likeOf.url | d(likeOf) }}"
 					>{{ d.likeOf.name | d(d.likeOf.url | truncateUrl) }}</a>
 		{%- endif -%}
 
 		{%- if d.repostOf %}
-			| Repost 🔁
+			| Repost <span class=noital>🔁</span>
 				<a class=u-repost-of 
 					href="{{ d.repostOf.url | d(d.repostOf) }}"
 					>{{ d.repostOf.name | d(d.repostOf | truncateUrl) }}</a>
 		{%- endif -%}
 
 		{%- if d.bookmarkOf %}
-			| Bookmark 🔖
+			| Bookmark <span class=noital>🔖</span>
 				<a class=u-bookmark-of 
 					href="{{ d.bookmarkOf.url | d(d.bookmarkOf) }}"
 					>{{ d.bookmarkOf.name | d(d.bookmarkOf | truncateUrl) }}</a>
 		{%- endif -%}
 
 		{%- if d.replyTo and (hideReplyContext or not d.replyTo.context) %}
-			| Re. ↪
+			| Re. <span class=noital>↪</span>
 				<a class=u-reply-to 
 					href="{{ d.replyTo.url | d(d.replyTo) }}"
 					>{{ d.replyTo.name 
 						| d(d.replyTo.url | d(d.replyTo) | truncateUrl) }}</a>
 		{%- endif -%}
-		&nbsp;<span class="decor">]</span>
 
 	</p>

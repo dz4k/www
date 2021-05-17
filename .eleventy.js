@@ -10,8 +10,8 @@ module.exports = function (eleventyConfig) {
    ****************************************************************************/
 
   eleventyConfig.addPassthroughCopy('assets')
-  eleventyConfig.addPassthroughCopy({ 'theme/styles': '/styles/' })
-  eleventyConfig.addPassthroughCopy({ 'theme/fonts': '/assets/fonts/' })
+  eleventyConfig.addPassthroughCopy('styles')
+  eleventyConfig.addPassthroughCopy('/assets/fonts/')
 
   /****************************************************************************
    LAYOUTS
@@ -100,8 +100,9 @@ ${body}
   eleventyConfig.addPlugin(require('eleventy-plugin-local-respimg'), {
     folders: { source: '.', output: '_site' },
     images: {
-      sizes: 'min(96vw, 700px)',
+      sizes: '(max-width: 848px) calc(100vw - 64px), 784px',
       watch: { src: 'assets/**/*' },
+      lazy: true,
     },
   })
 
@@ -117,7 +118,7 @@ ${body}
    ****************************************************************************/
 
   return {
-    dir: { output: '_site', includes: 'theme/includes', data: 'theme/data' },
+    dir: { output: '_site', includes: 'includes', data: 'data' },
     htmlTemplateEngine: 'hbs',
     markdownTemplateEngine: 'hbs'
   }

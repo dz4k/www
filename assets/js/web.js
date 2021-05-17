@@ -107,10 +107,10 @@
                     type: "addCmd",
                     attributeRef: attributeRef,
                     to: to,
-                    args: [to, attributeRef],
+                    args: [to],
                     op: function (context, to, attrRef) {
                         runtime.forEach(to, function (target) {
-                            target.setAttribute(attrRef.name, attrRef.value);
+                            target.setAttribute(attributeRef.name, attributeRef.value);
                         })
                         return runtime.findNext(addCmd, context);
                     },
@@ -176,7 +176,9 @@
                     args: [elementExpr],
                     op: function (context, element) {
                         runtime.forEach(element, function (target) {
-                            target.parentElement.removeChild(target);
+                            if(target.parentElement){
+                                target.parentElement.removeChild(target);
+                            }
                         })
                         return runtime.findNext(this, context);
                     }
@@ -257,7 +259,7 @@
                 time: time,
                 evt: evt,
                 from: from,
-                toggle: function (on, value) {
+                toggle: function (on) {
                     if (between) {
                         runtime.forEach(on, function (target) {
                             if (target.classList.contains(classRef.className())) {
@@ -279,18 +281,18 @@
                             if (target.hasAttribute(attributeRef.name)) {
                                 target.removeAttribute(attributeRef.name);
                             } else {
-                                target.setAttribute(attributeRef.name, value)
+                                target.setAttribute(attributeRef.name, attributeRef.value)
                             }
                         });
                     }
                 },
-                args: [on, attributeRef ? attributeRef.value : null, time, evt, from],
-                op: function (context, on, value, time, evt, from) {
+                args: [on, time, evt, from],
+                op: function (context, on, time, evt, from) {
                     if (time) {
                         return new Promise(function (resolve) {
-                            toggleCmd.toggle(on, value);
+                            toggleCmd.toggle(on);
                             setTimeout(function () {
-                                toggleCmd.toggle(on, value);
+                                toggleCmd.toggle(on);
                                 resolve(runtime.findNext(toggleCmd, context));
                             }, time);
                         });
@@ -298,13 +300,13 @@
                         return new Promise(function (resolve) {
                             var target = from || context.me;
                             target.addEventListener(evt, function () {
-                                toggleCmd.toggle(on, value);
+                                toggleCmd.toggle(on);
                                 resolve(runtime.findNext(toggleCmd, context));
                             }, {once: true})
-                            toggleCmd.toggle(on, value);
+                            toggleCmd.toggle(on);
                         });
                     } else {
-                        this.toggle(on, value);
+                        this.toggle(on);
                         return runtime.findNext(toggleCmd, context);
                     }
                 }
@@ -520,6 +522,14 @@
             } else if(target.type === "symbol" && operation === "into") {
                 symbolWrite = true;
                 prop = target.name;
+            } else if(target.type === "attributeRef" && operation === "into") {
+                var attributeWrite = true;
+                prop = target.name;
+                root = parser.requireElement('implicitMeTarget', tokens);
+            } else if(target.type === "attributeRefAccess" && operation === "into") {
+                var attributeWrite = true;
+                prop = target.attribute.name;
+                root = target.root;
             } else {
                 root = target;
             }
@@ -535,9 +545,15 @@
                         putInto(context, prop, valueToPut);
                     } else {
                         if (operation === "into") {
-                            runtime.forEach(root, function (elt) {
-                                putInto(elt, prop, valueToPut);
-                            })
+                            if (attributeWrite) {
+                                runtime.forEach(root, function (elt) {
+                                    elt.setAttribute(prop, valueToPut);
+                                });
+                            } else {
+                                runtime.forEach(root, function (elt) {
+                                    putInto(elt, prop, valueToPut);
+                                });
+                            }
                         } else if (operation === "before") {
                             runtime.forEach(root, function (elt) {
                                 elt.insertAdjacentHTML('beforebegin', valueToPut);
@@ -745,26 +761,144 @@
 
     _hyperscript.addLeafExpression('closestExpr', function (parser, runtime, tokens) {
         if (tokens.matchToken('closest')) {
-            var expr = parser.parseElement("targetExpression", tokens);
-            if (expr.css == null) {
-                parser.raiseParseError(tokens, "Expected a CSS expression");
+            if (tokens.matchToken('parent')) {
+                var parentSearch = true;
             }
+
+            var css = null;
+            if (tokens.currentToken().type === "ATTRIBUTE_REF") {
+                var attributeRef = parser.parseElement("attributeRefAccess", tokens, null);
+                css = '[' + attributeRef.attribute.name + ']';
+            }
+
+            if(css == null){
+                var expr = parser.parseElement("targetExpression", tokens);
+                if (expr.css == null) {
+                    parser.raiseParseError(tokens, "Expected a CSS expression");
+                } else {
+                    css = expr.css
+                }
+            }
+
             if (tokens.matchToken('to')) {
                 var to = parser.parseElement("targetExpression", tokens);
             } else {
                 var to = parser.parseElement("implicitMeTarget", tokens);
             }
-            return {
+
+            var closestExpr = {
+                type: 'closestExpr',
+                parentSearch: parentSearch,
                 expr: expr,
+                css:css,
                 to: to,
                 args: [to],
                 op: function (ctx, to) {
-                    return to == null ? null : to.closest(expr.css);
+                    if (to == null) {
+                        return null;
+                    } else {
+                        if (parentSearch) {
+                            var node = to.parentElement ? to.parentElement.closest(css) : null;
+                        } else {
+                            var node = to.closest(css);
+                        }
+                        return node;
+                    }
                 },
                 evaluate: function (context) {
                     return runtime.unifiedEval(this, context);
                 }
+            };
+
+            if(attributeRef) {
+                attributeRef.root = closestExpr;
+                attributeRef.args = [closestExpr];
+                return attributeRef;
+            } else {
+                return closestExpr;
             }
+        }
+    });
+
+    _hyperscript.addCommand('go', function (parser, runtime, tokens) {
+        if (tokens.matchToken('go')) {
+            if (tokens.matchToken('back')) {
+                var back = true;
+            } else {
+                tokens.matchToken('to');
+                if (tokens.matchToken('url')) {
+                    var target = parser.requireElement("stringLike", tokens);
+                    var url = true;
+                    if (tokens.matchToken('in')) {
+                        tokens.requireToken('new');
+                        tokens.requireToken('window');
+                        var newWindow = true;
+                    }
+                } else {
+                    tokens.matchToken('the'); // optional the
+                    var verticalPosition = tokens.matchAnyToken('top', 'bottom', 'middle');
+                    var horizontalPosition = tokens.matchAnyToken('left', 'center', 'right');
+                    if (verticalPosition || horizontalPosition) {
+                        tokens.requireToken("of");
+                    }
+                    var target = parser.requireElement("expression", tokens);
+                    var smoothness = tokens.matchAnyToken('smoothly', 'instantly');
+
+                    var scrollOptions = {}
+                    if (verticalPosition) {
+                        if (verticalPosition.value === "top") {
+                            scrollOptions.block = "start";
+                        } else if (verticalPosition.value === "bottom") {
+                            scrollOptions.block = "end";
+                        } else if (verticalPosition.value === "middle") {
+                            scrollOptions.block = "center";
+                        }
+                    }
+
+                    if (horizontalPosition) {
+                        if (horizontalPosition.value === "left") {
+                            scrollOptions.inline = "start";
+                        } else if (horizontalPosition.value === "center") {
+                            scrollOptions.inline = "center";
+                        } else if (horizontalPosition.value === "right") {
+                            scrollOptions.inline = "end";
+                        }
+                    }
+
+                    if (smoothness) {
+                        if (smoothness.value === "smoothly") {
+                            scrollOptions.behavior = "smooth";
+                        } else if (smoothness.value === "instantly") {
+                            scrollOptions.behavior = "instant";
+                        }
+                    }
+
+                }
+            }
+
+            var goCmd = {
+                target: target,
+                args: [target],
+                op: function (ctx, to) {
+                    if(back){
+                        window.history.back();
+                    } else if (url) {
+                        if (to) {
+                            if (to.indexOf("#") === 0 && !newWindow) {
+                                window.location.href = to;
+                            } else {
+                                window.open(to, newWindow ? "_blank" : null);
+                            }
+                        }
+                    } else {
+                        runtime.forEach(to, function (target) {
+                            target.scrollIntoView(scrollOptions);
+                        });
+                    }
+                    return runtime.findNext(goCmd)
+                }
+            };
+            return goCmd;
         }
     });
 
@@ -864,4 +998,36 @@
         }
     }
 
+	_hyperscript.config.conversions["HTML"] = function(value) {
+
+		var toHTML = /** @returns {string}*/ function(/** @type any*/ value) {
+
+			if (value instanceof Array) {
+				return value.map(function(item){return toHTML(item)}).join("")
+			}
+
+			if (value instanceof HTMLElement) {
+				return value.outerHTML
+			}
+
+			if (value instanceof NodeList) {
+				var result = ""
+                for (var i = 0; i < value.length; i++) {
+                    var node = value[i];
+                    if (node instanceof HTMLElement) {
+                        result += node.outerHTML;
+                    }
+                }
+				return result
+			}
+
+			if (value.toString) {
+				return value.toString()
+			}
+	
+			return ""
+		};
+
+		return toHTML(value);
+	}
 })()
