@@ -1,3 +1,4 @@
+#!/usr/bin/env powershell
 
 param ($action, $url)
 
@@ -12,10 +13,13 @@ $prop = @{
     repost="repostOf"
     reply="replyTo"
     bookmark="bookmarkOf"
+    post=$null
 }[$action]
 
-$h = (Invoke-WebRequest $url).Content | ConvertFrom-Html
-$title = $h.SelectNodes("//title")[0].InnerText
+if ($url) {
+	$h = (Invoke-WebRequest $url).Content | ConvertFrom-Html
+	$title = $h.SelectNodes("//title")[0].InnerText
+}
 
 if ($action -eq 'reply') {
     $replycontext = "<!doctype html><meta charset=utf-8><blockquote>" + `
@@ -29,17 +33,20 @@ $filename = "$psscriptroot/../entries/$slug.md"
 
     "---"
     "date: $isodate"
-    if ($title) {
-        "${prop}:"
-        "  name: `"$title`""
-        "  url: $url"
-    if ($replycontext) {
-        "  context: |"
-        $replycontext.Split("`n") | %{ "    $_" } }
-    } else {
-        "${prop}: $url"
+	if ($url) {
+	    if ($title) {
+	        "${prop}:"
+	        "  name: `"$title`""
+	        "  url: $url"
+	    if ($replycontext) {
+	        "  context: |"
+	        $replycontext.Split("`n") | %{ "    $_" } }
+	    } else {
+	        "${prop}: $url"
+	    }
     }
     "---"
 } | set-content $filename
 
 write-host "$verb `"$title`" <$url> : $filename"
+$filename
