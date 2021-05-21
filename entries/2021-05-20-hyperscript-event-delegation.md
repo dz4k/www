@@ -14,7 +14,7 @@ on click
 
 I've seen some people use a pattern like this:
 
-```liquid
+```jinja2
 <ul>
 	{% for item in items %}
 		<li _="on click remove me">{{ item }}</li>
