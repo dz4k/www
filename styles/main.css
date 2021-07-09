@@ -59,7 +59,7 @@ body {
 
 .entry-detail {
 	max-width: none;
-	color: var(--grayed);
+	color: var(--primary);
 	font-style: italic;
 	font-size: calc(1em * 14 / 16);
 	line-height: 1.8rem;
