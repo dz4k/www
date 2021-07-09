@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+	--left-w: clamp(10ch, 30vw, 14ch);
+	--lh: 1.4em;
+	--gap: 0 1ch;
+}
+
+body {
+	max-width: 80ch;
+	padding: 1em;
+	margin: auto;
+
+	font-family: 'Inria Sans', sans-serif;
+	line-height: var(--lh);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@media print {
+	.-no-print {
+		display: none;
+	}
+
+	.print-link::after {
+		content: ' [' attr(href) ']';
+		display: inline-block;
+		white-space: pre;
+		margin-left: .2ch;
+		font-size: .75em;
+	}
+}
+
+ul {
+	list-style: disc inside;
+}
+
+ul[role='list'], ol[role='list'] {
+	list-style: none;
+	padding-left: 0;
+}
+
+header {
+	text-align: center;
+}
+
+.see-also {
+	text-align: right;
+}
+
+h1 {
+	font-size: 1.4em;
+	line-height: var(--lh);
+}
+
+address {
+	font-style: normal;
+}
+
+small {
+	font-variant: all-small-caps;
+}
+
+a:not(:hover, :focus) {
+	color: currentcolor;
+}
+
+@media print {
+	a {
+		text-decoration: none;
+	}
+}
+
+section {
+	display: grid;
+	grid-template-columns: var(--left-w) 1fr;
+	gap: var(--gap);
+	margin: var(--lh) 0;
+}
+
+section * + * {
+	grid-column: 2;
+}
+
+h2, h3 {
+	font-size: 1em;
+}
+
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+ul.leftcol {
+	margin-top: calc(var(--lh) * 0);
+	grid-column: 1/span 2;
+}
+
+ul.leftcol > li {
+	display: grid;
+	grid-template-columns: var(--left-w) 1fr;
+	gap: var(--gap);
+}
+
+ul.leftcol > li *:first-child {
+	grid-column: 1;
+	grid-row: 1 / 999999999;
+}
+
+ul.leftcol > li * + * {
+	grid-column: 2;
+}
+
+.-flow-gap > * + * {
+	margin-top: calc(.5 * var(--lh));
+}
+
+table {
+	margin-top: var(--lh);
+	grid-column: 1/span 2;
+	border-collapse: collapse;
+}
+
+tr, th, td {
+	padding: 0;
+}
+
+table tr :first-child {
+	width: var(--left-w);
+}
+
+th {
+	text-align: left;
+}
+
+dt {
+	float: left;
+	font-weight: bold;
+	margin-right: 1ch;
+}
+
+dt::after {
+	content: ': ';
+}
+
+@supports (font-variant-position: super) {
+	sup {
+		font-variant-position: super;
+		vertical-align: inherit;
+	}
+}

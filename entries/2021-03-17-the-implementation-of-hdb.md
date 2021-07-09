@@ -165,7 +165,7 @@ self.cmd = self.runtime.findNext(self.cmd, self.ctx);
 
 Why do we call `findNext` twice? Consider the following hyperscript code:
 
-```
+```hyperscript
 transition 'color' to darkgray
 set name to getName()
 log the name
@@ -200,7 +200,7 @@ There are a lot of elements listening to `load or step from hdb.bus`, so I conso
 We define some functions.
 
 {% fig "hdb.js ln. 112", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L112"%}
-```html
+```hyperscript
 def highlightDebugCode
 	set start to hdb.cmd.startToken.start
 	set end to hdb.cmd.endToken.end
@@ -217,7 +217,7 @@ Now, I wasn't aware that we had [template literals][] in hyperscript at this poi
 
 
 {% fig "hdb.js ln. 122", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L122"%}
-```html
+```hyperscript
 def escapeHTML(unsafe)
 	js(unsafe) return unsafe
 		.replace(/&/g, "&amp;")

@@ -59,9 +59,9 @@ module.exports = function (eleventyConfig) {
     str => markdownLibrary.render(str))
 
   const luxify = d => 
-    d instanceof Date    ? DateTime.fromJSDate(d) :
+    (d instanceof Date   ? DateTime.fromJSDate(d) :
     typeof d == 'string' ? DateTime.fromISO(d) :
-    /* else */             DateTime.local()
+    /* else */             DateTime.local()).setZone('UTC+03')
 
   eleventyConfig.addFilter('datefmt', (date, fmt) => luxify(date).toFormat(fmt))
   eleventyConfig.addFilter('isodate', date => luxify(date).toISODate())
@@ -111,7 +111,11 @@ ${body}
    ****************************************************************************/
 
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'), {
+  	init: ({ Prism }) => {
+  	  try { require('prism-hyperscript')(Prism) } catch (e) {}
+  	}
+  })
 
   /****************************************************************************
    CONFIG
