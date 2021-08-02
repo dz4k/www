@@ -17,8 +17,8 @@ module.exports = function (eleventyConfig) {
    LAYOUTS
    ****************************************************************************/  
 
-  eleventyConfig.addLayoutAlias('entry', 'layout/entry-layout.njk')
-  eleventyConfig.addLayoutAlias('page', 'layout/layout.njk')
+  eleventyConfig.addLayoutAlias('entry', 'layout/entry.njk')
+  eleventyConfig.addLayoutAlias('page', 'layout/base.njk')
 
   /****************************************************************************
    COLLECTIONS
@@ -27,6 +27,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('entries', collectionApi => collectionApi
     .getFilteredByGlob('entries/*')
     .filter(entry => !entry.data.deleted))
+
+  eleventyConfig.addCollection('longform', collectionApi => collectionApi
+    .getFilteredByGlob('entries/*')
+    .filter(entry => 'title' in entry.data && !entry.data.deleted))
 
   eleventyConfig.addCollection('deleted', collectionApi => collectionApi
     .getAll()

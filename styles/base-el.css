@@ -3,15 +3,29 @@ body {
 	overflow-y: scroll;
 }
 
-.e-content   > * + *,
 .prose       > * + *,
 blockquote   > * + *,
 figcaption   > * + * {
-  margin-top: var(--flow-space, 1em);
+  margin-top: var(--flow-space, var(--line-height));
 }
 
 a {
 	color: currentColor;
+	text-decoration: none;
+}
+
+.prose a {
+	color: var(--primary);
+}
+
+a:hover {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
+a:not([href^="#fn"])::after {
+	color: var(--primary);
+	content: '\2794';
 }
 
 blockquote {
@@ -21,53 +35,18 @@ blockquote {
 }
 
 h1, h2, h3, h4 {
-	font-weight: bold;
-	font-size: 1rem;
+	font-weight: normal;
 }
 
 h1 {
-	font-size: 1.5em;
-	font-weight: normal;
-	line-height: 2em;
-
-	counter-reset: h2;
+	font-size: 2em;
+	line-height: 3ex;
 }
 
 h2 {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	counter-increment: h2;
-	counter-reset: h3;
-}
-
-h2::before {
-	content: counter(h2) ' ';
-	display: inline-block;
-	min-width: 4ch;
-}
-
-h3 {
-	counter-increment: h3;
-	counter-reset: h4;
-}
-
-h3::before {
-	content: counter(h2) '.' counter(h3) ' ';
-	display: inline-block;
-	min-width: 4ch;
-}
-
-h4::before {
-	content: counter(h2) '.' counter(h3) '.' counter(h4) ' ';
-	display: inline-block;
-	min-width: 4ch;
-}
-
-.-no-number-headings h1:before,
-.-no-number-headings h2:before,
-.-no-number-headings h3:before,
-.-no-number-headings h4:before {
-	all: initial;
+	font-size: 1.5em;
+	line-height: 2ex;
+	--line-height: 2ex;
 }
 
 hr {
@@ -106,8 +85,13 @@ ins {
 	background: var(--insert);
 }
 
+sub, sup {
+	line-height: 0;
+}
+
 time {
 	font-variant-numeric: tabular-nums;
+	font-size: .8em;
 }
 
 .fitted-figure {

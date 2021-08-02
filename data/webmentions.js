@@ -5,7 +5,6 @@ const url = `https://webmention.io/api/mentions.jf2?\
 domain=www.denizaksimsek.com&\
 token=${process.env.WEBMENTION_IO_TOKEN}`
 
-// TODO the same thing is implemented in devToSyndication.js. Factor it out.
 function relativeUrl(url) {
 	const urlObj = new URL(url)
 	return urlObj.pathname

@@ -1,81 +1,68 @@
 ---
 title: 'Deniz Akşimşek'
 layout: page
-permalink: 'index.html'
+permalink: /
 eleventyExcludeFromCollections: true
 ---
 
 <style>
-	.me {
-		text-align: center;
-	}
+.me {
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--line-height) 2ch;
+	
+	margin-bottom: 3ex;
+}
 
-	.me-elsewhere {
-		display: flex;
-		gap: 0 1ch;
-		flex-flow: row wrap;
-		justify-content: center;
-	}
+.me h1 {
+	flex: 0 0 100%;
+}
 
-	.me-elsewhere dt, dd {
-		display: inline;
-	}
-
-	.me-elsewhere dt {
-		color: var(--grayed);
-		font-weight: bold;
-	}
-
-	.me .u-photo {
-		margin: var(--line-height) auto;
-		height: 6em;
-		width: 6em;
-	}
-
-	.me h1 {
-		font-size: 2em;
-		line-height: 2em;
-	}
-
-	.me .p-name {
-		text-decoration: none;
-	}
+.me-elsewhere {
+    text-transform: lowercase;
+    margin-right: -1ch;
+}
 </style>
 
 <section class="p-author h-card me">
     <h1><a href=https://denizaksimsek.com/
-        rel=me class="p-name u-url u-uid" lang="tr"
+        rel=me class="p-name u-url u-uid nolink" lang="tr"
         >Deniz Akşimşek</a></h1>
 
-    <dl class=me-elsewhere>
-        <div>
-            <dt> Email <dd><a href=mailto:deniz@denizaksimsek.com rel=me 
-                class=u-email>deniz@denizaksimsek.com</a>
-        </div>
-        <div>
-            <dt> Twitter <dd><a href=//twitter.com/DenizAksimsek/ rel=me
-            	>DenizAksimsek</a>
-        </div>
-        <div>
-            <dt> GitHub <dd><a href=//github.com/dz4k/ rel=me>dz4k</a>
-        </div>
-        <div>
-            <dt> DEV <dd><a href=//dev.to/dz4k rel=me>dz4k</a>
-        </div>
-        <div>
-            <dt> LinkedIn <dd><a href=//linkedin.com/in/deniz-akşimşek-044651211/ rel=me>Deniz Akşimşek</a>
-        </div>
-        <div>
-            <dt> CV <dd><a href=/cv/tr rel=me>TR</a> / <a href=/cv/en rel=me>EN</a>
-        </div>
-    </dl>
+    <section class=me-elsewhere>
+        <ul role=list>
+            <li><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email>email</a>
+            <li><a href=//twitter.com/DenizAksimsek/ rel=me>Twitter</a>
+            <li><a href=//github.com/dz4k/ rel=me>GitHub</a>
+            <li><a href=//dev.to/dz4k rel=me>DEV.to</a>
+            <li><a href=//linkedin.com/in/deniz-akşimşek-044651211/ rel=me>LinkedIn</a>
+            <li>CV: <a href=/cv/tr>TR</a> <a href=/cv/en>EN</a>
+        </ul>
+    </section>
+        
+    <section>
+        <h2 class="flush-heading">projects</h2>
+        
+        <ul role=list>
+            <li><a href="//hyperscript.org">_hyperscript</a>
+            <li><a href="//ankarametro.dz4k.com">ankarametro</a>
+        </ul>
+    </section>
+    
+    
+	<section class="blog">
+		<h2>blog</h2>
 
-    <p class=p-note>I am <strong lang="tr">Deniz</strong>, a person. I'm into web development, programming languages and design. I made <a href="//ankarametro.dz4k.com">ankarametro.dz4k.com</a>. I'm currently studying Computer Engineering at <a href=//www.tedu.edu.tr><abbr>TEDU</abbr></a> in <span lang="tr">Ankara</span>, Turkey.
-
-    <img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey">
+		<ul role=list>
+		    {% for entry in (collections.longform | reverse).slice(0, 3) %}
+		        <li><a href="{{ entry.url }}">{{ entry.data.title }}
+		            <time>{{ entry.date | isodate }}</time></a>
+		    {% endfor %}
+		</ul>
+		
+		<a href="/archive">all posts</a>
+	</section>
+    
+    <!--<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey">-->
 </section>
 
-<section id="blog" class="h-feed">
-	<link href="https://denizaksimsek.com/#blog" class="u-url u-uid">
-	{% include "entry-list.njk" %}
-</section>

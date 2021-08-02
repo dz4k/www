@@ -5,7 +5,7 @@ lang: en
 <!doctype html>
 <html lang="{{ lang }}">
 <meta charset=utf-8>
-<title>Deniz Akşimşek</title>
+<title>{{ title | d("Deniz Akşimşek") }}</title>
 <meta name=viewport content=width=device-width,initial-scale=1.0>
 
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -26,7 +26,7 @@ lang: en
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
 <link rel=stylesheet href=/styles/styles.css>
-<link rel=stylesheet href=/styles/prism-synthwave84.css media=none
+<link rel=stylesheet href=/styles/paperweight-prism-theme.css media=none
       onload=media='all';onload=null>
 
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -71,4 +71,7 @@ lang: en
     <body>
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-{{ content | safe }}
+<main>{{ content | safe }}</main>
+
+<footer>&copy; {{ Date.now | datefmt('yyyy') }} Deniz Akşimşek</footer>
+

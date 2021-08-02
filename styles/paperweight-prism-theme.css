@@ -11,7 +11,7 @@ pre {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	line-height: 1.4rem;
+	line-height: inherit;
 
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
@@ -83,8 +83,7 @@ pre {
 .token.bold 
 {
 	font-weight: bold;
-	font-style: italic;
-	font-weight: bold;
+	text-decoration: underline;
 }
 
 .token.italic 

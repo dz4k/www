@@ -1,17 +1,13 @@
 	<p class="entry-detail">
 
-		{%- if isEntryPage -%}
-			<a class="p-author h-card" href="/">Deniz Akşimşek</a> |
-		{% else -%}
-			<span hidden class="p-author h-card">
-				<a class="u-url p-name"
-					href="https://denizaksimsek.com">Deniz Akşimşek</a>
-				<a class="u-photo" href="/assets/me.jpeg"></a>
-			</span>
-			{%- set foo='just removing whitespace' -%}
-		{% endif -%}
+		<span hidden class="p-author h-card">
+			<a class="u-url p-name"
+				href="https://denizaksimsek.com">Deniz Akşimşek</a>
+			<a class="u-photo" href="/assets/me.jpeg"></a>
+		</span>
+		{%- set foo='just removing whitespace' -%}
 	
-		<a href="{{ e.url }}" class="u-url"
+		<a href="{{ e.url }}" class="u-url nolink"
 			><time class="dt-published" datetime="{{ e.date | isodatetime }}"
 				>{{ e.date | datefmt('yyyy/MM/dd hh:mm') }}</time></a>
 
