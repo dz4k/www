@@ -32,6 +32,10 @@ module.exports = function (eleventyConfig) {
     .getFilteredByGlob('entries/*')
     .filter(entry => 'title' in entry.data && !entry.data.deleted))
 
+  eleventyConfig.addCollection('bookmark', collectionApi => collectionApi
+    .getFilteredByGlob('entries/*')
+    .filter(entry => 'bookmarkOf' in entry.data && !entry.data.deleted))
+    
   eleventyConfig.addCollection('deleted', collectionApi => collectionApi
     .getAll()
     .filter(entry => entry.data.deleted))

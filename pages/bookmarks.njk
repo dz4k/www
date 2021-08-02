@@ -1,0 +1,19 @@
+---
+title: Bookmarks - Deniz Akşimşek
+permalink: /bookmarks/
+layout: page
+---
+
+<h1>Bookmarks</h1>
+
+<ul role=list>
+{% for bm in collections.bookmark %}
+	<li>
+		<a href="{{ bm.data.bookmarkOf.url }}">{{ bm.data.bookmarkOf.name }}
+			<time>{{ bm.date | isodatetime }}</time></a>
+		{% if bm.templateContent.trim() != '' %}
+			<a href="{{ bm.url }}">notes</a>
+		{% endif %}
+{% endfor %}
+</ul>
+
