@@ -13,7 +13,7 @@ permalink: '/feed.xml'
     <name>Deniz Akşimşek</name>
     <email>deniz@denizaksimsek.com</email>
   </author>
-  {%- for post in collections.entries | reverse %}
+  {%- for post in collections.posts | reverse %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl('https://denizaksimsek.com') }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>

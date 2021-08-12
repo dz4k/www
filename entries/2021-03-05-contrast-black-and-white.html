@@ -1,33 +1,13 @@
 ---
 title: "Colors That Contrast With Both Black And White"
-repostOf:
+repost of:
   url: https://web.archive.org/web/20160214165231/trace.wisc.edu/contrast-ratio-examples/PassingMidColorSamples_4-5to1.htm
   name: Colors that have a contrast ratio of at least 4.5:1 on both Black and White
-templateEngineOverride: njk
 ---
 
 <script src="https://unpkg.com/hyperscript.org@0.0.8/dist/_hyperscript.min.js"></script>
 
 <style>
-	.colors-container {
-		overflow-x: auto;
-		position: relative;
-
-		padding: 0 var(--page-padding) !important;
-		margin-left: calc(0px - var(--page-padding));
-		margin-right: calc(0px - var(--page-padding));
-
-		scrollbar-color: #888 var(--bg);
-		scrollbar-width: thin;
-		
-		width: 80vw;
-		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -40vw;
-		margin-right: -40vw;
-	}
-
 	.colors {
 		width: min-content;
 		margin: auto;
@@ -75,15 +55,15 @@ templateEngineOverride: njk
 </div>
 
 <div class=colors-container>
-<ul role=list class=colors _="
+<ul role=list class="colors hscroll" _="
 	on click 
 		tell closest <li/> to the target
 			set #selected-color's innerText to the target's innerText
 			add {'--color': the target's innerText} to the #selected-color
 			take .active
 	">
-	{% for color in colors %}
-	<li style="--color:{{ color }}" title="{{ color }}">{{ color }}
-	{% endfor %}
+	{{#colors}}
+	<li style="--color:{{.}}" title="{{.}}">{{.}}
+	{{/colors}}
 </ul>
 </div>

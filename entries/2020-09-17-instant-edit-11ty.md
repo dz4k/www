@@ -11,7 +11,7 @@ You're looking at the blog post you made yesterday, when suddenly a typo catches
 
 Add the following to your base layout (note the `\{{}}` and replace `<username>/<repo>` with the repo for the site):
 
-```html
+~~~html
 <script>
   addEventListener('keyup', e => {
     if (e.shiftKey === true) {
@@ -23,6 +23,6 @@ Add the following to your base layout (note the `\{{}}` and replace `<username>/
     }
   })
 </script>
-```
+~~~
 
 When you press <kbd>Shift+E</kbd>, the GitHub editor will open to the current page! The switch statement is there because I used to have a few more hotkeys.

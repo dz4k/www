@@ -1,0 +1,24 @@
+
+[
+    {
+        "type": "like of",
+        "mf2": "u-like-of",
+        "emoji": "💟"
+    },
+    {
+        "type": "repost of",
+        "mf2": "u-repost-of",
+        "emoji": "🔁"
+    },
+    {
+        "type": "bookmark of",
+        "mf2": "u-bookmark-of",
+        "emoji": "🔖"
+    },
+    {
+        "type": "reply to",
+        "mf2": "u-in-reply-to",
+        "emoji": "↩️"
+    }
+]
+

@@ -15,7 +15,7 @@ I could, of course, add these links manually whenever I post, but being armed wi
 
 Eleventy users will be aware of how easy it is to gather all kinds of data from various APIs and put it in your site, all statically without client-side code. Our task here is exceptionally simple: Pick out the `url` and `canonical_url` properties for each article, and create a mapping from the latter to the former.
 
-```js
+~~~js
 const fetch = require('node-fetch')
 
 module.exports = fetch('https://dev.to/api/articles?username=dza')
@@ -23,38 +23,38 @@ module.exports = fetch('https://dev.to/api/articles?username=dza')
     .then(articles => articles.map(
         ({canonical_url, url}) => [canonical_url, url]))
     .then(Object.fromEntries)
-```
+~~~
 
 **Note:** If you are copy-and-pasting this code, make sure to replace `dza` with your own dev.to username.
 
 This will give us an object like this:
 
-```json
+~~~json
 {
 	"https://www.denizaksimsek.com/2020/css-additional-box-shadow/":
 	    "https://dev.to/dza/css-adding-additional-box-shadows-2lob",
 	...
 }
-```
+~~~
 
 Now let's try using it in our templates:
 
 {{{{raw}}}}
-```liquid
+~~~liquid
 {%if devToSyndication[page.url]%}
 <section class="syndication-links">
 This article is syndicated to <a class="u-syndication" 
     href="{{devToSyndication[page.url]}}">DEV</a>, where you can comment on it.
 </section>
 {%endif%}
-```
+~~~
 {{{{/raw}}}}
 
 Small problem: the `page.url` property Eleventy provides us is a relative URL, whereas the URLs we got from DEV are absolute. 
 
 Sounds like a job for the `URL` class!
 
-```js
+~~~js
 function makeRelativeUrl(url) {
 	const urlObj = new URL(url)
 	// you might want to append url.search and url.hash too
@@ -65,14 +65,13 @@ function makeRelativeUrl(url) {
 
 ...
 ({canonical_url, url}) => [makeRelativeUrl(canonical_url), url])
-```
+~~~
 
 Now you should see links on any post that is syndicated to DEV.
 
 ## Appendix: The Final Data File {#the-code}
 
-```js
-
+~~~js
 const fetch = require('node-fetch')
 
 function makeRelativeUrl(url) {
@@ -85,6 +84,6 @@ module.exports = fetch('https://dev.to/api/articles?username=dza')
     .then(articles => articles.map(
         ({canonical_url, url}) => [makeRelativeUrl(canonical_url), url]))
     .then(Object.fromEntries)
-```
+~~~
 
 [rsspub]:  https://dev.to/settings/publishing-from-rss

@@ -17,41 +17,29 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 
 ## Solution
 
+{{#>fig "<cite>YouTube user [Bantu Tu][], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>"}}
 > [...] the most useful things are usually cloaked in an air of nonchalance, even in documentation.
->
-> <footer>
->
-> <cite>YouTube user [Bantu Tu][], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>
->
-></footer>
+{{/fig}}
 
 The solution to my problem was right there in the Eleventy docs, staring at me, its description phrased such that it couldn't possibly be of use to anyone.
 
-
+{{#>fig '[Eleventy docs][]'}}
 > ### Also `getCollectionItem`
 >
 > For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
->
-> <footer>
->
-> <cite>[Eleventy docs](also-getcollectionitem)</cite>
->
-> </footer>
+{{/fig}}
 
 With this filter, all my problems were solved. I prepended the following to my `note.njk` template (similarly for `post.njk`):
 
-{%raw%}
-```liquid
+~~~liquid
 {%set item = note | d(collections.note | getCollectionItem(page))%}
-```
-{%endraw%}
+~~~
 
 When using `note.njk` as a partial, the caller assigns the variable `note`. When using it as a layout, no such variable will exist and the default (`d()`) will be used.. The beauty of this configuration is that in both situations, `item` will be a collection item with a `data` property.
 
 One caveat is that because I'm using this as a partial, I can't use frontmatter, and therefore can't set a layout for my layout (maybe I could use template data files...). Instead, I use Nunjucks' builtin [template inheritance][].
 
-{%raw%}
-```liquid
+~~~liquid
 {%if not note%}
 {%extends "base.njk"%}
 {%endif%}
@@ -60,11 +48,11 @@ One caveat is that because I'm using this as a partial, I can't use frontmatter,
 {%set item = note | d(collections.note | getCollectionItem(page))%}
 ...
 {%endblock%}
-```
-{%endraw%}
+~~~
 
 [data cascade]: https://www.11ty.dev/docs/data-cascade/
 [Bantu Tu]: https://www.youtube.com/channel/UCjknfwYaYZvv94AjL10NO0Q
 [missing-semester]: https://www.youtube.com/watch?v=a6Q8Na575qc
+[Eleventy.docs]: https://www.11ty.dev/docs/filters/collection-items/#also-getcollectionitem
 [also-getcollectionitem]: https://www.11ty.dev/docs/filters/collection-items/\#also-getcollectionitem
 [template inheritance]: https://mozilla.github.io/nunjucks/templating.html#template-inheritance

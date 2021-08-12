@@ -16,7 +16,7 @@ As far as I know, Jekyll is the origin of using a YAML block at the top of a Mar
 
 Eleventy uses frontmatter blocks (delimited by `---`) for all kinds of files. Markdown posts, HTML partials and Nunjucks/EJS/Liquid/... templates can all have them. The data in the frontmatter can then be used in templates. In the following, `title` is not a reserved name:
 
-```
+~~~
 ---
 title: 'A Blog Post'
 ---
@@ -25,7 +25,7 @@ title: 'A Blog Post'
 
 Lorem ipsum dolor sit amet...
 
-```
+~~~
 
 We could have used `name`, `heading` or `kdsad983erj33`.
 
@@ -33,7 +33,7 @@ We could have used `name`, `heading` or `kdsad983erj33`.
 
 Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in the frontmatter. As YAML doesn't have functions, you are expected to use JS (well, you can use template strings I guess...):
 
-```html
+~~~html
 ---js
 {
   title: "My page title",
@@ -48,7 +48,7 @@ Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in 
 <body>
    <p>This website was last generated on {{ currentDate }}</p>
   <!-- … -->
-```
+~~~
 
 Computed data is cool. Among other things, it allows me to move logic away from my templates and express it in an actual programming language. However JS frontmatter is not very pretty, and I don't want to convert my whole frontmatter just for one function.
 
@@ -58,39 +58,48 @@ If only there was a language that had the expressive power of JS, and the visual
 
 CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uses to parse frontmatter. Compared to YAML, it's not much more verbose:
 
-<div style="width: 92vw; display:grid;grid-template-columns:1fr 1fr; gap: 2ch">
+<div id=compare class="fullwidth hscroll" style="
+	display:grid; 
+	grid-template-columns: 1fr auto auto 1fr; 
+	grid-template-areas: '. pre1 pre2 .';">
 
-``` {style=width:100%}
+<style>
+#compare pre {overflow: unset; margin-inline: 1ch}
+#compare pre:first-of-type {grid-area: pre1}
+#compare pre:last-of-type  {grid-area: pre2}
+</style>
+
+~~~
 ---
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03:00
 tags:
 - place
 - design
-uPhoto: /assets/photos/IMG20201007085906-02.jpeg
+photo: /assets/photos/IMG20201007085906-02.jpeg
 türkçe: /2020/istanbul-sokak-tabelasi/
 ---
 
 <!-- YAML -->
-```
+~~~
 
-``` {style=width:100%}
+~~~
 ---
 title: 'Street sign in İstanbul'
 date: '2020-10-10T19:27:39+03:00'
 tags: ['place', 'design']
-uPhoto: '/assets/photos/IMG20201007085906-02.jpeg'
+photo: '/assets/photos/IMG20201007085906-02.jpeg'
 türkçe: '/2020/istanbul-sokak-tabelasi/'
 ---
 
 <!-- CoffeeScript -->
-```
+~~~
 
 </div>
 
 The CoffeeScript code above is actually fully YAML-compatible! This keeps my templates portable. And with computed data:
 
-```liquid
+~~~liquid
 ---
 layout: 'layout'
 eleventyComputed:
@@ -104,7 +113,7 @@ eleventyComputed:
 		<a class="u-syndication" href="{{link}}">{{silo}}</a>
 		{%if not loop.last%} | {%endif%}
 	{%endfor%}
-```
+~~~
 
 I think that computed frontmatter gives a nice balance of logic-less[^2] and logic-full templates.
 

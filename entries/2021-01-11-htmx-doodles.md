@@ -1,7 +1,7 @@
 ---
 title: HTMX Doodles
 date: 2021-01-11T00:47+03
-uPhoto:
+photo:
   src: /assets/htmx-doodles/hypertext-man.jpeg
   alt: Hypertext Man!
   colorscheme: light
@@ -11,8 +11,10 @@ style: >
 
 ![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg){data-img-color-scheme=light}
 
-<div class=img-block>
-<img data-img-color-scheme=light alt="On HTMX, see transcript" src=/assets/htmx-doodles/consult-your-doctor.jpeg>
+---------------------------------------------------------------------------------------
+
+![On HTMX (see transcript)](/assets/htmx-doodles/consult-your-doctor.jpeg){data-img-color-scheme=light}
+
 <details class="-no-number-headings"><summary>Transcript</summary>
 
 ### Server-Side App
@@ -39,13 +41,15 @@ style: >
 -	Your code runs on the server, which you trust
 -	htmx allows for **locality of behavior**
 
-<small>Consult your doctor to find out if htmx s right for you. Side effects may include arguing about REST on HN.</small>
+<small>Consult your doctor to find out if htmx is right for you. Side effects may include arguing about REST on 
+<abbr title="Hacker News">HN</abbr>.</small>
 
 </details>
-</div>
 
-<div class=img-block>
-<img data-img-color-scheme=light alt="2040. See transcript" src=/assets/htmx-doodles/2040.jpeg>
+---------------------------------------------------------------------------------------
+
+![2040 (See transcript)](/assets/htmx-doodles/2040.jpeg){data-img-color-scheme=light}
+
 <details><summary>Transcript</summary>
 
 The year is 2040.

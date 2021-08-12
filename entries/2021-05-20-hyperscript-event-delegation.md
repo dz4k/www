@@ -3,24 +3,34 @@ title: Event Delegation in _hyperscript
 date: 2021-05-20T12:43:49.6252879+03:00
 ---
 
+This is how you do it:
 
-```hyperscript
+~~~hyperscript
 on click
 	tell the closest <li/> to the target
-		remove you
+		remove yourself
 		-- do more stuff...
 		-- "you" refers to the clicked list item
-```
+~~~
+
+Or more concisely:
+
+~~~hyperscript
+on click tell closest <li/> to target
+	remove yourself
+~~~
+
+_______________________________________________________________________________
 
 I've seen some people use a pattern like this:
 
-```jinja2
+~~~jinja2
 <ul>
 	{% for item in items %}
 		<li _="on click remove me">{{ item }}</li>
 	{% endfor %}
 </ul>
-```
+~~~
 
 This is convenient to write if you have a server-side templating system, but has
 a few issues:
@@ -32,13 +42,13 @@ a few issues:
 The pattern for resolving this is called <dfn>event delegation</dfn>. Here's how
 you might do it in JavaScript:
 
-```javascript
+~~~javascript
 ul.addEventListener('click', e => {
 	const li = e.target.closest('li')
 	if (!li) return
 	li.remove()
 })
-```
+~~~
 
 We add a single event listener to the enclosing list, which finds the item that
 was clicked and manipulates it.

@@ -1,0 +1,57 @@
+---
+layout: page
+permalink: "
+	{{~#if title~}} /{{datefmt page.date 'yyyy'}}/{{page.fileSlug}}/
+	{{~else~}}      /{{datefmt page.date 'yyyy'}}/{{datefmt page.date 'MMddHHmmss'}}/
+	{{~/if~}}
+	"
+---
+
+<article class="h-entry flowspace">
+	<header class="entry-page-header">
+		
+		{{#photo}}
+			<link class=u-photo href="{{photo}}">
+		{{/photo}}
+
+		{{#title}}
+			<h1 class="p-name links">{{.}}</h1>
+		{{/title}}
+
+		{{> entry-detail}}
+
+		{{#[reply to].context}}
+		<blockquote class="replycontext" cite="{{../[reply to].url}}">
+			{{{markdown .}}}
+		</blockquote>
+		{{/[reply to].context}}
+
+		{{#english}}
+			<p><a rel=alternate href="{{.}}" hreflang=en>English</a>
+			</p>
+		{{/english}}
+
+		{{#türkçe}}
+			<p><a rel=alternate href="{{.}}" hreflang=tr>Türkçe</a></p>
+		{{/türkçe}}
+
+		{{#syndication}}
+			<p class="syndication">also on
+				{{#each .~}}
+					{{#unless @first~}}
+					{{#if @last}} and {{else}}, {{/if}}
+				{{/unless}}
+				<a class="u-syndication" href="{{.}}">{{@key}}</a>
+			{{~/each}}</p>
+		{{/syndication}}
+
+	</header>
+
+	<div class="e-content prose">{{{content}}}</div>
+
+	{{> webmentions}}
+
+</article>
+
+{{> recent-posts-nav}}
+

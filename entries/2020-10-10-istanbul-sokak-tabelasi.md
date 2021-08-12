@@ -2,7 +2,7 @@
 title: İstanbul'da bir sokak tabelası
 date: 2020-10-10T19:27:39+03
 lang: tr
-uPhoto: 
+photo: 
   src: /assets/photos/IMG20201007085906-02.jpeg
   alt: |
     Bir direk tepesinde ön öne gelmiş iki sokak tabelası. Her biri kırmızı ve 
@@ -19,7 +19,7 @@ templateEngineOverride: njk,md
 
 [Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
 
-<img alt='{{ uPhoto.alt }}' src="{{ uPhoto.src }}">
+<img alt='{{ photo.alt }}' src="{{ photo.src }}">
 
 Pandemi yüzünden İstanbul'da gezemedim ama bu tabelaları gerçekte görme fırsatım oldu. Özel tasarım _Kent_ yazıtipi ve ilçe renk kodlarını biliyordum ama tabelaların kabartmalı olduğu fotoğraflarda belli olmuyor.
 

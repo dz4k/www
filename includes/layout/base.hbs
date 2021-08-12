@@ -3,23 +3,18 @@ lang: en
 ---
 
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{lang}}">
 <meta charset=utf-8>
-<title>{{ title | d("Deniz Akşimşek") }}</title>
+<title>{{d title "Deniz Akşimşek"}}</title>
 <meta name=viewport content=width=device-width,initial-scale=1.0>
 
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     Preloading fonts 
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-{% for font in [
-	"/assets/fonts/InriaSans-Regular.ttf",
-	"/assets/fonts/InriaSans-Bold.ttf",
-	"/assets/fonts/InriaSans-Italic.ttf"
-	] 
-%}
-<link rel=preload href="{{ font }}" as=font crossorigin=anonymous>
-{% endfor %}
+<link rel="preload" href="/assets/fonts/InriaSans-Regular.ttf" as="font" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/InriaSans-Bold.ttf" as="font" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/InriaSans-Italic.ttf" as="font" crossorigin="anonymous">
 
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     Styles
@@ -54,16 +49,16 @@ lang: en
     Cards 
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-{% if collections.entries | getCollectionItem(page) %}
-    <meta property=og:title content="{{ tagline }}">
-    <meta property=og:url content=https://denizaksimsek.com{{ page.url }}>
+{{#if (getCollectionItem collections.posts page)}}
+    <meta property=og:title content="{{title}}">
+    <meta property=og:url content=https://denizaksimsek.com{{../page.url}}>
     <meta property=og:type content=article>
-    {% if uPhoto %}
-    	<meta property=og:image content="{{ uPhoto }}">
-    {% endif %}
-{% endif %}
+    {{#photo}}
+    	<meta property=og:image content="{{.}}">
+    {{/photo}}
+{{/if}}
 
-<meta name=twitter:card content="summary{{ '_large_image' if uPhoto }}">
+<meta name=twitter:card content="summary{{#photo}}_large_image{{/photo}}">
 <meta name=twitter:site content=@DenizAksimsek>
 <meta name=twitter:creator content=@DenizAksimsek>
 
@@ -71,7 +66,7 @@ lang: en
     <body>
 <!--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-<main>{{ content | safe }}</main>
+<main>{{{content}}}</main>
 
-<footer>&copy; {{ Date.now | datefmt('yyyy') }} Deniz Akşimşek</footer>
+<footer>&copy; {{ datefmt undefined 'yyyy' }} Deniz Akşimşek</footer>
 

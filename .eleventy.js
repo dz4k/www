@@ -2,8 +2,10 @@
 const { DateTime } = require('luxon')
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 
+const interactionTypes = require('./data/interactionTypes.json')
+
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addTemplateFormats('njk,md,css')
+  eleventyConfig.addTemplateFormats('hbs,md')
 
   /****************************************************************************
    PASSTHROUGH COPY
@@ -11,14 +13,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('assets')
   eleventyConfig.addPassthroughCopy('styles')
-  eleventyConfig.addPassthroughCopy('/assets/fonts/')
 
   /****************************************************************************
    LAYOUTS
    ****************************************************************************/  
 
-  eleventyConfig.addLayoutAlias('entry', 'layout/entry.njk')
-  eleventyConfig.addLayoutAlias('page', 'layout/base.njk')
+  eleventyConfig.addLayoutAlias('entry', 'layout/entry.hbs')
+  eleventyConfig.addLayoutAlias('page', 'layout/base.hbs')
 
   /****************************************************************************
    COLLECTIONS
@@ -28,13 +29,13 @@ module.exports = function (eleventyConfig) {
     .getFilteredByGlob('entries/*')
     .filter(entry => !entry.data.deleted))
 
-  eleventyConfig.addCollection('longform', collectionApi => collectionApi
+  eleventyConfig.addCollection('posts', collectionApi => collectionApi
     .getFilteredByGlob('entries/*')
-    .filter(entry => 'title' in entry.data && !entry.data.deleted))
+    .filter(entry => 'title' in entry.data))
 
-  eleventyConfig.addCollection('bookmark', collectionApi => collectionApi
+  eleventyConfig.addCollection('interact', collectionApi => collectionApi
     .getFilteredByGlob('entries/*')
-    .filter(entry => 'bookmarkOf' in entry.data && !entry.data.deleted))
+    .filter(entry => entry.data.interaction))
     
   eleventyConfig.addCollection('deleted', collectionApi => collectionApi
     .getAll()
@@ -63,9 +64,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('markdown',
     str => markdownLibrary.render(str))
 
-  eleventyConfig.addPairedShortcode('markdown', 
-    str => markdownLibrary.render(str))
-
   const luxify = d => 
     (d instanceof Date   ? DateTime.fromJSDate(d) :
     typeof d == 'string' ? DateTime.fromISO(d) :
@@ -75,7 +73,47 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('isodate', date => luxify(date).toISODate())
   eleventyConfig.addFilter('isodatetime', date => luxify(date).toISO())
   eleventyConfig.addFilter('isotime', date => luxify(date).toISOTime())
+  eleventyConfig.addFilter('dateid', date => luxify(date).toFormat('MMddHHmmss'))
 
+  eleventyConfig.addFilter('interaction', function (ia) {
+		return ia.interactionType
+			? ia[ia.interactionType]
+			: ia.data[ia.data.interactionType]
+	})
+
+  eleventyConfig.addFilter('groupByYear', coll => {
+    const rv = []
+    for (const entry of coll) {
+      let current = rv[rv.length - 1]
+      if (current == undefined || entry.date.getFullYear() != current.year) {
+          rv.push(current = { year: entry.date.getFullYear(), entries: [] })
+      }
+      current.entries.push(entry)
+    }
+    return rv
+  })
+  
+  eleventyConfig.addFilter('reverse', e => (function*() {
+    for (let i = e.length - 1; i >= 0; i--) yield e[i]
+  }()))
+
+  eleventyConfig.addFilter('limit', (i, e) => (function*() {
+    let n = 0
+    for (const v of e) {
+      if (n++ == i) break
+      yield v
+    }
+  }()))
+  
+  eleventyConfig.addFilter('eq', (a, b) => a === b)
+  
+  eleventyConfig.addFilter('and', (...args) => args.reduce((a, b) => a && b))
+  eleventyConfig.addFilter('or',  (...args) => args.reduce((a, b) => a || b))
+  eleventyConfig.addFilter('not', a => !a)
+  
+  eleventyConfig.addFilter('d', (...args) => 
+    args.find(arg => arg !== undefined && arg !== null))
+  
   eleventyConfig.addFilter('truncateUrl', url => {
     if (typeof url !== 'string') return url
     url = new URL(url)
@@ -90,13 +128,31 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPairedShortcode('fig', (body, caption, link) =>
-`<figure><figcaption>${
-	link ? `<a href="${link}">${caption}</a>` : caption
+`
+
+<figure><figcaption>${
+	typeof link === 'string' 
+		? `<a href="${link}">${markdownLibrary.renderInline(caption)}</a>`
+    : markdownLibrary.renderInline(caption)
 }</figcaption>
 
 ${body}
 
-</figure>`)
+</figure>
+
+`) // `
+
+	eleventyConfig.addShortcode('set', function ({ hash, data: { root } }) {
+		Object.assign(root, hash)
+	})
+
+	eleventyConfig.addShortcode('eval', function (body) {
+		return new Function('with (this) return ' + body).call(this)
+	})
+
+	eleventyConfig.addPairedShortcode('exec', function (body) {
+		return new Function('with (this) { ' + body + ' }').call(this)
+	})
 
   /****************************************************************************
    RESPONSIVE IMAGES
@@ -124,6 +180,7 @@ ${body}
   	  try { require('prism-hyperscript')(Prism) } catch (e) {}
   	}
   })
+  eleventyConfig.addDataExtension('yaml', contents => require('js-yaml').load(contents))
 
   /****************************************************************************
    CONFIG

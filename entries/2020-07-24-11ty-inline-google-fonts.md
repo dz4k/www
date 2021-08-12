@@ -15,7 +15,7 @@ When you add Google Fonts to your website by copying the link from the fonts.goo
 
 We simply fetch the CSS at build time.
 
-```js
+~~~js
 // _data/googleFontsStylesheet.js
 
 const fetch = require('node-fetch')
@@ -23,14 +23,14 @@ const fetch = require('node-fetch')
 const url = 'the URL in the Google Fonts stylesheet link href'
 
 module.exports = fetch(url).then(res => res.text())
-```
+~~~
 
 And include it in our base layout.
 
 {{{{raw}}}}
-```liquid
+~~~liquid
 <style type="text/css">{{googleFontsStylesheet|safe}}</style>
-```
+~~~
 {{{{/raw}}}}
 
 Enjoy your improved Lighthouse scores!

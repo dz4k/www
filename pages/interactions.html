@@ -1,0 +1,30 @@
+---
+title: Interactions - Deniz Akşimşek
+permalink: /interactions/
+layout: page
+---
+
+<div class="prose">
+
+<h1>interactions&mdash;<a href="/" lang=tr class="my-name nolink smcp">Deniz Akşimşek</a></h1>
+
+<p>💟 Likes | 🔁 Reposts | 🔖 Bookmarks | ↩️ Replies</p>
+
+<style>
+	td:first-child { white-space: nowrap; padding-inline-end: 1ch; }
+</style>
+
+<ul role=list>
+	{{#each (reverse collections.interact)}}
+			<li><a href="{{./url}}">
+				{{#data.interaction}}
+					{{emoji}}
+					{{d name url}}
+				{{/data.interaction}}
+				<time datetime="{{isodatetime date}}">{{datefmt date "yyyy-MM-dd HH:mm"}}</time> 
+			</a>
+	{{/each}}
+</ul>
+
+</div>
+

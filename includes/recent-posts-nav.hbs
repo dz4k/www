@@ -1,0 +1,12 @@
+
+<nav class="bottom-nav">
+	<ul role=list class="links">
+		<li><a href="/"><strong class="my-name" lang=tr>Deniz Akşimşek</strong></a>
+		{{#each (limit 3 (reverse collections.posts))}}
+		    <li><a href="{{./url}}">{{data.title}}
+		        <time>{{isodate date}}</time></a>
+		{{/each}}
+		<li><a href="/archive">all posts</a>
+	</ul>
+</nav>
+

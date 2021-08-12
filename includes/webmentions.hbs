@@ -1,0 +1,40 @@
+
+{{#*inline webmention}}
+
+	{{set published=(d published [wm-received])}}
+
+	<article class="webmention h-cite" id="wm-{{./[wm-id]}}">
+		<header>
+			<span class="p-author h-card"><a class=u-url
+				href="{{author.url}}" rel='noopener noreferrer' 
+				target='_blank'>{{author.name}}</a></span>,
+
+			<a class="u-url" href="{{./url}}" rel='noopener noreferrer'
+				target='_blank'>
+				{{#with (d published [wm-received])}}
+				<time class="dt-published" datetime="{{isodatetime .}}"
+					>{{datefmt . 'yyyy-MM-dd HHmm'}}</time>
+				(link)</a>
+				{{/with}}
+		</header>
+		
+		<blockquote class=p-content>{{content.text}}</blockquote>
+	</article>
+
+{{/inline}}
+
+{{set wms=(lookup webmentions page.url)}}
+
+{{#if wms}}
+	<section class="webmentions" id="webmentions">
+		<h2>Webmentions ({{ wms.length }})</h2>
+		<ol reversed class="webmention-list">
+			{{#each wms}}
+				<li>{{> webmention}}
+			{{/each}}
+		</ol>
+	</section>
+{{else}}
+	<p><em>This page accepts Webmentions.</em>
+{{/if}}
+

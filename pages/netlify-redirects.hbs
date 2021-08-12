@@ -8,24 +8,17 @@ http://dz4k.com/* https://denizaksimsek.com/:splat 301!
 
 /2020/ankara-metro-map/ https://ankarametro.dz4k.com
 
-{# Shortlinks #}
-{% for post in collections.posts %}
-https://dz4k.com/{{ post.shortlink }} https://denizaksimsek.com{{ post.url }} 301
-{% endfor %}
-
-{# Legacy redirects #}
+{{! Legacy redirects }}
 /archive/ /
 /archive/* /
 /20200902T1254/	/2020/css-additional-box-shadow/
 /20200827T2005/	/2020/ardesen-rize-tr/
 /20200826T1523/	/2020/road-to-indieweb/
 
-{# Latest entry bookmark #}
-/latest/	{{ (collections.entries | last).url }}
+{{! HTTP 410 Gone for deleted posts}}
+{{#collections.deleted}}
+{{./url}} /deleted/ 410
+{{/collections.deleted}}
 
-{# HTTP 410 Gone for deleted posts #}
-{% for entry in collections.deleted %}
-{{ entry.url }} /deleted/ 410
-{% endfor %}
 
 

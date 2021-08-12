@@ -17,20 +17,20 @@ We could copy the `box-shadow` property from the element in question, paste it a
 
 Use CSS variables to apply box shadows.
 
-```css
+~~~css
 .shadowy-figure {
     --box-shadow: .5em .5em 1em #333;
     box-shadow: var(--box-shadow);
 }
-```
+~~~
 
 Later on, you can tack things on at the end of this variable, like so:
 
-```css
+~~~css
 .highlight {
     box-shadow: var(--box-shadow), 0 0 .1em #fff inset;
 }
-```
+~~~
 
 One drawback is that we cannot use this technique in several classes and apply them to one element. We can solve this problem when [`parent-var()`](parent-var) is a thing in CSS --- if it already is by the time you read this post, do let me know!
 

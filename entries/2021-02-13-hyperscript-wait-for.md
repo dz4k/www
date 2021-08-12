@@ -1,7 +1,8 @@
 ---
-title: "Upcoming _hyperscript feature: Waiting for an event"
 date: 2021-02-13T17:45:11.5407427+03:00
-repostOf: https://twitter.com/htmx_org/status/1360593828894281736
+repost of: 
+  name: “hyperscript 0.0.4 beta is going to be out soon [...]”
+  url: https://twitter.com/htmx_org/status/1360593828894281736
 ---
 
 > hyperscript 0.0.4 beta is going to be out soon
@@ -15,8 +16,8 @@ repostOf: https://twitter.com/htmx_org/status/1360593828894281736
 >
 > feature suggested by @DenizAksimsek
 >
-> ```html
+> ~~~html
 > <div _="on click add .fade then wait for transitionend then remove">
 >   This is a notice. Click to dismiss.
 > </div>
-> ```
+> ~~~

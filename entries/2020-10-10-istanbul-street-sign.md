@@ -1,7 +1,7 @@
 ---
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03
-uPhoto: 
+photo: 
   src: /assets/photos/IMG20201007085906-02.jpeg
   alt: |
     A post with two signs on it, one partially covering the other. The signs 
@@ -19,7 +19,7 @@ templateEngineOverride: njk,md
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 
-<img alt='{{ uPhoto.alt }}' src="{{ uPhoto.src }}">
+<img alt='{{ photo.alt }}' src="{{ photo.src }}">
 
 While I didn't get to explore İstanbul due to the pandemic, I had an opportunity to see one of these for myself, with the custom-made _Kent_{lang=tr} typeface and the district color codes (as you can see, I was in the lime green Çekmeköy district). When I saw one IRL, I realized that the letters are embossed --- this doesn't show through in photos.
 

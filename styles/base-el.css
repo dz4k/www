@@ -3,39 +3,34 @@ body {
 	overflow-y: scroll;
 }
 
-.prose       > * + *,
-blockquote   > * + *,
-figcaption   > * + * {
-  margin-top: var(--flow-space, var(--line-height));
+.flowspace          > * + *,
+.prose              > * + *,
+.prose blockquote   > * + *,
+.prose figcaption   > * + *,
+.prose details      > * + *,
+.prose section      > * + * {
+  margin-top: var(--flow-space);
 }
 
 a {
-	color: currentColor;
+	color: var(--copy);
+	background: var(--bg2);
 	text-decoration: none;
-}
-
-.prose a {
-	color: var(--primary);
+	border-bottom: 1px solid var(--grayed);
 }
 
 a:hover {
-	color: var(--primary);
-	text-decoration: underline;
-}
-
-a:not([href^="#fn"])::after {
-	color: var(--primary);
-	content: '\2794';
+	background: var(--grayed);
+	color: var(--bg);
 }
 
 blockquote {
-	padding: 0 0 .2em 1em;
-	border-left: 1px solid var(--secondary);
-	border-radius: 1em;
+	padding: 0 1ex;
+	border-left: 3px double var(--grayed);
+	background: var(--bg2);
 }
 
 h1, h2, h3, h4 {
-	font-weight: normal;
 }
 
 h1 {
@@ -44,9 +39,12 @@ h1 {
 }
 
 h2 {
-	font-size: 1.5em;
-	line-height: 2ex;
-	--line-height: 2ex;
+	font-size: 1em;
+	border-bottom: 1px solid var(--grayed);
+}
+
+h3 {
+	font-size: 1em;
 }
 
 hr {
@@ -67,12 +65,26 @@ img {
 table {
 	display: block;
 	overflow-x: auto;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 0;
+	vertical-align: top;
 }
 
 th { text-align: left; }
 
-details[open] {
-	
+details {
+	padding: 0 1ex;
+	background: var(--bg2);
+	border: 1px dotted var(--grayed);
+}
+
+details[open] summary {
+	background: var(--bg);
+	margin: 0 -1ex;
+	padding: 0 1ex;
 }
 
 mark {
@@ -117,7 +129,7 @@ figcaption {
 }
 
 button, input[type="submit"] {
-	background: none;
+	background: var(--bg2);
 	border: 1px solid var(--primary);
 	color: currentColor;
 	font: inherit;
