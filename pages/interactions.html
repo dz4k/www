@@ -4,8 +4,6 @@ permalink: /interactions/
 layout: page
 ---
 
-<div class="prose">
-
 <h1>interactions&mdash;<a href="/" lang=tr class="my-name nolink smcp">Deniz Akşimşek</a></h1>
 
 <p>💟 Likes | 🔁 Reposts | 🔖 Bookmarks | ↩️ Replies</p>
@@ -16,15 +14,16 @@ layout: page
 
 <ul role=list>
 	{{#each (reverse collections.interact)}}
-			<li><a href="{{./url}}">
-				{{#data.interaction}}
-					{{emoji}}
-					{{d name url}}
-				{{/data.interaction}}
-				<time datetime="{{isodatetime date}}">{{datefmt date "yyyy-MM-dd HH:mm"}}</time> 
-			</a>
+		<li>
+			{{#data.interaction}}
+				{{emoji}}
+				<a href="{{./url}}">{{d name url}}</a>
+			{{/data.interaction}}
+			<a href="{{./url}}"><time datetime="{{isodatetime date}}"
+				>{{datefmt date "yyyy-MM-dd HH:mm"}}</time></a>
+			{{#if (eq data.interaction.type "reply to")}}
+				<div class="e-content -indent">{{{templateContent}}}</div>
+			{{/if}}
 	{{/each}}
 </ul>
-
-</div>
 

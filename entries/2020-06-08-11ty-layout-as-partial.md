@@ -17,13 +17,13 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 
 ## Solution
 
-{{#>fig "<cite>YouTube user [Bantu Tu][], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>"}}
+{{#>fig caption="<cite>YouTube user [Bantu Tu][], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>"}}
 > [...] the most useful things are usually cloaked in an air of nonchalance, even in documentation.
 {{/fig}}
 
 The solution to my problem was right there in the Eleventy docs, staring at me, its description phrased such that it couldn't possibly be of use to anyone.
 
-{{#>fig '[Eleventy docs][]'}}
+{{#>fig caption='[Eleventy docs][]'}}
 > ### Also `getCollectionItem`
 >
 > For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
@@ -53,6 +53,6 @@ One caveat is that because I'm using this as a partial, I can't use frontmatter,
 [data cascade]: https://www.11ty.dev/docs/data-cascade/
 [Bantu Tu]: https://www.youtube.com/channel/UCjknfwYaYZvv94AjL10NO0Q
 [missing-semester]: https://www.youtube.com/watch?v=a6Q8Na575qc
-[Eleventy.docs]: https://www.11ty.dev/docs/filters/collection-items/#also-getcollectionitem
+[Eleventy docs]: https://www.11ty.dev/docs/filters/collection-items/#also-getcollectionitem
 [also-getcollectionitem]: https://www.11ty.dev/docs/filters/collection-items/\#also-getcollectionitem
 [template inheritance]: https://mozilla.github.io/nunjucks/templating.html#template-inheritance

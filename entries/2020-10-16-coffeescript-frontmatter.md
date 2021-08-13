@@ -58,15 +58,12 @@ If only there was a language that had the expressive power of JS, and the visual
 
 CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uses to parse frontmatter. Compared to YAML, it's not much more verbose:
 
-<div id=compare class="fullwidth hscroll" style="
-	display:grid; 
-	grid-template-columns: 1fr auto auto 1fr; 
-	grid-template-areas: '. pre1 pre2 .';">
+<div id=compare class="hscroll" style="
+	display:flex; 
+	gap: 3ch;">
 
 <style>
-#compare pre {overflow: unset; margin-inline: 1ch}
-#compare pre:first-of-type {grid-area: pre1}
-#compare pre:last-of-type  {grid-area: pre2}
+#compare pre {overflow: unset;}
 </style>
 
 ~~~

@@ -1,12 +1,25 @@
 
+{{set
+	prev=(getPreviousCollectionItem this.collections.posts this.page)
+	next=(getNextCollectionItem     this.collections.posts this.page)}}
+
+{{#exec}}
+this.posts = collections.posts.filter(p => p !== prev && p !== next && p.url !== page.url)
+{{/exec}}
+
+{{#*inline "post"}}
+	<a href="{{./url}}">{{data.title}}
+	<time class="-small">{{isodate date}}</time></a>
+{{/ inline}}
+
 <nav class="bottom-nav">
-	<ul role=list class="links">
+	<ul role=list class="-flow-space" style="--dim-flow-space: .5em">
 		<li><a href="/"><strong class="my-name" lang=tr>Deniz Akşimşek</strong></a>
-		{{#each (limit 3 (reverse collections.posts))}}
-		    <li><a href="{{./url}}">{{data.title}}
-		        <time>{{isodate date}}</time></a>
+		{{#prev}}<li><span class="-small">prev:</span> {{>post}}{{/prev}}
+		{{#next}}<li><span class="-small">next:</span> {{>post}}{{/next}}
+		{{#each (limit 3 (reverse posts))}}
+			<li>{{>post}}
 		{{/each}}
-		<li><a href="/archive">all posts</a>
 	</ul>
 </nav>
 

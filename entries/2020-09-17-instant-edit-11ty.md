@@ -17,7 +17,7 @@ Add the following to your base layout (note the `\{{}}` and replace `<username>/
     if (e.shiftKey === true) {
       switch (e.keyCode) {
       case 69: // E
-        window.location = 'https://github.com/<username>/<repo>/edit/main/{%raw%}{{page.inputPath}}{%endraw%}'
+        window.location = 'https://github.com/<username>/<repo>/edit/main/\{{page.inputPath}}'
         break
       }
     }

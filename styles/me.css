@@ -1,0 +1,29 @@
+
+.me {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		'photo  name'
+		'photo  elsewhere';
+	grid-gap: 1em 2ch;
+}
+
+	.me > * {
+		margin: 0;
+	}
+	
+	.me picture {
+		grid-area: photo;
+
+		--size: calc(1.6em + 1em + 1.5em);
+		width: var(--size);
+		height: var(--size);
+	}
+	
+	.me h1 {
+		grid-area: name;
+		
+		line-height: 1em;
+	}
+	
+

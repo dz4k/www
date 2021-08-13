@@ -9,50 +9,73 @@ eleventyExcludeFromCollections: true
 	<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey" width=120 height=120 sizes="10ch">
 
 	<h1><a href=https://denizaksimsek.com/
-		rel=me class="p-name u-url u-uid my-name inline-block nolink" lang="tr"
+		rel=me class="p-name u-url u-uid -unlink" lang="tr"
 		>Deniz Akşimşek</a></h1>
 
-	<ul role=list class="me-elsewhere inline-list">
-		<li><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email>Email</a>
+	<ul role="list" class="elsewhere -lowercase -inline-list" style="--inline-list-gap: 1ch;">
 		<li><a href=https://twitter.com/DenizAksimsek/ rel=me>Twitter</a>
+		<li><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email>Email</a>
 		<li><a href=https://github.com/dz4k/ rel=me>GitHub</a>
 		<li><a href=https://dev.to/dz4k rel=me>DEV.to</a>
+		<li><a href=https://m.page/dz4k rel=me>mmm</a>
 		<li><a href=https://linkedin.com/in/deniz-akşimşek-044651211/ rel=me>LinkedIn</a>
 		<li>CV: <a href=/cv/tr>TR</a>, <a href=/cv/en>EN</a>
 	</ul>
 </section>
 
-<section class="projects inline-list">
+<section>
 	<ul role=list class="display-contents">
 		<li><a href="https://hyperscript.org">///_hyperscript</a>
 		<li><a href="https://ankarametro.dz4k.com">ankarametro</a>
 	</ul>
 </section>
 
-<section class="card">
-	<h2><a href="interactions">interactions</a></h2>
+<section>
+	<h2>interactions</h2>
 
-	<p class="small">Most recent: 
+	<ul role="list" class="-inline-list">
 		{{#each (limit 3 (reverse collections.interact))}}
-			{{#data.interaction}}
-				{{emoji}}
-				{{d name url}}
-			{{/data.interaction}}
-			{{#if (not @last)}} | {{/if}}
+			<li class="-truncate">
+				{{#data.interaction}}
+					{{emoji}}
+					<a href="{{./url}}">{{d name url}}</a>
+				{{/data.interaction}}
+				<!--<a href="{{./url}}"><time class="-small -nowrap" datetime="{{isodatetime date}}"-->
+				<!--	>{{datefmt date "MM-dd HH:mm"}}</time></a>-->
 		{{/each}}
 	</ul>
+	
+	<p><a href="/interactions">all interactions</a>
 </section>
 
 <section>
 	<h2>blog</h2>
 
-	<ul role=list class="hangindent">
-		{{#each (limit 3 (reverse collections.posts))}}
-			<li><a href="{{./url}}">{{data.title}}
-			<time>{{isodate date}}</time></a>
-		{{/each}}
-	</ul>
-	
-	<a href="/archive">all posts</a>
+	<div class="entry-list">
+	{{#each (reverse collections.posts) as | page |}}
+		{{#with page.data}}
+			<article class="h-entry">
+				{{#photo}}
+					<img class="u-photo thumbnail"
+						sizes="4em"
+						src="{{src}}"
+						alt="{{alt}}"
+						data-img-color-scheme="{{colorscheme}}">
+				{{/photo}}
+				<h3><a href="{{page.url}}" class="p-name">{{title}}</a></h2>
+				{{> entry-detail}}
+				{{#summary}}
+					<p><span class="p-summary">{{{markdown .}}}</span></p>
+				{{/summary}}
+			</article>
+		{{/with}}
+	{{/each}}
+	</div>
+
+	<script>
+	document.querySelector('.entry-list').addEventListener('click', e => {
+		event.target.closest('.h-entry').querySelector('.entry-u-url').click();
+	})
+	</script>
 </section>
 

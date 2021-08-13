@@ -1,0 +1,55 @@
+
+.-indent {
+	padding-left: 1.2em;
+}
+
+.-unlink {
+	background: none;
+	border: none;
+}
+
+.-big-margin {
+	margin-block: 3em;
+}
+
+.-h-scroll {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+.-full-bleed {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+}
+
+.-small {
+	font-size: var(--dim-font-smaller);
+}
+
+.-nowrap {
+	white-space: nowrap;
+}
+
+.-truncate {
+	max-width: 100%;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	
+	text-overflow: ellipsis;
+}
+
+.-flow-space > * + * {
+	margin-top: var(--dim-flow-space, 1em);
+}
+
+.-inline-list {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0 var(--inline-list-gap, 2ch);
+}
+
+.-lowercase {
+	text-transform: lowercase;
+}
+

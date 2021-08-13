@@ -7,7 +7,7 @@ permalink: "
 	"
 ---
 
-<article class="h-entry flowspace">
+<article class="h-entry">
 	<header class="entry-page-header">
 		
 		{{#photo}}
@@ -18,7 +18,9 @@ permalink: "
 			<h1 class="p-name links">{{.}}</h1>
 		{{/title}}
 
-		{{> entry-detail}}
+		<p>{{> entry-detail}}</p>
+		
+		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
 
 		{{#[reply to].context}}
 		<blockquote class="replycontext" cite="{{../[reply to].url}}">
@@ -47,7 +49,7 @@ permalink: "
 
 	</header>
 
-	<div class="e-content prose">{{{content}}}</div>
+	<div class="e-content -big-margin">{{{content}}}</div>
 
 	{{> webmentions}}
 

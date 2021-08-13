@@ -5,7 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const interactionTypes = require('./data/interactionTypes.json')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addTemplateFormats('hbs,md')
+  eleventyConfig.addTemplateFormats('hbs,md,css')
 
   /****************************************************************************
    PASSTHROUGH COPY

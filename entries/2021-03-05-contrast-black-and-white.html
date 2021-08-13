@@ -10,7 +10,6 @@ repost of:
 <style>
 	.colors {
 		width: min-content;
-		margin: auto;
 		display: grid;
 		grid-template-columns: repeat(72, 11px); /* 72 makes a nice grid */
 	}
@@ -20,7 +19,7 @@ repost of:
 		overflow: hidden;
 		height: 11px;
 		width: 11px;
-		border: 1px solid var(--bg);
+		border: 1px solid var(--color-background);
 		border-left: none; border-top: none;
 		background: var(--color);
 		color: transparent;
@@ -31,18 +30,21 @@ repost of:
 		position: sticky;
 		top: 0;
 		z-index: 100000;
+		
+		height: 3em;
+		width: 100%;
+		max-width: 20ch;
+		padding: 0 1em;
+		
 		font-size: 1.2em;
 		text-align: center;
 		font-weight: bold;
-		height: 3em;
-		padding: 0 1em;
-		text-shadow: 0 1.5em 0 var(--color, #888);
-		color: var(--color, #888);
+		
 		background: linear-gradient(#000, #000 50%, #fff 50%);
 		outline: 1px solid black;
-		width: max-content;
-		margin: auto;
-		min-width: 20ch;
+		
+		text-shadow: 0 1.5em 0 var(--color);
+		color: var(--color);
 	}
 
 	li.active {
@@ -54,8 +56,8 @@ repost of:
 	Select a color...
 </div>
 
-<div class=colors-container>
-<ul role=list class="colors hscroll" _="
+<div class="colors-container -full-bleed">
+<ul role=list class="colors -h-scroll" _="
 	on click 
 		tell closest <li/> to the target
 			set #selected-color's innerText to the target's innerText
