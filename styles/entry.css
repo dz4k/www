@@ -3,6 +3,13 @@
 	border-top: 1px dotted var(--color-foreground);
 }
 
+.entry-list .h-entry {
+	cursor: pointer;
+}
+	.entry-list .h-entry:hover .p-name {
+		background: var(--color-block-background-hover);
+	}
+
 .thumbnail {
 	width: 4em;
 	height: 3.8em;
