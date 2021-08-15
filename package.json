@@ -24,10 +24,10 @@
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-footnote": "^3.0.2",
     "node-fetch": "^2.6.1",
-    "prism-hyperscript": "^1.0.1"
-  },
-  "dependencies": {
+    "prism-hyperscript": "^1.0.1",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "luxon": "^1.25.0"
+  },
+  "dependencies": {
   }
 }
