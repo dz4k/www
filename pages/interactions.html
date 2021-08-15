@@ -4,15 +4,17 @@ permalink: /interactions/
 layout: page
 ---
 
+<header>
 <h1>interactions&mdash;<a href="/" lang=tr class="my-name nolink smcp">Deniz Akşimşek</a></h1>
 
-<p>💟 Likes | 🔁 Reposts | 🔖 Bookmarks | ↩️ Replies</p>
+<p>💟&nbsp;Likes | 🔁&nbsp;Reposts | 🔖&nbsp;Bookmarks | ↩️&nbsp;Replies</p>
+</header>
 
 <style>
 	td:first-child { white-space: nowrap; padding-inline-end: 1ch; }
 </style>
 
-<ul role=list>
+<ul role=list class="-flow-space">
 	{{#each (reverse collections.interact)}}
 		<li>
 			{{#data.interaction}}

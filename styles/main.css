@@ -1,9 +1,10 @@
 
 :root {
 	--dim-line-length: 70ch;
-	--dim-font-smaller: .8em;
+	--dim-font-smaller: .9em;
+	--dim-body-padding: 1rem;
 
-	--font-sans: sans-serif;
+	--font-sans: Arimo, Roboto, sans-serif;
 	--font-mono: 'Consolas', 'Menlo', 'Source Code Pro', monospace;
 	--font-main: var(--font-sans);
 	
@@ -23,7 +24,8 @@
 }
 
 body {
-	padding: 1rem;
+	padding: var(--dim-body-padding);
+	margin: 0;
 
 	font-family: var(--font-main);
 	line-height: 1.5;
@@ -67,6 +69,7 @@ h1 {
 }
 
 h2 {
+	margin-top: 1.6em;
 	font-size: 1.3em;
 }
 
@@ -83,7 +86,7 @@ ul, ol, dd {
 }
 
 blockquote, figure {
-	padding-inline: 1em;
+	margin-inline: clamp(1em, 3vw, 2em);
 }
 
 ul[role=list] {
@@ -95,13 +98,13 @@ blockquote {
 	border-left: 2px solid var(--grayed);
 }
 
-	figure blockquote {
-		margin-inline: 0;
-	}
-
 figcaption {
 	font-size: var(--dim-font-smaller);
 	font-style: italic;
+}
+
+pre {
+	overflow-x: auto;
 }
 
 img {
@@ -122,5 +125,16 @@ hr {
 
 article {
 	margin-block: 1em;
+}
+	article footer {
+		border-top: 1px solid var(--color-foreground);
+	}
+
+header {
+	border-bottom: 1px solid var(--color-foreground);
+}
+
+body > footer {
+	font-size: .8em;
 }
 

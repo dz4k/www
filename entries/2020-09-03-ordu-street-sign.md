@@ -6,6 +6,6 @@ photo:
     the Metropolitan Municipality of Ordu.
 ---
 
-![{{photo.alt}}]({{photo.src}})
+[![{{photo.alt}}]({{photo.src}})]({{photo.src}})
 
 Street sign in Ordu. The layout seems inspired by street signs in İstanbul, but those are red and lack a garish logo at the bottom, instead featuring the names and color codes of the districts of İstanbul. I should post a photo if I end up going there for some reason. <ins>Update 06/01/2021: [I did!](https://denizaksimsek.com/2020/istanbul-street-sign/)</ins>

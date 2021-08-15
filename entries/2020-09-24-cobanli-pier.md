@@ -10,4 +10,4 @@ photo:
 
 Nothing gets me quite like city lights reflecting off water. Though it's usually rainwater on asphalt.
 
-![{{photo.alt}}]({{photo.src}})
+[![{{photo.alt}}]({{photo.src}})]({{photo.src}})

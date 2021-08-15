@@ -8,8 +8,8 @@ photo:
 
 A few pics from there.
 
-![{{photo.alt}}]({{photo.src}})
+[![{{photo.alt}}]({{photo.src}})]({{photo.src}})
 
-![The dark clouds are painted yellow by the sun, the sea is set ablaze](/assets/photos/IMG20200902180736.jpg)
+[![The dark clouds are painted yellow by the sun, the sea is set ablaze](/assets/photos/IMG20200902180736.jpg)](/assets/photos/IMG20200902180736.jpg)
 
-![The beach is covered in rocks as far as the eyes can see, and even further](/assets/photos/IMG20200902184220.jpg)
+[![The beach is covered in rocks as far as the eyes can see, and even further](/assets/photos/IMG20200902184220.jpg)](/assets/photos/IMG20200902184220.jpg)

@@ -24,6 +24,7 @@ templateEngineOverride: njk,md
 
 The `breakpoint` statement stops execution and launches the HDB UI.
 
+{% fig "Demo: The breakpoint command" %}
 <button type="button" _="
 on click
 	breakpoint
@@ -35,16 +36,18 @@ on click
 	wait for mouseover -- mouse over the button after you step over this
 	transition 'background-color' to initial
 ">Click me to try HDB</button>
+{% endfig %}
 
 You can set breakpoints conditionally:
 
+{% fig "Demo: Conditional breakpoints" %}
 <label><input type=checkbox id=debugmode checked/> Debug Mode</label>
-
 <button type="button" _="
 on click
 	if #debugmode.checked breakpoint end
 	put 'Nothing to see here, end user' into me
 ">Debug, maybe</button>
+{% endfig %}
 
 ## Implementation
 

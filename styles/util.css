@@ -18,16 +18,17 @@
 }
 
 .-full-bleed {
-	width: 100vw;
-	margin-left: calc(50% - 50vw);
+	width: calc(100% + (2 * var(--dim-body-padding)));
+	max-width: none;
+	margin-left: calc(-1 * var(--dim-body-padding));
 }
 
-.-small {
-	font-size: var(--dim-font-smaller);
-}
-
-.-nowrap {
-	white-space: nowrap;
+.-full-bleed-scroll {
+	overflow-x: auto;
+	padding-inline: var(--dim-body-padding);
+	width: calc(100% + (2 * var(--dim-body-padding)));
+	max-width: none;
+	margin-left: calc(-1 * var(--dim-body-padding));
 }
 
 .-truncate {

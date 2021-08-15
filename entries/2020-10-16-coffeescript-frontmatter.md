@@ -58,7 +58,8 @@ If only there was a language that had the expressive power of JS, and the visual
 
 CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the library Eleventy uses to parse frontmatter. Compared to YAML, it's not much more verbose:
 
-<div id=compare class="hscroll" style="
+<div id=compare class="-full-bleed-scroll" style="
+	padding-inline: var(--dim-body-padding);
 	display:flex; 
 	gap: 3ch;">
 
@@ -70,14 +71,11 @@ CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the lib
 ---
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03:00
-tags:
-- place
-- design
-photo: /assets/photos/IMG20201007085906-02.jpeg
-türkçe: /2020/istanbul-sokak-tabelasi/
+tags: [place, design]
+photo: /photos/img02.jpeg
+türkçe: /2020/istanbul-street-sign/
 ---
-
-<!-- YAML -->
+YAML
 ~~~
 
 ~~~
@@ -85,11 +83,10 @@ türkçe: /2020/istanbul-sokak-tabelasi/
 title: 'Street sign in İstanbul'
 date: '2020-10-10T19:27:39+03:00'
 tags: ['place', 'design']
-photo: '/assets/photos/IMG20201007085906-02.jpeg'
-türkçe: '/2020/istanbul-sokak-tabelasi/'
+photo: '/photos/img02.jpeg'
+türkçe: '/2020/istanbul-street-sign/'
 ---
-
-<!-- CoffeeScript -->
+CoffeeScript
 ~~~
 
 </div>

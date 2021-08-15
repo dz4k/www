@@ -19,7 +19,7 @@ templateEngineOverride: njk,md
 
 [Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
 
-<img alt='{{ photo.alt }}' src="{{ photo.src }}">
+[![{{photo.alt}}]({{photo.src}})]({{photo.src}})
 
 Pandemi yüzünden İstanbul'da gezemedim ama bu tabelaları gerçekte görme fırsatım oldu. Özel tasarım _Kent_ yazıtipi ve ilçe renk kodlarını biliyordum ama tabelaların kabartmalı olduğu fotoğraflarda belli olmuyor.
 

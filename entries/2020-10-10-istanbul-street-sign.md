@@ -19,7 +19,7 @@ templateEngineOverride: njk,md
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 
-<img alt='{{ photo.alt }}' src="{{ photo.src }}">
+[![{{photo.alt}}]({{photo.src}})]({{photo.src}})
 
 While I didn't get to explore İstanbul due to the pandemic, I had an opportunity to see one of these for myself, with the custom-made _Kent_{lang=tr} typeface and the district color codes (as you can see, I was in the lime green Çekmeköy district). When I saw one IRL, I realized that the letters are embossed --- this doesn't show through in photos.
 

@@ -44,7 +44,7 @@ repost of:
 		outline: 1px solid black;
 		
 		text-shadow: 0 1.5em 0 var(--color);
-		color: var(--color);
+		color: var(--color, #ddd);
 	}
 
 	li.active {
@@ -56,16 +56,16 @@ repost of:
 	Select a color...
 </div>
 
-<div class="colors-container -full-bleed">
-<ul role=list class="colors -h-scroll" _="
-	on click 
-		tell closest <li/> to the target
-			set #selected-color's innerText to the target's innerText
-			add {'--color': the target's innerText} to the #selected-color
-			take .active
-	">
-	{{#colors}}
-	<li style="--color:{{.}}" title="{{.}}">{{.}}
-	{{/colors}}
-</ul>
+<div class="colors-container -full-bleed-scroll">
+	<ul role=list class="colors" _="
+		on click 
+			tell closest <li/> to the target
+				set #selected-color's innerText to the target's innerText
+				add {'--color': the target's innerText} to the #selected-color
+				take .active
+		">
+		{{#colors}}
+		<li style="--color:{{.}}" title="{{.}}">{{.}}
+		{{/colors}}
+	</ul>
 </div>

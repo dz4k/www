@@ -5,4 +5,4 @@ photo:
   alt: The Hyperscript Machine -- half computer, half microwave.
 ---
 
-![{{ photo.alt }}]({{photo.src}}){data-img-color-scheme=light}
+[![{{ photo.alt }}]({{photo.src}}){data-img-color-scheme=light}]({{photo.src}})

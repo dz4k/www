@@ -18,9 +18,9 @@ permalink: "
 			<h1 class="p-name links">{{.}}</h1>
 		{{/title}}
 
-		<p>{{> entry-detail}}</p>
-		
 		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
+		
+		<p>{{> entry-detail}}</p>
 
 		{{#[reply to].context}}
 		<blockquote class="replycontext" cite="{{../[reply to].url}}">
@@ -51,9 +51,11 @@ permalink: "
 
 	<div class="e-content -big-margin">{{{content}}}</div>
 
-	{{> webmentions}}
-
+	<section class="comments">{{> webmentions}}</section>
+	
+	<footer class="entry-page-footer">
+		{{> recent-posts-nav}}
+	</footer>
 </article>
 
-{{> recent-posts-nav}}
 
