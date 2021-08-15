@@ -30,7 +30,7 @@ module.exports = class {
 				content_html: post.templateContent,
 				url: new URL(post.url, homepage),
 				summary: post.data.summary,
-				image: new URL(post.data.photo?.src, homepage),
+				image: new URL(post.data.photo && post.data.photo.src, homepage),
 				date_published: this.isodatetime(post.date),
 			}))
 		})
