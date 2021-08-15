@@ -1,10 +1,8 @@
 ---
 lang: en
 ---
-
 <!doctype html>
 <html lang="{{lang}}">
-<meta charset=utf-8>
 <title>{{d title "Deniz Akşimşek"}}</title>
 <meta name=viewport content=width=device-width,initial-scale=1.0>
 
@@ -39,7 +37,7 @@ lang: en
     Cards 
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-{{#if (getCollectionItem collections.posts page)}}
+{{#if title}}
     <meta property=og:title content="{{title}}">
     <meta property=og:url content=https://denizaksimsek.com{{../page.url}}>
     <meta property=og:type content=article>

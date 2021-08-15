@@ -3,8 +3,8 @@ permalink: '_redirects'
 eleventyExcludeFromCollections: true
 ---
 
-https://dz4k.com/* https://denizaksimsek.com/:splat 301!
-http://dz4k.com/* https://denizaksimsek.com/:splat 301!
+https://dz4k.com/* https://denizaksimsek.com/:splat 301
+http://dz4k.com/* https://denizaksimsek.com/:splat 301
 
 /2020/ankara-metro-map/ https://ankarametro.dz4k.com
 
@@ -14,11 +14,4 @@ http://dz4k.com/* https://denizaksimsek.com/:splat 301!
 /20200902T1254/	/2020/css-additional-box-shadow/
 /20200827T2005/	/2020/ardesen-rize-tr/
 /20200826T1523/	/2020/road-to-indieweb/
-
-{{! HTTP 410 Gone for deleted posts}}
-{{#collections.deleted}}
-{{./url}} /deleted/ 410
-{{/collections.deleted}}
-
-
 
