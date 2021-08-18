@@ -56,16 +56,8 @@ a:hover {
 	background: var(--color-block-background-hover);
 }
 
-a:not(
-	[href^='/'], 
-	[href^='./'], 
-	[href^='../'], 
-	[href^='#'], 
-	[href^='https://denizaksimsek.com']
-):after {
-	background: none;
-	content: '\2197';
-	content: '\2197' / '(external link)';
+a:hover picture:only-child {
+	opacity: .8;
 }
 
 h1 {
