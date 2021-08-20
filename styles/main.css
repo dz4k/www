@@ -30,7 +30,7 @@ body {
 
 	font-family: var(--font-main);
 	line-height: 1.5;
-	tab-size: 2ch;
+	tab-size: 4ch;
 
 	background: var(--color-background);
 	color: var(--color-foreground);
@@ -102,6 +102,9 @@ figcaption {
 
 pre {
 	overflow-x: auto;
+	-moz-tab-size: 4ch;
+	-o-tab-size: 4ch;
+	tab-size: 4ch;
 }
 
 img {
