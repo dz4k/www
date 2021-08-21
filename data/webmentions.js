@@ -1,13 +1,10 @@
 
 const fetch = require('node-fetch')
 
-const url = `https://webmention.io/api/mentions.jf2?\
-domain=www.denizaksimsek.com&\
-token=${process.env.WEBMENTION_IO_TOKEN}`
+const url = `https://webmention.io/api/mentions.jf2?token=${process.env.WEBMENTION_IO_TOKEN}`
 
 function relativeUrl(url) {
-	const urlObj = new URL(url)
-	return urlObj.pathname
+	return new URL(url).pathname
 }
 
 function groupByPage(wmData) {
@@ -23,4 +20,4 @@ function groupByPage(wmData) {
 module.exports = () =>
 	fetch(url).then(res => res.json())
 		.then(data => groupByPage(data))
-		.catch(e => ({}))
+		.catch(e => (console.log(e), {}))

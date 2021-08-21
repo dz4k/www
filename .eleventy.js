@@ -107,8 +107,8 @@ module.exports = function (eleventyConfig) {
   
   eleventyConfig.addFilter('eq', (a, b) => a === b)
   
-  eleventyConfig.addFilter('and', (...args) => args.reduce((a, b) => a && b))
-  eleventyConfig.addFilter('or',  (...args) => args.reduce((a, b) => a || b))
+  eleventyConfig.addFilter('and', (...args) => args.slice(0, -1).reduce((a, b) => a && b))
+  eleventyConfig.addFilter('or',  (...args) => args.slice(0, -1).reduce((a, b) => a || b))
   eleventyConfig.addFilter('not', a => !a)
   
   eleventyConfig.addFilter('d', (...args) => 

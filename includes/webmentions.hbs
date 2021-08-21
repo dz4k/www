@@ -4,21 +4,35 @@
 	{{set published=(d published [wm-received])}}
 
 	<article class="webmention h-cite" id="wm-{{./[wm-id]}}">
-		<header>
+		{{#if (eq [wm-property] 'in-reply-to')}}<header>{{/if}}
+			{{#if (eq [wm-property] 'like-of')}}💟
+			{{else if (eq [wm-property] 'repost-of')}}🔁
+			{{else if (eq [wm-property] 'mention-of')}}💬
+			{{else if (eq [wm-property] 'bookmark-of')}}🔖
+			{{/if}}
+
 			<span class="p-author h-card"><a class=u-url
 				href="{{author.url}}" rel='noopener noreferrer' 
-				target='_blank'>{{author.name}}</a></span>,
+				target='_blank'>{{author.name}}</a></span>
+
+			{{#if (eq [wm-property] 'like-of')}} liked this
+			{{else if (eq [wm-property] 'repost-of')}} reposted this
+			{{else if (eq [wm-property] 'mention-of')}} mentioned this
+			{{else if (eq [wm-property] 'bookmark-of')}} bookmarked this
+			{{/if}}
 
 			<a class="u-url" href="{{./url}}" rel='noopener noreferrer'
 				target='_blank'>
 				{{#with (d published [wm-received])}}
-				<time class="dt-published" datetime="{{isodatetime .}}"
-					>{{datefmt . 'yyyy-MM-dd HHmm'}}</time>
-				(link)</a>
+				on <time class="dt-published" datetime="{{isodatetime .}}"
+					>{{datefmt . 'yyyy-MM-dd HH:mm'}}</time>
 				{{/with}}
-		</header>
-		
-		<blockquote class=p-content>{{content.text}}</blockquote>
+				(link)</a>
+		{{#if (eq [wm-property] 'in-reply-to')}}</header>{{/if}}
+		{{or (eq [wm-property] 'in-reply-to') (eq [wm-property] 'mention-of')}}
+		{{#if (or (eq [wm-property] 'in-reply-to') (eq [wm-property] 'mention-of'))}}
+			<blockquote class=p-content>{{content.text}}</blockquote>
+		{{/if}}
 	</article>
 
 {{/inline}}
@@ -28,11 +42,11 @@
 {{#if wms}}
 	<section class="webmentions" id="webmentions">
 		<h2>Webmentions ({{ wms.length }})</h2>
-		<ol reversed class="webmention-list">
+		<ul class="webmention-list">
 			{{#each wms}}
 				<li>{{> webmention}}
 			{{/each}}
-		</ol>
+		</ul>
 	</section>
 {{else}}
 	<p><em>This page accepts Webmentions.</em>
