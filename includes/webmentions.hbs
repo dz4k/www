@@ -29,7 +29,6 @@
 				{{/with}}
 				(link)</a>
 		{{#if (eq [wm-property] 'in-reply-to')}}</header>{{/if}}
-		{{or (eq [wm-property] 'in-reply-to') (eq [wm-property] 'mention-of')}}
 		{{#if (or (eq [wm-property] 'in-reply-to') (eq [wm-property] 'mention-of'))}}
 			<blockquote class=p-content>{{content.text}}</blockquote>
 		{{/if}}
