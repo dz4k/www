@@ -18,16 +18,15 @@
   "homepage": "https://github.com/asyncsus/www#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "eleventy-plugin-local-respimg": "^0.3.1",
+    "luxon": "^1.25.0",
     "markdown-it": "^11.0.1",
     "markdown-it-attrs": "^3.0.3",
+    "markdown-it-container": "^3.0.0",
     "markdown-it-footnote": "^3.0.2",
     "node-fetch": "^2.6.1",
-    "prism-hyperscript": "^1.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.1.0",
-    "luxon": "^1.25.0"
-  },
-  "dependencies": {
+    "prism-hyperscript": "^1.0.1"
   }
 }

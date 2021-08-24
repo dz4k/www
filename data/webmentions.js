@@ -17,7 +17,9 @@ function groupByPage(wmData) {
 	return rv
 }
 
-module.exports = () =>
-	fetch(url).then(res => res.json())
+module.exports = function () {
+	if (!('WEBMENTION_IO_TOKEN' in process.env)) return {};
+	return fetch(url).then(res => res.json())
 		.then(data => groupByPage(data))
 		.catch(e => (console.log(e), {}))
+}
