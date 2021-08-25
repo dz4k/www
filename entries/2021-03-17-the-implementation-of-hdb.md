@@ -190,7 +190,7 @@ What did I use to make the UI for the hyperscript debugger? Hyperscript, of cour
 
 {% fig "hdb.js ln. 107", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L107"%}
 ~~~html
-<div class="hdb" _="
+<div class="hdb" _="--
 	on load or step from hdb.bus send update to me
 	on continue from hdb.bus remove #hyperscript-hdb-ui-wrapper-">
 ~~~
@@ -206,11 +206,11 @@ We define some functions.
 ~~~hyperscript
 def highlightDebugCode
 	set start to hdb.cmd.startToken.start
-	set end to hdb.cmd.endToken.end
+	set end_ to hdb.cmd.endToken.end
 	set src to hdb.cmd.programSource
 	set beforeCmd to escapeHTML(src.substring(0, start))
-	set cmd to escapeHTML(src.substring(start, end))
-	set afterCmd to escapeHTML(src.substring(end))
+	set cmd to escapeHTML(src.substring(start, end_))
+	set afterCmd to escapeHTML(src.substring(end_))
 	return beforeCmd+"<u class='current'>"+cmd+"</u>"+afterCmd
 end
 ~~~
@@ -243,15 +243,16 @@ Having defined our functions we have a simple toolbar and then the **eval panel*
 
 {% fig "hdb.js ln. 158", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L158"%}
 ~~~html
-<form class="eval-form"  _="
-	on submit call event.preventDefault()
+<form class="eval-form"  _="on submit
+	call event.preventDefault()
 	get the first <input/> in me
-	then call _hyperscript(its.value, hdb.ctx)
-	then call prettyPrint(it)
-	then put it into the <output/> in me">
-	<input type="text" id="eval-expr" placeholder="e.g. target.innerText">
-	<button type="submit">Go</button>
-	<output id="eval-output"><em>The value will show up here</em></output>
+	call _hyperscript(its.value, hdb.ctx)
+	call prettyPrint(it)
+	put it into the <output/> in me">
+
+		<input type="text" id="eval-expr" placeholder="e.g. target.innerText">
+		<button type="submit">Go</button>
+		<output id="eval-output"><em>The value will show up here</em></output>
 ~~~
 {% endfig %}
 
@@ -281,13 +282,13 @@ Finally, a context panel that shows the local variables.
 
 {% fig "hdb.js ln. 106", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L186"%}
 ~~~html
-<dl class="context" _="
+<dl class="context" _="--
 	on update from hdbUI
-	set my.innerHTML to ''
-	repeat for var in Object.keys(hdb.ctx) if var != 'meta'
-		get '<dt>'+var+'<dd>'+prettyPrint(hdb.ctx[var])
-		put it at end of me
-	end end
+		set my.innerHTML to ''
+		repeat for var in Object.keys(hdb.ctx) if var != 'meta'
+			get '<dt>'+var+'<dd>'+prettyPrint(hdb.ctx[var])
+			put it at end of me
+		end
 	on click
 		get closest <dt/> to target
 		log hdb.ctx[its.innerText]"></dl>

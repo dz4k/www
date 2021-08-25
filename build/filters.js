@@ -72,16 +72,16 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPairedShortcode('fig', (body, caption, link) =>
         `
 
-    <figure><figcaption>${typeof link === 'string'
-            ? `<a href="${link}">${markdownLibrary.renderInline(caption)}</a>`
-            : markdownLibrary.renderInline(caption)
-        }</figcaption>
+<figure><figcaption>${typeof link === 'string'
+        ? `<a href="${link}">${markdownLibrary.renderInline(caption)}</a>`
+        : markdownLibrary.renderInline(caption)
+    }</figcaption>
 
-    ${body}
+${body}
 
-    </figure>
+</figure>
 
-    `) // `
+`) // `
 
     eleventyConfig.addShortcode('set', function ({ hash, data: { root } }) {
         Object.assign(root, hash)
