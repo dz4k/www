@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   require('./build/filters')(eleventyConfig)
   require('./build/collections')(eleventyConfig)
   require('./build/markdown')(eleventyConfig)
+  require('./build/respimg')(eleventyConfig)
 
   /****************************************************************************
    PASSTHROUGH COPY
@@ -23,24 +24,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('page', 'layout/base.hbs')
 
 
-  /****************************************************************************
-   RESPONSIVE IMAGES
-   ****************************************************************************/
-
-  Array.prototype.flat = function () {
-    return this.reduce((acc, cur) => acc.concat(cur), [])
-  }
-  eleventyConfig.addPlugin(require('eleventy-plugin-local-respimg'), {
-    folders: { source: '.', output: '_site' },
-    images: {
-      resize: {
-        min: 70,
-      },
-      sizes: '(max-width: 848px) calc(100vw - 64px), 784px',
-      watch: { src: 'assets/**/*' },
-      lazy: true,
-    },
-  })
 
   /****************************************************************************
    PLUGINS
