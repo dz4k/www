@@ -4,7 +4,7 @@
 	--dim-font-smaller: .9em;
 	--dim-body-padding: 1rem;
 
-	--font-sans: 'Cantarell', Arimo, Roboto, sans-serif;
+	--font-sans: 'Roboto', 'Segoe UI', sans-serif;
 	--font-mono: 'Consolas', 'Menlo', 'Source Code Pro', monospace;
 	--font-main: var(--font-sans);
 	
