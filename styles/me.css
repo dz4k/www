@@ -5,7 +5,7 @@
 	grid-template-areas:
 		'photo  name'
 		'photo  elsewhere';
-	grid-gap: 1em 2ch;
+	grid-gap: .2em 2ch;
 }
 
 	.me > * {
@@ -15,7 +15,7 @@
 	.me picture {
 		grid-area: photo;
 
-		--size: calc(1.6em + 1em + 1.5em);
+		--size: calc(2.4em + .2em + 1.5em);
 		width: var(--size);
 		height: var(--size);
 	}
@@ -24,6 +24,11 @@
 		grid-area: name;
 		
 		line-height: 1em;
+		font-family: 'Ankara Display';
+		font-weight: 900;
+		text-transform: uppercase;
+		font-size: 2.4em;
+		letter-spacing: 2px;
 	}
 	
 

@@ -1,0 +1,68 @@
+
+@font-face {
+    font-family: 'Ankara Text';
+    src: url(/assets/fonts/AnkaraText-Regular.woff);
+}
+
+@font-face {
+    font-family: 'Ankara Text';
+    font-style: italic;
+    src: url(/assets/fonts/AnkaraText-RegularIt.woff);
+}
+
+@font-face {
+    font-family: 'Ankara Text';
+    font-weight: 700;
+    src: url(/assets/fonts/AnkaraText-Bold.woff);
+}
+
+@font-face {
+    font-family: 'Ankara Text';
+    font-weight: 700;
+    font-style: italic;
+    src: url(/assets/fonts/AnkaraText-BoldIt.woff);
+}
+
+/* Set custom properties for each layout feature */
+:root {
+    --aalt: off;
+    --case: off;
+    --dlig: off;
+    --dnom: off;
+    --frac: off;
+    --numr: off;
+    --onum: off;
+    --ordn: off;
+    --salt: off;
+    --sinf: off;
+    --smcp: off;
+    --ss01: off;
+    --ss02: off;
+    --ss03: off;
+    --subs: off;
+    --sups: off;
+}
+
+* {
+    font-feature-settings: 
+        "aalt" var(--aalt),
+        "case" var(--case),
+        "dlig" var(--dlig), 
+        "dnom" var(--dnom), 
+        "frac" var(--frac),
+        "numr" var(--numr), 
+        "onum" var(--onum), 
+        "ordn" var(--ordn),
+        "salt" var(--salt), 
+        "sinf" var(--sinf), 
+        "smcp" var(--smcp),
+        "ss01" var(--ss01), 
+        "ss02" var(--ss02), 
+        "ss03" var(--ss03),
+        "subs" var(--subs), 
+        "sups" var(--sups);
+}
+
+:lang(tr) {
+    --ss01: "ss01" on;
+}

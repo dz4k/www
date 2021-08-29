@@ -1,4 +1,10 @@
 
+.cta {
+	display: block;
+	padding: .3em 1ch;
+	border-radius: .2em;
+}
+
 .-indent {
 	padding-left: 1.2em;
 }
@@ -47,7 +53,7 @@
 .-inline-list {
 	display: flex;
 	flex-flow: row wrap;
-	gap: 0 var(--inline-list-gap, 2ch);
+	gap: 1ch var(--inline-list-gap, 2ch);
 }
 
 .-lowercase {

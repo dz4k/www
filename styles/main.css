@@ -4,7 +4,7 @@
 	--dim-font-smaller: .9em;
 	--dim-body-padding: 1rem;
 
-	--font-sans: 'Roboto', 'Segoe UI', sans-serif;
+	--font-sans: 'Ankara Text', sans-serif;
 	--font-mono: 'Consolas', 'Menlo', 'Source Code Pro', monospace;
 	--font-main: var(--font-sans);
 	
@@ -143,4 +143,3 @@ header {
 body > footer {
 	font-size: .8em;
 }
-
