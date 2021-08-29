@@ -6,6 +6,7 @@
 code,
 pre[class*="language-"] {
     color: var(--color-foreground);
+    filter: brightness(0.9);
     word-spacing: normal;
     word-break: normal;
 
