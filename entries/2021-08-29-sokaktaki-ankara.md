@@ -6,7 +6,7 @@ photo:
   src: /assets/photos/ank-tabela-a.jpg
 ---
 
-Ankara Büyükşehir Belediyesi sokak tabelalarının yenilenmesi için yarışma 
+Ankara Büyükşehir Belediyesi sokak tabelalarının yenilenmesi için [yarışma][] 
 düzenledi. Halk oylamasına sunulmak üzere üç tasarım seçildi. Siz de Başkent
 Mobil uygulamasının <kbd><samp>Söz Hakkı</samp></kbd> bölümünden oy 
 verebilirsiniz.
@@ -30,6 +30,7 @@ Gazi Mustafa Kemal Bulvarı, Balıkçı Caddesi, Alâ Sokak, 1923. Sokak</i> ile
 test edilmesi söylenmiş. Bence [Bangabandhu Şeyh Mucibur Rahman Bulvarı][BŞM Rahman]
 da eklenmeliydi.
 
+[yarışma]: https://sokaktakiankara.ankara.bel.tr/
 [Legible London]: https://en.wikipedia.org/wiki/Legible_London
 [şartname]: https://sokaktakiankara.ankara.bel.tr/sartnameekler/tabelafontyarismasartnamesi.pdf
 [BŞM Rahman]: https://www.openstreetmap.org/way/25211791
