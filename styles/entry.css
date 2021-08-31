@@ -2,6 +2,9 @@
 .entry-list > * + * {
 	border-top: 1px dotted var(--color-foreground);
 }
+.entry-list :first-child {
+	border-top: 1px solid transparent;
+}
 
 .entry-list .h-entry {
 	cursor: pointer;
