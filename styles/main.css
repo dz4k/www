@@ -13,6 +13,8 @@
 	--color-block-background-hover: #c8c8e1;
 	--color-foreground: black;
 	--color-muted-foreground: #c4c4cf;
+
+	font-size: 1.15rem; /* This needs to go in :root, not body, to make rems work */
 }
 
 @media screen and (prefers-color-scheme: dark) {
