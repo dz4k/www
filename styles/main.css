@@ -51,15 +51,11 @@ a {
 
 	background: var(--color-block-background);
 	color: currentColor;
-	border-bottom: 1px solid var(--color-muted-foreground);
+	border-bottom: 1px solid var(--color-foreground);
 }
 
 a:hover {
 	background: var(--color-block-background-hover);
-}
-
-a:hover picture:only-child {
-	opacity: .8;
 }
 
 sup {
