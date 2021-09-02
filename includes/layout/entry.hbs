@@ -21,6 +21,10 @@ permalink: "
 		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
 		
 		<p>{{> entry-detail}}</p>
+		
+		{{#[last modified]}}
+			<p>Last modified {{.}}</p>
+		{{/[last modified]}}
 
 		{{#[reply to].context}}
 		<blockquote class="replycontext" cite="{{../[reply to].url}}">

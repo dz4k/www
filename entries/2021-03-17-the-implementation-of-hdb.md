@@ -1,22 +1,21 @@
 ---
 title: "The Implementation of HDB, the _hyperscript debugger"
-date: 2021-03-17
-summary: The 0.0.6 release of the [_hyperscript](https://hyperscript.org)
-  hypertext UI scripting language introduces HDB, an interactive debugging 
-  environment. In this article I discuss how the hyper-flexible hyperscript 
-  runtime allowed me to implement the first release of HDB with ease.
+date: 2021-03-17T00:00+0300
+last modified: 2021-09-02T12:48+0300
+summary: The 0.0.6 release of the [_hyperscript](https://hyperscript.org hypertext UI scripting language introduces HDB, an interactive debugging environment. In this article I discuss how the hyper-flexible hyperscript runtime allowed me to implement the first release of HDB with ease.
 syndication:
   Twitter: https://twitter.com/DenizAksimsek/status/1372244813928660993
   Hacker News: https://news.ycombinator.com/item?id=26494553
   DEV: https://dev.to/dz4k/the-implementation-of-hdb-the-hyperscript-debugger-5hf4
 
-noHyperscript: true
 templateEngineOverride: njk,md
 ---
 
 <script src="/assets/js/core.js"></script>
 <script src="/assets/js/web.js"></script>
 <script src="/assets/js/hdb.js"></script>
+
+{{fleuron}} <ins>Update <time>2021-09-02</time>: HDB has evolved since this post was written. Though it works mostly the same way, there have been fixes and a UI redesign. Check [the _hyperscript repo][] for the up-to-date code.</ins>
 
 {{ summary }} But first, I will introduce you to what HDB is like:
 
@@ -319,6 +318,7 @@ HDB.prototype.ui = function () {
 In just 360 lines, we have a basic debugger. This speaks volumes to the flexibility of the hyperscript runtime, and I hope HDB serves as an example of what's possible with the hyperscript extension API. Like the rest of hyperscript, it's in early stages of development --- feedback and contributors are always welcome!
 
 [_hyperscript]: https://hyperscript.org
+[the _hyperscript repo]: https://github.com/bigskysoftware/_hyperscript
 [hdb-src]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js
 [continue-exec]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L54
 [HALT]: https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/core.js#L1221
