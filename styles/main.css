@@ -94,9 +94,13 @@ blockquote {
 }
 
 aside {
+	padding: 0 1em;
+	max-width: var(--dim-line-length);
+
 	font-size: var(--dim-font-smaller);
+	font-style: italic;
+	
 	background: var(--color-block-background);
-	padding: 1em;
 }
 
 ul[role=list] {

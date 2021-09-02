@@ -5,7 +5,7 @@ date: 2021-09-02T19:41+03
 
 <aside>
 
-This post is straight from my notes. 
+This post is directly from my notes, with no edits.
 
 </aside>
 
