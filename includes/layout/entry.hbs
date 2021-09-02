@@ -23,7 +23,7 @@ permalink: "
 		<p>{{> entry-detail}}</p>
 		
 		{{#[last modified]}}
-			<p>Last modified {{.}}</p>
+			<p>Last modified {{isodate .}}</p>
 		{{/[last modified]}}
 
 		{{#[reply to].context}}

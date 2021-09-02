@@ -2,7 +2,7 @@
 title: "The Implementation of HDB, the _hyperscript debugger"
 date: 2021-03-17T00:00+0300
 last modified: 2021-09-02T12:48+0300
-summary: The 0.0.6 release of the [_hyperscript](https://hyperscript.org hypertext UI scripting language introduces HDB, an interactive debugging environment. In this article I discuss how the hyper-flexible hyperscript runtime allowed me to implement the first release of HDB with ease.
+summary: The 0.0.6 release of the [\\_hyperscript](https://hyperscript.org hypertext UI scripting language introduces HDB, an interactive debugging environment. In this article I discuss how the hyper-flexible hyperscript runtime allowed me to implement the first release of HDB with ease.
 syndication:
   Twitter: https://twitter.com/DenizAksimsek/status/1372244813928660993
   Hacker News: https://news.ycombinator.com/item?id=26494553
@@ -15,7 +15,7 @@ templateEngineOverride: njk,md
 <script src="/assets/js/web.js"></script>
 <script src="/assets/js/hdb.js"></script>
 
-{{fleuron}} <ins>Update <time>2021-09-02</time>: HDB has evolved since this post was written. Though it works mostly the same way, there have been fixes and a UI redesign. Check [the _hyperscript repo][] for the up-to-date code.</ins>
+**Update <time>2021-09-02</time>:** HDB has evolved since this post was written. Though it works mostly the same way, there have been fixes and a UI redesign. Check [the _hyperscript repo][] for the up-to-date code.</ins>
 
 {{ summary }} But first, I will introduce you to what HDB is like:
 
