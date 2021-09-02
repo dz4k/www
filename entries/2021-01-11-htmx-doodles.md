@@ -11,7 +11,7 @@ style: >
 
 ![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg){data-img-color-scheme=light}
 
----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 ![On HTMX (see transcript)](/assets/htmx-doodles/consult-your-doctor.jpeg){data-img-color-scheme=light}
 
@@ -41,12 +41,11 @@ style: >
 -	Your code runs on the server, which you trust
 -	htmx allows for **locality of behavior**
 
-<small>Consult your doctor to find out if htmx is right for you. Side effects may include arguing about REST on 
-<abbr title="Hacker News">HN</abbr>.</small>
+<small>Consult your doctor to find out if htmx is right for you. Side effects may include arguing about REST on <abbr title="Hacker News">HN</abbr>.</small>
 
 </details>
 
----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 ![2040 (See transcript)](/assets/htmx-doodles/2040.jpeg){data-img-color-scheme=light}
 
@@ -54,7 +53,6 @@ style: >
 
 The year is 2040.
 
-htmx is a W3C recommendation and _hyperscript is an ECMA standard.
-War has long ceased, API churn is nought but a distant memory.
+htmx is a W3C recommendation and _hyperscript is an ECMA standard. War has long ceased, API churn is nought but a distant memory.
 </details>
 </div>
