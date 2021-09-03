@@ -1,6 +1,8 @@
 
 const markdownLibrary = require('./markdown').markdownLibrary;
 const { DateTime } = require('luxon')
+const path = require('path')
+const fs = require('fs')
 
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter('markdown',
@@ -93,5 +95,11 @@ ${body}
 
     eleventyConfig.addPairedShortcode('exec', function (body) {
         return new Function('with (this) { ' + body + ' }').call(this)
+    })
+
+    eleventyConfig.addShortcode('fread', function (pathname) {
+        console.log(this.page.inputPath)
+        const realpath = path.resolve(this.page.inputPath, '..', pathname)
+        return fs.readFileSync(realpath, { encoding: 'utf-8' })
     })
 }
