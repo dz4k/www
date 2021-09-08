@@ -3,11 +3,8 @@
 	cursor: pointer;
 }
 
-.thumbnail {
-	width: 4em;
-	height: 3.8em;
-	margin: 1.1em 1em 0 0;
-	object-fit: cover;
-	float: left;
-}
-
+	.entry-list .h-entry time.dt-published {
+		display: inline-block;
+		width: 9ch;
+		font-size: .9em;
+	}
