@@ -2,9 +2,9 @@
 :root {
 	--dim-line-length: 70ch;
 	--dim-font-smaller: .9em;
-	--dim-body-padding: 1rem;
+	--dim-body-padding: max(1rem, 10vw);
 
-	--font-sans: 'Ankara Text', sans-serif;
+	--font-sans: 'Fira Sans', sans-serif;
 	--font-mono: 'Consolas', 'Menlo', 'Source Code Pro', monospace;
 	--font-main: var(--font-sans);
 	
@@ -14,7 +14,7 @@
 	--color-foreground: black;
 	--color-muted-foreground: #c4c4cf;
 
-	font-size: 1.15rem; /* This needs to go in :root, not body, to make rems work */
+	font-size: 1rem; /* This needs to go in :root, not body, to make rems work */
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -27,7 +27,7 @@
 }
 
 body {
-	padding: var(--dim-body-padding);
+	padding: 0 var(--dim-body-padding);
 	margin: 0;
 
 	font-family: var(--font-main);
@@ -47,11 +47,7 @@ body {
 }
 
 a {
-	text-decoration: none;
-
-	background: var(--color-block-background);
 	color: currentColor;
-	border-bottom: 1px solid var(--color-foreground);
 }
 
 a:hover {
@@ -61,6 +57,10 @@ a:hover {
 sup {
 	vertical-align: top;
 	font-size: .8em;
+}
+
+h1, h2 {
+	font-weight: normal;
 }
 
 h1 {

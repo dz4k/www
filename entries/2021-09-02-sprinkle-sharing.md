@@ -1,13 +1,9 @@
 ---
 title: Sprinkle Sharing
 date: 2021-09-02T19:41+03
+...: >-
+  <p><em>This post is directly from my notes, with no edits.</em>
 ---
-
-<aside>
-
-This post is directly from my notes, with no edits.
-
-</aside>
 
 When people talk about code sharing between server and client, the usual suspects are Node.js and sharing model classes. However, there's often good reason to duplicate these. 
 

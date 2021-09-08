@@ -1,8 +1,12 @@
 
-.cta {
-	display: block;
-	padding: .3em 1ch;
-	border-radius: .2em;
+.-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.-tall {
+	min-height: 70vh;
 }
 
 .-indent {

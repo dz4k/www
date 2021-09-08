@@ -1,15 +1,4 @@
 
-<span hidden class="p-author h-card">
-	<a class="u-url p-name"
-		href="https://denizaksimsek.com">Deniz Akşimşek</a>
-	<a class="u-photo" href="/assets/me.jpeg"></a>
-</span>
-
 <a href="{{page.url}}" class="entry-u-url u-url"
 	><time class="dt-published" datetime="{{isodatetime page.date}}"
 		>{{datefmt page.date 'yyyy-MM-dd HH:mm'}}</time></a>
-
-{{#this.interaction}}
-<p>{{emoji}} {{type}} <a class="{{mf2}}" href="{{./url}}"><q>{{d name (truncateUrl url)}}</q></a>
-{{/this.interaction}}
-

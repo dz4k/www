@@ -18,19 +18,16 @@ permalink: "
 			<h1 class="p-name links">{{.}}</h1>
 		{{/title}}
 
-		<p><a class="p-author h-card" href="/">Deniz Akşimşek</a></p>
-		
-		<p>{{> entry-detail}}</p>
-		
+		<p>
+			<a class="p-author h-card" href="/">Deniz Akşimşek</a> &mdash;
+			<a href="{{page.url}}" class="entry-u-url u-url"
+				><time class="dt-published" datetime="{{isodatetime page.date}}"
+					>{{datefmt page.date 'yyyy-MM-dd HH:mm'}}</time></a>
+
+				
 		{{#[last modified]}}
 			<p>Last modified {{isodate .}}</p>
 		{{/[last modified]}}
-
-		{{#[reply to].context}}
-		<blockquote class="replycontext" cite="{{../[reply to].url}}">
-			{{{markdown .}}}
-		</blockquote>
-		{{/[reply to].context}}
 
 		{{#english}}
 			<p><a rel=alternate href="{{.}}" hreflang=en>English</a>
@@ -51,6 +48,9 @@ permalink: "
 			{{~/each}}</p>
 		{{/syndication}}
 
+		{{#[...]}}
+			{{{.}}}
+		{{/[...]}}
 	</header>
 
 	<div class="e-content -big-margin">{{{content}}}</div>

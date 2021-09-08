@@ -8,8 +8,8 @@ this.posts = collections.posts.filter(p => p !== prev && p !== next && p.url !==
 {{/exec}}
 
 {{#*inline "post"}}
-	<a href="{{./url}}">{{data.title}}</a
-	> <time>{{isodate date}}</time>
+	<time>{{isodate date}}</time> &mdash;
+	<a href="{{./url}}">{{data.title}}</a>
 {{/ inline}}
 
 <ul role=list class="-flow-space" style="--dim-flow-space: .5em">

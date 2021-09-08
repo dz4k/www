@@ -1,17 +1,7 @@
 
-.entry-list > * + * {
-	border-top: 1px dotted var(--color-foreground);
-}
-.entry-list :first-child {
-	border-top: 1px solid transparent;
-}
-
 .entry-list .h-entry {
 	cursor: pointer;
 }
-	.entry-list .h-entry:hover .p-name {
-		background: var(--color-block-background-hover);
-	}
 
 .thumbnail {
 	width: 4em;

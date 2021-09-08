@@ -5,77 +5,119 @@ permalink: /
 eleventyExcludeFromCollections: true
 ---
 
-<style>{{{fread "../styles/my-name.css"}}}</style>
+<div class="-center -tall">
+	<div class="p-author h-card me" style="width: 100%;">
+		<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey" width=120 height=120 sizes="10ch">
 
-<section class="p-author h-card me" style="--flow-space: .9rem;">
-	<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey" width=120 height=120 sizes="10ch">
+		<h1><a href=https://denizaksimsek.com/
+			rel=me class="p-name u-url u-uid -unlink" lang="tr"
+			style="">Deniz Akşimşek</a></h1>
 
-	<h1><a href=https://denizaksimsek.com/
-		rel=me class="p-name u-url u-uid -unlink" lang="tr"
-		style=""
-		>Deniz Akşimşek</a></h1>
+		<ul role="list" class="-inline-list -lowercase"
+				style="margin-block: .5em;">
+			<li><a href=https://twitter.com/DenizAksimsek/ rel=me>Twitter</a>
+			<li><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email>Email</a>
+			<li><a href=https://github.com/dz4k/ rel=me>GitHub</a>
+			<li><a href=https://dev.to/dz4k rel=me>DEV.to</a>
+			<li><a href=https://m.page/dz4k rel=me>mmm</a>
+			<li><a href=https://linkedin.com/in/deniz-akşimşek-044651211/ rel=me>LinkedIn</a>
+			<li>CV: <a href=/cv/tr>TR</a>, <a href=/cv/en>EN</a>
+		</ul>
 
-	<ul role="list" class="elsewhere -lowercase -inline-list" style="gap: 1ch;">
-		<li><a href=https://twitter.com/DenizAksimsek/ rel=me>Twitter</a>
-		<li><a href=mailto:deniz@denizaksimsek.com rel=me class=u-email>Email</a>
-		<li><a href=https://github.com/dz4k/ rel=me>GitHub</a>
-		<li><a href=https://dev.to/dz4k rel=me>DEV.to</a>
-		<li><a href=https://m.page/dz4k rel=me>mmm</a>
-		<li><a href=https://linkedin.com/in/deniz-akşimşek-044651211/ rel=me>LinkedIn</a>
-		<li>CV: <a href=/cv/tr>TR</a>, <a href=/cv/en>EN</a>
-	</ul>
-</section>
-
-<section>
-	<ul role=list class="-inline-list">
-		<li><a class="cta" href="https://hyperscript.org">///_hyperscript</a>
-		<li><a class="cta" href="https://ankarametro.dz4k.com" lang="tr" hreflang="tr">Ankara Raylı Sistemler Haritası</a>
-	</ul>
-</section>
-
-<section>
-	<h2>interactions</h2>
-
-	<ul role="list" class="-inline-list">
-		{{#each (limit 3 (reverse collections.interact))}}
-			<li class="-truncate">
-				{{#data.interaction}}
-					{{emoji}}
-					<a href="{{./url}}">{{d name url}}</a>
-				{{/data.interaction}}
-		{{/each}}
-		<li><a href="/interactions">all interactions&rarr;</a>
-	</ul>
-</section>
-
-<section>
-	<h2>blog</h2>
-
-	<div class="entry-list">
-	{{#each (reverse collections.posts) as | page |}}
-		{{#with page.data}}
-			<article class="h-entry">
-				{{#photo}}
-					<img class="u-photo thumbnail"
-						sizes="4em"
-						src="{{src}}"
-						alt="{{alt}}"
-						data-img-color-scheme="{{colorscheme}}">
-				{{/photo}}
-				<h3><a href="{{page.url}}" class="p-name">{{title}}</a></h2>
-				{{> entry-detail}}
-				{{#summary}}
-					<p><span class="p-summary">{{{markdown .}}}</span></p>
-				{{/summary}}
-			</article>
-		{{/with}}
-	{{/each}}
+		<ul role="list" class="-inline-list" 
+				style="margin-block: .5em;">
+			<li><a href="https://hyperscript.org">///_hyperscript&nearr;</a>
+			<li><a href="https://ankarametro.dz4k.com" lang="tr" hreflang="tr">Ankara Raylı Sistemler Haritası&nearr;</a>
+		</ul>
 	</div>
+</div>
 
-	<script>
-	document.querySelector('.entry-list').addEventListener('click', e => {
-		event.target.closest('.h-entry').querySelector('.entry-u-url').click();
+<h2>blog</h2>
+
+<div class="entry-list">
+{{#each (reverse collections.posts) as | page |}}
+	{{#with page.data}}
+		<article class="h-entry">
+			<time class="dt-published" datetime="{{isodatetime page.date}}"
+				>{{isodate page.date}}</time>
+			<a href="{{page.url}}" class="p-name">{{title}}</a>
+			{{#photo}}
+				<a data-img-popup href="{{src}}">(image)</a>
+			{{/photo}}
+		</article>
+	{{/with}}
+{{/each}}
+</div>
+
+<style>
+	time.dt-published {
+		display: inline-block;
+		width: 9ch;
+		font-size: .9em;
+	}
+	[data-img-popup] {
+		font-size: .8em;
+	}
+</style>
+
+<div hidden id="preview" style="
+		position: absolute; 
+		height: min-content;
+		background: var(--color-block-background);
+		border: 1px solid var(--color-muted-foreground)">
+</div>
+
+<script>
+	const
+		$preview = document.getElementById('preview'),
+		$previewImg = document.createElement('img')
+		let showing = false
+	
+	$preview.append($previewImg)
+
+	function showPreview(e) {
+		if (showing) return
+		showing = true
+		console.log('show')
+
+		$previewImg.src = e.target.href
+		$previewImg.addEventListener('load', async eLoad => { // once: true
+			const rect = await getRectAsync(e.target)
+			if (!showing) return
+			console.log(rect)
+			$preview.style.bottom = (window.innerHeight - rect.top - window.scrollY) + 'px'
+			$preview.style.right = (document.body.clientWidth - rect.right) + 'px'
+			console.log($preview.style)
+			$preview.toggleAttribute('hidden', false)
+		}, { once: true })
+	}
+
+	function hidePreview(e) {
+		if (!showing) return
+		if ($preview.matches(':hover')) return
+		showing = false
+		$preview.toggleAttribute('hidden', true)
+		console.log('hide')
+	}
+
+	document.querySelectorAll('a[data-img-popup]').forEach($a => {
+		$a.addEventListener('mouseover', showPreview)
+		$a.addEventListener('focus', showPreview)
+		$a.addEventListener('mouseout', hidePreview)
+		$a.addEventListener('blur', hidePreview)
+		$preview.addEventListener('mouseout', hidePreview)
 	})
-	</script>
-</section>
 
+	function getRectAsync($el) {
+		return new Promise((resolve, reject) => {
+			const observer = new IntersectionObserver(entries => {
+				for (const entry of entries) {
+					resolve(entry.boundingClientRect)
+				}
+				observer.disconnect()
+			})
+
+			observer.observe($el)
+		})
+	}
+</script>

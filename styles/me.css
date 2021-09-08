@@ -1,34 +1,16 @@
 
-.me {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-template-areas:
-		'photo  name'
-		'photo  elsewhere';
-	grid-gap: .2em 2ch;
+.me h1 {
+	margin-top: 0;
+	line-height: 1em;
+	font-size: clamp(1.6em, 3.5vw, 3em);
 }
 
-	.me > * {
-		margin: 0;
-	}
-	
-	.me picture {
-		grid-area: photo;
+@media screen and (min-width: 760px) {
+	.me picture:first-of-type {
+		float: right;
+	}		
+}
 
-		--size: calc(2.4em + .2em + 1.5em);
-		width: var(--size);
-		height: var(--size);
-	}
-	
-	.me h1 {
-		grid-area: name;
-		
-		line-height: 1em;
-		font-family: 'Ankara Display';
-		font-weight: 900;
-		text-transform: uppercase;
-		font-size: 2.4em;
-		letter-spacing: 2px;
-	}
-	
-
+.me h1 a {
+	text-decoration: none;
+}

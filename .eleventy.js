@@ -23,8 +23,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('entry', 'layout/entry.hbs')
   eleventyConfig.addLayoutAlias('page', 'layout/base.hbs')
 
-
-
   /****************************************************************************
    PLUGINS
    ****************************************************************************/
