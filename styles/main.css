@@ -21,6 +21,7 @@
 	:root {
 		--color-background: black;
 		--color-block-background: #30303f;
+		--color-block-background-hover: #727279;
 		--color-foreground: white;
 		--color-muted-foreground: #88888f;
 	}
@@ -82,10 +83,10 @@ p {
 }
 
 ul, ol, dd {
-	padding-inline-start: 1em;
+	padding-inline: 0;
 }
 
-blockquote, figure {
+blockquote, figure, ul, ol, dd {
 	margin-inline: clamp(1em, 3vw, 2em) 0;
 }
 
@@ -105,6 +106,7 @@ aside {
 
 ul[role=list] {
 	padding-left: 0;
+	margin-left: 0;
 	list-style: none;
 }
 
