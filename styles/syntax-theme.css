@@ -96,3 +96,8 @@ code {
 .token.hyperscript {
     color: var(--color-foreground);
 }
+
+.token.comment {
+    font-family: var(--font-main);
+    letter-spacing: .04em;
+}

@@ -64,7 +64,7 @@ CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the lib
 	gap: 3ch;">
 
 <style>
-#compare pre {overflow: unset;}
+#compare pre {overflow: unset; margin-inline: 0}
 </style>
 
 ~~~

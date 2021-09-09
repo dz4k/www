@@ -15,6 +15,7 @@
 	--color-muted-foreground: #c4c4cf;
 
 	font-size: 1rem; /* This needs to go in :root, not body, to make rems work */
+	scrollbar-color: var(--color-foreground) var(--color-block-background-hover);
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -90,7 +91,14 @@ blockquote, figure, ul, ol, dd {
 	margin-inline: clamp(1em, 3vw, 2em) 0;
 }
 
+	figure blockquote {
+		margin-inline: 0;
+	}
+
 blockquote {
+	padding-inline-start: 1ch;
+	box-sizing: content-box;
+	border-left: 2px solid var(--color-muted-foreground);
 	background: var(--color-block-background);
 }
 
@@ -108,10 +116,6 @@ ul[role=list] {
 	padding-left: 0;
 	margin-left: 0;
 	list-style: none;
-}
-
-blockquote {
-	border-left: 2px solid var(--grayed);
 }
 
 figcaption {
@@ -139,12 +143,8 @@ img {
 }
 
 hr {
-	border: none;
+	border: 1px solid var(--color-muted-foreground);
 }
-	hr:after {
-		content: '\2767      \2767      \2767';
-		font-size: 1.8em;
-	}
 
 /* Semantics */
 
