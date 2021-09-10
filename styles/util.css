@@ -64,3 +64,6 @@
 	text-transform: lowercase;
 }
 
+.-wide-para {
+	max-width: none;
+}

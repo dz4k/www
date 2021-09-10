@@ -146,6 +146,11 @@ hr {
 	border: 1px solid var(--color-muted-foreground);
 }
 
+.footnote-backref {
+    width: 0;
+    display: inline-block;
+}
+
 /* Semantics */
 
 article {

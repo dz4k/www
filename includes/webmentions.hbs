@@ -36,18 +36,42 @@
 
 {{/inline}}
 
-{{set wms=(lookup webmentions page.url)}}
+{{set wms=(groupby 'wm-property' (lookup webmentions this.page.url) 1)}}
 
-{{#if wms}}
-	<section class="webmentions" id="webmentions">
-		<h2>Webmentions ({{ wms.length }})</h2>
-		<ul class="webmention-list">
-			{{#each wms}}
-				<li>{{> webmention}}
-			{{/each}}
-		</ul>
-	</section>
-{{else}}
-	<p><em>This page accepts Webmentions.</em>
-{{/if}}
+<section class="webmentions" id="webmentions">
+	<h2>Webmentions</h2>
+
+	<p><em>This page accepts Webmentions.</em></p>
+		{{#if wms.[like-of]}}
+			<p class="-wide-para"><strong>Liked by:</strong> 
+				{{#each wms.[like-of]}}
+					<a href="{{./url}}">{{author.name}}</a>
+					{{#unless @last}} &middot; {{/unless}}
+				{{/each}}</p>
+		{{/if}}
+
+		{{#if wms.[repost-of]}}
+			<p class="-wide-para"><strong>Reposted by:</strong> 
+				{{#each wms.[repost-of]}}
+					<a href="{{./url}}">{{author.name}}</a>
+					{{#unless @last}} &middot; {{/unless}}
+				{{/each}}</p>
+		{{/if}}
+		
+		{{#if wms.[mention-of]}}
+			<p class="-wide-para"><strong>Mentioned by:</strong> 
+				{{#each wms.[mention-of]}}
+					<a href="{{./url}}">{{author.name}}</a>
+					{{#unless @last}} &middot; {{/unless}}
+				{{/each}}</p>
+		{{/if}}
+
+		{{#if wms.[in-reply-to]}}
+			<ul class="webmention-list">
+				{{#each wms.[in-reply-to]}}
+					<li>{{> webmention}}
+				{{/each}}
+			</ul>
+		{{/if}}
+</section>
 

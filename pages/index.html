@@ -44,7 +44,7 @@ eleventyExcludeFromCollections: true
 				>{{isodate page.date}}</time>
 			<a href="{{page.url}}" class="p-name">{{title}}</a>
 			{{#photo}}
-				<a data-img-popup href="{{src}}">(image)</a>
+				<a data-popup href="{{src}}">(image)</a>
 			{{/photo}}
 		</article>
 	{{/with}}
@@ -52,69 +52,17 @@ eleventyExcludeFromCollections: true
 </div>
 
 <style>
-	[data-img-popup] {
+	[data-popup] {
 		font-size: .8em;
 	}
 </style>
 
-<div hidden id="preview" style="
-		position: absolute; 
-		height: min-content;
-		background: var(--color-block-background);
-		border: 1px solid var(--color-muted-foreground)">
-</div>
 
 <script>
-	const
-		$preview = document.getElementById('preview'),
-		$previewImg = document.createElement('img')
-		let showing = false
-	
-	$preview.append($previewImg)
-
-	function showPreview(e) {
-		if (showing) return
-		showing = true
-		console.log('show')
-
-		$previewImg.src = e.target.href
-		$previewImg.addEventListener('load', async eLoad => { // once: true
-			const rect = await getRectAsync(e.target)
-			if (!showing) return
-			console.log(rect)
-			$preview.style.bottom = (window.innerHeight - rect.top - window.scrollY) + 'px'
-			$preview.style.right = (document.body.clientWidth - rect.right) + 'px'
-			console.log($preview.style)
-			$preview.toggleAttribute('hidden', false)
-		}, { once: true })
-	}
-
-	function hidePreview(e) {
-		if (!showing) return
-		if ($preview.matches(':hover')) return
-		showing = false
-		$preview.toggleAttribute('hidden', true)
-		console.log('hide')
-	}
-
-	document.querySelectorAll('a[data-img-popup]').forEach($a => {
-		$a.addEventListener('mouseover', showPreview)
-		$a.addEventListener('focus', showPreview)
-		$a.addEventListener('mouseout', hidePreview)
-		$a.addEventListener('blur', hidePreview)
-		$preview.addEventListener('mouseout', hidePreview)
-	})
-
-	function getRectAsync($el) {
-		return new Promise((resolve, reject) => {
-			const observer = new IntersectionObserver(entries => {
-				for (const entry of entries) {
-					resolve(entry.boundingClientRect)
-				}
-				observer.disconnect()
-			})
-
-			observer.observe($el)
+	document.querySelectorAll('a[data-popup]').forEach($a => {
+		$a.addEventListener('click', e => {
+			e.preventDefault()
+			window.open($a.href, "ImagePreview", "resizable")
 		})
-	}
+	})
 </script>

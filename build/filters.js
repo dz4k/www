@@ -25,14 +25,16 @@ module.exports = eleventyConfig => {
             : ia.data[ia.data.interactionType]
     })
 
-    eleventyConfig.addFilter('groupByYear', coll => {
-        const rv = []
-        for (const entry of coll) {
-            let current = rv[rv.length - 1]
-            if (current == undefined || entry.date.getFullYear() != current.year) {
-                rv.push(current = { year: entry.date.getFullYear(), entries: [] })
-            }
-            current.entries.push(entry)
+    eleventyConfig.addFilter('groupby', function (prop, coll) {
+        if (typeof prop === 'string') {
+            const ns = prop.split('.')
+            prop = e => ns.reduce((acc, cur) => acc[cur], e)
+        }
+        const rv = {}
+        for (const e of coll || []) {
+            const value = prop(e)
+            const group = rv[value] || (rv[value] = [])
+            group.push(e)
         }
         return rv
     })
