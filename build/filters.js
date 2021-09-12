@@ -27,16 +27,15 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addFilter('groupby', function (prop, coll) {
         if (typeof prop === 'string') {
-            const ns = prop.split('.')
-            prop = e => ns.reduce((acc, cur) => acc[cur], e)
+            const temp = prop
+            prop = e => e[temp]
         }
-        const rv = {}
+        const rv = new Map
         for (const e of coll || []) {
             const value = prop(e)
-            const group = rv[value] || (rv[value] = [])
-            group.push(e)
+            rv.has(value) ? rv.get(value).push(e) : rv.set(value, [e])
         }
-        return rv
+        return Array.from(rv.entries(), e => ({ key: e[0], values: e[1] }))
     })
 
     eleventyConfig.addFilter('reverse', e => (function* () {
@@ -52,6 +51,10 @@ module.exports = eleventyConfig => {
     }()))
 
     eleventyConfig.addFilter('eq', (a, b) => a === b)
+    eleventyConfig.addFilter('gt', (a, b) => a > b)
+    eleventyConfig.addFilter('ge', (a, b) => a >= b)
+    eleventyConfig.addFilter('le', (a, b) => a <= b)
+    eleventyConfig.addFilter('lt', (a, b) => a < b)
 
     eleventyConfig.addFilter('and', (...args) => args.slice(0, -1).reduce((a, b) => a && b))
     eleventyConfig.addFilter('or', (...args) => args.slice(0, -1).reduce((a, b) => a || b))
@@ -86,6 +89,10 @@ ${body}
 </figure>
 
 `) // `
+
+    eleventyConfig.addShortcode('log', function (x) {
+        console.log(x)
+    })
 
     eleventyConfig.addShortcode('set', function ({ hash, data: { root } }) {
         Object.assign(root, hash)

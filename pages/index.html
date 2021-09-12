@@ -36,18 +36,24 @@ eleventyExcludeFromCollections: true
 
 <h2>blog</h2>
 
-<div class="entry-list">
-{{#each (reverse collections.posts) as | page |}}
-	{{#with page.data}}
-		<article class="h-entry">
-			<time class="dt-published" datetime="{{isodatetime page.date}}"
-				>{{isodate page.date}}</time>
-			<a href="{{page.url}}" class="p-name">{{title}}</a>
-			{{#photo}}
-				<a data-popup href="{{src}}">(image)</a>
-			{{/photo}}
-		</article>
-	{{/with}}
+<div class="entry-list" style="--dim-date-width: 5ch">
+{{#each 
+	(groupby 
+		(eval 'post => post.date.getFullYear()')
+		(reverse collections.posts))}}
+	<h3><time>{{key}}</time></h3>
+	{{#each values as | page |}}
+		{{#with page.data}}
+			<article class="h-entry">
+				<time class="dt-published" datetime="{{isodatetime page.date}}"
+					>{{datefmt page.date 'MM-dd'}}</time>
+				<a href="{{page.url}}" class="p-name">{{title}}</a>
+				{{#photo}}
+					<a data-popup href="{{src}}">(image)</a>
+				{{/photo}}
+			</article>
+		{{/with}}
+	{{/each}}
 {{/each}}
 </div>
 
