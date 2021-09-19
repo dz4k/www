@@ -22,7 +22,7 @@ pre[class*="language-"] {
 }
 
 code {
-    color: var(--color-foreground);
+    color: #595959;
     filter: brightness(0.8);
 }
 
