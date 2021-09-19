@@ -27,8 +27,8 @@ code {
 }
 
 @media (prefers-color-scheme: dark) {
-    code, pre[class*="language-"] {
-        filter: brightness(1.4);
+    code {
+        filter: brightness(1.96);
     }
 }
 
