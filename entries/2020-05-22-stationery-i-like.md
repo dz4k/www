@@ -1,10 +1,10 @@
 ---
 title: Stationery I like
 date: 2020-05-22T22:10+03
+last modified: 2021-10-13T20:51:46+03:00
 ---
 
-Reviews for things I used, and a wishlist I try to keep small. Last edited <time>2020-22-08</time>
-
+Reviews for things I used, and a wishlist I try to keep small.
 
 ## Things I have used
 
@@ -49,6 +49,4 @@ These are how you know it's Back To School season in Turkey. As far as I can fin
 
 ### Miscellaneous
 
--   [Papier Tigre A4 Clipboard](https://milligram.com/products/papier-tigre-a4-clipboard)
--   [Nakabayashi Magnetic Bookmark Rulers](https://to.jetpens.com/2UHjXxq)
 -   [Raymay Pencut Mini Scissors](https://www.jetpens.com/Raymay-Pencut-Mini-Scissors/ct/1623)
