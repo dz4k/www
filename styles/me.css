@@ -22,3 +22,14 @@
 .me h1 a {
 	text-decoration: none;
 }
+
+.me .btn {
+	background: #ffef33;
+	border: 1px solid #ceb707;
+	font-size: .8em;
+	vertical-align: text-top;
+	padding: .1em .3em;
+	text-decoration: none;
+	border-radius: .2em;
+	text-transform: none;
+}
