@@ -48,6 +48,10 @@ body {
 	outline: 2px dashed;
 }
 
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
 a {
 	color: currentColor;
 }
