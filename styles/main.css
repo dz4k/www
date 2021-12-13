@@ -4,8 +4,8 @@
 	--dim-font-smaller: .9em;
 	--dim-body-padding: max(1rem, 10vw);
 
-	--font-sans: 'Fira Sans', sans-serif;
-	--font-mono: 'Consolas', 'Menlo', 'Source Code Pro', monospace;
+	--font-sans: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+	--font-mono: Consolas, Menlo, Source Code Pro, monospace, monospace;
 	--font-main: var(--font-sans);
 	
 	--color-background: ghostwhite;
