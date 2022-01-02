@@ -1,10 +1,17 @@
 
+@font-face {
+  font-family: Manrope;
+  src: 
+    url('/assets/fonts/Manrope[wght].woff2') format('woff2'),
+    url('/assets/fonts/Manrope[wght].ttf') format('ttf');
+}
+
 :root {
 	--dim-line-length: 70ch;
 	--dim-font-smaller: .9em;
 	--dim-body-padding: max(1rem, 10vw);
 
-	--font-sans: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+	--font-sans: Manrope, Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 	--font-mono: Consolas, Menlo, Source Code Pro, monospace, monospace;
 	--font-main: var(--font-sans);
 	
