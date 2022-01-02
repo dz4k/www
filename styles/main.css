@@ -21,7 +21,7 @@
 	--color-foreground: black;
 	--color-muted-foreground: #c4c4cf;
 
-	font-size: 1rem; /* This needs to go in :root, not body, to make rems work */
+	font-size: 1.1rem; /* This needs to go in :root, not body, to make rems work */
 	scrollbar-color: var(--color-foreground) var(--color-block-background-hover);
 }
 
@@ -40,7 +40,9 @@ body {
 	margin: 0;
 
 	font-family: var(--font-main);
-	line-height: 1.5;
+	font-weight: 450;
+	line-height: 1.8;
+	letter-spacing: 0.02em;
 	tab-size: 4ch;
 
 	background: var(--color-background);
