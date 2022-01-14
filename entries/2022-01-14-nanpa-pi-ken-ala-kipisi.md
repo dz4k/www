@@ -2,7 +2,8 @@
 title: nanpa pi ken ala kipisi pi mute ale li lon
 date: 2022-01-14T21:47+03
 lang: tok
-...: <p><i>ni li tan mi ala. mi sona ala e ni: jan seme li pali e ni.</i></p>
+...: >-
+  <p><i>ni li tan mi ala. mi sona ala e ni: jan seme li pali e ni.</i></p>
 # ...: <p><i>ni l'tan mi ala. mi sona alaj'n' jan seme l' pal'jen.</i></p>
 ---
 
