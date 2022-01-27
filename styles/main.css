@@ -1,27 +1,20 @@
-
-@font-face {
-  font-family: Manrope;
-  src: 
-    url('/assets/fonts/Manrope[wght].woff2') format('woff2'),
-    url('/assets/fonts/Manrope[wght].ttf') format('ttf');
-}
-
 :root {
 	--dim-line-length: 70ch;
 	--dim-font-smaller: .9em;
 	--dim-body-padding: max(1rem, 10vw);
 
-	--font-sans: Manrope, Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+	--font-sans: -apple-system, system-ui, sans-serif;
 	--font-mono: Consolas, Menlo, Source Code Pro, monospace, monospace;
 	--font-main: var(--font-sans);
-	
+
 	--color-background: ghostwhite;
 	--color-block-background: #e6e6ff;
 	--color-block-background-hover: #c8c8e1;
 	--color-foreground: black;
-	--color-muted-foreground: #c4c4cf;
+	--color-muted-foreground: #595454;
 
-	font-size: 1.1rem; /* This needs to go in :root, not body, to make rems work */
+	--line-height: 1.4rem;
+
 	scrollbar-color: var(--color-foreground) var(--color-block-background-hover);
 }
 
@@ -40,8 +33,8 @@ body {
 	margin: 0;
 
 	font-family: var(--font-main);
-	font-weight: 450;
-	line-height: 1.8;
+	font-weight: 400;
+	line-height: var(--line-height);
 	letter-spacing: 0.02em;
 	tab-size: 4ch;
 
@@ -74,6 +67,19 @@ sup {
 	font-size: .8em;
 }
 
+time {
+	font-variant-numeric: tabular-nums;
+}
+
+p,
+ul, ol, dl,
+details, figure, table, blockquote, pre,
+article, section, header, main, footer,
+address,
+h1, h2, h3, h4, h5, h6 {
+	margin: var(--line-height) 0;
+}
+
 h1, h2 {
 	font-weight: normal;
 }
@@ -81,15 +87,19 @@ h1, h2 {
 h1 {
 	margin-bottom: 0;
 	font-size: 1.6em;
+	line-height: calc(1.5 * var(--line-height));
 }
 
 h2 {
-	margin-top: 1.6em;
 	font-size: 1.3em;
+	margin-top: calc(2 * var(--line-height));
+	line-height: var(--line-height);
 }
 
 h3 {
 	font-size: 1em;
+	margin-top: calc(2 * var(--line-height));
+	line-height: var(--line-height);
 }
 
 p {
@@ -121,7 +131,7 @@ aside {
 
 	font-size: var(--dim-font-smaller);
 	font-style: italic;
-	
+
 	background: var(--color-block-background);
 }
 
@@ -147,6 +157,11 @@ pre {
 	-o-tab-size: 4ch;
 	tab-size: 4ch;
 	margin-inline-end: calc(-1 * var(--dim-body-padding));
+	letter-spacing: 0;
+}
+
+code {
+	letter-spacing: 0;
 }
 
 img {
@@ -156,7 +171,13 @@ img {
 }
 
 hr {
-	border: 1px solid var(--color-muted-foreground);
+	border: none;
+}
+
+hr:after {
+	content: '\2766';
+	font-size: var(--line-height);
+	line-height: 1em;
 }
 
 .footnote-backref {
@@ -167,15 +188,11 @@ hr {
 /* Semantics */
 
 article {
-	margin-block: 1em;
+	margin-block: var(--line-height);
 }
-	article footer {
+	article > footer:first-of-type {
 		border-top: 1px solid var(--color-foreground);
 	}
-
-header {
-	border-bottom: 1px solid var(--color-foreground);
-}
 
 body > footer {
 	font-size: .8em;

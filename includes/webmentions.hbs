@@ -12,7 +12,7 @@
 			{{/if}}
 
 			<span class="p-author h-card"><a class=u-url
-				href="{{author.url}}" rel='noopener noreferrer' 
+				href="{{author.url}}" rel='noopener noreferrer'
 				target='_blank'>{{author.name}}</a></span>
 
 			{{#if (eq [wm-property] 'like-of')}} liked this
@@ -43,7 +43,7 @@
 
 	{{#each wms}}
 		{{#if (eq key 'like-of')}}
-			<p class="-wide-para"><strong>Liked by:</strong> 
+			<p class="-wide-para"><strong>Liked by:</strong>
 				{{#each values}}
 					<a href="{{./url}}">{{author.name}}</a>
 					{{#unless @last}} &middot; {{/unless}}
@@ -51,15 +51,15 @@
 		{{/if}}
 
 		{{#if (eq key 'repost-of')}}
-			<p class="-wide-para"><strong>Reposted by:</strong> 
+			<p class="-wide-para"><strong>Reposted by:</strong>
 				{{#each values}}
 					<a href="{{./url}}">{{author.name}}</a>
 					{{#unless @last}} &middot; {{/unless}}
 				{{/each}}</p>
 		{{/if}}
-		
+
 		{{#if (eq key 'mention-of')}}
-			<p class="-wide-para"><strong>Mentioned by:</strong> 
+			<p class="-wide-para"><strong>Mentioned by:</strong>
 				{{#each values}}
 					<a href="{{./url}}">{{author.name}}</a>
 					{{#unless @last}} &middot; {{/unless}}
@@ -74,7 +74,7 @@
 			</ul>
 		{{/if}}
 	{{else}}
-		<p><em>This page accepts Webmentions.</em></p>
+		<p>This page accepts Webmentions.</p>
 	{{/each}}
 </section>
 

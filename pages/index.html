@@ -5,7 +5,7 @@ permalink: /
 eleventyExcludeFromCollections: true
 ---
 
-<div class="-center -tall">
+<div>
 	<div class="p-author h-card me" style="width: 100%;">
 		<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey" width=120 height=120 sizes="10ch">
 
@@ -24,10 +24,9 @@ eleventyExcludeFromCollections: true
 			<li><a class="btn" href="https://buymeacoffee.com/dz4k">Buy me a coffee</a>
 		</ul>
 
-		<hr style="max-width: 25em; margin-inline: 0; border-bottom: none;">
+		<h2>projects</h2>
 
-		<ul role="list" class="-inline-list" 
-				style="margin-block: .5em;">
+		<ul role="list" class="-inline-list">
 			<li><a href="https://hyperscript.org">///_hyperscript&nearr;</a>
 			<li><a href="https://thisweek.htmx.org">This Week in HTMX&nearr;</a>
 			<li><a href="https://ankarametro.dz4k.com" lang="tr" hreflang="tr">Ankara Raylı Sistemler Haritası&nearr;</a>
@@ -38,17 +37,17 @@ eleventyExcludeFromCollections: true
 <h2>blog</h2>
 
 <div class="entry-list" style="--dim-date-width: 5ch">
-{{#each 
-	(groupby 
+{{#each
+	(groupby
 		(eval 'post => post.date.getFullYear()')
 		(reverse collections.posts))}}
 	<h3><time>{{key}}</time></h3>
 	{{#each values as | page |}}
 		{{#with page.data}}
 			<article class="h-entry">
+				<a href="{{page.url}}" class="p-name">{{title}}</a>
 				<time class="dt-published" datetime="{{isodatetime page.date}}"
 					>{{datefmt page.date 'MM-dd'}}</time>
-				<a href="{{page.url}}" class="p-name">{{title}}</a>
 				{{#photo}}
 					<a data-popup href="{{src}}">(image)</a>
 				{{/photo}}

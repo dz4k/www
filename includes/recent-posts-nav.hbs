@@ -8,13 +8,13 @@ this.posts = collections.posts.filter(p => p !== prev && p !== next && p.url !==
 {{/exec}}
 
 {{#*inline "post"}}
-	<time class="dt-published">{{isodate date}}</time> &mdash;
 	<a href="{{./url}}">{{data.title}}</a>
+	<time class="dt-published">{{isodate date}}</time>
 {{/ inline}}
 
 <ul role=list class="entry-list -flow-space" style="--dim-flow-space: .5em">
-	{{#prev}}<li class="h-entry">{{>post}} [&larr;]{{/prev}}
-	{{#next}}<li class="h-entry">{{>post}} [&rarr;]{{/next}}
+	{{#prev}}<li class="h-entry">&larr; {{>post}}{{/prev}}
+	{{#next}}<li class="h-entry">&rarr; {{>post}}{{/next}}
 	{{#each (limit 3 (reverse posts))}}
 		<li class="h-entry">{{>post}}
 	{{/each}}

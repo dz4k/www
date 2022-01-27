@@ -9,7 +9,7 @@ permalink: "
 
 <article class="h-entry">
 	<header class="entry-page-header">
-		
+
 		{{#photo}}
 			<link class=u-photo href="{{photo}}">
 		{{/photo}}
@@ -24,7 +24,7 @@ permalink: "
 				><time class="dt-published" datetime="{{isodatetime page.date}}"
 					>{{datefmt page.date 'yyyy-MM-dd HH:mm'}}</time></a>
 
-				
+
 		{{#[last modified]}}
 			<p>Last modified {{isodate .}}</p>
 		{{/[last modified]}}
@@ -53,10 +53,11 @@ permalink: "
 		{{/[...]}}
 	</header>
 
-	<div class="e-content -big-margin">{{{content}}}</div>
+	<div class="e-content">{{{content}}}</div>
 
-	
-	<footer class="comments -big-margin">{{> webmentions}}</footer>
+
+	<footer class="comments">{{> webmentions}}</footer>
+
 	<footer class="entry-page-footer">
 		<section role="complementary">{{> recent-posts-nav}}</section>
 	</footer>
