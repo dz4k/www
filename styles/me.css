@@ -2,7 +2,7 @@
 .me h1 {
 	margin-top: 0;
 	line-height: 1em;
-	font-size: clamp(1.6em, 3.5vw, 3em);
+	font-size: clamp(3em, 3.5vw, 3em);
 	margin-left: -.06em;
 	font-weight: bold;
 }
