@@ -1,9 +1,9 @@
----
+<!--
 title: 'Deniz Akşimşek'
 layout: page
 permalink: /
 eleventyExcludeFromCollections: true
----
+-->
 
 <div>
 	<div class="p-author h-card me" style="width: 100%;">
@@ -40,7 +40,7 @@ eleventyExcludeFromCollections: true
 {{#each
 	(groupby
 		(eval 'post => post.date.getFullYear()')
-		(reverse collections.posts))}}
+		(reverse collections.entries))}}
 	<h3><time>{{key}}</time></h3>
 	{{#each values as | page |}}
 		{{#with page.data}}

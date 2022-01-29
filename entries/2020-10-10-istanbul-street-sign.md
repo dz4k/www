@@ -1,21 +1,21 @@
----
+<!--
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03
-photo: 
+photo:
   src: /assets/photos/IMG20201007085906-02.jpeg
   alt: |
-    A post with two signs on it, one partially covering the other. The signs 
-    are colored red with a thin white strip, then a thick green strip at the 
+    A post with two signs on it, one partially covering the other. The signs
+    are colored red with a thin white strip, then a thick green strip at the
     bottom.
     The front one says:
-    "KÖKNAR CADDESİ ↞↠, [on white strip] MEHMET AKİF MAHALLESİ, [on green 
+    "KÖKNAR CADDESİ ↞↠, [on white strip] MEHMET AKİF MAHALLESİ, [on green
     strip] ÇEKMEKÖY (TN:40 )".
     The one behind says:
-    "BİL..". SOKAĞI, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip] 
+    "BİL..". SOKAĞI, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip]
     ÇEKMEKÖY (TN:60 )"
 türkçe: /2020/istanbul-sokak-tabelasi/
 templateEngineOverride: njk,md
----
+-->
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 

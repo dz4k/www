@@ -1,11 +1,11 @@
----
+<!--
 title: "Sokaktaki Ankara: Tabela Tasarım Yarışması"
 date: 2021-08-29T19:07:59.826+03:00
 last updated: 2021-09-02T23:47+03
 lang: tr
 photo:
   src: /assets/photos/ank-tabela-a.jpg
----
+-->
 
 **<time>2021-09-08:** [Kırmızı kazandı! (twitter)](https://twitter.com/ankarabbld/status/1433505785573777414)
 

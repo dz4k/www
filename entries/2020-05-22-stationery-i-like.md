@@ -1,8 +1,8 @@
----
+<!--
 title: Stationery I like
 date: 2020-05-22T22:10+03
 last modified: 2021-10-13T20:51:46+03:00
----
+-->
 
 Reviews for things I used, and a wishlist I try to keep small.
 

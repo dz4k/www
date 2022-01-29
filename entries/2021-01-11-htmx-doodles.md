@@ -1,4 +1,4 @@
----
+<!--
 title: HTMX Doodles
 date: 2021-01-11T00:47+03
 photo:
@@ -7,7 +7,7 @@ photo:
   colorscheme: light
 style: >
 	.img-block { margin: 3em 0; }
----
+-->
 
 ![Hypertext Man!](/assets/htmx-doodles/hypertext-man.jpeg){data-img-color-scheme=light}
 

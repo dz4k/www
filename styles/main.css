@@ -1,6 +1,6 @@
 :root {
 	--dim-line-length: 70ch;
-	--dim-font-smaller: .9em;
+	--dim-font-smaller: .8em;
 	--dim-body-padding: max(1rem, 10vw);
 
 	--font-sans: -apple-system, system-ui, sans-serif;
@@ -102,7 +102,7 @@ h3 {
 	line-height: var(--line-height);
 }
 
-p {
+p, li, dt {
 	max-width: var(--dim-line-length);
 }
 
@@ -143,7 +143,6 @@ ul[role=list] {
 
 figcaption {
 	font-size: var(--dim-font-smaller);
-	font-style: italic;
 }
 
 	figcaption a {
@@ -185,13 +184,42 @@ hr:after {
     display: inline-block;
 }
 
+[data-sidenote] {
+	font-size: .88em;
+	opacity: .7;
+}
+
+[data-sidenote]:before { content: '(' }
+[data-sidenote]:after  { content: ')' }
+
+@media (min-width: calc(70ch + max(1rem, 10vw) + 21ch)) {
+	p {
+		position: relative;
+	}
+	[data-sidenote] {
+		display: block;
+		width: 19ch;
+		float: right;
+		clear: right;
+		margin-right: -21ch;
+		margin-top: calc(-1 * var(--line-height));
+		margin-bottom: calc(2 * var(--line-height));
+	}
+
+	[data-sidenote]:before { content: none }
+	[data-sidenote]:after  { content: none }
+}
+
 /* Semantics */
 
 article {
 	margin-block: var(--line-height);
 }
-	article > footer:first-of-type {
-		border-top: 1px solid var(--color-foreground);
+	article > footer:first-of-type:before {
+		content: '';
+		display: block;
+		width: 20ch;
+		border-top: 3px double var(--color-foreground);
 	}
 
 body > footer {

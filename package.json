@@ -27,6 +27,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-footnote": "^3.0.2",
     "node-fetch": "^2.6.1",
+    "posthtml": "^0.16.5",
     "prism-hyperscript": "^1.0.1"
   }
 }

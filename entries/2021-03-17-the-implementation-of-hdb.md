@@ -1,4 +1,4 @@
----
+<!--
 title: "The Implementation of HDB, the _hyperscript debugger"
 date: 2021-03-17T00:00+0300
 last modified: 2021-09-02T12:48+0300
@@ -8,7 +8,7 @@ syndication:
   DEV: https://dev.to/dz4k/the-implementation-of-hdb-the-hyperscript-debugger-5hf4
 
 templateEngineOverride: njk,md
----
+-->
 
 <script src="/assets/js/core.js"></script>
 <script src="/assets/js/web.js"></script>
@@ -88,7 +88,7 @@ HDB.prototype.break = function(ctx) {
 ~~~
 {% endfig %}
 
-There are a few things to unpack here. We call `self.ui()` to start the UI, which we'll get to later. Remember how a command can return the next method to execute as a promise? The break method resolves after the [internal event bus][] receives a `"continue"` event, whether by the user pressing "Continue" or simply reaching the end of the debugged code. 
+There are a few things to unpack here. We call `self.ui()` to start the UI, which we'll get to later. Remember how a command can return the next method to execute as a promise? The break method resolves after the [internal event bus][] receives a `"continue"` event, whether by the user pressing "Continue" or simply reaching the end of the debugged code.
 
 The "context switch" is the dirtiest part of it all. Because we can step out of functions, we might finish debugging session with a different context than before. In this case, we just wipe the old context and copy the current context variables over. Honestly, I thought I'd have to do a lot more of this kind of thing.
 
@@ -106,7 +106,7 @@ HDB.prototype.stepOver = function() {
 ~~~
 {% endfig %}
 
-If not, then we do a little dance to execute the current command and get the next one: 
+If not, then we do a little dance to execute the current command and get the next one:
 
 {% fig "hdb.js ln. 61", "https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L61" %}
 ~~~js
@@ -231,7 +231,7 @@ end
 ~~~
 {% endfig %}
 
-Unfortunately, hyperscript's regex syntax isn't decided yet. 
+Unfortunately, hyperscript's regex syntax isn't decided yet.
 
 ------------
 
@@ -254,7 +254,7 @@ Having defined our functions we have a simple toolbar and then the **eval panel*
 ~~~
 {% endfig %}
 
-Why do I use weird selectors like `<input/> in me` when these elements have good IDs? Because `#eval-expr` in hyperscript uses `document.querySelector`, which doesn't reach Shadow DOM. 
+Why do I use weird selectors like `<input/> in me` when these elements have good IDs? Because `#eval-expr` in hyperscript uses `document.querySelector`, which doesn't reach Shadow DOM.
 
 ------------
 

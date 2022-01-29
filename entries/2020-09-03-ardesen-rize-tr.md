@@ -1,10 +1,10 @@
----
+<!--
 title: Ardeşen, Rize, Turkey
 date: 2020-09-02T22:40:22+03
 photo:
   src: /assets/photos/IMG20200825184721.jpg
   alt: Sunset over the sea, reflecting off a nearby car
----
+-->
 
 A few pics from there.
 

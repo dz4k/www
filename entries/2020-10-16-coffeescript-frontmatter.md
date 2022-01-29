@@ -1,16 +1,21 @@
----
+<!--
 title: Eleventy + Markdown + CoffeeScript = ❤
 date: 2020-10-16T17:12+03
 syndication:
   DEV: https://dev.to/dz4k/eleventy-markdown-coffeescript-p5a
 templateEngineOverride: md
----
+-->
 
 I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman][endorsed].
 
 ## Markdown with Frontmatter
 
-As far as I know, Jekyll is the origin of using a YAML block at the top of a Markdown file for metadata. It's not hard to imagine why this became popular --- associating prose with data is a common use case, and though they have their issues, both Markdown and YAML look pretty[^1].
+As far as I know, Jekyll is the origin of using a YAML block at the top of a
+Markdown file for metadata. It's not hard to imagine why this became popular ---
+associating prose with data is a common use case, and though they have their
+issues, both Markdown and YAML look pretty.* <small data-sidenote><q>It looks
+pretty</q> is often what people really mean when they call something
+"human-readable".</small>
 
 ## Eleventy Frontmatter
 
@@ -60,7 +65,7 @@ CoffeeScript is actually mentioned in the GitHub repo for `gray-matter`, the lib
 
 <div id=compare class="-full-bleed-scroll" style="
 	padding-inline: var(--dim-body-padding);
-	display:flex; 
+	display:flex;
 	gap: 3ch;">
 
 <style>
@@ -109,11 +114,9 @@ eleventyComputed:
 	{%endfor%}
 ~~~
 
-I think that computed frontmatter gives a nice balance of logic-less[^2] and logic-full templates.
-
-[^1]:	"It looks pretty" is often what people really mean when they call something "human-readable".
-
-[^2]:	Logicless templates: For people who will never need to make an HTML monthly calendar!
+I think that computed frontmatter gives a nice balance of logic-less* and
+logic-full templates. <small data-sidenote>Logicless templates: For people
+who will never need to make an HTML monthly calendar!</small>
 
 [endorsed]: https://twitter.com/zachleat/status/1340057504567488513
 [computed-data-docs]:	https://www.11ty.dev/docs/data-computed/

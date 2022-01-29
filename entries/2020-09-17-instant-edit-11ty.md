@@ -1,9 +1,9 @@
----
+<!--
 title: "Tip: Instantly Edit Your Eleventy Site on Github"
 date: 2020-08-17T20:12+03
 syndication:
   DEV: https://dev.to/dz4k/tip-instantly-edit-your-eleventy-site-on-github-5cme
----
+-->
 
 You're looking at the blog post you made yesterday, when suddenly a typo catches your eye. What is the fastest way to fix it? ([Skip to code](#the-code)).
 

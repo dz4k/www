@@ -1,11 +1,11 @@
----
+<!--
 title: Add Syndication Links On Your Personal Site Using Dev.to API
 date: 2020-09-17T21:10+03
 syndication:
   DEV: https://dev.to/dz4k/add-syndication-links-on-your-personal-site-using-dev-to-api-395
----
+-->
 
-I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow any readers to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts. 
+I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow any readers to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts.
 
 ([Skip to code](#the-code))
 
@@ -43,14 +43,14 @@ Now let's try using it in our templates:
 ~~~liquid
 {%if devToSyndication[page.url]%}
 <section class="syndication-links">
-This article is syndicated to <a class="u-syndication" 
+This article is syndicated to <a class="u-syndication"
     href="{{devToSyndication[page.url]}}">DEV</a>, where you can comment on it.
 </section>
 {%endif%}
 ~~~
 {{{{/raw}}}}
 
-Small problem: the `page.url` property Eleventy provides us is a relative URL, whereas the URLs we got from DEV are absolute. 
+Small problem: the `page.url` property Eleventy provides us is a relative URL, whereas the URLs we got from DEV are absolute.
 
 Sounds like a job for the `URL` class!
 
@@ -60,7 +60,7 @@ function makeRelativeUrl(url) {
 	// you might want to append url.search and url.hash too
     // but it's unlikely, and a small amount of tech debt is
     // good for the soul
-	return urlObj.pathname 
+	return urlObj.pathname
 }
 
 ...

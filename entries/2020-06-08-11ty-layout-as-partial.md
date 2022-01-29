@@ -1,9 +1,9 @@
----
+<!--
 title: Eleventy — Using A Layout As A Partial (The Most Useful Things...)
 date: 2020-06-08T14:50+03
 syndication:
   DEV: https://dev.to/dz4k/eleventy-using-a-layout-as-a-partial-the-most-useful-things-182n
----
+-->
 
 <ins>
 
@@ -17,17 +17,29 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 
 ## Solution
 
-{{#>fig caption="<cite>YouTube user [Bantu Tu][], commenting on [Missing Semester: Lecture 3: Editors (vim) (2020)][missing-semester]</cite>"}}
+<figure>
+
 > [...] the most useful things are usually cloaked in an air of nonchalance, even in documentation.
-{{/fig}}
+
+<figcaption>
+	&mdash; <cite>YouTube user
+	<a href="https://www.youtube.com/channel/UCjknfwYaYZvv94AjL10NO0Q">Bantu Tu</a>,
+	commenting on
+	<a href="https://www.youtube.com/watch?v=a6Q8Na575qc">Missing Semester: Lecture 3: Editors (vim) (2020)</a>
+	</cite>
+</figcaption>
+</figure>
 
 The solution to my problem was right there in the Eleventy docs, staring at me, its description phrased such that it couldn't possibly be of use to anyone.
 
-{{#>fig caption='[Eleventy docs][]'}}
+<figure>
+
 > ### Also `getCollectionItem`
 >
 > For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
-{{/fig}}
+
+<figcaption>&mdash; <cite><a href="https://www.11ty.dev/docs/filters/collection-items/#also-getcollectionitem">Eleventy docs</a></cite></figcaption>
+</figure>
 
 With this filter, all my problems were solved. I prepended the following to my `note.njk` template (similarly for `post.njk`):
 

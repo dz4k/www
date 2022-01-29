@@ -1,10 +1,10 @@
----
+<!--
 date: 2020-09-03T16:42+03
 photo:
   src: /assets/photos/IMG20200903164220.jpeg
   alt: Old, fading street sign, with text 'Yeniköy Caddesi ↞' and the logo of
     the Metropolitan Municipality of Ordu.
----
+-->
 
 [![{{photo.alt}}]({{photo.src}})]({{photo.src}})
 

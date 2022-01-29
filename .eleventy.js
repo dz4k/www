@@ -9,6 +9,10 @@ module.exports = function (eleventyConfig) {
   require('./build/markdown')(eleventyConfig)
   require('./build/respimg')(eleventyConfig)
 
+  eleventyConfig.setFrontMatterParsingOptions({
+  	delimiters: ['<!--', '-->']
+  })
+
   /****************************************************************************
    PASSTHROUGH COPY
    ****************************************************************************/
@@ -18,7 +22,7 @@ module.exports = function (eleventyConfig) {
 
   /****************************************************************************
    LAYOUTS
-   ****************************************************************************/  
+   ****************************************************************************/
 
   eleventyConfig.addLayoutAlias('entry', 'layout/entry.hbs')
   eleventyConfig.addLayoutAlias('page', 'layout/base.hbs')
@@ -28,12 +32,15 @@ module.exports = function (eleventyConfig) {
    ****************************************************************************/
 
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'), {
+
+  const syntaxhighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+  eleventyConfig.addPlugin(syntaxhighlight, {
   	init: ({ Prism }) => {
   	  require('prism-hyperscript')(Prism)
   	}
   })
-  eleventyConfig.addDataExtension('yaml', contents => require('js-yaml').load(contents))
+  eleventyConfig.addPairedShortcode("highlight",
+  	(a, b) => syntaxhighlight.pairedShortcode(a, b))
 
   /****************************************************************************
    CONFIG

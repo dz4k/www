@@ -1,11 +1,11 @@
----
+<!--
 layout: page
 permalink: "
 	{{~#if title~}} /{{datefmt page.date 'yyyy'}}/{{page.fileSlug}}/
 	{{~else~}}      /{{datefmt page.date 'yyyy'}}/{{datefmt page.date 'MMddHHmmss'}}/
 	{{~/if~}}
 	"
----
+-->
 
 <article class="h-entry">
 	<header class="entry-page-header">
@@ -26,7 +26,9 @@ permalink: "
 
 
 		{{#[last modified]}}
-			<p>Last modified {{isodate .}}</p>
+			<p>Last modified
+				<time class="dt-updated" datetime="{{isodatetime page.date}}"
+					>{{datefmt page.date 'yyyy-MM-dd HH:mm'}}</time></p>
 		{{/[last modified]}}
 
 		{{#english}}
