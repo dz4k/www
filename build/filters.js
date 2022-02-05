@@ -76,6 +76,27 @@ module.exports = eleventyConfig => {
         return url.href + (dotdotdot ? '…' : '')
     })
 
+    function reLast(haystack, needle) {
+        let rv = null;
+        while ((rv = needle.exec(haystack)) !== null) rv = rv.index;
+        return rv;
+    }
+
+    eleventyConfig.addFilter('smartTruncate', (text, len = 50) => {
+        if (text.length < len + 2) return len;
+        let rv = text.slice(0, len)
+
+        // Try to cut at a punctuation mark
+        const punctIdx = reLast(rv, /\.,:;—/g)
+        if (punctIdx > .6 * len) {
+            return rv = rv.slice(0, punctIdx)
+        }
+
+        return rv = rv.slice(0, rv.lastIndexOf(' '))
+    })
+
+    eleventyConfig.addFilter('striptags', text => text.replace(/<\/?[^>]+(>|$)/g, ""))
+
     eleventyConfig.addPairedShortcode('fig', (body, caption, link) =>
         `
 

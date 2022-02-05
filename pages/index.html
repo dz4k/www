@@ -45,7 +45,12 @@ eleventyExcludeFromCollections: true
 	{{#each values as | page |}}
 		{{#with page.data}}
 			<article class="h-entry">
-				<a href="{{page.url}}" class="p-name">{{title}}</a>
+				{{#if title}}
+					<a href="{{page.url}}" class="p-name">{{title}}</a>
+				{{else}}
+					<a href="{{page.url}}" class="p-summary">{{d summary (
+						smartTruncate (striptags page.templateContent) 65)}}&hellip;</a>
+				{{/if}}
 				<time class="dt-published" datetime="{{isodatetime page.date}}"
 					>{{datefmt page.date 'MM-dd'}}</time>
 				{{#photo}}

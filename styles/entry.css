@@ -3,6 +3,10 @@
 	text-decoration: none;
 }
 
+.entry-list .p-summary {
+	font-style: italic;
+}
+
 .entry-list h3 {
 	margin: var(--line-height) 0;
 }
