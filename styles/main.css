@@ -119,10 +119,14 @@ blockquote, figure, ul, ol, dd {
 	}
 
 blockquote {
-	padding-inline-start: 1ch;
-	box-sizing: content-box;
+	padding-inline: calc(.6 * var(--line-height));
 	border-left: 2px solid var(--color-muted-foreground);
 	background: var(--color-block-background);
+	width: max-content;
+	max-width: 100%;
+	box-shadow:
+		0 calc(-.5 * var(--line-height)) var(--color-block-background),
+		0 calc( .5 * var(--line-height)) var(--color-block-background);
 }
 
 aside {
@@ -139,6 +143,18 @@ ul[role=list] {
 	padding-left: 0;
 	margin-left: 0;
 	list-style: none;
+}
+
+th {
+	text-align: start;
+}
+
+thead tr > *, tr:not(:last-child) > * {
+	padding-block-end: calc(.5 * var(--line-height));
+}
+
+td:not(:last-child) {
+	padding-inline-end: 2em;
 }
 
 figcaption {
