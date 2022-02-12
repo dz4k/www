@@ -118,6 +118,13 @@ blockquote, figure, ul, ol, dd {
 		margin-inline: 0;
 	}
 
+	blockquote + figcaption {
+  	background: var(--color-block-background);
+  	margin-top: calc(-1 * var(--line-height));
+  	padding: 0 1rem calc(var(--line-height) / 2) 1rem;
+  	text-align: end;
+	}
+
 blockquote {
 	padding-inline: calc(.6 * var(--line-height));
 	border-left: 2px solid var(--color-muted-foreground);
