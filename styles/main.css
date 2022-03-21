@@ -4,8 +4,9 @@
 	--dim-body-padding: max(1rem, 10vw);
 
 	--font-sans: -apple-system, system-ui, sans-serif;
+	--font-serif: 'Source Serif 4', serif;
 	--font-mono: Consolas, Menlo, Source Code Pro, monospace, monospace;
-	--font-main: var(--font-sans);
+	--font-main: var(--font-serif);
 
 	--color-background: ghostwhite;
 	--color-block-background: #e6e6ff;
@@ -16,6 +17,7 @@
 	--line-height: 1.4rem;
 
 	scrollbar-color: var(--color-foreground) var(--color-block-background-hover);
+	font-size: 100%;
 }
 
 @media screen and (prefers-color-scheme: dark) {

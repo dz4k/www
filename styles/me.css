@@ -4,7 +4,7 @@
 	line-height: 1em;
 	font-size: clamp(3em, 3.5vw, 3em);
 	margin-left: -.06em;
-	font-weight: bold;
+	font-style: italic;
 }
 
 .me img {
