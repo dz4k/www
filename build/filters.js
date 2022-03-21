@@ -42,6 +42,8 @@ module.exports = eleventyConfig => {
         for (let i = e.length - 1; i >= 0; i--) yield e[i]
     }()))
 
+    eleventyConfig.addFilter('filter', (f, e) => e.filter(eval("it=>" + f)))
+
     eleventyConfig.addFilter('limit', (i, e) => (function* () {
         let n = 0
         for (const v of e) {

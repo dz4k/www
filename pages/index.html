@@ -5,6 +5,25 @@ permalink: /
 eleventyExcludeFromCollections: true
 -->
 
+{{#*inline "post"}}
+	{{#with data}}
+		<article class="h-entry">
+			{{#if title}}
+				<a href="{{../url}}" class="p-name">{{title}}</a>
+			{{else}}
+				<a href="{{../url}}" class="p-summary">{{d summary (
+					smartTruncate (striptags ../templateContent) 65)
+				}}&hellip;</a>
+			{{/if}}
+			<time class="dt-published" datetime="{{isodatetime ../date}}"
+				>{{datefmt ../date 'MM-dd'}}</time>
+			{{#photo}}
+				<a data-popup href="{{src}}">(image)</a>
+			{{/photo}}
+		</article>
+	{{/with}}
+{{/inline}}
+
 <div>
 	<div class="p-author h-card me" style="width: 100%;">
 		<img class=u-photo src=/assets/me.jpeg alt="Me @ Atakule, Ankara, Turkey" width=120 height=120 sizes="10ch">
@@ -23,41 +42,30 @@ eleventyExcludeFromCollections: true
 			<li>CV: <a href=/cv/tr>TR</a>, <a href=/cv/en>EN</a>
 			<li><a class="btn" href="https://buymeacoffee.com/dz4k">Buy me a coffee</a>
 		</ul>
-
-		<h2>projects</h2>
-
-		<ul role="list" class="-inline-list">
-			<li><a href="https://hyperscript.org">///_hyperscript&nearr;</a>
-			<li><a href="https://thisweek.htmx.org">This Week in HTMX&nearr;</a>
-			<li><a href="https://ankarametro.dz4k.com" lang="tr" hreflang="tr">Ankara Raylı Sistemler Haritası&nearr;</a>
-		</ul>
-	</div>
+</div>
+		
+<h2>projects</h2>
+		
+<ul role="list" class="entry-list">
+	{{#collections.project}}
+		<li>{{> post .}}
+	{{/collections.project}}
+	<li><p><a href="https://thisweek.htmx.org">This Week in HTMX&nearr;</a>
+	<li><p><a href="https://ankarametro.dz4k.com" lang="tr" hreflang="tr">Ankara Raylı Sistemler Haritası&nearr;</a>
+</ul>
 </div>
 
 <h2>blog</h2>
 
-<div class="entry-list" style="--dim-date-width: 5ch">
+<div class="entry-list">
 {{#each
 	(groupby
 		(eval 'post => post.date.getFullYear()')
-		(reverse collections.entries))}}
+		(reverse 
+			(filter '!it.data.category' collections.entries)))}}
 	<h3><time>{{key}}</time></h3>
-	{{#each values as | page |}}
-		{{#with page.data}}
-			<article class="h-entry">
-				{{#if title}}
-					<a href="{{page.url}}" class="p-name">{{title}}</a>
-				{{else}}
-					<a href="{{page.url}}" class="p-summary">{{d summary (
-						smartTruncate (striptags page.templateContent) 65)}}&hellip;</a>
-				{{/if}}
-				<time class="dt-published" datetime="{{isodatetime page.date}}"
-					>{{datefmt page.date 'MM-dd'}}</time>
-				{{#photo}}
-					<a data-popup href="{{src}}">(image)</a>
-				{{/photo}}
-			</article>
-		{{/with}}
+	{{#each values as | entry |}}
+			{{>post entry}}
 	{{/each}}
 {{/each}}
 </div>

@@ -22,4 +22,8 @@ module.exports = eleventyConfig => {
     eleventyConfig.addCollection('deleted', collectionApi => collectionApi
         .getAll()
         .filter(entry => entry.data.deleted))
+    
+    eleventyConfig.addCollection('project', collectionApi => collectionApi
+        .getAll()
+        .filter(entry => entry.data.category === 'project'))
 }
