@@ -11,3 +11,20 @@ The code used to  generate the site is available under the MIT License.
 The contents of the website (stored in the `entries/` and `assets/` directories)
 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+## Features
+
+ * posts
+ * feeds (atom, json)
+ * webmentions (through webmention.io)
+ * pinned posts
+ * last-modified date (manual)
+ * syndication links
+
+## want:
+
+ * static-rendered custom elements
+     * more html-based in general
+ * git-based content dates (unless specified!)
+ * garden
+ * missing.css

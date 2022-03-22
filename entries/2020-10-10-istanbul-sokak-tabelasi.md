@@ -1,4 +1,4 @@
-<!--
+---
 title: İstanbul'da bir sokak tabelası
 date: 2020-10-10T19:27:39+03
 lang: tr
@@ -15,7 +15,7 @@ photo:
     ÇEKMEKÖY (TN:60 )
 english: /2020/istanbul-street-sign/
 templateEngineOverride: njk,md
--->
+---
 
 [Ordu'daki tabelanın olduğu yazıda][ordu-street-sign] İstanbul'a yolum düşerse oradakilerin resmini paylaşırım diye yazmıştım. Başka bir şey dileseymişim.
 

@@ -1,9 +1,9 @@
-<!--
+---
 title: Eleventy — Using A Layout As A Partial (The Most Useful Things...)
 date: 2020-06-08T14:50+03
 syndication:
   DEV: https://dev.to/dz4k/eleventy-using-a-layout-as-a-partial-the-most-useful-things-182n
--->
+---
 
 <ins>
 

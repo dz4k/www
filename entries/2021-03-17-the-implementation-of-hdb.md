@@ -1,4 +1,4 @@
-<!--
+---
 title: "The Implementation of HDB, the _hyperscript debugger"
 date: 2021-03-17T00:00+0300
 last modified: 2021-09-02T12:48+0300
@@ -8,7 +8,7 @@ syndication:
   DEV: https://dev.to/dz4k/the-implementation-of-hdb-the-hyperscript-debugger-5hf4
 
 templateEngineOverride: njk,md
--->
+---
 
 <script src="/assets/js/core.js"></script>
 <script src="/assets/js/web.js"></script>

@@ -9,10 +9,6 @@ module.exports = function (eleventyConfig) {
   require('./build/markdown')(eleventyConfig)
   require('./build/respimg')(eleventyConfig)
 
-  eleventyConfig.setFrontMatterParsingOptions({
-  	delimiters: ['<!--', '-->']
-  })
-
   /****************************************************************************
    PASSTHROUGH COPY
    ****************************************************************************/

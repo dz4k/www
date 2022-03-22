@@ -1,9 +1,9 @@
-<!--
+---
 title: Add Syndication Links On Your Personal Site Using Dev.to API
 date: 2020-09-17T21:10+03
 syndication:
   DEV: https://dev.to/dz4k/add-syndication-links-on-your-personal-site-using-dev-to-api-395
--->
+---
 
 I recently started using the [RSS publishing][rsspub] option to syndicate posts from my personal site to DEV. This allows people to post comments under my posts, many of which might contain useful info. To allow any readers to easily discover and participate in these discussions, I've added links to the dev.to copies under my posts.
 

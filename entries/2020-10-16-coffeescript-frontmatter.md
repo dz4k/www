@@ -1,10 +1,10 @@
-<!--
+---
 title: Eleventy + Markdown + CoffeeScript = ❤
 date: 2020-10-16T17:12+03
 syndication:
   DEV: https://dev.to/dz4k/eleventy-markdown-coffeescript-p5a
 templateEngineOverride: md
--->
+---
 
 I've started using CoffeeScript instead of YAML for frontmatter, and it works like a dream. [Endorsed by Zach Leatherman][endorsed].
 
@@ -49,7 +49,7 @@ Eleventy's ["Computed Data"][computed-data-docs] feature relies on functions in 
 ---
 <!doctype html>
 <html>
-<!-- … -->
+--- … -->
 <body>
    <p>This website was last generated on {{ currentDate }}</p>
   <!-- … -->

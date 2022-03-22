@@ -1,8 +1,8 @@
-<!--
+---
 title: _hyperscript
 date: 2022-03-21T20:47:47+03:00
 category: project
--->
+---
 
 &rarr; <https://hyperscript.org>
 

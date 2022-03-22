@@ -1,11 +1,11 @@
-<!--
+---
 title: Intentionally Unscalable
 date: 2022-02-06T14:52:45+03:00
 ...:
   <p>Originally published as a <a
   	href="https://gist.github.com/dz4k/c6829e42066a5fba64238a68cf41abd7"
   	>GitHub Gist</a> on <time>2021-11-22</time></p>
--->
+---
 
 \_hyperscript is intentionally unscalable. We make decisions that would be
 obviously inadvisable to anyone looking to make scalable software, and dismiss

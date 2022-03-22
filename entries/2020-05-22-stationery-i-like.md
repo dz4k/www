@@ -1,8 +1,8 @@
-<!--
+---
 title: Stationery I like
 date: 2020-05-22T22:10+03
 last modified: 2021-10-13T20:51:46+03:00
--->
+---
 
 Reviews for things I used, and a wishlist I try to keep small.
 
@@ -21,12 +21,12 @@ Great paper for the price --- takes well to many pens. Subtle, sparse dot grid. 
 
 These are how you know it's Back To School season in Turkey. As far as I can find, the only place you can get these is <span lang=tr>A-101</span> (TR supermarket chain). It takes well to a lot of pens --- the paper quality is amazing for the price. The plain design is quite nice in my opinion, with vibrant colors or plain black/dark blue options available. I shouldn't praise them too much, lest they become more expensive...
 
-<!--
+ <!--
 
 -   [Uni Jetstream SX-217](https://www.uniball.com.tr/urunler/jetstream/jetstream/sx-217){#uni-jetstream}
 
     TODO: I should write a blog post about this
--->
+ -->
 
 ## Things I want (curse you, JetPens)
 

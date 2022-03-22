@@ -1,4 +1,4 @@
-<!--
+---
 title: Street sign in İstanbul
 date: 2020-10-10T19:27:39+03
 photo:
@@ -15,7 +15,7 @@ photo:
     ÇEKMEKÖY (TN:60 )"
 türkçe: /2020/istanbul-sokak-tabelasi/
 templateEngineOverride: njk,md
--->
+---
 
 I mentioned these signs in [my post about the ones in Ordu][ordu-street-sign] and said I'd post a picture if I ever went to İstanbul. I think I just wasted my wish.
 
